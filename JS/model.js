@@ -1,8 +1,11 @@
 model = {
   //app
+
   state: "mainView",
   loggedInUser: {},
+
   //input
+
   inputs: {
     login: {
       password: "",
@@ -32,7 +35,9 @@ model = {
       },
     },
   },
+
   //data
+
   userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
   adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
   wordFilter: [],
@@ -44,19 +49,36 @@ model = {
     { cat: "By", checked: false },
     { cat: "Natur", checked: false },
   ],
-  creator: {
-    aboutPicture: "IMG/jarand.jpg",
-    title: "Arkitekt",
-    name: "Jarand Midtgaard",
-    aboutCreator:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    creatorSoMelinks: [
-      { media: "Facebook", logoimg: "", link: "" },
-      { media: "SnapChat", logoimg: "", link: "" },
-      { media: "Twitter", logoimg: "", link: "" },
-      { media: "Instagram", logoimg: "", link: "" },
-    ],
-  },
+  creator: [
+    {
+      id: 01,
+      aboutPicture: "IMG/jarand.jpg",
+      title: "Arkitekt",
+      name: "Jarand Midtgaard",
+      aboutCreator:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      creatorSoMelinks: [
+        { media: "Facebook", logoimg: "", link: "" },
+        { media: "SnapChat", logoimg: "", link: "" },
+        { media: "Twitter", logoimg: "", link: "" },
+        { media: "Instagram", logoimg: "", link: "" },
+      ],
+    },
+    {
+      id: 02,
+      aboutPicture: "IMG/somePicture.jpg",
+      title: "SomeTitle",
+      name: "SomeName",
+      aboutCreator:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      creatorSoMelinks: [
+        { media: "Facebook", logoimg: "", link: "" },
+        { media: "SnapChat", logoimg: "", link: "" },
+        { media: "Twitter", logoimg: "", link: "" },
+        { media: "Instagram", logoimg: "", link: "" },
+      ],
+    },
+  ],
   pictures: [
     {
       img: "",
