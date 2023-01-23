@@ -16,6 +16,8 @@
     <div id="app"></div>
   </body>
   <script>
-    function updateView() {}
+    function updateView() {
+      if (model.state === "mainView") updateMainView();
+    }
   </script>
 </html>
