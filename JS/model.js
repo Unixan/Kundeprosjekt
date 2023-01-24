@@ -39,7 +39,6 @@ model = {
 
   userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
   adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
-  wordFilter: [],
   filter: [
     { cat: "Fargerik", checked: false },
     { cat: "Mørk", checked: false },
@@ -84,7 +83,7 @@ model = {
       ],
     },
   ],
-  
+
   // Todo: Fylle in dummydata i pictures.
 
   pictures: [
