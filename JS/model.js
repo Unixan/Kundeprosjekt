@@ -2,7 +2,7 @@ model = {
   //app
 
   state: "mainView",
-  loggedInUser: {},
+  loggedInUser: null,
 
   //input
 
@@ -20,12 +20,11 @@ model = {
     admin: {
       addPic: {
         img: "",
-        id: "",
         title: "",
         description: "",
         artist: "",
+        addNewCat: "",
         category: [],
-        comments: [],
       },
       editProfile: {
         aboutCreator: "",
@@ -52,6 +51,9 @@ model = {
   creator: [
     {
       id: 01,
+      role: "Admin",
+      password: "1234",
+      email: "fakeEmail@mail.com",
       aboutPicture: "IMG/jarand.jpg",
       title: "Arkitekt",
       name: "Jarand Midtgaard",
@@ -66,6 +68,9 @@ model = {
     },
     {
       id: 02,
+      role: "collaborator",
+      password: "abcd",
+      email: "fakeEmail2@mail.com",
       aboutPicture: "IMG/somePicture.jpg",
       title: "SomeTitle",
       name: "SomeName",
@@ -79,6 +84,9 @@ model = {
       ],
     },
   ],
+  
+  // Todo: Fylle in dummydata i pictures.
+
   pictures: [
     {
       img: "",
@@ -88,24 +96,13 @@ model = {
       artist: "",
       category: [],
       comments: [{ user: "", comment: "" }],
+      SoMelinks: [
+        { media: "Facebook", logoimg: "", link: "" },
+        { media: "SnapChat", logoimg: "", link: "" },
+        { media: "Twitter", logoimg: "", link: "" },
+        { media: "Instagram", logoimg: "", link: "" },
+      ],
     },
-  ],
-  SoMelinks: [
-    { media: "Facebook", logoimg: "", link: "" },
-    { media: "SnapChat", logoimg: "", link: "" },
-    { media: "Twitter", logoimg: "", link: "" },
-    { media: "Instagram", logoimg: "", link: "" },
-  ],
-
-  adminAccount: {
-    id: 01,
-    email: "fakeEmail@mail.com",
-    name: "Admin",
-    password: "1234",
-  },
-
-  collabAccounts: [
-    { id: 02, email: "fakeEmail2@mail.com", name: "big.dk", password: "abcd" },
   ],
   areYouSure: false,
   logo: "IMG/Logo.png",
