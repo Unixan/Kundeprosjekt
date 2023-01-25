@@ -1,6 +1,6 @@
 model = {
   //app
-
+  // mainView, adminView, addImageView, contactView, adminContactView, collabView
   state: "mainView",
   loggedInUser: null,
 
@@ -90,66 +90,6 @@ model = {
     {
       img: "IMG/PICTURES/Picture 1.jpg",
       picId: 001,
-      title: "",
-      description: "",
-      artist: "",
-      category: ["Natur"],
-      comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
-    },
-    {
-      img: "IMG/PICTURES/Picture 2.jpg",
-      picId: 002,
-      title: "",
-      description: "",
-      artist: "",
-      category: ["Natur"],
-      comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
-    },
-    {
-      img: "IMG/PICTURES/Picture 3.jpg",
-      picId: 003,
-      title: "",
-      description: "",
-      artist: "",
-      category: ["Natur"],
-      comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
-    },
-    {
-      img: "IMG/PICTURES/Picture 4.jpg",
-      picId: 004,
-      title: "",
-      description: "",
-      artist: "",
-      category: ["Natur"],
-      comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
-    },
-    {
-      img: "IMG/PICTURES/Picture 5.jpg",
-      picId: 005,
       title: "",
       description: "",
       artist: "",
