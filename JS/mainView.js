@@ -19,13 +19,17 @@ function updateMainView() {
     appDiv.innerHTML += /*HTML*/ `
             <div>
                 <div>${picture.title}</div>
-                <div onclick="showPicture(${i})"><img src="${picture.img}"></div>
-                ${picture.toggled ? '<div class="description">${picture.description}</div>': ''}
+                <div onclick="showPicture(${i})"><img src="${
+      picture.img
+    }"></div>
+                ${
+                  picture.toggled
+                    ? '<div class="description">' +
+                      picture.description +
+                      "</div>"
+                    : ""
+                }
             </div>
                 `;
   }
 }
-
-//når man toggler en klasse, vil den da endre på alle i loopen siden de genererer seg like. 
-//Hvordan endre dette er spørsmålet, eller om vi fyller en variabel med den informasjonen. 
-//Eller om funksjonen henter inn den informasjonen. 
