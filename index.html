@@ -12,13 +12,32 @@
     <script src="JS/modelfilter.js"></script>
     <script src="JS/mainView.js" defer></script>
     <script src="JS/mainController.js"></script>
+    <script src="JS/collabView.js"></script>
+    <script src="JS/collabController.js"></script>
+    <script src="JS/contactView.js"></script>
+    <script src="JS/contactController.js"></script>
+    <script src="JS/ADMIN/addImageView.js"></script>
+    <script src="JS/ADMIN/addImageController.js"></script>
+    <script src="JS/ADMIN/adminContactView.js"></script>
+    <script src="JS/ADMIN/adminContactController.js"></script>
+    <script src="JS/ADMIN/adminView.js"></script>
+    <script src="JS/ADMIN/adminController.js"></script>
+    <script src="JS/ADMIN/loginView.js"></script>
+    <script src="JS/ADMIN/loginController.js"></script>
   </head>
   <body>
     <div id="app"></div>
   </body>
   <script>
+    updateView();
     function updateView() {
       if (model.state === "mainView") updateMainView();
+      if (model.state === "adminView") updateAdminView();
+      if (model.state === "addImageView") updateAddImageView();
+      if (model.state === "contactView") updateContactView();
+      if (model.state === "adminContactView") updateAdminContactView();
+      if (model.state === "collabView") updateCollabView();
+      if (model.state === "loginView") updateLoginView();
     }
   </script>
 </html>
