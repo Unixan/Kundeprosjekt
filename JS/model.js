@@ -1,6 +1,6 @@
 model = {
   //app
-  // mainView, adminView, addImageView, contactView, adminContactView, collabView
+  // mainView, adminView, addImageView, contactView, adminContactView, collabView, loginView
   state: "mainView",
   loggedInUser: null,
 
