@@ -1,0 +1,1 @@
+//controller skal bruke midlertidige verdier fra addImageView og push-e til model.pictures

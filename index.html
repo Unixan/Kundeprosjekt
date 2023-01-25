@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="JS/model.js"></script>
     <script src="JS/modelfilter.js"></script>
-    <script src="JS/mainView.js" defer></script>
+    <script src="JS/mainView.js"></script>
     <script src="JS/mainController.js"></script>
     <script src="JS/collabView.js"></script>
     <script src="JS/collabController.js"></script>
@@ -29,6 +29,7 @@
     <div id="app"></div>
   </body>
   <script>
+    const appDiv = document.getElementById(`app`);
     updateView();
     function updateView() {
       if (model.state === "mainView") updateMainView();

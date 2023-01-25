@@ -1,0 +1,3 @@
+//Funksjonene til kontroller
+/*TODO
+-  */

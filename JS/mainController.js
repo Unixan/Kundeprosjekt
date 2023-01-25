@@ -1,0 +1,1 @@
+//controllerfunksjonene til mainView

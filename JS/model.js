@@ -89,6 +89,7 @@ model = {
   pictures: [
     {
       img: "IMG/PICTURES/Picture 1.jpg",
+      toggled: false,
       picId: 001,
       title: "",
       description: "",

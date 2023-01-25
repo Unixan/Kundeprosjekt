@@ -1,0 +1,5 @@
+//Funksjonene til contact
+/*TODO
+-  */
+
+
