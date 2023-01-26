@@ -1,4 +1,4 @@
-model = {
+const model = {
   //app
   // mainView, adminView, addImageView, contactView, adminContactView, collabView, loginView
   state: "mainView",
