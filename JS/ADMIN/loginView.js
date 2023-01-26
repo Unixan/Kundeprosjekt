@@ -7,7 +7,7 @@ NEED
 
 
 function updateLoginView(){
-    appDiv.innerHTLM = /*HTML*/`
+    appDiv.innerHTML = /*HTML*/`
     <div>
         <div>Administrerende logg-inn</div>
         <div>Brukernavn</div>
