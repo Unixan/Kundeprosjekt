@@ -1,13 +1,11 @@
 /*Vise info om ønske om og collab og kontaktinfo/mulighet. samt liste med bildene som er collabed
         Ansvarlig: Becka
-TO DO:  
-- displaye info og kontaktinfo
-- vise frem bilder under i display area
-
 NEED
 - Testing
 - CSS
 NB!:
+Kopiere tilbake-knappen fra contact-siden
+
 Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
 må disse også endres til lik stil. 
 */
@@ -15,10 +13,10 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTLM = /*HTML*/`
         <div>
-        <button onclick="">Tilbake</button>
-                <div>Samarbeidsmuligheter</div>
-                <div>Hei, hvis du ønsker å samarbeide med meg så kontakt meg her:</div>
+        <button onclick="backButton()">Tilbake</button>
+                <div>Samarbeidsprosjekter</div>
                 <div>${model.creator.aboutPicture}</div>
+                <div>Hei, jeg ønsker flere samarbeidspartnere! Kontakt meg gjerne.</div>
                 <div>Kontakt meg her!</div>
                 <div>${model.creator.email}</div>
                 <div>${model.creator.tlf}</div>
