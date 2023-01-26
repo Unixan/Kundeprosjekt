@@ -3,6 +3,10 @@
 TO DO:  
 - displaye info og kontaktinfo
 - vise frem bilder under i display area
+
+NEED
+- Testing
+- CSS
 NB!:
 Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
 må disse også endres til lik stil. 
@@ -11,12 +15,16 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTLM = /*HTML*/`
         <div>
+        <button onclick="">Tilbake</button>
                 <div>Samarbeidsmuligheter</div>
                 <div>Hei, hvis du ønsker å samarbeide med meg så kontakt meg her:</div>
+                <div>${model.creator.aboutPicture}</div>
                 <div>Kontakt meg her!</div>
+                <div>${model.creator.email}</div>
+                <div>${model.creator.tlf}</div>
         </div>
+        </div>${collabImages()}</div>
         `;
-        collabImages();
 }
 
 function collabImages(){
