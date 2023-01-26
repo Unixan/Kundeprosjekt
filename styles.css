@@ -1,17 +1,44 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-img {
+.picture {
   width: 100%;
   object-fit: contain;
 }
 .scrollBox {
+  padding-top: 60px;
   margin: auto;
   max-width: 1000px;
 }
 
-a{
+a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+.menuBar {
+  margin: auto;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: olivedrab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: olivedrab url("IMG/Signatur.png") no-repeat scroll 0 0;
+}
+
+.menu {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.logo {
+  height: 60px;
 }

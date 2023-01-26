@@ -11,29 +11,45 @@
 
 function updateMainView() {
   //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
+  // Jobber med å få menyen alignet samtidig som logoen blir seendes på venstre side.
   let html = "";
   html += /*HTML*/ `
   <header>
-  <a href="#">Banner med signatur</a>
-    <div>Burgermeny</div>
-      <div class="scrollBox">`;
-    model.pictures.forEach((picture, i) => {
-      html += /*HTML*/ `
-              <div>
-                  <div>${picture.title}</div>
-                  <div onclick="showPicture(${i})"><img src="${picture.img}">
-              </div>
-                  ${
-                    picture.toggled
-                      ? '<div class="description">' +
-                        picture.description +
-                        "</div>"
-                      : ""
-                  }
-              </div>
-                  `;
-    });
+  <nav class="menuBar">
+ 
+        <ul class="menu">
+          <li class="menuItem">
+            <a href="#">Filtrering</a>
+          </li>
+          <li class="menuItem">
+            <a href="#">Samarbeid</a>
+          </li>
+          <li class="menuItem">
+            <a href="#">Kontakt</a>
+          </li>
+        </ul>
+    </nav>
+  </header>
+        <div class="scrollBox">`;
+  model.pictures.forEach((picture, i) => {
+    html += /*HTML*/ `
+                <div>
+                    <div>${picture.title}</div>
+                    <div onclick="showPicture(${i})"><img src="${
+      picture.img
+    }" class="picture">
+                </div>
+                    ${
+                      picture.toggled
+                        ? '<div class="description">' +
+                          picture.description +
+                          "</div>"
+                        : ""
+                    }
+                </div>
+                    `;
+  });
 
-    html+= `</div></header>`
+  html += `</div></header>`;
   appDiv.innerHTML = html;
 }
