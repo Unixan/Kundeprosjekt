@@ -1,9 +1,11 @@
 /*Vise info om ønske om og collab og kontaktinfo/mulighet. samt liste med bildene som er collabed
         Ansvarlig: Becka
-TO DO:  
-- displaye info og kontaktinfo
-- vise frem bilder under i display area
+NEED
+- Testing
+- CSS
 NB!:
+Kopiere tilbake-knappen fra contact-siden
+
 Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
 må disse også endres til lik stil. 
 */
@@ -11,17 +13,25 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTLM = /*HTML*/`
         <div>
-                <div>Samarbeidsmuligheter</div>
-                <div>Hei, hvis du ønsker å samarbeide med meg så kontakt meg her:</div>
+        <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
+                <div>Samarbeidsprosjekter</div>
+                <div>${model.creator.aboutPicture}</div>
+                <div>Hei, jeg ønsker flere samarbeidspartnere! Kontakt meg gjerne.</div>
                 <div>Kontakt meg her!</div>
+                <div>${model.creator.email}</div>
+                <div>${model.creator.tlf}</div>
         </div>
+        </div>${collabImages()}</div>
         `;
-        collabImages();
 }
 
+//Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
+//Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){
+        let collabImageExists = false;
         model.pictures.forEach((picture, index) => {
         if(picture[index].category.includes('Samarbeidsprosjekt')){
+                collabImageExists = true;
                 appDiv.innerHTLM += /*HTML*/`
                 <div>
                         <div>${picture.title}</div>
@@ -34,8 +44,13 @@ function collabImages(){
                       "</div>"
                     : ""
                 }
-            </div>
+                </div>
                 `;
-                }
+                };
         });
+        if(collabImageExists === true){
+                appDiv.innerHTLM += /*HTML*/`
+                <div>Tidligere samarbeidsprosjekter</div>
+                `;
+        };
 }

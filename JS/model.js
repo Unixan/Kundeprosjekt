@@ -1,4 +1,4 @@
-model = {
+const model = {
   //app
   // mainView, adminView, addImageView, contactView, adminContactView, collabView, loginView
   state: "mainView",
@@ -50,6 +50,7 @@ model = {
     role: "Admin",
     password: "1234",
     email: "fakeEmail@mail.com",
+    tlf: 12345678,
     aboutPicture: "IMG/jarand.jpg",
     title: "Arkitekt",
     name: "Jarand Midtgaard",
@@ -149,4 +150,5 @@ model = {
   ],
   areYouSure: false,
   logo: "IMG/Signatur.png",
+  backLogo: "IMG/ICONS/tilbake.png",
 };
