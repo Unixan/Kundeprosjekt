@@ -5,3 +5,4 @@
 - sosiale medier lenker til Jarand
 - tilbakeknapp
 - kontakt-lenke til epost*/
+/*DOES IT: Erwan Foxtail*/
