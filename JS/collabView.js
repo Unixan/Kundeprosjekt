@@ -13,7 +13,7 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTLM = /*HTML*/`
         <div>
-        <button onclick="backButton()">Tilbake</button>
+        <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
                 <div>Samarbeidsprosjekter</div>
                 <div>${model.creator.aboutPicture}</div>
                 <div>Hei, jeg ønsker flere samarbeidspartnere! Kontakt meg gjerne.</div>
@@ -25,9 +25,13 @@ function updateCollabView(){
         `;
 }
 
+//Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
+//Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){
+        let collabImageExists = false;
         model.pictures.forEach((picture, index) => {
         if(picture[index].category.includes('Samarbeidsprosjekt')){
+                collabImageExists = true;
                 appDiv.innerHTLM += /*HTML*/`
                 <div>
                         <div>${picture.title}</div>
@@ -40,8 +44,13 @@ function collabImages(){
                       "</div>"
                     : ""
                 }
-            </div>
+                </div>
                 `;
-                }
+                };
         });
+        if(collabImageExists === true){
+                appDiv.innerHTLM += /*HTML*/`
+                <div>Tidligere samarbeidsprosjekter</div>
+                `;
+        };
 }
