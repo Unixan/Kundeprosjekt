@@ -26,5 +26,6 @@
         <input type="text" placeholder="Skriv inn beskrivelse" onchange="model.inputs.admin.addPic.description = this.value">
     </div>
     `;
-   }
+}
+    appDiv.innerHTML = html;
     }
