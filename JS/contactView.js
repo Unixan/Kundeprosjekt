@@ -19,6 +19,6 @@ function updateContactView(){
         <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
         <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
     </div>
-    <button onclick="mainViewState()"
+    <button onclick="mainViewState()">Tilbake</button>
     `
 }
