@@ -148,5 +148,5 @@ model = {
     },
   ],
   areYouSure: false,
-  logo: "IMG/Logo.png",
+  logo: "IMG/Signatur.png",
 };
