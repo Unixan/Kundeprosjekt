@@ -9,7 +9,8 @@
 // Knapp som linker til brukers foretrukne e-post program hvor gjeldende bilde (tittel og id) blir automatisk lagt til som emne.
 // Knapp som kaller på funksjon for å vise SoMe linker der bildene kan deles direkte til brukers feed.function updateMainView(){}
 
-function updateMainView() {
+
+function updateMainView() {         //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
   appDiv.innerHTML = /*HTML*/ `
     <div>Burgermeny</div>
     <div>Banner med signatur</div>
