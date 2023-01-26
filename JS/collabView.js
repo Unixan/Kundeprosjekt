@@ -27,6 +27,7 @@ function updateCollabView(){
 
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
+//error når jeg skriver funksjonen i consollen. 
 function collabImages(){
         let collabImageExists = false;
         model.pictures.forEach((picture, index) => {
