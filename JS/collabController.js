@@ -1,3 +1,4 @@
-//Funksjonene til kontroller
-/*TODO
+/*Funksjonene til kontroller
+    Ansvarlig: Becka
+TODO
 -  */
