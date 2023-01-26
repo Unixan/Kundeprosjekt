@@ -29,11 +29,11 @@ li {
   position: fixed;
   width: 100%;
   height: 60px;
-  background-color: #939d7b;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #939d7b url("IMG/Signatur60px.png") no-repeat scroll 0 0;
+  background: #939d7b url("IMG/Signatur60px.png") no-repeat scroll 0% 50%;
 }
 
 .menu {
