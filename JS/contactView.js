@@ -8,11 +8,16 @@
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
-    <h1>Jarand Midtgaard</h1>
-    <p>Lorem ipsum</p>
+    <h1>${model.creator.name}</h1>
+    <p>${model.creator.title}</p>
     <p><a>kontakt</a>
     <div>
     <img src=${model.creator.aboutPicture} alt="Profilbilde av Jarand Midtgaard">
+    <div>
+        <div><a><img src=${model.creator.creatorSoMelinks[0].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[1].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
     </div>
     `
 }
