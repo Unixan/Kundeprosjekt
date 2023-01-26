@@ -13,6 +13,11 @@ function updateContactView(){
     <p><a>kontakt</a>
     <div>
     <img src=${model.creator.aboutPicture} alt="Profilbilde av Jarand Midtgaard">
+    <div>
+        <div><a><img src=${model.creator.creatorSoMelinks[0].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[1].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
+        <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
     </div>
     `
 }
