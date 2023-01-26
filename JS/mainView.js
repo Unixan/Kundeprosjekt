@@ -14,14 +14,12 @@ function updateMainView() {
     <div>Burgermeny</div>
     <div>Banner med signatur</div>
     `;
-  for (let i = 0; i < model.pictures.length; i++) {
-    picture = model.pictures[i];
+  model.pictures.forEach((picture, i) => {
     appDiv.innerHTML += /*HTML*/ `
             <div>
                 <div>${picture.title}</div>
-                <div onclick="showPicture(${i})"><img src="${
-      picture.img
-    }"></div>
+                <div onclick="showPicture(${i})"><img src="${picture.img}">
+            </div>
                 ${
                   picture.toggled
                     ? '<div class="description">' +
@@ -31,5 +29,5 @@ function updateMainView() {
                 }
             </div>
                 `;
-  }
+  });
 }
