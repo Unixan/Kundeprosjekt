@@ -1,8 +1,8 @@
 //Informasjonsside til Jarand med informasjon og kontaktinformasjon. 
 /*TODO 
-- profilbildet
-- navn og kontaktinformasjon
-- sosiale medier lenker til Jarand
+- profilbildet X
+- navn og kontaktinformasjon X
+- sosiale medier lenker til Jarand X
 - tilbakeknapp
 - kontakt-lenke til epost*/
 /*DOES IT: Erwan Foxtail*/
@@ -19,5 +19,6 @@ function updateContactView(){
         <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
         <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
     </div>
+    <button onclick="mainViewState()"
     `
 }
