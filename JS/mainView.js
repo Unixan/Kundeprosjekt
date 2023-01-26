@@ -11,7 +11,7 @@
 
 function updateMainView() {
   //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
-  // Jobber med å få menyen alignet samtidig som logoen blir seendes på venstre side.
+  //Gjort ferdig full-screen meny. Hvertfall ferdig til diskusjon i team.
   let html = "";
   html += /*HTML*/ `
   <header>
@@ -19,13 +19,13 @@ function updateMainView() {
  
         <ul class="menu">
           <li class="menuItem">
-            <a href="#">Filtrering</a>
+            <a href="#" class="menuLink">Filtrering</a>
           </li>
           <li class="menuItem">
-            <a href="#">Samarbeid</a>
+            <a href="#" class="menuLink">Samarbeid</a>
           </li>
           <li class="menuItem">
-            <a href="#">Kontakt</a>
+            <a href="#" class="menuLink">Kontakt</a>
           </li>
         </ul>
     </nav>
