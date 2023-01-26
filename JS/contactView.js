@@ -4,7 +4,10 @@
 - navn og kontaktinformasjon X
 - sosiale medier lenker til Jarand X
 - tilbakeknapp X
-- kontakt-lenke til epost*/
+- kontakt-lenke til epost X
+- Legge til brødtekst?
+- Legge til link til SoMe*
+- Legge til meny/
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
