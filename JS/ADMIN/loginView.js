@@ -1,12 +1,15 @@
-//Login side som admin skal kunne logge seg på. Denne skal være på egen side. 
-/*TODO
-- Sette inn inputfelt (text)
-- sette inn submitknapp*/
+/*Login side som admin skal kunne logge seg på. Denne skal være på egen side. 
+    Ansvarlig: Becka
+NEED
+- Testing
+- CSS
+*/
+
 
 function updateLoginView(){
     appDiv.innerHTLM = /*HTML*/`
     <div>
-        <div>Log inn</div>
+        <div>Administrerende logg-inn</div>
         <div>Brukernavn</div>
         <input type="text" placeholder="Skriv inn brukernavn" oninput="model.inputs.login.username=this.value" value='${model.inputs.login.username}'/>
         <div>Passord</div>

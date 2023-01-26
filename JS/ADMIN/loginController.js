@@ -1,7 +1,9 @@
 /*Kontrolleren til login
-TODO
-- Skjekke om login er riktig  
-- Vise til admin sine sider for redigering*/
+    Ansvarlig: Becka
+NEED 
+- Testing
+- CSS
+*/
 
 function login(){
     if(model.inputs.login.username === model.creator.role && model.inputs.login.password === model.creator.password){
@@ -12,6 +14,5 @@ function login(){
         model.inputs.login.password = '';
         wrongUser();
     }
-    
     updateView();
 }
