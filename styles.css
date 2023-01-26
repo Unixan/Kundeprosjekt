@@ -12,4 +12,6 @@ img {
   max-width: 1000px;
 }
 
-
+a{
+  text-decoration: none;
+}

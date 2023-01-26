@@ -13,25 +13,27 @@ function updateMainView() {
   //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
   let html = "";
   html += /*HTML*/ `
+  <header>
+  <a href="#">Banner med signatur</a>
     <div>Burgermeny</div>
-    <div>Banner med signatur</div>
-    <div class="scrollBox">`;
-  model.pictures.forEach((picture, i) => {
-    html += /*HTML*/ `
-            <div>
-                <div>${picture.title}</div>
-                <div onclick="showPicture(${i})"><img src="${picture.img}">
-            </div>
-                ${
-                  picture.toggled
-                    ? '<div class="description">' +
-                      picture.description +
-                      "</div>"
-                    : ""
-                }
-            </div>
-                `;
-  });
-  html+= `</div>`
+      <div class="scrollBox">`;
+    model.pictures.forEach((picture, i) => {
+      html += /*HTML*/ `
+              <div>
+                  <div>${picture.title}</div>
+                  <div onclick="showPicture(${i})"><img src="${picture.img}">
+              </div>
+                  ${
+                    picture.toggled
+                      ? '<div class="description">' +
+                        picture.description +
+                        "</div>"
+                      : ""
+                  }
+              </div>
+                  `;
+    });
+
+    html+= `</div></header>`
   appDiv.innerHTML = html;
 }
