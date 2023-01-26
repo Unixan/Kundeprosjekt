@@ -50,6 +50,7 @@ model = {
     role: "Admin",
     password: "1234",
     email: "fakeEmail@mail.com",
+    tlf: 12345678,
     aboutPicture: "IMG/jarand.jpg",
     title: "Arkitekt",
     name: "Jarand Midtgaard",
