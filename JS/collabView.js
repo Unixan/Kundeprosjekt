@@ -55,3 +55,4 @@ function findCollabImages(catArr){
                 `;
         };
 }
+//Filter istedenfor map?? forEach og filter?? 
