@@ -29,26 +29,26 @@ function updateCollabView(){
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 //error når jeg skriver funksjonen i consollen. 
 function collabImages(){
-        let collabImageExists = false;
+        
         model.pictures.forEach((picture, index) => {
-        if(picture[index].category.includes('Samarbeidsprosjekt')){
-                collabImageExists = true;
-                appDiv.innerHTLM += /*HTML*/`
-                <div>
-                        <div>${picture.title}</div>
-                        <div onclick="showPicture(${i})"><img src="${picture.img}">
-                </div>
-                ${
-                  picture.toggled
-                    ? '<div class="description">' +
-                      picture.description +
-                      "</div>"
-                    : ""
+                let catArr = picture[index].category;
+                catArr.map(findCollabImages)
+        })
+        
+        
+}
+
+function findCollabImages(catArr){
+        let collabImageExists = false;
+        for(let i = 0; i < catArr.length; i++){
+                if(catArr[i].includes('Samarbeidsprosjekt')){
+                        collabImageExists = true;
+                        appDiv.innerHTLM += /*HTML*/`
+                        <div>Collab img here</div>
+                        `;
                 }
-                </div>
-                `;
-                };
-        });
+        }
+        
         if(collabImageExists === true){
                 appDiv.innerHTLM += /*HTML*/`
                 <div>Tidligere samarbeidsprosjekter</div>
