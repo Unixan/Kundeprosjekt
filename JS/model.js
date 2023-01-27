@@ -106,7 +106,7 @@ const model = {
       title: "",
       description: "Dette er et bilde",
       artist: "",
-      category: ["Natur"],
+      category: ["Natur", "Samarbeidsprosjekt"],
       comments: [{ user: "", comment: "" }],
       SoMelinks: [
         { media: "Facebook", logoimg: "", link: "" },
