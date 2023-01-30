@@ -1,17 +1,14 @@
 /*Vise info om ønske om og collab og kontaktinfo/mulighet. samt liste med bildene som er collabed
         Ansvarlig: Becka
 NEED
-- Testing
 - CSS
-NB!:
-Kopiere tilbake-knappen fra contact-siden
 
 Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
 må disse også endres til lik stil. 
 */
 
 function updateCollabView(){
-        appDiv.innerHTLM = /*HTML*/`
+        appDiv.innerHTML = /*HTML*/`
         <div>
         <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
                 <div>Samarbeidsprosjekter</div>
@@ -27,32 +24,35 @@ function updateCollabView(){
 
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
-//error når jeg skriver funksjonen i consollen. 
-function collabImages(){
-        
-        model.pictures.forEach((picture, index) => {
-                let catArr = picture[index].category;
-                catArr.map(findCollabImages)
-        })
-        
-        
-}
 
-function findCollabImages(catArr){
+function collabImages(){
+        let html = '';
         let collabImageExists = false;
-        for(let i = 0; i < catArr.length; i++){
-                if(catArr[i].includes('Samarbeidsprosjekt')){
-                        collabImageExists = true;
-                        appDiv.innerHTLM += /*HTML*/`
-                        <div>Collab img here</div>
-                        `;
-                }
+        for(let i = 0; i < model.pictures.length; i++){
+                let picture = model.pictures[i];
+                model.pictures[i].category.forEach((catArr) => {
+                        if(catArr.includes('Samarbeidsprosjekt')){
+                                collabImageExists = true;
+                                html += /*HTML*/`
+                        <div>
+                                <div>${picture.title}</div>
+                                <div onclick="showPicture(${i})">
+                                        <img src="${picture.img}" class="picture">
+                        </div>
+                                ${picture.toggled
+                                ? '<div class="description">' +
+                                picture.description +
+                                "</div>": ""}
+                        </div>
+                        `;        
+                        }
+                        
+                })
         }
-        
-        if(collabImageExists === true){
-                appDiv.innerHTLM += /*HTML*/`
-                <div>Tidligere samarbeidsprosjekter</div>
+        if(collabImageExists == true){
+                html += /*HTML*/`
+                <h3>Tidligere samarbeidsprosjekter</h3>
                 `;
         };
+        return html;
 }
-//Filter istedenfor map?? forEach og filter?? 
