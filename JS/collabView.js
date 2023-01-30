@@ -11,7 +11,7 @@ må disse også endres til lik stil.
 */
 
 function updateCollabView(){
-        appDiv.innerHTLM = /*HTML*/`
+        appDiv.innerHTML = /*HTML*/`
         <div>
         <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
                 <div>Samarbeidsprosjekter</div>
@@ -33,14 +33,14 @@ function updateCollabView(){
 function collabImages(){
         for(let i = 0; i < model.pictures.length; i++){
                 model.pictures[i].category.forEach((catArr, j) => {
-                        appDiv.innerHTLM += /*HTML*/`
+                        appDiv.innerHTML += /*HTML*/`
                         <div>works</div>
                         `;
-                        console.log(catArr, j)
-                        /*while(catArr[j].includes('Samarbeidsprosjekt')){
+                        
+                        while(catArr[j].includes('Samarbeidsprosjekt')){
 
                                 console.log('works');
-                        }*/
+                        }
                         
                 })
         }
