@@ -8,13 +8,13 @@ function updateAdminContactView(){
  
         <ul class="menu">
           <li class="menuItem">
-            <a href="#" class="menuLink">Filtrering</a>
+            <a href="#" class="menuLink">Rediger filtrering</a>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Samarbeid</a>
+            <a href="#" class="menuLink">Adminside</a>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Kontakt</a>
+            <a href="#" class="menuLink">Logg ut</a>
           </li>
         </ul>
     </nav>
