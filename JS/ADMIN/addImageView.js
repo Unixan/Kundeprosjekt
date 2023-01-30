@@ -12,14 +12,18 @@
     funksjonen trenger argument for å kunne velge allerede eksisterende bilde for redigering
     bildet skal legges til i model.pictures, eller endre model.pictures[argument]
     */
-   function updateAddImageView(index){
-    //skriver skjermbilde for endring eller redigering av bilder
-    let html = "";
-    if(!index){//om det ikke er noen index, så lager vi nytt bilde med tomme verdier fra model.inputs
+function updateAddImageView(index) {
+  //skriver skjermbilde for endring eller redigering av bilder
+  let html = "";
+  if (!index) {
+    //om det ikke er noen index, så lager vi nytt bilde med tomme verdier fra model.inputs
     model.inputs.admin.category = model.filter;
+    //TODO kanskje legge til else if (index) for å hente vedrier fra bilde, og bruke includes for å checkbox-e kategorier.
+    //her er det mye forbedringspotensiale, jobb med opplastning først
     let catecoryDiv = "";
-    for (let i = 0; i < model.inputs.admin.category.length; i++){//genererer categoribokser
-        catecoryDiv += /*HTML*/ `
+    for (let i = 0; i < model.inputs.admin.category.length; i++) {
+      //genererer categoribokser
+      catecoryDiv += /*HTML*/ `
         <div> 
             <input 
                 type="checkbox" 
@@ -45,6 +49,6 @@
         </div>
     </div>
     `;
+  }
+  appDiv.innerHTML = html;
 }
-    appDiv.innerHTML = html;
-    }
