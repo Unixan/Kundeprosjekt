@@ -6,14 +6,18 @@ NEED
 */
 
 function login(){
-    if(model.inputs.login.username === model.creator.role && model.inputs.login.password === model.creator.password){
+    if(model.inputs.login.username !== model.creator.role 
+        || model.inputs.login.password !== model.creator.password){
+        model.inputs.login.username = '';
+        model.inputs.login.password = '';
+        model.areYouSure = true;
+        return updateLoginView();
+    }
+    if(model.inputs.login.username === model.creator.role 
+        && model.inputs.login.password === model.creator.password){
+        model.areYouSure = false;
         model.state = 'adminView';
         updateView();
     }
-    if(model.inputs.login.username !== model.creator.role || model.inputs.login.password !== model.creator.password){
-        model.inputs.login.username = '';
-        model.inputs.login.password = '';
-        wrongUser();
-        return;
-    }
+    model.areYouSure = false;
 }
