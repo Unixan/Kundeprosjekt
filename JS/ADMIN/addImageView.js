@@ -3,6 +3,7 @@
 //ON THE CASE: Nikotron
 
 /*TODO:
+legge til bilde i input om en skal redigere
 legge til back button
     skrive view for å kunne legge til:
          nytt bilde X ferdig, men kan endres om det gjør denklere å redigere nye bilder
@@ -18,15 +19,13 @@ function updateAddImageView(index) {
   let html = "";
   if (!index) {
     //om det ikke er noen index, så lager vi nytt bilde med tomme verdier fra model.inputs
+    //kategorier for tomme bilder hentes fra filter
     model.inputs.admin.addPic.category = model.filter;
-    //TODO kanskje legge til else if (index) for å hente vedrier fra bilde, og bruke includes for å checkbox-e kategorier.
-    //her er det mye forbedringspotensiale, jobb med opplastning først
     let catecoryDiv = "";
     for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
       //genererer categoribokser
-      if(model.inputs.admin.addPic.category[i].cat != ""){
-      catecoryDiv += /*HTML*/ `
-        <div> 
+      if (model.inputs.admin.addPic.category[i].cat) {
+        catecoryDiv += /*HTML*/ `
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
@@ -38,20 +37,18 @@ function updateAddImageView(index) {
             </label> 
             <br>
         `;
-    }
-    else{
+      } else
         catecoryDiv += /*HTML*/ `
-        <div>
             <input
                 type="text"
                 placeholder="Skriv inn kategorinavn"
-                onchange="model.inputs.admin.addPic.category[i].temp = this.value"
+                onchange="model.inputs.admin.addPic.category[${i}].temp = this.value"
+                value="${model.inputs.admin.addPic.category[i].temp}"
             >
-            <button onclick="pushCategory()">Legg til og bruk</button>
-            <button onclick="removeUnusedCategory()">Fjern</button>
-        </div>
-        `
-    }
+            <button onclick="pushCategory(${i})">Legg til</button>
+            <button onclick="removeUnusedCategory(${i})">Fjern</button>
+            <br>
+        `;
     }
     html = /*HTML*/ `
     <h1>Legg til nytt bilde</h1>
@@ -59,8 +56,7 @@ function updateAddImageView(index) {
         <input type="text" placeholder="Skriv inn bildetittel" onchange="model.inputs.admin.addPic.title = this.value">
         <div> 
         ${
-          //skjekker om det er et bilde i input TODO legge til bilde i input om en skal redigere
-          //TODO fjern denne kommentaren hvis det funker, skriv om koden om det ikke funker
+          //skjekker om det er et bilde i input 
           model.inputs.admin.addPic.img != ""
             ? `<img src='${model.inputs.admin.addPic.img}'>`
             : "<p>does not virk</p>"
