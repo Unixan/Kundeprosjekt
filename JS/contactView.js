@@ -8,9 +8,11 @@
 - Legge til brødtekst? X
 - Legge til link til SoMe X
 - Legge til meny (se hvordan den er laget andre steder) X
+- Lage for loop for SoMe links
 */ 
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
+    let someHTML = "";
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
@@ -35,11 +37,11 @@ function updateContactView(){
     <div>
     <img src=${model.creator.aboutPicture} alt="Profilbilde av Jarand Midtgaard">
     <div> <!--SoMe linker-->
-    <div><a><img src=${model.creator.creatorSoMelinks[0].logoimg}></a></div>
-        <div><a><img src=${model.creator.creatorSoMelinks[1].logoimg}></a></div>
-        <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
-        <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
+    <div>${someHTML}
     </div>
     <p>${model.creator.aboutCreator}</p>
     `
+    for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
+        someHTML += `<div><a><img src=${model.creator.creatorSoMelinks[i].logoimg}></a></div>`
+    }
 }

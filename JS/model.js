@@ -103,7 +103,7 @@ const model = {
       img: "IMG/PICTURES/Picture3.jpg",
       toggled: false,
       picId: 003,
-      title: "",
+      title: "Samarbeidsprosjekt test",
       description: "Dette er et bilde",
       artist: "",
       category: ["Natur", "Samarbeidsprosjekt"],
