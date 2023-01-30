@@ -12,7 +12,7 @@
 function updateMainView() {
   //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
   //Gjort ferdig full-screen meny. Hvertfall ferdig til diskusjon i team.
-  // Holder på å sette
+  // Holder på å sette opp modal. Har laget den, men den er foreløpig inaktiv.
   let html = "";
   html += /*HTML*/ `
   <header>
