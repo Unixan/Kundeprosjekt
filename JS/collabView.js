@@ -46,7 +46,6 @@ function collabImages(){
                         </div>
                         `;        
                         }
-                        
                 })
         }
         if(collabImageExists == true){
