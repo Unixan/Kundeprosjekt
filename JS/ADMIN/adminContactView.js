@@ -8,18 +8,18 @@ function updateAdminContactView(){
  
         <ul class="menu">
           <li class="menuItem">
-            <a href="#" class="menuLink">Filtrering</a>
+            <a href="#" class="menuLink">Rediger filtrering</a>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Samarbeid</a>
+            <a href="#" class="menuLink">Adminside</a>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Kontakt</a>
+            <a href="#" class="menuLink">Logg ut</a>
           </li>
         </ul>
     </nav>
   </header>
-    <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
+    <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
