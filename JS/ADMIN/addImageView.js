@@ -3,12 +3,13 @@
 //ON THE CASE: Nikotron
 
 /*TODO:
+legge til back button
     skrive view for å kunne legge til:
-         nytt bilde
-         bildetittel
-         beskrivelse av bilde
-         hvilke tags bildet skal ha
-         nye tags
+         nytt bilde X ferdig, men kan endres om det gjør denklere å redigere nye bilder
+         bildetittel X ferdig, men kan endres om det gjør denklere å redigere nye bilder
+         beskrivelse av bilde X ferdig, men kan endres om det gjør denklere å redigere nye bilder
+         hvilke tags bildet skal ha X ferdig, men kan endres om det gjør denklere å redigere nye bilder
+         nye tags X ferdig, men kan endres om det gjør denklere å redigere nye bilder
     funksjonen trenger argument for å kunne velge allerede eksisterende bilde for redigering
     bildet skal legges til i model.pictures, eller endre model.pictures[argument]
     */
@@ -17,25 +18,40 @@ function updateAddImageView(index) {
   let html = "";
   if (!index) {
     //om det ikke er noen index, så lager vi nytt bilde med tomme verdier fra model.inputs
-    model.inputs.admin.category = model.filter;
+    model.inputs.admin.addPic.category = model.filter;
     //TODO kanskje legge til else if (index) for å hente vedrier fra bilde, og bruke includes for å checkbox-e kategorier.
     //her er det mye forbedringspotensiale, jobb med opplastning først
     let catecoryDiv = "";
-    for (let i = 0; i < model.inputs.admin.category.length; i++) {
+    for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
       //genererer categoribokser
+      if(model.inputs.admin.addPic.category[i].cat != ""){
       catecoryDiv += /*HTML*/ `
         <div> 
             <input 
                 type="checkbox" 
-                name="${model.inputs.admin.category[i].cat}"
-                ${model.inputs.admin.category ? "" : "checked"} 
-                onchange="model.inputs.admin.category[${i}].checked = !model.inputs.admin.category[${i}].checked"
+                name="${model.inputs.admin.addPic.category[i].cat}"
+                ${model.inputs.admin.addPic.category ? "" : "checked"} 
+                onchange="model.inputs.admin.addPic.category[${i}].checked = !model.inputs.admin.addPic.category[${i}].checked"
             >
-            <label for="${model.inputs.admin.category[i].cat}">
-            ${model.inputs.admin.category[i].cat}
+            <label for="${model.inputs.admin.addPic.category[i].cat}">
+            ${model.inputs.admin.addPic.category[i].cat}
             </label> 
             <br>
         `;
+    }
+    else{
+        catecoryDiv += /*HTML*/ `
+        <div>
+            <input
+                type="text"
+                placeholder="Skriv inn kategorinavn"
+                onchange="model.inputs.admin.addPic.category[i].temp = this.value"
+            >
+            <button onclick="pushCategory()">Legg til og bruk</button>
+            <button onclick="removeUnusedCategory()">Fjern</button>
+        </div>
+        `
+    }
     }
     html = /*HTML*/ `
     <h1>Legg til nytt bilde</h1>
@@ -65,7 +81,7 @@ function updateAddImageView(index) {
         >
         <div>
             ${catecoryDiv}
-            //TODO fancy schmancy måte å legge til nye kategorier som jeg ikke har tid til nå
+            <button onclick="addCategory()">Legg til kategori</button>
         </div>
     </div>
     `;
