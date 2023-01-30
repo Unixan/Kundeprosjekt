@@ -6,8 +6,9 @@
 - tilbakeknapp X
 - kontakt-lenke til epost X
 - Legge til brødtekst? X
-- Legge til link til SoMe*
-- Legge til meny (se hvordan den er laget andre steder)*/ 
+- Legge til link til SoMe X
+- Legge til meny (se hvordan den er laget andre steder) X
+*/ 
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
