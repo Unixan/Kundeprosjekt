@@ -10,7 +10,7 @@
     "headLeft head headRight"
     "body body body"
     "footer footer footer";
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 60px 1fr 40px;
   grid-template-columns: 240px auto 240px;
 }
 
@@ -24,17 +24,43 @@ li {
   list-style: none;
 }
 
-.picture {
-  height: 768px;
-  width: 100%;
-  object-fit: cover;
+.picBox {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 10px 0;
 }
+
+.picBox:nth-child(1) {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.picBox:nth-last-child() {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.picture {
+  padding: 5px 0;
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+  transition: 0.3s all ease;
+}
+
+.picture:hover {
+  transform: scale(0.95);
+}
+
 .scrollBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-area: body;
-  margin: auto;
-  max-width: 768px;
+  max-width: 100%;
   overflow-y: scroll;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 100px);
+  scroll-behavior: smooth;
 }
 
 .scrollBox::-webkit-scrollbar {
@@ -77,4 +103,22 @@ li {
 
 .logo {
   height: 60px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #939d7b;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
 }

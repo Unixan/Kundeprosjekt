@@ -12,6 +12,7 @@
 function updateMainView() {
   //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
   //Gjort ferdig full-screen meny. Hvertfall ferdig til diskusjon i team.
+  // Holder på å sette
   let html = "";
   html += /*HTML*/ `
   <header>
@@ -33,23 +34,21 @@ function updateMainView() {
         <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {
     html += /*HTML*/ `
-                <div>
-                    <div>${picture.title}</div>
-                    <div onclick="showPicture(${i})"><img src="${
-      picture.img
-    }" class="picture">
+                <div class="picBox">
+                    <h2>${picture.title}</h2>
+                    <div><img src="${picture.img}" class="picture">
                 </div>
-                    ${
-                      picture.toggled
-                        ? '<div class="description">' +
-                          picture.description +
-                          "</div>"
-                        : ""
-                    }
-                </div>
+        </div>
+      
                     `;
   });
 
-  html += `</div></header>`;
+  html += /*HTML*/ `</div>
+    </header>
+    <footer class="footer">
+    ©Copyright
+    </footer>
+    <div class="modal" id="modal">
+    <div>`;
   appDiv.innerHTML = html;
 }
