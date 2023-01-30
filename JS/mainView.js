@@ -33,7 +33,7 @@ function updateMainView() {
         <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {
     html += /*HTML*/ `
-                <div>
+                <div class="picBox">
                     <div>${picture.title}</div>
                     <div onclick="showPicture(${i})"><img src="${
       picture.img
@@ -49,7 +49,11 @@ function updateMainView() {
                 </div>
                     `;
   });
-
-  html += `</div></header>`;
+``
+  html += /*HTML*/`</div>
+    </header>
+    <footer class="footer">
+    ©Copyright
+    </footer>`;
   appDiv.innerHTML = html;
 }
