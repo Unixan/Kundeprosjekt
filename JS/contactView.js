@@ -11,6 +11,22 @@
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
+    <header>
+  <nav class="menuBar">
+ 
+        <ul class="menu">
+          <li class="menuItem">
+            <a href="#" class="menuLink">Filtrering</a>
+          </li>
+          <li class="menuItem">
+            <a href="#" class="menuLink">Samarbeid</a>
+          </li>
+          <li class="menuItem">
+            <a href="#" class="menuLink">Kontakt</a>
+          </li>
+        </ul>
+    </nav>
+  </header>
     <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
