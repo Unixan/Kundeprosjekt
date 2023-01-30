@@ -5,9 +5,9 @@
 - sosiale medier lenker til Jarand X
 - tilbakeknapp X
 - kontakt-lenke til epost X
-- Legge til brødtekst?
+- Legge til brødtekst? X
 - Legge til link til SoMe*
-- Legge til meny/
+- Legge til meny (se hvordan den er laget andre steder)*/ 
 /*DOES IT: Erwan Foxtail*/
 function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
@@ -23,5 +23,6 @@ function updateContactView(){
         <div><a><img src=${model.creator.creatorSoMelinks[2].logoimg}></a></div>
         <div><a><img src=${model.creator.creatorSoMelinks[3].logoimg}></a></div>
     </div>
+    <p>${model.creator.aboutCreator}</p>
     `
 }
