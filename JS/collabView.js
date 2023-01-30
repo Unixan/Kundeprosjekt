@@ -28,15 +28,41 @@ function updateCollabView(){
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 //error når jeg skriver funksjonen i consollen. 
+
+//Klarer ikke å finne category! Prøv og se om det fungerer med en vanlig loop
 function collabImages(){
-        
-        model.pictures.forEach((picture, index) => {
+        for(let i = 0; i < model.pictures.length; i++){
+                model.pictures[i].category.forEach((catArr, j) => {
+                        appDiv.innerHTLM += /*HTML*/`
+                        <div>works</div>
+                        `;
+                        console.log(catArr, j)
+                        /*while(catArr[j].includes('Samarbeidsprosjekt')){
+
+                                console.log('works');
+                        }*/
+                        
+                })
+        }
+                
+}
+                /*for(let j = 0; j < model.pictures[i].category.length; j++){
+                        console.log('works')
+                }*/
+
+
+
+       /* model.pictures.forEach((picture, i) => {
+                let index = i;
+                console.log(index)
+                for(let i = 0; i < picture[index].category.length; i++){
+
+                }
                 let catArr = picture[index].category;
                 catArr.map(findCollabImages)
-        })
+        })*/
         
         
-}
 
 function findCollabImages(catArr){
         let collabImageExists = false;
@@ -56,3 +82,4 @@ function findCollabImages(catArr){
         };
 }
 //Filter istedenfor map?? forEach og filter?? 
+//while loop med samarbeidsprosjekter?
