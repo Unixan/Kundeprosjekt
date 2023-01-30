@@ -19,7 +19,7 @@ function updateAdminContactView(){
         </ul>
     </nav>
   </header>
-    <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
+    <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
