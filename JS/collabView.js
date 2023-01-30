@@ -33,6 +33,9 @@ function updateCollabView(){
 function collabImages(){
         for(let i = 0; i < model.pictures.length; i++){
                 model.pictures[i].category.forEach((catArr, j) => {
+                        appDiv.innerHTLM += /*HTML*/`
+                        <div>works</div>
+                        `;
                         console.log(catArr, j)
                         /*while(catArr[j].includes('Samarbeidsprosjekt')){
 
@@ -40,11 +43,12 @@ function collabImages(){
                         }*/
                         
                 })
+        }
                 
+}
                 /*for(let j = 0; j < model.pictures[i].category.length; j++){
                         console.log('works')
                 }*/
-        }
 
 
 
@@ -59,7 +63,6 @@ function collabImages(){
         })*/
         
         
-}
 
 function findCollabImages(catArr){
         let collabImageExists = false;
