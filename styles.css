@@ -46,6 +46,7 @@ li {
   width: 500px;
   object-fit: cover;
   transition: 0.3s all ease;
+  cursor: pointer;
 }
 
 .picture:hover {
@@ -120,4 +121,49 @@ li {
   z-index: 1;
   opacity: 0;
   pointer-events: none;
+  overflow: auto;
+}
+
+.modalContent {
+  max-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImg {
+  min-height: 100%;
+  height: 80%;
+  max-width: 700px;
+
+}
+
+.close {
+  position: absolute;
+  top: 1.5em;
+  right: 2em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal.appear {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal.appear .modalImg {
+  animation: zoom 0.3s linear;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
