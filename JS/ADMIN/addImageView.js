@@ -41,8 +41,28 @@ function updateAddImageView(index) {
     <h1>Legg til nytt bilde</h1>
     <div>
         <input type="text" placeholder="Skriv inn bildetittel" onchange="model.inputs.admin.addPic.title = this.value">
-        <div> //TODO: insert fancy schmancy bildeopplastning here </div>
-        <input type="text" placeholder="Skriv inn beskrivelse" onchange="model.inputs.admin.addPic.description = this.value">
+        <div> 
+        ${
+          //skjekker om det er et bilde i input TODO legge til bilde i input om en skal redigere
+          //TODO fjern denne kommentaren hvis det funker, skriv om koden om det ikke funker
+          model.inputs.admin.addPic.img != ""
+            ? `<img src='${model.inputs.admin.addPic.img}'>`
+            : "<p>does not virk</p>"
+        }
+        <!--knapp bruker kan trykke på for å laste opp bilder
+        sender hele input-taggen med bildet som innhold til userUpload() i controller
+        TODO skriv om litt så den ikke dukker opp hvis du bare redigerer bilde -->
+          <input 
+            type="file"
+            oninput="userUpload(this)"
+            accept="image/jpeg, image/png, image/jpg"
+          >
+        </div>
+        <input 
+          type="text" 
+          placeholder="Skriv inn beskrivelse" 
+          onchange="model.inputs.admin.addPic.description = this.value"
+        >
         <div>
             ${catecoryDiv}
             //TODO fancy schmancy måte å legge til nye kategorier som jeg ikke har tid til nå
