@@ -1,7 +1,6 @@
 /*Login side som admin skal kunne logge seg på. Denne skal være på egen side. 
     Ansvarlig: Becka
 NEED
-- wrongUser dupliserer seg. 
 - CSS
 */
 
