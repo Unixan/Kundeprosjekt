@@ -35,7 +35,7 @@ function collabImages(){
                                 collabImageExists = true;
                                 html += /*HTML*/`
                         <div>
-                                <div>${picture.title}</div>
+                                <div><img src="${picture.title}"></div>
                                 <div onclick="showPicture(${i})">
                                         <img src="${picture.img}" class="picture">
                         </div>
