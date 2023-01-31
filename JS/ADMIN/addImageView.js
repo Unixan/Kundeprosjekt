@@ -16,24 +16,29 @@ legge til back button
     */
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
-  console.log(index)
+  console.log(index);
   let html = "";
-    model.inputs.admin.addPic.category = model.filter;
-  if (index != null){
-    model.inputs.admin.addPic.category.map((filterList) =>{
-      console.log("triggered");
-      if (model.pictures[index].category.includes(filterList.cat)) filterList.checked = true;
-    })
+  model.inputs.admin.addPic.category = model.filter;
+  if (index != null) {
+    //setter kategorier på valgt bilde til å være "checked"
+    model.inputs.admin.addPic.category.map((filterList) => {
+      if (model.pictures[index].category.includes(filterList.cat))
+        filterList.checked = true;
+    });
   }
-    let catecoryDiv = "";
-    for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
-      //genererer categoribokser
-      if (model.inputs.admin.addPic.category[i].cat) {
-        catecoryDiv += /*HTML*/ `
+  let catecoryDiv = "";
+  for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
+    //genererer categoribokser
+    if (model.inputs.admin.addPic.category[i].cat) {
+      catecoryDiv += /*HTML*/ `
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
-                ${!model.inputs.admin.addPic.category[i].checked ? "" : "checked"} 
+                ${
+                  !model.inputs.admin.addPic.category[i].checked
+                    ? ""
+                    : "checked"
+                } 
                 onchange="model.inputs.admin.addPic.category[${i}].checked = !model.inputs.admin.addPic.category[${i}].checked"
             >
             <label for="${model.inputs.admin.addPic.category[i].cat}">
@@ -41,11 +46,11 @@ function updateAddImageView(index) {
             </label> 
             <br>
         `;
-      } else
-        catecoryDiv += /*HTML*/ `
+    } else
+      catecoryDiv += /*HTML*/ `
             <input
                 type="text"
-                placeholder="Skriv inn kategorinavn"
+                placeholder= "Skriv inn kategorinavn"
                 onchange="model.inputs.admin.addPic.category[${i}].temp = this.value"
                 value="${model.inputs.admin.addPic.category[i].temp}"
             >
@@ -53,17 +58,29 @@ function updateAddImageView(index) {
             <button onclick="removeUnusedCategory(${i})">Fjern</button>
             <br>
         `;
-    }
-    html = /*HTML*/ `
-    <h1>Legg til nytt bilde</h1>
+  }
+  html = /*HTML*/ `
+    <h1>${
+      index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
+    }</h1>
     <div>
-        <input type="text" placeholder="Skriv inn bildetittel" onchange="model.inputs.admin.addPic.title = this.value">
+        <input type="text" placeholder=${
+          index != null
+            ? `${model.pictures[index].title}`
+            : "Skriv inn bildetittel"
+        } onchange="model.inputs.admin.addPic.title = this.value">
         <div> 
         ${
-          //skjekker om det er et bilde i input 
+          //om du redigerer eksisterende, vises bildet her
+          index != null
+            ? `<img src='${model.pictures[index].img}'>`
+            : //ellers får du dette om du legger til nytt bilde
+              /*HTML*/ `
+        ${
+          //skjekker om det er et bilde i input
           model.inputs.admin.addPic.img != ""
             ? `<img src='${model.inputs.admin.addPic.img}'>`
-            : "<p>does not virk</p>"
+            : "<p>Legg til bilde</p>"
         }
         <!--knapp bruker kan trykke på for å laste opp bilder
         sender hele input-taggen med bildet som innhold til userUpload() i controller
@@ -78,7 +95,8 @@ function updateAddImageView(index) {
           type="text" 
           placeholder="Skriv inn beskrivelse" 
           onchange="model.inputs.admin.addPic.description = this.value"
-        >
+        >`
+        }
         <div>
             ${catecoryDiv}
             <button onclick="addCategory()">Legg til kategori</button>
