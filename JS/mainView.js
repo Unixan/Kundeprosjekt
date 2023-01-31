@@ -16,7 +16,7 @@ function updateMainView() {
   //Må bare nå legge til kommentarer, kontakt og social media links
   let html = "";
   html += menu(); //Menyinit
-  html += hamburger();
+
   html += /*HTML*/ `
           <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {
@@ -35,6 +35,7 @@ function updateMainView() {
 
   appDiv.innerHTML = html;
 
+  hamburger();
   modal(); // Modal innlasting
 }
 
@@ -79,7 +80,6 @@ function modalFunc() {
   const modal = document.querySelector(".modal");
   const modalImg = document.querySelector(".modalImg");
   const close = document.querySelector(".close");
-  console.log(images);
   images.forEach((image) => {
     image.addEventListener("click", () => {
       modal.classList.add("appear");
@@ -92,13 +92,18 @@ function modalFunc() {
 }
 
 function hamburger() {
-  let hamburger = "";
-  hamburger += /*HTML*/ `
-    <div class="hamburger">
+  let html = "";
+  html += /*HTML*/ `
+    <div class="hamburger" onclick="hamburgerFunc()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
-  `;
-  return hamburger;
+    `;
+  appDiv.innerHTML += html;
+}
+
+function hamburgerFunc() {
+  const hamburger = document.querySelector(".hamburger");
+  hamburger.classList.toggle("show");
 }
