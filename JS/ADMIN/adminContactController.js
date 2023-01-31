@@ -4,10 +4,10 @@ function adminBackButton(){
     updateView();
 }
 
-function editName(){
-    model.creator.name.editMode = true;
-    updateAdminContactView();
-}
+// function editName(){
+//     model.creator.name.editMode = true;
+//     updateAdminContactView();
+// }
 
 function editTitle(){
     model.creator.title.editMode = true;
