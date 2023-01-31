@@ -76,7 +76,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_1.jpg",
       toggled: false,
-      picId: 001,
+      projectId: 001,
       title: "Project 1 - Home Atelier 1",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -92,7 +92,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_2.jpg",
       toggled: false,
-      picId: 002,
+      projectId: 001,
       title: "Project 1 - Home Atelier 2",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -108,7 +108,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
       toggled: false,
-      picId: 003,
+      projectId: 001,
       title: "Project 1 - Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -124,7 +124,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_1.jpg",
       toggled: false,
-      picId: 003,
+      projectId: 002,
       title: "Project 2 - Exhibition 1",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -140,7 +140,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_2.jpg",
       toggled: false,
-      picId: 003,
+      projectId: 002,
       title: "Project 2 - Exhibition 2",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -156,7 +156,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_3.jpg",
       toggled: false,
-      picId: 003,
+      projectId: 002,
       title: "Project 2 - Exhibition 3",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -173,7 +173,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_1.jpg",
       toggled: false,
-      picId: 004,
+      projectId: 003,
       title: "Project 3 - Digital Collages 1",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -189,7 +189,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_2.jpg",
       toggled: false,
-      picId: 005,
+      projectId: 003,
       title: "Project 3 - Digital Collages 2",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -205,7 +205,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
       toggled: false,
-      picId: 006,
+      projectId: 003,
       title: "Project 3 - Digital Collages 3",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -222,7 +222,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_1.jpg",
       toggled: false,
-      picId: 007,
+      projectId: 004,
       title: "Project 4 - Sculptures 1",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -238,7 +238,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
       toggled: false,
-      picId: 007,
+      projectId: 004,
       title: "Project 4 - Sculptures 2",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -254,7 +254,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
       toggled: false,
-      picId: 007,
+      projectId: 004,
       title: "Project 4 - Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -271,7 +271,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_1.JPG",
       toggled: false,
-      picId: 007,
+      projectId: 005,
       title: "Project 5 - Architectural unbilt projects 1",
       description: "",
       artist: "Jarand Midtgaard",
@@ -287,7 +287,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_2.jpg",
       toggled: false,
-      picId: 007,
+      projectId: 005,
       title: "Project 5 - Architectural unbilt projects 2",
       description: "",
       artist: "Jarand Midtgaard",
@@ -303,7 +303,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
       toggled: false,
-      picId: 007,
+      projectId: 005,
       title: "Project 5 - Architectural unbilt projects 3",
       description: "",
       artist: "Jarand Midtgaard",
