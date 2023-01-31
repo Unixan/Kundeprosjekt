@@ -35,3 +35,8 @@ function editProfilePic(){
     model.creator.aboutPicture.editMode = true;
     updateAdminContactView();
 }
+
+function editAbout(){
+    model.creator.aboutCreator.editMode = true;
+    updateAdminContactView();
+}

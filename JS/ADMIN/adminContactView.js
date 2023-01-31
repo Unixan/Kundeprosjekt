@@ -3,6 +3,8 @@
 //Erwan Foxtail DOES it
 function updateAdminContactView(){
     let someHTML = "";
+    let aboutCreatorEdit = "";
+    if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator}</p><button onclick="editAbout()">Rediger</button>`}
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
@@ -29,7 +31,7 @@ function updateAdminContactView(){
     <div> <!--SoMe linker-->
     <div>${someHTML}
     </div>
-    <p>${model.creator.aboutCreator}</p><button onclick="editAbout()">Rediger</button>
+    <div>${aboutCreatorEdit}</div>
     `
     for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
         someHTML += `<div><a><img src=${model.creator.creatorSoMelinks[i].logoimg}></a> <button onclick="editSoMe(i)">Rediger</button></div>`
