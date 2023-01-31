@@ -33,6 +33,7 @@ function updateMainView() {
     </footer>`;
 
   appDiv.innerHTML = html;
+
   modal(); // Modal innlasting
 }
 
