@@ -17,10 +17,12 @@ legge til back button
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
   let html = "";
-  if (!index) {
-    //om det ikke er noen index, så lager vi nytt bilde med tomme verdier fra model.inputs
-    //kategorier for tomme bilder hentes fra filter
     model.inputs.admin.addPic.category = model.filter;
+  if (index){
+    model.inputs.admin.addPic.category.map((cat) =>{
+      if (model.pictures[index].category.includes(cat.cat)) cat.checked = true;
+    })
+  }
     let catecoryDiv = "";
     for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
       //genererer categoribokser
@@ -29,7 +31,7 @@ function updateAddImageView(index) {
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
-                ${model.inputs.admin.addPic.category ? "" : "checked"} 
+                ${!model.inputs.admin.addPic.category[i].checked ? "" : "checked"} 
                 onchange="model.inputs.admin.addPic.category[${i}].checked = !model.inputs.admin.addPic.category[${i}].checked"
             >
             <label for="${model.inputs.admin.addPic.category[i].cat}">
@@ -81,6 +83,5 @@ function updateAddImageView(index) {
         </div>
     </div>
     `;
-  }
   appDiv.innerHTML = html;
 }
