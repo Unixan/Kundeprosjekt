@@ -9,7 +9,8 @@
 
 //TODO skrive addCategory() pushCategory() og removeUnusedCategory()
 
-function userUpload(imageToAdd) {//sendet inputTag med bildefil og legger til model.inputs
+function userUpload(imageToAdd) {
+  //sendet inputTag med bildefil og legger til model.inputs
   const inputTag = imageToAdd;
   inputTag.addEventListener("change", () => {
     const temp = inputTag.files;
@@ -19,14 +20,16 @@ function userUpload(imageToAdd) {//sendet inputTag med bildefil og legger til mo
   const waitForUpdate = setTimeout(updateView, 300); //lar bildet laste opp før oppdatering av view
 }
 
-function addCategory() {//legger til tom kategori som kan redigeres
+function addCategory() {
+  //legger til tom kategori som kan redigeres
   let categoryArray = model.inputs.admin.addPic.category;
   categoryArray;
   categoryArray[categoryArray.length] = { temp: "" };
   updateView();
 }
 
-function pushCategory(index) {//legger til ny kategori på model.filter, fjerner fra inputs så ikke tegnes dobbelt.
+function pushCategory(index) {
+  //legger til ny kategori på model.filter, fjerner fra inputs så ikke tegnes dobbelt.
   let categoryToAdd = {
     cat: model.inputs.admin.addPic.category[index].temp,
     checked: true,
@@ -36,7 +39,26 @@ function pushCategory(index) {//legger til ny kategori på model.filter, fjerner
   updateView();
 }
 
-function removeUnusedCategory(index){//fjerner påbegynnt kategori om brukeren ikke vil legge til likevel
-    model.inputs.admin.addPic.category.splice(index, 1);
-    updateView();
+function removeUnusedCategory(index) {
+  //fjerner påbegynnt kategori om brukeren ikke vil legge til likevel
+  model.inputs.admin.addPic.category.splice(index, 1);
+  updateView();
+}
+
+function backEdit() {
+  emptyUnusedFilter();
+  resetInput();
+}
+
+function emptyUnusedFilter() {
+  //TODO TEST! tømmer ubrukte filtre som ikke er lagt til
+  model.inputs.admin.addPic.category.forEach((tempCat, index) => {
+    if (tempCat.temp) {
+      tempCat.splice(index, 1);
+    }
+  });
+}
+
+function resetInput() {
+  //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
 }
