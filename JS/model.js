@@ -22,7 +22,6 @@ const model = {
         title: "",
         description: "",
         artist: "",
-        addNewCat: "",
         category: [],
       },
       editProfile: {
@@ -51,7 +50,7 @@ const model = {
     password: "1234",
     email: "fakeEmail@mail.com",
     tlf: 12345678,
-    aboutPicture: "IMG/jarand.jpg",
+    aboutPicture: "IMG/ProfilePicture.jpeg",
     title: "Arkitekt",
     name: "Jarand Midtgaard",
     aboutCreator:
@@ -139,6 +138,22 @@ const model = {
       description: "Dette er et bilde",
       artist: "",
       category: ["Natur"],
+      comments: [{ user: "", comment: "" }],
+      SoMelinks: [
+        { media: "Facebook", logoimg: "", link: "" },
+        { media: "SnapChat", logoimg: "", link: "" },
+        { media: "Twitter", logoimg: "", link: "" },
+        { media: "Instagram", logoimg: "", link: "" },
+      ],
+    },
+    {
+      img: "",
+      toggled: false,
+      picId: 006,
+      title: "",
+      description: "",
+      artist: "",
+      category: [""],
       comments: [{ user: "", comment: "" }],
       SoMelinks: [
         { media: "Facebook", logoimg: "", link: "" },
