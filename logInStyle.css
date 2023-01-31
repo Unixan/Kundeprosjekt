@@ -1,0 +1,47 @@
+.logIn-Field{
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid grey;
+    height: auto;
+    width: 450px;
+}
+
+.logIn-Title{
+    font-size: 35px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.logIn-UnderTitle{
+    font-size: 18px;
+}
+
+.logIn-Input{
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.logIn-button{
+    font-size: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-bottom: 30px;
+}
+
+
+.logIn-Warning{
+    font-style: italic;
+    color: rgb(129, 32, 32);
+}
