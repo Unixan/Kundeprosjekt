@@ -16,11 +16,13 @@ legge til back button
     */
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
+  console.log(index)
   let html = "";
     model.inputs.admin.addPic.category = model.filter;
-  if (index){
-    model.inputs.admin.addPic.category.map((cat) =>{
-      if (model.pictures[index].category.includes(cat.cat)) cat.checked = true;
+  if (index != null){
+    model.inputs.admin.addPic.category.map((filterList) =>{
+      console.log("triggered");
+      if (model.pictures[index].category.includes(filterList.cat)) filterList.checked = true;
     })
   }
     let catecoryDiv = "";
