@@ -1,18 +1,18 @@
 // addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
-//TODO everything. What you mean every- EEEEVEEERYYYTHIIING!
+
 //ON THE CASE: Nikotron
 
 /*TODO:
-legge til bilde i input om en skal redigere
-legge til back button
+legge til bilde i input om en skal redigere X
+legge til back button X
     skrive view for å kunne legge til:
-         nytt bilde X ferdig, men kan endres om det gjør denklere å redigere nye bilder
-         bildetittel X ferdig, men kan endres om det gjør denklere å redigere nye bilder
-         beskrivelse av bilde X ferdig, men kan endres om det gjør denklere å redigere nye bilder
-         hvilke tags bildet skal ha X ferdig, men kan endres om det gjør denklere å redigere nye bilder
-         nye tags X ferdig, men kan endres om det gjør denklere å redigere nye bilder
+         nytt bilde X
+         bildetittel X
+         beskrivelse av bilde X
+         hvilke tags bildet skal ha X
+         nye tags X
     funksjonen trenger argument for å kunne velge allerede eksisterende bilde for redigering
-    bildet skal legges til i model.pictures, eller endre model.pictures[argument]
+    bildet skal legges til i model.pictures, eller endre model.pictures[argument] X
     */
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
@@ -46,7 +46,8 @@ function updateAddImageView(index) {
             </label> 
             <br>
         `;
-    } else
+    } //om vi legger til ny kategori
+    else
       catecoryDiv += /*HTML*/ `
             <input
                 type="text"
@@ -60,21 +61,25 @@ function updateAddImageView(index) {
         `;
   }
   html = /*HTML*/ `
+  <div><a onclick=${index != null ? "backEdit()" : "backAdd()"}><img src=${
+    model.backLogo
+  }></a></div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
+  <div>
     <h1>${
       index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
     }</h1>
-    <div>
         <input type="text" placeholder=${
-          index != null
-            ? "Rediger"
-            : "Skriv inn bildetittel"
+          index != null ? "RedigerTittel" : "SkrivInnBildetittel"
         } onchange="model.inputs.admin.addPic.title = this.value">
         <div> 
         ${
-          //om du redigerer eksisterende, vises bildet her
+          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
           index != null
-            ? `<img src='${model.pictures[index].img}'>`
-            : //ellers får du dette om du legger til nytt bilde
+            ? /*HTML*/ `
+            <img src='${model.pictures[index].img}'>
+            <button onclick="deletePicture()">Slett bilde</button>
+            `
+            : //ellers får du input for å legge til nytt
               /*HTML*/ `
         ${
           //skjekker om det er et bilde i input
@@ -100,6 +105,17 @@ function updateAddImageView(index) {
         <div>
             ${catecoryDiv}
             <button onclick="addCategory()">Legg til kategori</button>
+        </div><br>
+        <div>
+          ${
+            index != null
+              ? /*HTML*/ `
+          <button onclick="saveEdit(${index})">Lagre endringer</button>
+          `
+              : /*HTML*/ `
+          <button onclick="publishNew()">Publisér</button>
+          `
+          }
         </div>
     </div>
     `;
