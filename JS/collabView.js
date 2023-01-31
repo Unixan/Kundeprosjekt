@@ -12,7 +12,7 @@ function updateCollabView(){
         <div>
         <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
                 <div>Samarbeidsprosjekter</div>
-                <div>${model.creator.aboutPicture}</div>
+                <div><img src="${model.creator.aboutPicture}"></div>
                 <div>Hei, jeg ønsker flere samarbeidspartnere! Kontakt meg gjerne.</div>
                 <div>Kontakt meg her!</div>
                 <div>${model.creator.email}</div>
@@ -31,11 +31,11 @@ function collabImages(){
         for(let i = 0; i < model.pictures.length; i++){
                 let picture = model.pictures[i];
                 model.pictures[i].category.forEach((catArr) => {
-                        if(catArr.includes('Samarbeidsprosjekt')){
+                        if(catArr.includes('Collaboration')){
                                 collabImageExists = true;
                                 html += /*HTML*/`
                         <div>
-                                <div><img src="${picture.title}"></div>
+                                <div>${picture.title}</div>
                                 <div onclick="showPicture(${i})">
                                         <img src="${picture.img}" class="picture">
                         </div>
