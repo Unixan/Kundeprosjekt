@@ -71,10 +71,13 @@ function updateAddImageView(index) {
         } onchange="model.inputs.admin.addPic.title = this.value">
         <div> 
         ${
-          //om du redigerer eksisterende, vises bildet her
+          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
           index != null
-            ? `<img src='${model.pictures[index].img}'>`
-            : //ellers får du dette om du legger til nytt bilde
+            ? /*HTML*/ `
+            <img src='${model.pictures[index].img}'>
+            <button onclick="deletePicture()">Slett bilde</button>
+            `
+            : //ellers får du input for å legge til nytt
               /*HTML*/ `
         ${
           //skjekker om det er et bilde i input
