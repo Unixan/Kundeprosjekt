@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .app {
@@ -78,6 +79,20 @@ li {
   justify-content: space-between;
   align-items: center;
   background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 0% 50%;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
 }
 
 .menu {
@@ -170,6 +185,40 @@ li {
 @media (max-width: 850px) {
   .app {
     display: grid;
-    grid-template-columns: repeat(1, 1fr)
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 1;
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(-45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(45deg);
+  }
+
+  .menuBar {
+    background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 50% 50%;
+  }
+
+  .menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #2a2f35;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
   }
 }

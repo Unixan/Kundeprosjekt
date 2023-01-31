@@ -16,6 +16,7 @@ function updateMainView() {
   //Må bare nå legge til kommentarer, kontakt og social media links
   let html = "";
   html += menu(); //Menyinit
+  html += hamburger();
   html += /*HTML*/ `
           <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {
@@ -88,4 +89,16 @@ function modalFunc() {
       });
     });
   });
+}
+
+function hamburger() {
+  let hamburger = "";
+  hamburger += /*HTML*/ `
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  `;
+  return hamburger;
 }
