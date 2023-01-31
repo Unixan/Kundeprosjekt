@@ -66,7 +66,7 @@ function updateAddImageView(index) {
     <div>
         <input type="text" placeholder=${
           index != null
-            ? `${model.pictures[index].title}`
+            ? "Rediger"
             : "Skriv inn bildetittel"
         } onchange="model.inputs.admin.addPic.title = this.value">
         <div> 
