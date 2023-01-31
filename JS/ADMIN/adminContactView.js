@@ -5,6 +5,7 @@ function updateAdminContactView(){
     let someHTML = "";
     let adminTitle = "";
     if(!model.creator.title.editMode){adminTitle = `<p>${model.creator.title}</p><button onclick="editTitle()">Rediger</button>`}
+    else if(model.creator.title.editMode){adminTitle = `<input type="text" value="${model.creator.title}" onchange="changeTitle(this.value)"><button onclick="updateTitle()">Lagre</button>`}
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
