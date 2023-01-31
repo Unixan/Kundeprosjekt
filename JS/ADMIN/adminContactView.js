@@ -2,6 +2,9 @@
 
 function updateAdminContactView(){
     let someHTML = "";
+    let adminTitle = "";
+    if(!model.creator.name.editMode){adminTitle = `<h1>${model.creator.name}</h1><button onclick="editName()">Rediger</button>`}
+    else if(model.creator.name.editMode = true){adminTitle = `<input type="text" value="${model.creator.name}" `}
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
@@ -20,7 +23,7 @@ function updateAdminContactView(){
     </nav>
   </header>
     <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
-    <h1>${model.creator.name}</h1><button onclick="editName()">Rediger</button>
+    <!--<h1>${model.creator.name}</h1><button onclick="editName()">Rediger</button>-->
     <p>${model.creator.title}</p><button onclick="editTitle()">Rediger</button>
     <p><a href="mailto:${model.creator.email}">kontakt</a><button onclick="editMail()">Rediger mail</button>
     <div>
