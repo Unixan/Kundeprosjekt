@@ -42,7 +42,7 @@ li {
 
 .picture {
   padding: 5px 0;
-  max-height: 500px;
+  height: 500px;
   width: 500px;
   object-fit: cover;
   transition: 0.3s all ease;

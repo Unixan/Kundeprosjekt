@@ -11,7 +11,19 @@ function adminBackButton(){
 
 function editTitle(){
     model.creator.title.editMode = true;
+    model.inputs.admin.editProfile.title = model.creator.title
     updateAdminContactView();
+}
+
+function changeTitle(thisValue){
+    model.inputs.admin.editProfile.title = thisValue;
+}
+
+function updateTitle(){
+    model.creator.title = model.inputs.admin.editProfile.title;
+    model.creator.title.editMode = false;
+    model.inputs.admin.editProfile.title = "";
+    updateAdminContactView;
 }
 
 function editMail(){
