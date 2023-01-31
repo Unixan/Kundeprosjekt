@@ -1,7 +1,11 @@
 // her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst og SoMeLinks
-
+//LAge input
+//Erwan Foxtail DOES it
 function updateAdminContactView(){
     let someHTML = "";
+    let adminTitle = "";
+    if(!model.creator.title.editMode){adminTitle = `<p>${model.creator.title}</p><button onclick="editTitle()">Rediger</button>`}
+    else if(model.creator.title.editMode){adminTitle = `<input type="text" value="${model.creator.title}" onchange="changeTitle(this.value)"><button onclick="updateTitle()">Lagre</button>`}
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
@@ -21,7 +25,7 @@ function updateAdminContactView(){
   </header>
     <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1><button onclick="editName()">Rediger</button>
-    <p>${model.creator.title}</p><button onclick="editTitle()">Rediger</button>
+    <div>${adminTitle}</div>
     <p><a href="mailto:${model.creator.email}">kontakt</a><button onclick="editMail()">Rediger mail</button>
     <div>
     <img src=${model.creator.aboutPicture} alt="Profilbilde av Jarand Midtgaard"><button onclick="editProfilePic()">Rediger bilde</button>

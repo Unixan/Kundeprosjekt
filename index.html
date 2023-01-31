@@ -33,10 +33,11 @@
 <script>
   const appDiv = document.getElementById(`app`);
   updateView();
-  function updateView() {
+  function updateView(picture) {
+    let index = picture;
     if (model.state === "mainView") updateMainView();
     if (model.state === "adminView") updateAdminView();
-    if (model.state === "addImageView") updateAddImageView();
+    if (model.state === "addImageView") updateAddImageView(index);
     if (model.state === "contactView") updateContactView();
     if (model.state === "adminContactView") updateAdminContactView();
     if (model.state === "collabView") updateCollabView();

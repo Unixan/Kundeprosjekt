@@ -29,7 +29,7 @@ function addCategory() {//legger til tom kategori som kan redigeres
 function pushCategory(index) {//legger til ny kategori på model.filter, fjerner fra inputs så ikke tegnes dobbelt.
   let categoryToAdd = {
     cat: model.inputs.admin.addPic.category[index].temp,
-    checked: false,
+    checked: true,
   };
   model.inputs.admin.addPic.category.splice(index, 1);
   model.filter.push(categoryToAdd);
