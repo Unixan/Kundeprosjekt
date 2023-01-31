@@ -7,25 +7,27 @@ NEED
 
 function updateLoginView(){
     appDiv.innerHTML = /*HTML*/`
-    <div>
-        <div>Administrerende logg-inn</div>
-        <div>Brukernavn</div>
+    <div class="logIn-Field">
+        <div class="logIn-Title">Administrerende logg-inn</div>
+        <div class="logIn-UnderTitle">Brukernavn</div>
         <input type="text" 
+            class="logIn-Input"
             placeholder="Skriv inn brukernavn" 
             oninput="model.inputs.login.username=this.value" 
             value='${model.inputs.login.username}'/>
-        <div>Passord</div>
+        <div class="logIn-UnderTitle">Passord</div>
         <input type="text" 
+            class="logIn-Input"
             placeholder="Skriv inn passord" 
             oninput="model.inputs.login.password=this.value"
             value='${model.inputs.login.password}' 
             onkeydown="if(event.code === 'Enter') login()"/>
-        <button onclick="login()">Logg inn</button>
+        <button class="logIn-button" onclick="login()">Logg inn</button>
     </div>
     `;
     if(model.areYouSure == true){
         appDiv.innerHTML += /*HTML*/`
-        <h3>Passord og/eller brukernavn er feil.</h3>
+        <h3 class="logIn-Field logIn-Warning">Passord og/eller brukernavn er feil.</h3>
         `;
     }
 }
