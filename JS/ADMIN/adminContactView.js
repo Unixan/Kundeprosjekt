@@ -26,7 +26,7 @@ function updateAdminContactView(){
     <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
-    <p><a href="mailto:${model.creator.email}">kontakt</a><button onclick="editMail()">Rediger mail</button>
+    <p><a href="mailto:${model.creator.email}">kontakt</a>
     <div>
     <img src=${model.creator.aboutPicture.picture} alt="Profilbilde av Jarand Midtgaard"><button onclick="editProfilePic()">Rediger bilde</button>
     <div> <!--SoMe linker-->
