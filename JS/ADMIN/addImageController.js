@@ -47,21 +47,42 @@ function removeUnusedCategory(index) {
 }
 
 function backEdit() {
+  //klargjør modellen for nye inputs og sender tilbake til adminView
   emptyUnusedFilter();
   resetInput();
   backToMain();
 }
 
 function deletePicture(picture) {
+  //sletter bildet, men kun om du huker av på "ja-" knapp.
   if (!model.areYouSure) {
-    console.log(model.areYouSureImg, "før")
+    console.log(model.areYouSureImg, "før");
     model.areYouSureImg = true;
-    console.log(model.areYouSureImg, "etter")
+    console.log(model.areYouSureImg, "etter");
     updateView(picture);
   } else {
     model.pictures.splice(picture, 1);
+    model.areYouSure = false;
+    model.areYouSureImg = false;
     backEdit();
   }
+}
+
+function saveEdit(index) {
+  //TODO Test
+  //skal oppdatere eksisterende bilde med endringer
+  if (model.inputs.admin.addPic.title != "") {
+    model.pictures[index].title = model.inputs.admin.addPic.title;
+  }
+  if (model.inputs.admin.addPic.description != "") {
+    model.pictures[index].description = model.inputs.admin.addPic.description;
+  }
+  backEdit();
+}
+
+function publishNew() {
+  //skal legge nytt bilde til model.pictures
+
 }
 
 function emptyUnusedFilter() {
@@ -88,6 +109,7 @@ function resetInput() {
 }
 
 function backToMain() {
-  model.state = "adminView";
+  //TODO Skal endre til "adminView", men for test purpouses trenger jeg å se main.
+  model.state = "mainView";
   updateView;
 }
