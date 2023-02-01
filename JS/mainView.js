@@ -23,10 +23,11 @@ function updateMainView() {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
-                    <h2>${picture.title}</h2>
-                    <div><img src="${picture.img}" class="picture" onclick="modalActivate(${index})">
-                </div>
-        </div>`;
+                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <div>
+                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                  </div>
+                </div>`;
   });
   html += /*HTML*/ `</div>
     </header>
