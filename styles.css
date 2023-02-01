@@ -170,8 +170,14 @@ li {
   cursor: pointer;
 }
 
+.linkBox .button {
+  grid-area: modalleft;
+  height: 30px;
+  background-color: transparent;
+  width: 30px;
+}
+
 .pictureComment {
-  z-index: 1;
   min-width: 200px;
   width: 60%;
   font-size: larger;
@@ -182,7 +188,6 @@ li {
   align-self: flex-end;
   overflow-y: scroll;
   padding: 1em;
-  margin-bottom: 60px;
   grid-area: modalleft;
   max-height: 70vh;
   max-width: 500px;
