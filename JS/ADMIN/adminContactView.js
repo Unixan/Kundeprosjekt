@@ -5,7 +5,7 @@ function updateAdminContactView(){
     let someHTML = "";
     let aboutCreatorEdit = "";
     if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator.about}</p><button onclick="editAbout()">Rediger</button>`}
-    else if(model.creator.aboutCreator.editMode === true){aboutCreatorEdit = `<input type="text" value="${model.inputs.admin.editProfile.aboutCreator}" onchange="changeAbout(this.value)"><button onclcik="updateAbout()">Lagre</button>`}
+    else if(model.creator.aboutCreator.editMode === true){aboutCreatorEdit = `<input type="text" value="${model.inputs.admin.editProfile.aboutCreator}" onchange="changeAbout(this.value)"><button onclick="updateAbout()">Lagre</button>`}
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
