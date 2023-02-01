@@ -35,6 +35,6 @@ function updateAdminContactView(){
     <div>${aboutCreatorEdit}</div>
     `
     for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
-        someHTML += `<div><a><img src=${model.creator.creatorSoMelinks[i].logoimg}></a> <button onclick="editSoMe(i)">Rediger</button></div>`
+        someHTML += `<div><a <a href="${model.creator.creatorSoMelinks.links[i].link}" target="_blank" rel="noopener noreferrer"><img src=${model.creator.creatorSoMelinks.links[i].logoimg}></a> <button onclick="editSoMe(i)">Rediger</button></div>`
     }
 }
