@@ -20,36 +20,40 @@ function updateMainView() {
   html += /*HTML*/ `
           <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {
+    index = i;
     html += /*HTML*/ `
                 <div class="picBox">
-                    <h2>${picture.title}</h2>
-                    <div><img src="${picture.img}" class="picture">
-                </div>
-        </div>`;
+                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <div>
+                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                  </div>
+                </div>`;
   });
   html += /*HTML*/ `</div>
     </header>
     <footer class="footer">
     ©Copyright
     </footer>`;
+  html += modal(); // Modal innlasting
+  html += hamburger();
 
   appDiv.innerHTML = html;
-
-  hamburger();
-  modal(); // Modal innlasting
 }
 
 function modal() {
   //tegner opp modalen
-  html = /*HTML*/ `<div class="modal" id="modal">
-  <span><img src="IMG/ICONS/close.png" style="height:20px" class="close"/></span>
-  <div class="modalContent">
-  <img src="" class="modalImg" />
+  html = /*HTML*/ `
+  <div class="modal" id="modal">
+    <span>
+      <img src="IMG/ICONS/close.png" style="height:20px" class="close" onclick="closeModal()"/>
+    </span>
+    <div class="modalContent">
+      <img src="" class="modalImg" />
+    </div>
   </div>
-  <div>`;
+  `;
 
-  appDiv.innerHTML += html;
-  modalFunc();
+  return html;
 }
 
 function menu() {
@@ -74,36 +78,33 @@ function menu() {
   return menu;
 }
 
-function modalFunc() {
-  // Eventlisteners for bilder og modal
-  const images = document.querySelectorAll(".picture");
+function closeModal() {
   const modal = document.querySelector(".modal");
-  const modalImg = document.querySelector(".modalImg");
-  const close = document.querySelector(".close");
-  images.forEach((image) => {
-    image.addEventListener("click", () => {
-      modal.classList.add("appear");
-      modalImg.src = image.src;
-      close.addEventListener("click", () => {
-        modal.classList.remove("appear");
-      });
-    });
-  });
+  const modalImage = document.querySelector(".modalImg");
+  modal.classList.toggle("appear");
+  modalImage.src = "";
+}
+
+function modalActivate(index) {
+  const picture = model.pictures[index].img;
+  const modal = document.querySelector(".modal");
+  const modalImage = document.querySelector(".modalImg");
+  modal.classList.toggle("appear");
+  modalImage.src = picture;
 }
 
 function hamburger() {
-  let html = "";
-  html += /*HTML*/ `
-    <div class="hamburger" onclick="hamburgerFunc()">
+  let hamburger = /*HTML*/ `
+    <div class="hamburger" onclick="hamburgerActivate()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
     `;
-  appDiv.innerHTML += html;
+  return hamburger;
 }
 
-function hamburgerFunc() {
+function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");
   hamburger.classList.toggle("show");
 }

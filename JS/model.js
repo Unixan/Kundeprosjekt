@@ -58,11 +58,16 @@ const model = {
     password: "1234",
     email: "fakeEmail@mail.com",
     tlf: 12345678,
-    aboutPicture: "IMG/Jarand_img.jpg",
+    aboutPicture: {
+       picture: "IMG/Jarand_img.jpg",
+       editMode: false,
+    },
     title: "Arkitekt",
     name: "Jarand Midtgaard",
-    aboutCreator:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    aboutCreator: {
+      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      editMode: false,
+    },
       creatorSoMelinks: [
         { media: "Facebook", logoimg: "", link: "" },
         { media: "SnapChat", logoimg: "", link: "" },
