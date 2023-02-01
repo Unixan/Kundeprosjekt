@@ -52,7 +52,7 @@ function backEdit() {
   backToMain();
 }
 
-function deletePicture(picture) {
+function deletePicture(picture) {//sletter bildet, men kun om du huker av på "ja-" knapp.
   if (!model.areYouSure) {
     console.log(model.areYouSureImg, "før")
     model.areYouSureImg = true;
@@ -60,6 +60,8 @@ function deletePicture(picture) {
     updateView(picture);
   } else {
     model.pictures.splice(picture, 1);
+    model.areYouSure = false;
+    model.areYouSureImg = false;
     backEdit();
   }
 }
