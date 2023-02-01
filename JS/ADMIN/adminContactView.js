@@ -3,13 +3,22 @@
 //Erwan Foxtail DOES it
 function updateAdminContactView(){
     let someHTML = "";
-    let aboutCreatorEdit = "";
-    if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator.about}</p><button onclick="editAbout()">Rediger</button>`}
-    else if(model.creator.aboutCreator.editMode === true){aboutCreatorEdit = `<input type="text" value="${model.inputs.admin.editProfile.aboutCreator}" onchange="changeAbout(this.value)"><button onclick="updateAbout()">Lagre</button>`}
-    for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
+    if(model.creator.creatorSoMelinks.editMode === false){
+    for(i = 0; i < model.creator.creatorSoMelinks.links.length; i ++){
       someHTML += `<div><a href="${model.creator.creatorSoMelinks.links[i].link}" target="_blank" rel="noopener noreferrer"><img src=${model.creator.creatorSoMelinks.links[i].logoimg}></a></div>`
   }
   someHTML += `<button onclick="editSoMe()">Rediger SoMe-linker</button>`;
+}
+else if (model.creator.creatorSoMelinks.editMode === true){
+  for(i = 0; i < model.creator.creatorSoMelinks.links.length; i++){
+    someHTML += `<input type="text" value="${model.creator.creatorSoMelinks.links[i].link}" onchange="changeSoMe(${i},this.value)><button onclick="updateSoMe(${i})">Lagre</button>`
+  }
+}  
+  let aboutCreatorEdit = "";
+    if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator.about}</p><button onclick="editAbout()">Rediger</button>`}
+    else if(model.creator.aboutCreator.editMode === true){aboutCreatorEdit = `<input type="text" value="${model.inputs.admin.editProfile.aboutCreator}" onchange="changeAbout(this.value)"><button onclick="updateAbout()">Lagre</button>`}
+    
+  
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
