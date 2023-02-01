@@ -20,12 +20,13 @@ function userUpload(imageToAdd) {
   const waitForUpdate = setTimeout(updateView, 300); //lar bildet laste opp før oppdatering av view
 }
 
-function addCategory() {
+function addCategory(index) {
   //legger til tom kategori som kan redigeres
   let categoryArray = model.inputs.admin.addPic.category;
   categoryArray;
   categoryArray[categoryArray.length] = { temp: "" };
-  updateView();
+  if (index == null) updateView();
+  else updateView(index);
 }
 
 function pushCategory(index) {
@@ -48,17 +49,45 @@ function removeUnusedCategory(index) {
 function backEdit() {
   emptyUnusedFilter();
   resetInput();
+  backToMain();
+}
+
+function deletePicture(picture) {
+  if (!model.areYouSure) {
+    console.log(model.areYouSureImg, "før")
+    model.areYouSureImg = true;
+    console.log(model.areYouSureImg, "etter")
+    updateView(picture);
+  } else {
+    model.pictures.splice(picture, 1);
+    backEdit();
+  }
 }
 
 function emptyUnusedFilter() {
-  //TODO TEST! tømmer ubrukte filtre som ikke er lagt til
+  //TODO TEST!
+  //tømmer ubrukte filtre som ikke er lagt til
   model.inputs.admin.addPic.category.forEach((tempCat, index) => {
-    if (tempCat.temp) {
+    if (tempCat.temp != null) {
       tempCat.splice(index, 1);
     }
   });
 }
 
 function resetInput() {
+  //TODO test!
   //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
+  const emptyInput = {
+    img: "",
+    title: "",
+    description: "",
+    artist: "",
+    category: model.filter,
+  };
+  model.inputs.admin.addPic = emptyInput;
+}
+
+function backToMain() {
+  model.state = "adminView";
+  updateView;
 }
