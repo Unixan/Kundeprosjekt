@@ -1,8 +1,6 @@
 /*Kontrolleren til login
     Ansvarlig: Becka
-NEED 
-- Kan forbedres, men fungerer. 
-- CSS
+DONE
 */
 
 function togglePassword(){

@@ -1,7 +1,6 @@
 /*Login side som admin skal kunne logge seg på. Denne skal være på egen side. 
     Ansvarlig: Becka
-NEED
-- CSS
+DONE
 */
 
 
@@ -31,7 +30,7 @@ function updateLoginView(){
             oninput="model.inputs.login.password=this.value"
             value='${model.inputs.login.password}' 
             onkeydown="if(event.code === 'Enter') login()"/>
-        <i class="passwordEye" onclick="togglePassword()"><img src="IMG/ICONS/password_eye.png" style="height: 30px"></i>
+        <i class="passwordEye" onclick="togglePassword()"><img src="IMG/ICONS/password_eye.png" style="height: 30px"/></i>
         <b id="wrongPassword" class="wrongUsername">Må ha et gyldig passord</b>
 
         <button type="submit" class="logIn-button" onclick="login()">Logg inn</button>
