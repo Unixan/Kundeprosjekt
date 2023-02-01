@@ -323,6 +323,7 @@ const model = {
     },
   ],
   areYouSure: false,
+  areYouSureImg: false,
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
 };

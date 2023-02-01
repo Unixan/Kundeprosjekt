@@ -15,7 +15,7 @@ function updateMainView() {
   // Holder på å sette opp modal. Får nå opp bilder.
   //Må bare nå legge til kommentarer, kontakt og social media links
   let html = "";
-  html += menu(); //Menyinit
+  html += menuBar(); //Menyinit
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
@@ -23,10 +23,11 @@ function updateMainView() {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
-                    <h2>${picture.title}</h2>
-                    <div><img src="${picture.img}" class="picture" onclick="modalActivate(${index})">
-                </div>
-        </div>`;
+                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <div>
+                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                  </div>
+                </div>`;
   });
   html += /*HTML*/ `</div>
     </header>
@@ -55,7 +56,7 @@ function modal() {
   return html;
 }
 
-function menu() {
+function menuBar() {
   //tegner opp menyen
   menu = /*HTML*/ `<header>
   <nav class="menuBar">
