@@ -1,4 +1,4 @@
-// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst og SoMeLinks
+// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks
 //Lage input
 //Erwan Foxtail DOES it
 function updateAdminContactView(){
