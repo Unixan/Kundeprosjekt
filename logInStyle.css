@@ -1,50 +1,33 @@
 .logIn-Field{
     grid-area: body;
-    max-width: 500px;
-    margin: 0 auto;
-    display: grid; 
-    justify-items: center;
-    grid-template-columns: 50px 200px 200px 50px;
-    grid-template-rows: 50px 100px 100px 50px;
-    grid-template-areas: 
-        'toprow toprow toprow toprow'
-        'side body1 body1 side'
-        'side body2 body2 side'
-        'footer footer footer footer';
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     border-radius: 10px;
     border: 1px solid grey;
+    height: auto;
+    width: 450px;
     background-color: beige;
 }
 
 .logIn-Title{
-    grid-area: toprow;
-    justify-self: center;
     font-size: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
-.logIn-UsernameTitle{
-    grid-area: body1;
-    font-size: 18px;
-}
-.logIn-PasswordTitle{
-    grid-area: body2;
+.logIn-UnderTitle{
     font-size: 18px;
 }
 
-.logIn-InputUsername{
-    grid-area: body1;
+.logIn-Input{
     width: 300px;
     height: 40px;
     font-size: 15px;
-    border-radius: 20px;
-    padding: 5px;
-    border: 1px solid grey;
-}
-.logIn-InputPassword{
-    grid-area: body2;
-    width: 300px;
-    height: 40px;
-    font-size: 15px;
+    margin-bottom: 30px;
     border-radius: 20px;
     padding: 5px;
     border: 1px solid grey;
@@ -54,7 +37,6 @@
 }
 
 .logIn-button{
-    grid-area: footer;
     font-size: 20px;
     padding: 10px;
     width: 200px;
@@ -69,22 +51,49 @@
 .wrongUsername{
     display: none;
     color: rgb(192, 27, 27);
-}
-.wrongLogInUsername{
-    display: grid;
-    grid-area: body2;
-}
-.wrongPassword{
-    display: none;
-    color: rgb(192, 27, 27);
     
 }
-.wrongLogInPassword{
-    display: grid;
-    grid-area: body1;
+.wrongLogIn{
+    display: flex;
 }
 
 .passwordEye{
-    grid-area: body2;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+.bbbody{
+    background: #000}
+.card{
+    border: none;
+    height: 320px}
+.forms-inputs{
+    position: relative}
+.forms-inputs span{
+    position: absolute;
+    top:-18px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px}
+    .forms-inputs input{
+        height: 50px;
+        border: 2px solid #eee}
+    .forms-inputs input:focus{
+        box-shadow: none;
+        outline: none;
+        border: 2px solid #000}
+    .btn{
+        height: 50px}
+    .success-data{
+        display: flex;
+        flex-direction: column}
+    .bxs-badge-check{
+        font-size: 90px}
