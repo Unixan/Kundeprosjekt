@@ -57,8 +57,12 @@ function updateAddImageView(index) {
                 onchange="model.inputs.admin.addPic.category[${i}].temp = this.value"
                 value="${model.inputs.admin.addPic.category[i].temp}"
             >
-            <button onclick="pushCategory(${i})">Legg til</button>
-            <button onclick="removeUnusedCategory(${i})">Fjern</button>
+            <button onclick="pushCategory(${
+              index != null ? `${i},${index}` : i
+            })">Legg til</button>
+            <button onclick="removeUnusedCategory(${
+              index != null ? `${i},${index}` : i
+            })">Fjern</button>
             <br>
         `;
   }
@@ -74,13 +78,14 @@ function updateAddImageView(index) {
       index != null
         ? /*HTML*/ `<input 
         type="text" 
-        value=${model.pictures[index].title} 
+        value="${model.pictures[index].title}" 
         onchange="model.inputs.admin.addPic.title = this.value"
         >`
         : /*HTML*/ `<input 
         type="text" 
         placeholder="Skriv inn tittel" 
         onchange="model.inputs.admin.addPic.title = this.value"
+        value="${model.inputs.admin.addPic.title}"
         >`
     }
         <div> 
@@ -106,37 +111,36 @@ function updateAddImageView(index) {
             `
             }
             <button onclick="deletePicture(${index})">Slett bilde</button>
-            `
+            <input 
+            type="text" 
+            value="${model.pictures[index].description}" 
+            onchange="model.inputs.admin.addPic.description = this.value"
+            >
+            </div>
+          `
             : //ellers får du input for å legge til nytt
               /*HTML*/ `
-        ${
-          //skjekker om det er et bilde i input
-          model.inputs.admin.addPic.img != ""
-            ? `<img src='${model.inputs.admin.addPic.img}'>`
-            : "<p>Legg til bilde</p>"
-        }
-        <!--knapp bruker kan trykke på for å laste opp bilder
-        sender hele input-taggen med bildet som innhold til userUpload() i controller
-        TODO skriv om litt så den ikke dukker opp hvis du bare redigerer bilde -->
-          <input 
+              ${
+                //skjekker om det er et bilde i input
+                model.inputs.admin.addPic.img != ""
+                  ? `<img src='${model.inputs.admin.addPic.img}'>`
+                  : "<p>Legg til bilde</p>"
+              }
+            <!--knapp bruker kan trykke på for å laste opp bilder
+            sender hele input-taggen med bildet som innhold til userUpload() i controller-->
+            <input 
             type="file"
             oninput="userUpload(this)"
             accept="image/jpeg, image/png, image/jpg"
-          >
+             >
+            
         </div>
-        ${
-          index != null
-            ? /*HTML*/ `<input 
-            type="text" 
-            value=${model.pictures[index].description} 
-            onchange="model.inputs.admin.addPic.description = this.value"
-            >`
-            : /*HTML*/ `<input 
+        <input 
             type="text" 
             placeholder="Skriv inn beskrivelse" 
             onchange="model.inputs.admin.addPic.description = this.value"
-            >`
-        }
+            value="${model.inputs.admin.addPic.description}"
+            >
         `
         }
         <div>
