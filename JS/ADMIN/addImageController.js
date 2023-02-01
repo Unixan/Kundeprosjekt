@@ -52,11 +52,12 @@ function backEdit() {
   backToMain();
 }
 
-function deletePicture(picture) {//sletter bildet, men kun om du huker av på "ja-" knapp.
+function deletePicture(picture) {
+  //sletter bildet, men kun om du huker av på "ja-" knapp.
   if (!model.areYouSure) {
-    console.log(model.areYouSureImg, "før")
+    console.log(model.areYouSureImg, "før");
     model.areYouSureImg = true;
-    console.log(model.areYouSureImg, "etter")
+    console.log(model.areYouSureImg, "etter");
     updateView(picture);
   } else {
     model.pictures.splice(picture, 1);
@@ -64,6 +65,14 @@ function deletePicture(picture) {//sletter bildet, men kun om du huker av på "j
     model.areYouSureImg = false;
     backEdit();
   }
+}
+
+function saveEdit() {
+  //skal oppdatere eksisterende bilde med endringer
+}
+
+function publishNew() {
+  //skal legge nytt bilde til model.pictures
 }
 
 function emptyUnusedFilter() {
