@@ -61,7 +61,7 @@ function updateAddImageView(index) {
         `;
   }
   html = /*HTML*/ `
-  <div><a onclick=${index != null ? "backEdit()" : "backAdd()"}><img src=${
+  <div><a onclick="backEdit()"><img src=${
     model.backLogo
   }></a></div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
   <div>
@@ -77,7 +77,23 @@ function updateAddImageView(index) {
           index != null
             ? /*HTML*/ `
             <img src='${model.pictures[index].img}'>
-            <button onclick="deletePicture()">Slett bilde</button>
+            ${
+              !model.areYouSureImg
+                ? "" //spør bruker om de er sikker på at de vil slette bildet
+                : /*HTML*/ `
+            <p>Er du sikker på at du vil slette bildet for alltid?</p>
+            <input 
+                type="checkbox" 
+                ${!model.areYouSure ? "" : "checked"} 
+                name="delete"
+                onchange="model.areYouSure = !model.areYouSure"
+            >
+            <label for="delete">
+              Ja 
+            </label>
+            `
+            }
+            <button onclick="deletePicture(${index})">Slett bilde</button>
             `
             : //ellers får du input for å legge til nytt
               /*HTML*/ `
@@ -104,7 +120,9 @@ function updateAddImageView(index) {
         }
         <div>
             ${catecoryDiv}
-            <button onclick="addCategory()">Legg til kategori</button>
+            <button onclick="addCategory(${
+              (index == null) ? null : index
+            })">Legg til kategori</button>
         </div><br>
         <div>
           ${
