@@ -7,14 +7,15 @@ NEED
 
 function updateLoginView(){
     appDiv.innerHTML = /*HTML*/`
+    <div class="container">
     <div class="logIn-Field">
-        <div class="logIn-Title">Administrerende logg-inn</div>
+        <div class="logIn-Title">Velkommen</div>
         <label class="logIn-UnderTitle">Brukernavn</label>
         <input type="text" 
             id="usernameInput"
             name="usernameInput"
             class="logIn-Input"
-            placeholder="Skriv inn brukernavn" 
+            placeholder="Små og/eller store bokstaver." 
             autocomplete="off"
             oninput="model.inputs.login.username=this.value" 
             value='${model.inputs.login.username}'/>
@@ -34,6 +35,7 @@ function updateLoginView(){
         <b id="wrongPassword" class="wrongUsername">Må ha et gyldig passord</b>
 
         <button type="submit" class="logIn-button" onclick="login()">Logg inn</button>
+    </div>
     </div>
     `;
 
