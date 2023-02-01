@@ -11,5 +11,16 @@ function editProfilePic(){
 
 function editAbout(){
     model.creator.aboutCreator.editMode = true;
+    model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
+    updateAdminContactView();
+}
+
+function changeAbout(thisValue){
+model.inputs.admin.editProfile.aboutCreator = thisValue;
+}
+
+function updateAbout(){
+    model.creator.aboutCreator.about = model.inputs.admin.editProfile.aboutCreator;
+    model.creator.aboutCreator.editMode = false;
     updateAdminContactView();
 }
