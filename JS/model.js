@@ -68,12 +68,15 @@ const model = {
       about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       editMode: false,
     },
-      creatorSoMelinks: [
+      creatorSoMelinks: {links: 
+       [
         { media: "Facebook", logoimg: "", link: "" },
         { media: "SnapChat", logoimg: "", link: "" },
         { media: "Twitter", logoimg: "", link: "" },
         { media: "Instagram", logoimg: "", link: "" },
       ],
+      editMode: false,
+    }
     },
 
     
