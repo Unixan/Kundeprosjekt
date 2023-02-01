@@ -8,27 +8,33 @@ NEED
 function updateLoginView(){
     appDiv.innerHTML = /*HTML*/`
     <div class="logIn-Field">
-        <div class="logIn-Title">Administrerende logg-inn</div>
-        <div class="logIn-UnderTitle">Brukernavn</div>
+        <div class="logIn-Title">Logg-inn</div>
+        <label class="logIn-UsernameTitle">Brukernavn</label>
         <input type="text" 
-            class="logIn-Input"
+            id="usernameInput"
+            name="usernameInput"
+            class="logIn-InputUsername"
             placeholder="Skriv inn brukernavn" 
+            autocomplete="off"
             oninput="model.inputs.login.username=this.value" 
             value='${model.inputs.login.username}'/>
-        <div class="logIn-UnderTitle">Passord</div>
-        <input type="text" 
-            class="logIn-Input"
+        <b id="wrongUsername" class="wrongUsername">Må ha et gyldig brukernavn.</b>
+
+        <label class="logIn-PasswordTitle">Passord</label>
+        <input type="password" 
+            id="passwordInput"
+            name="passwordInput"
+            class="logIn-InputPassword"
             placeholder="Skriv inn passord" 
+            autocomplete="off"
             oninput="model.inputs.login.password=this.value"
             value='${model.inputs.login.password}' 
             onkeydown="if(event.code === 'Enter') login()"/>
-        <button class="logIn-button" onclick="login()">Logg inn</button>
+            <i class="passwordEye" onclick="togglePassword()"><img src="IMG/ICONS/password_eye.png"></i>
+        <b id="wrongPassword" class="wrongPassword">Må ha et gyldig passord</b>
+
+        <button type="submit" class="logIn-button" onclick="login()">Logg inn</button>
     </div>
     `;
-    if(model.areYouSure == true){
-        appDiv.innerHTML += /*HTML*/`
-        <h3 class="logIn-Field logIn-Warning">Passord og/eller brukernavn er feil.</h3>
-        `;
-    }
 }
 

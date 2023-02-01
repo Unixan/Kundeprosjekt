@@ -1,47 +1,90 @@
 .logIn-Field{
     grid-area: body;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid; 
+    justify-items: center;
+    grid-template-columns: 50px 200px 200px 50px;
+    grid-template-rows: 50px 100px 100px 50px;
+    grid-template-areas: 
+        'toprow toprow toprow toprow'
+        'side body1 body1 side'
+        'side body2 body2 side'
+        'footer footer footer footer';
     border-radius: 10px;
     border: 1px solid grey;
-    height: auto;
-    width: 450px;
+    background-color: beige;
 }
 
 .logIn-Title{
-    font-size: 35px;
-    padding-bottom: 50px;
-    padding-top: 30px;
+    grid-area: toprow;
+    justify-self: center;
+    font-size: 30px;
 }
 
-.logIn-UnderTitle{
+.logIn-UsernameTitle{
+    grid-area: body1;
+    font-size: 18px;
+}
+.logIn-PasswordTitle{
+    grid-area: body2;
     font-size: 18px;
 }
 
-.logIn-Input{
-    width: 200px;
-    height: 20px;
+.logIn-InputUsername{
+    grid-area: body1;
+    width: 300px;
+    height: 40px;
     font-size: 15px;
-    margin-bottom: 30px;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px;
+    border: 1px solid grey;
+}
+.logIn-InputPassword{
+    grid-area: body2;
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid grey;
+}
+.wrongLoginInput{
+    border: 3px solid rgb(192, 27, 27);
 }
 
 .logIn-button{
+    grid-area: footer;
     font-size: 20px;
-    padding: 0;
-    border: none;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
     background: none;
     cursor: pointer;
-    padding-bottom: 30px;
+    background-color: #cedbad;
 }
 
 
-.logIn-Warning{
-    font-style: italic;
-    color: rgb(129, 32, 32);
+.wrongUsername{
+    display: none;
+    color: rgb(192, 27, 27);
+}
+.wrongLogInUsername{
+    display: grid;
+    grid-area: body2;
+}
+.wrongPassword{
+    display: none;
+    color: rgb(192, 27, 27);
+    
+}
+.wrongLogInPassword{
+    display: grid;
+    grid-area: body1;
+}
+
+.passwordEye{
+    grid-area: body2;
+    cursor: pointer;
 }
