@@ -10,12 +10,13 @@
     border: 1px solid grey;
     height: auto;
     width: 450px;
+    background-color: beige;
 }
 
 .logIn-Title{
-    font-size: 35px;
+    font-size: 30px;
     padding-bottom: 50px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .logIn-UnderTitle{
@@ -23,25 +24,46 @@
 }
 
 .logIn-Input{
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 40px;
     font-size: 15px;
-    margin-bottom: 30px;
-    border-radius: 10px;
+    position: relative;
+    border-radius: 20px;
     padding: 5px;
+    border: 1px solid grey;
+}
+.wrongLoginInput{
+    border: 3px solid rgb(192, 27, 27);
 }
 
 .logIn-button{
     font-size: 20px;
-    padding: 0;
-    border: none;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 20px;
     background: none;
     cursor: pointer;
-    padding-bottom: 30px;
+    background-color: #cedbad;
+    margin-bottom: 30px;
 }
 
 
-.logIn-Warning{
-    font-style: italic;
-    color: rgb(129, 32, 32);
+.wrongUsername{
+    display: none;
+    color: rgb(192, 27, 27);
+    margin-bottom: 30px;
+    
+}
+.wrongLogIn{
+    display: flex;
+}
+
+.passwordEye{
+    position: absolute;
+    cursor: pointer;
+    margin-bottom: -145px;
+    margin-right: -250px;
+    opacity: 0.5;
+    
 }
