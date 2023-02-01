@@ -6,6 +6,10 @@ function updateAdminContactView(){
     let aboutCreatorEdit = "";
     if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator.about}</p><button onclick="editAbout()">Rediger</button>`}
     else if(model.creator.aboutCreator.editMode === true){aboutCreatorEdit = `<input type="text" value="${model.inputs.admin.editProfile.aboutCreator}" onchange="changeAbout(this.value)"><button onclick="updateAbout()">Lagre</button>`}
+    for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
+      someHTML += `<div><a href="${model.creator.creatorSoMelinks.links[i].link}" target="_blank" rel="noopener noreferrer"><img src=${model.creator.creatorSoMelinks.links[i].logoimg}></a></div>`
+  }
+  someHTML += `<button onclick="editSoMe()">Rediger SoMe-linker</button>`;
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
@@ -26,15 +30,14 @@ function updateAdminContactView(){
     <div><a onclick="adminBackButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
-    <p><a href="mailto:${model.creator.email}">kontakt</a><button onclick="editMail()">Rediger mail</button>
+    <p><a href="mailto:${model.creator.email}">kontakt</a>
     <div>
     <img src=${model.creator.aboutPicture.picture} alt="Profilbilde av Jarand Midtgaard"><button onclick="editProfilePic()">Rediger bilde</button>
     <div> <!--SoMe linker-->
     <div>${someHTML}
     </div>
+    </div>
     <div>${aboutCreatorEdit}</div>
     `
-    for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
-        someHTML += `<div><a><img src=${model.creator.creatorSoMelinks[i].logoimg}></a> <button onclick="editSoMe(i)">Rediger</button></div>`
-    }
+    
 }

@@ -1,5 +1,7 @@
 // addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
+//TODO Legg til endring for projectId og Artsist, og legge til klasser for CSS
+
 //ON THE CASE: Nikotron
 
 /*TODO:
@@ -68,9 +70,19 @@ function updateAddImageView(index) {
     <h1>${
       index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
     }</h1>
-        <input type="text" placeholder=${
-          index != null ? "RedigerTittel" : "SkrivInnBildetittel"
-        } onchange="model.inputs.admin.addPic.title = this.value">
+    ${
+      index != null
+        ? /*HTML*/ `<input 
+        type="text" 
+        value=${model.pictures[index].title} 
+        onchange="model.inputs.admin.addPic.title = this.value"
+        >`
+        : /*HTML*/ `<input 
+        type="text" 
+        placeholder="Skriv inn tittel" 
+        onchange="model.inputs.admin.addPic.title = this.value"
+        >`
+    }
         <div> 
         ${
           //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
@@ -112,16 +124,25 @@ function updateAddImageView(index) {
             accept="image/jpeg, image/png, image/jpg"
           >
         </div>
-        <input 
-          type="text" 
-          placeholder="Skriv inn beskrivelse" 
-          onchange="model.inputs.admin.addPic.description = this.value"
-        >`
+        ${
+          index != null
+            ? /*HTML*/ `<input 
+            type="text" 
+            value=${model.pictures[index].description} 
+            onchange="model.inputs.admin.addPic.description = this.value"
+            >`
+            : /*HTML*/ `<input 
+            type="text" 
+            placeholder="Skriv inn beskrivelse" 
+            onchange="model.inputs.admin.addPic.description = this.value"
+            >`
+        }
+        `
         }
         <div>
             ${catecoryDiv}
             <button onclick="addCategory(${
-              (index == null) ? null : index
+              index == null ? null : index
             })">Legg til kategori</button>
         </div><br>
         <div>

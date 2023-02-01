@@ -10,12 +10,13 @@
     border: 1px solid grey;
     height: auto;
     width: 450px;
+    background-color: beige;
 }
 
 .logIn-Title{
-    font-size: 35px;
+    font-size: 30px;
     padding-bottom: 50px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .logIn-UnderTitle{
@@ -23,25 +24,76 @@
 }
 
 .logIn-Input{
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 40px;
     font-size: 15px;
     margin-bottom: 30px;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px;
+    border: 1px solid grey;
+}
+.wrongLoginInput{
+    border: 3px solid rgb(192, 27, 27);
 }
 
 .logIn-button{
     font-size: 20px;
-    padding: 0;
-    border: none;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
     background: none;
     cursor: pointer;
-    padding-bottom: 30px;
+    background-color: #cedbad;
 }
 
 
-.logIn-Warning{
-    font-style: italic;
-    color: rgb(129, 32, 32);
+.wrongUsername{
+    display: none;
+    color: rgb(192, 27, 27);
+    
 }
+.wrongLogIn{
+    display: flex;
+}
+
+.passwordEye{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.bbbody{
+    background: #000}
+.card{
+    border: none;
+    height: 320px}
+.forms-inputs{
+    position: relative}
+.forms-inputs span{
+    position: absolute;
+    top:-18px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px}
+    .forms-inputs input{
+        height: 50px;
+        border: 2px solid #eee}
+    .forms-inputs input:focus{
+        box-shadow: none;
+        outline: none;
+        border: 2px solid #000}
+    .btn{
+        height: 50px}
+    .success-data{
+        display: flex;
+        flex-direction: column}
+    .bxs-badge-check{
+        font-size: 90px}
