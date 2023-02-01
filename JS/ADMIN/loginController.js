@@ -34,4 +34,4 @@ function wrongLogIn(){
         usernameInput.classList.add('wrongLoginInput');
         usernameWarning.classList.add('wrongLogIn');
         passwordWarning.classList.add('wrongLogIn');
-    }
+}

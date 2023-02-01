@@ -1,0 +1,51 @@
+.collabInfo-box{
+    grid-area: body;
+    justify-self: center;
+    align-self: start;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 70px 300px 100px 100px 50px 10px;
+    grid-template-areas: 
+        'title title title'
+        'info1 info1 imageSpace'
+        'info1 info1 info2'
+        'info3 info3 info2'
+        'banner banner banner'
+        'img img img';
+}
+
+.collabTitle{
+    grid-area: title;
+    justify-self: start;
+    align-self: center;
+    font-size: 25px;
+}
+
+.creatorImg{
+    grid-area: imageSpace;
+    justify-self: center;
+    align-self: center;
+}
+
+.collab-SoMeLinks{
+    grid-area: info2;
+    display: flex;
+}
+
+.collabInfo{
+    grid-area: info1;
+    display: flex;
+}
+
+.collabContactInfo-box{
+    grid-area: info3;
+    display: flex;
+}
+
+
+.collabBanner{
+    grid-area: banner;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
