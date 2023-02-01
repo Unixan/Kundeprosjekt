@@ -15,7 +15,7 @@ function updateMainView() {
   // Holder på å sette opp modal. Får nå opp bilder.
   //Må bare nå legge til kommentarer, kontakt og social media links
   let html = "";
-  html += menu(); //Menyinit
+  html += menuBar(); //Menyinit
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
@@ -56,7 +56,7 @@ function modal() {
   return html;
 }
 
-function menu() {
+function menuBar() {
   //tegner opp menyen
   menu = /*HTML*/ `<header>
   <nav class="menuBar">
