@@ -29,7 +29,7 @@ function addCategory(index) {
   else updateView(index);
 }
 
-function pushCategory(index) {
+function pushCategory(index, picture) {
   //legger til ny kategori på model.filter, fjerner fra inputs så ikke tegnes dobbelt.
   let categoryToAdd = {
     cat: model.inputs.admin.addPic.category[index].temp,
@@ -37,13 +37,15 @@ function pushCategory(index) {
   };
   model.inputs.admin.addPic.category.splice(index, 1);
   model.filter.push(categoryToAdd);
-  updateView();
+  if (picture == null) updateView();
+  else updateView(picture);
 }
 
-function removeUnusedCategory(index) {
+function removeUnusedCategory(index, picture) {
   //fjerner påbegynnt kategori om brukeren ikke vil legge til likevel
   model.inputs.admin.addPic.category.splice(index, 1);
-  updateView();
+  if (picture == null) updateView();
+  else updateView(picture);
 }
 
 function backEdit() {
@@ -56,11 +58,10 @@ function backEdit() {
 function deletePicture(picture) {
   //sletter bildet, men kun om du huker av på "ja-" knapp.
   if (!model.areYouSure) {
-    console.log(model.areYouSureImg, "før");
     model.areYouSureImg = true;
-    console.log(model.areYouSureImg, "etter");
     updateView(picture);
-  } else {
+  }
+  if (model.areYouSure == true) {
     model.pictures.splice(picture, 1);
     model.areYouSure = false;
     model.areYouSureImg = false;
@@ -82,7 +83,30 @@ function saveEdit(index) {
 
 function publishNew() {
   //skal legge nytt bilde til model.pictures
+  const newImage = {
+    img: model.inputs.admin.addPic.img,
+    toggled: false,
+    projectId: "TODO fix this shit",
+    title: model.inputs.admin.addPic.title,
+    description: model.inputs.admin.addPic.description,
+    artist: "TODO fix this shit",
+    category: getCategoryNames(),
+    comments: [],
+    SoMelinks: "TODO hent dette basert på artist",
+  };
+  model.pictures.push(newImage);
+  backEdit();
+}
 
+function getCategoryNames() {
+  //ser om kategori er checked, og legger til teksten i bildekategorien
+  const catArray = [];
+  model.inputs.admin.addPic.category.map((list) => {
+    if (list.checked) {
+      catArray.push(list.cat);
+    }
+  });
+  return catArray;
 }
 
 function emptyUnusedFilter() {
@@ -98,6 +122,12 @@ function emptyUnusedFilter() {
 function resetInput() {
   //TODO test!
   //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
+  model.filter.map((list) => {
+    //setter alle kategorier til å være unchecked så listen kan brukes på nytt
+    if (list.checked) {
+      list.checked = !list.checked;
+    }
+  });
   const emptyInput = {
     img: "",
     title: "",
@@ -111,5 +141,5 @@ function resetInput() {
 function backToMain() {
   //TODO Skal endre til "adminView", men for test purpouses trenger jeg å se main.
   model.state = "mainView";
-  updateView;
+  updateView();
 }
