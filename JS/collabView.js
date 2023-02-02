@@ -26,7 +26,7 @@ function updateCollabView(){
                 </div>
                 <h3 class="collabBanner" id="collabBannerId">Tidligere samarbeidsprosjekter</h3>
         </div>
-        <div class="scrollBox">${collabImages()}</div>
+        <div class="scrollBox imgUnderinfo">${collabImages()}</div>
         <footer class="footer">
         ©Copyright
         </footer>
@@ -34,6 +34,7 @@ function updateCollabView(){
         ${hamburger()}
         `;
 }
+//Footer havner under collab grid, og ikke i bunn. WHY
 
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
@@ -69,6 +70,4 @@ function collabImages(){
 - lage en funksjon i controller som toggler som blir kalt i if statementen
 istedenfor tittelen. 
 
-- spørre ståle hvorfor bildene blir slik som de er!
-- legge til class som gjør at siden samarbeider med bredden
 */

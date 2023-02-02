@@ -3,8 +3,8 @@
     justify-self: center;
     align-self: start;
     display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 70px 300px 100px 100px 50px 10px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 70px 300px 100px 100px 50px 0px;
     grid-template-areas: 
         'title title title'
         'info1 info1 imageSpace'
@@ -12,6 +12,9 @@
         'info3 info3 info2'
         'banner banner banner'
         'img img img';
+}
+.imgUnderinfo{
+    grid-area: img;
 }
 
 .collabTitle{
