@@ -13,7 +13,7 @@ function updateCollabView(){
         <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
         <div class="collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
-                <div class="creatorImg"><img src="${model.creator.aboutPicture}"></div>
+                <div class="creatorImg"><img src="${model.creator.aboutPicture}"/></div>
                 <div class="collab-SoMeLinks">Social media links here</div>
 
                 <p class="collabInfo">Hei, jeg ønsker flere samarbeidspartnere! 
@@ -24,9 +24,9 @@ function updateCollabView(){
                 <a class="collab-email">${model.creator.email}</a>
                 <a class="collab-tlf">${model.creator.tlf}</a>
                 </div>
-                <h3 class="collabBanner">Tidligere samarbeidsprosjekter</h3>
+                <h3 class="collabBanner" id="collabBannerId">Tidligere samarbeidsprosjekter</h3>
         </div>
-        </div class="scrollBox">${collabImages()}</div>
+        <div class="scrollBox">${collabImages()}</div>
         <footer class="footer">
         ©Copyright
         </footer>
@@ -50,18 +50,16 @@ function collabImages(){
                         <div class="picBox">
                                 <h2 class="pictureTitle">${picture.title}</h2>
                                 <div>
-                                <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                                <img src="${picture.img}" class="picture" onclick="modalActivate(${i})"/>
                                 </div>
                         </div>
                         `;        
                         }
                 })
         }
-        if(collabImageExists == true){
-                html += /*HTML*/`
-                <h3>Tidligere samarbeidsprosjekter</h3>
-                `;
-        };
+        /*if(collabImageExists == true){
+                showBanner();
+        }*/
         return html;
 }
 
@@ -72,4 +70,5 @@ function collabImages(){
 istedenfor tittelen. 
 
 - spørre ståle hvorfor bildene blir slik som de er!
+- legge til class som gjør at siden samarbeider med bredden
 */

@@ -32,8 +32,7 @@ function updateMainView() {
                 </div>`;
   });
   html += /*HTML*/ `</div>
-    </header>
-    <footer class="footer">
+        <footer class="footer">
     ©Copyright
     </footer>`;
   html += modal(); // Modal innlasting

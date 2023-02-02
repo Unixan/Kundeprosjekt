@@ -45,7 +45,10 @@
 
 .collabBanner{
     grid-area: banner;
-    display: flex;
+    display: none;
     justify-self: center;
     align-self: center;
+}
+.collabExists{
+    display: flex;
 }
