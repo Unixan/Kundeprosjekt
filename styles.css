@@ -252,15 +252,22 @@ li {
 
   .menu {
     position: fixed;
-    right: -100%;
-    top: 70px;
+    left: 100%;
+    top: 60px;
     gap: 0;
     flex-direction: column;
     background-color: #2a2f35;
-    width: 100%;
-    object-fit: cover;
+    width: 100vw;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.4s ease-in-out;
+  }
+
+  .menuItem {
+    margin: 16px 0;
+  }
+
+  .menu.show {
+    left: 0;
   }
 
   .picture {

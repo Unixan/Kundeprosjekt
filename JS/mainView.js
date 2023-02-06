@@ -130,5 +130,11 @@ function hamburger() {
 
 function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");
+  const menuItem = document.querySelectorAll(".menuItem");
+  const menu = document.querySelector(".menu")
+  menu.classList.toggle("show")
   hamburger.classList.toggle("show");
+  menuItem.forEach((item) => {
+    item.classList.toggle("show");
+  });
 }
