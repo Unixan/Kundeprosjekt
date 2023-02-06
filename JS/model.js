@@ -75,10 +75,10 @@ const model = {
     },
       creatorSoMelinks: {links: 
        [
-        { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
-        { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
-        { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
-        { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
+        { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "https://nb-no.facebook.com/" },
+        { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "https://www.snapchat.com/" },
+        { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "https://twitter.com/home?" },
+        { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "https://www.instagram.com/" },
       ],
       editMode: false,
     }
@@ -86,10 +86,10 @@ const model = {
 
     
     SoMelinks: [
-      { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
-      { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
-      { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
-      { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
+      { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "https://nb-no.facebook.com/" },
+      { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "https://www.snapchat.com/" },
+      { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "https://twitter.com/home?" },
+      { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "https://www.instagram.com/" },
     ],
 
 

@@ -74,7 +74,7 @@ function creatorSoMeLinks(){
         const soMeCreator = model.creator.creatorSoMelinks;
         for(let i = 0; i > soMeCreator.length; i++){
                 html += /*HTML*/`
-                <a onclick="${soMeCreator[i].link}">
+                <a href="${soMeCreator[i].link}">
                 <img src='${soMeCreator[i].logoimg}'/></a>
                 `;
         }
