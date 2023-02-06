@@ -115,6 +115,9 @@ li {
 .menuLink {
   transition: 0.7s ease;
   font-weight: bolder;
+  color: white;
+  user-select: none;
+  cursor: pointer;
 }
 
 .menuLink:hover {
