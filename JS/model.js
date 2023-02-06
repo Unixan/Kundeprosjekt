@@ -70,10 +70,10 @@ const model = {
     },
       creatorSoMelinks: {links: 
        [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
+        { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
+        { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
+        { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
+        { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
       ],
       editMode: false,
     }
@@ -81,10 +81,10 @@ const model = {
 
     
     SoMelinks: [
-      { media: "Facebook", logoimg: "", link: "" },
-      { media: "SnapChat", logoimg: "", link: "" },
-      { media: "Twitter", logoimg: "", link: "" },
-      { media: "Instagram", logoimg: "", link: "" },
+      { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
+      { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
+      { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
+      { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
     ],
 
 
