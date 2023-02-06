@@ -85,16 +85,15 @@ function menuBar() {
   //tegner opp menyen
   menu = /*HTML*/ `<header>
   <nav class="menuBar">
- 
-        <ul class="menu">
+         <ul class="menu">
           <li class="menuItem">
-            <a href="#" class="menuLink">Filtrering</a>
+            <div onclick="changeToMainView()" class="menuLink">Hjem</div>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Samarbeid</a>
+            <div onclick="changeToCollabView()" class="menuLink">Samarbeid</div>
           </li>
           <li class="menuItem">
-            <a href="#" class="menuLink">Kontakt</a>
+            <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
           </li>
         </ul>
     </nav>

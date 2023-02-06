@@ -16,7 +16,6 @@ function updateContactView(){
     document.getElementById('app').innerHTML = /*html*/ `
     <header>
   <nav class="menuBar">
- 
         <ul class="menu">
           <li class="menuItem">
             <a href="#" class="menuLink">Filtrering</a>
