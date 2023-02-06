@@ -40,6 +40,7 @@ const model = {
 
   //data
 
+  userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
   adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
   filter: [
     { cat: "Architecture", checked: false },
@@ -63,14 +64,13 @@ const model = {
     email: "fakeEmail@mail.com",
     tlf: 12345678,
     aboutPicture: {
-      picture: "IMG/Jarand_img.jpg",
-      editMode: false,
+       picture: "IMG/Jarand_img.jpg",
+       editMode: false,
     },
     title: "Arkitekt",
     name: "Jarand Midtgaard",
     aboutCreator: {
-      about:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       editMode: false,
     },
       creatorSoMelinks: {links: 
@@ -81,9 +81,19 @@ const model = {
         { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "https://www.instagram.com/" },
       ],
       editMode: false,
+    }
     },
 
     
+    SoMelinks: [
+      { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "https://nb-no.facebook.com/" },
+      { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "https://www.snapchat.com/" },
+      { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "https://twitter.com/home?" },
+      { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "https://www.instagram.com/" },
+    ],
+
+
+
     pictures: [
     {
       img: "IMG/PICTURES/Pro1_1.jpg",
@@ -92,7 +102,7 @@ const model = {
       title: "Project 1 - Home Atelier 1",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration"],
+      category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "Knut Arild", comment: "Dette var lekkert! 10/10." }],
     },
     {
@@ -102,7 +112,7 @@ const model = {
       title: "Project 1 - Home Atelier 2",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration"],
+      category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -112,7 +122,7 @@ const model = {
       title: "Project 1 - Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration"],
+      category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -122,7 +132,7 @@ const model = {
       title: "Project 2 - Exhibition 1",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Art", "Exhibition"],
+      category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -132,7 +142,7 @@ const model = {
       title: "Project 2 - Exhibition 2",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Art", "Exhibition"],
+      category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -142,7 +152,7 @@ const model = {
       title: "Project 2 - Exhibition 3",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Art", "Exhibition"],
+      category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -153,7 +163,7 @@ const model = {
       title: "Project 3 - Digital Collages 1",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
-      category: ["Surrealism", "Art", "Collage", "Digital"],
+      category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -163,7 +173,7 @@ const model = {
       title: "Project 3 - Digital Collages 2",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
-      category: ["Surrealism", "Art", "Collage", "Digital"],
+      category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -173,7 +183,7 @@ const model = {
       title: "Project 3 - Digital Collages 3",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
-      category: ["Surrealism", "Art", "Collage", "Digital"],
+      category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -184,7 +194,7 @@ const model = {
       title: "Project 4 - Sculptures 1",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
+      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -194,7 +204,7 @@ const model = {
       title: "Project 4 - Sculptures 2",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
+      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -204,7 +214,7 @@ const model = {
       title: "Project 4 - Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
+      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -215,7 +225,7 @@ const model = {
       title: "Project 5 - Architectural unbilt projects 1",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -225,7 +235,7 @@ const model = {
       title: "Project 5 - Architectural unbilt projects 2",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -235,7 +245,7 @@ const model = {
       title: "Project 5 - Architectural unbilt projects 3",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
     },
   ],
