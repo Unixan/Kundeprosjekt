@@ -10,7 +10,6 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTML = /*HTML*/`
         ${menuBar()}
-        <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
         <div class="collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
                 <div class="creatorImg"><img src="${model.creator.aboutPicture}"/></div>
