@@ -10,9 +10,9 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTML = /*HTML*/`
         ${menuBar()}
-        <div class="collabInfo-box">
+        <div class="scrollBox collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
-                <div class="creatorImg"><img src="${model.creator.aboutPicture}"/></div>
+                <div class="creatorImg"><img src=${model.creator.aboutPicture.picture}/></div>
                 <div class="collab-SoMeLinks">Social media links here</div>
 
                 <p class="collabInfo">Hei, jeg ønsker flere samarbeidspartnere! 
@@ -23,23 +23,21 @@ function updateCollabView(){
                 <a class="collab-email">${model.creator.email}</a>
                 <a class="collab-tlf">${model.creator.tlf}</a>
                 </div>
-                <h3 class="collabBanner" id="collabBannerId">Tidligere samarbeidsprosjekter</h3>
         </div>
-        <div class="scrollBox imgUnderinfo">${collabImages()}</div>
-        <footer class="footer">
+        <div class="scrollBox">${collabImages()}</div>
+        <footer class="footer footerPlacement">
         ©Copyright
         </footer>
         ${modal()}
         ${hamburger()}
         `;
 }
-//Footer havner under collab grid, og ikke i bunn. WHY
-
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 
 function collabImages(){
         let html = '';
+        let banner = '';
         let collabImageExists = false;
         for(let i = 0; i < model.pictures.length; i++){
                 let picture = model.pictures[i];
@@ -54,12 +52,14 @@ function collabImages(){
                                 </div>
                         </div>
                         `;        
+                        banner = /*HTML*/ `
+                        <h3 class="collabBanner" id="collabBannerId">
+                        Tidligere samarbeidsprosjekter</h3>
+                        `;
                         }
+                        return banner;
                 })
         }
-        /*if(collabImageExists == true){
-                showBanner();
-        }*/
         return html;
 }
 
