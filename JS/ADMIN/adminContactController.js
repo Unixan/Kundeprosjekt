@@ -22,7 +22,12 @@ function updateAbout(){
     updateView();
 }
 
-function editSoMe(index){
+function editSoMe(){
     model.creator.creatorSoMelinks.editMode = true;
+    model.inputs.admin.editProfile.creatorSoMeLink[0].link = model.creator.creatorSoMelinks.links[0].link
+    model.inputs.admin.editProfile.creatorSoMeLink[1].link = model.creator.creatorSoMelinks.links[1].link
+    model.inputs.admin.editProfile.creatorSoMeLink[2].link = model.creator.creatorSoMelinks.links[2].link
+    model.inputs.admin.editProfile.creatorSoMeLink[3].link = model.creator.creatorSoMelinks.links[3].link
     updateView()
 }
+

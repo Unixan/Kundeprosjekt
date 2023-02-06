@@ -11,18 +11,24 @@ function updateCollabView(){
         appDiv.innerHTML = /*HTML*/`
         ${menuBar()}
         ${hamburger()}
-        <div class="scrollBox collabInfo-box">
+        <div class="collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
-                <div class="creatorImg"><img src='${model.creator.aboutPicture.picture}'/></div>
-                <div class="collab-SoMeLinks">Social media links here</div>
+                <div class="creatorImg">
+                <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 300px;"/>
+                </div>
+                <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
-                <p class="collabInfo">Hei, jeg ønsker flere samarbeidspartnere! 
-                Kontakt meg gjerne.
-                </p>
-                <div class="collabContactInfo-box">
-                <label class="contactInfoTitle">Kontakt meg her!</label>
-                <a class="collab-email">${model.creator.email}</a>
-                <a class="collab-tlf">${model.creator.tlf}</a>
+                <div class="collabInfo">
+                        <p>Hei, jeg ønsker flere samarbeidspartnere! 
+                        Kontakt meg gjerne.
+                        </p>
+                        <p><a class="collab-email">${model.creator.email}</a></p>
+                        <p><a class="collab-tlf">${model.creator.tlf}</a></p>
+                        <p class="collabInfoParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
                 </div>
         </div>
         <div class="scrollBox">${collabImages()}</div>
@@ -63,6 +69,17 @@ function collabImages(){
         return html;
 }
 
+function creatorSoMeLinks(){
+        let html;
+        const soMeCreator = model.creator.creatorSoMelinks;
+        for(let i = 0; i > soMeCreator.length; i++){
+                html += /*HTML*/`
+                <a onclick="${soMeCreator[i].link}">
+                <img src='${soMeCreator[i].logoimg}'/></a>
+                `;
+        }
+        return html;
+}
 /* Todo
 -fylle inn info i css
 -lage en toggle på h3 banner tittel i hovedsiden og fjerne tittelen i collabImages

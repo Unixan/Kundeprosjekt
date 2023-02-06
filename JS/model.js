@@ -28,7 +28,12 @@ const model = {
         aboutCreator: "",
         aboutPicture: "",
         title: "",
-        creatorSoMeLink: "",
+        creatorSoMeLink:[
+          {link: ''},
+          {link: ''},
+          {link: ''},
+          {link: ''},
+        ]
       },
     },
   },
@@ -70,16 +75,25 @@ const model = {
     },
       creatorSoMelinks: {links: 
        [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
+        { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
+        { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
+        { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
+        { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
       ],
       editMode: false,
     }
     },
 
     
+    SoMelinks: [
+      { media: "Facebook", logoimg: "IMG/ICONS/facebook.png", link: "" },
+      { media: "SnapChat", logoimg: "IMG/ICONS/snapchat.png", link: "" },
+      { media: "Twitter", logoimg: "IMG/ICONS/twitter.png", link: "" },
+      { media: "Instagram", logoimg: "IMG/ICONS/instagram.png", link: "" },
+    ],
+
+
+
     pictures: [
     {
       img: "IMG/PICTURES/Pro1_1.jpg",
@@ -90,12 +104,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "Knut Arild", comment: "Dette var lekkert! 10/10." }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro1_2.jpg",
@@ -106,12 +114,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
@@ -122,12 +124,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro2_1.jpg",
@@ -138,12 +134,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro2_2.jpg",
@@ -154,12 +144,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro2_3.jpg",
@@ -170,12 +154,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
 
     {
@@ -187,12 +165,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro3_2.jpg",
@@ -203,12 +175,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
@@ -219,12 +185,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
 
     {
@@ -236,12 +196,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
@@ -252,12 +206,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
@@ -268,12 +216,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
 
     {
@@ -285,12 +227,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro5_2.jpg",
@@ -301,12 +237,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
@@ -317,12 +247,6 @@ const model = {
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
       comments: [{ user: "", comment: "" }],
-      SoMelinks: [
-        { media: "Facebook", logoimg: "", link: "" },
-        { media: "SnapChat", logoimg: "", link: "" },
-        { media: "Twitter", logoimg: "", link: "" },
-        { media: "Instagram", logoimg: "", link: "" },
-      ],
     },
   ],
   areYouSure: false,
