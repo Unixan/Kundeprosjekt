@@ -9,3 +9,8 @@ function changeToCollabView() {
   model.state = "collabView";
   updateView();
 }
+
+function changeToMainView() {
+  model.state = "mainView";
+  updateView();
+}
