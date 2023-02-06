@@ -13,7 +13,7 @@ else if (model.creator.creatorSoMelinks.editMode === true){
   for(i = 0; i < model.creator.creatorSoMelinks.links.length; i++){
     someHTML += `<input type="text" value="${model.inputs.admin.editProfile.creatorSoMelink[i].link}" onchange="changeSoMe(${i},this.value)>`
   }
-  someHTML += `<button onclick="updateSoMe(${i})">Lagre</button>`
+  someHTML += `<button onclick="updateSoMe()">Lagre</button>`
 }  
   let aboutCreatorEdit = "";
     if(!model.creator.aboutCreator.editMode){aboutCreatorEdit = `<p>${model.creator.aboutCreator.about}</p><button onclick="editAbout()">Rediger</button>`}
