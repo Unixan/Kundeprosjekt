@@ -34,11 +34,13 @@ function updateAddImageView(index) {
     </a>
   </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
   
-  <div>
+  <div class="main">
     ${titleDiv}
     ${imageDiv}
     ${descriptionDiv}
-    ${catecoryDiv}
+    <div class="addCategory">
+      ${catecoryDiv}
+    </div>
     ${saveButtonsDiv}
     </div>
     `;
@@ -47,7 +49,7 @@ function updateAddImageView(index) {
 
 function fetchTitle(index) {
   let titleDiv = /*html*/ `
-  <div>
+  <div class="addTitle">
   <h1>${
     index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
   }</h1>
@@ -72,7 +74,7 @@ function fetchTitle(index) {
 
 function fetchImage(index) {
   let imageDiv = /*html*/ `
-    <div> 
+    <div class="addImage"> 
         ${
           //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
           index != null
@@ -94,6 +96,7 @@ function fetchImage(index) {
             </label>
             `
             }
+            <br>
             <button onclick="deletePicture(${index})">Slett bilde</button> 
           `
             : //ellers får du input for å legge til nytt
@@ -120,6 +123,7 @@ function fetchImage(index) {
   
   function fetchDescription(index) {
     let descriptionDiv = `
+    <div class="addDescription">
   ${
     index != null
     ? `<input 
@@ -134,6 +138,7 @@ function fetchImage(index) {
         value="${model.inputs.admin.addPic.description}"
       >`
     }
+    </div>
   `;
   return descriptionDiv;
 }
@@ -198,7 +203,7 @@ function fetchCategories(index) {
 
 function fetchSaveButtons(index) {
   let saveButtonsDiv = `
-  <div>
+  <div class="addSaveButtons">
     ${
       index != null
         ? /*HTML*/ `
