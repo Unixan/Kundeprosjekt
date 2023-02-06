@@ -10,9 +10,10 @@ må disse også endres til lik stil.
 function updateCollabView(){
         appDiv.innerHTML = /*HTML*/`
         ${menuBar()}
+        ${hamburger()}
         <div class="scrollBox collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
-                <div class="creatorImg"><img src=${model.creator.aboutPicture.picture}/></div>
+                <div class="creatorImg"><img src='${model.creator.aboutPicture.picture}'/></div>
                 <div class="collab-SoMeLinks">Social media links here</div>
 
                 <p class="collabInfo">Hei, jeg ønsker flere samarbeidspartnere! 
@@ -29,7 +30,6 @@ function updateCollabView(){
         ©Copyright
         </footer>
         ${modal()}
-        ${hamburger()}
         `;
 }
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
