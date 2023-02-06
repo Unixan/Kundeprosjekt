@@ -50,30 +50,17 @@ function modal() {
     </span>
     
     <div class="modalContent">
-      <div>
-        <div class="pictureComment">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="linkbox">
-          <img src="IMG/ICONS/comment.png" class="button"/>
-        </div>
-      </div>  
-    <img src="" class="modalImg" />
+      <div class="pictureComments">
+        
+      </div>
+      <div class="linkbox">
+          <img src="IMG/ICONS/comment.png" class="button" 
+            onclick="showModalComments()" 
+            style="height: 35px" />
+          <img src="IMG/ICONS/email.png" class="button"/>
+          <img src="IMG/ICONS/share.png" class="button"/>
+      </div>
+      <img src="" class="modalImg" />
     </div>
   </div>
   `;
@@ -106,6 +93,7 @@ function closeModal() {
   const modal = document.querySelector(".modal");
   const modalImage = document.querySelector(".modalImg");
   modal.classList.toggle("appear");
+  model.modal.currentPictureIndex = null;
   modalImage.src = "";
 }
 
@@ -113,8 +101,10 @@ function modalActivate(index) {
   const picture = model.pictures[index].img;
   const modal = document.querySelector(".modal");
   const modalImage = document.querySelector(".modalImg");
+  model.modal.currentPictureIndex = index;
   modal.classList.toggle("appear");
   modalImage.src = picture;
+  generateComments(index);
 }
 
 function hamburger() {
@@ -131,10 +121,14 @@ function hamburger() {
 function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");
   const menuItem = document.querySelectorAll(".menuItem");
-  const menu = document.querySelector(".menu")
-  menu.classList.toggle("show")
+  const menu = document.querySelector(".menu");
+  menu.classList.toggle("show");
   hamburger.classList.toggle("show");
   menuItem.forEach((item) => {
     item.classList.toggle("show");
   });
+}
+
+function showModalComments() {
+  document.querySelector(".pictureComments").classList.toggle("show");
 }

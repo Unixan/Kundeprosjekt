@@ -159,6 +159,7 @@ li {
 }
 
 .modalImg {
+  z-index: 10;
   grid-area: modalcenter;
   max-height: 100vh;
   height: 90%;
@@ -174,14 +175,40 @@ li {
   cursor: pointer;
 }
 
-.linkBox .button {
+.linkbox {
   grid-area: modalleft;
-  height: 30px;
-  background-color: transparent;
-  width: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: space-evenly;
+  display: grid;
+  margin: 20px;
+  border: solid white 2px;
+  border-radius: 7.5% / 50%;
+  height: 50px;
+  width: 300px;
+  justify-self: center;
+  align-self: flex-end;
 }
 
-.pictureComment {
+.button {
+  margin: auto;
+  height: 40px;
+  background-color: transparent;
+  width: 40px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover{
+  scale: 1.2;
+}
+
+.button:active{
+  scale: 1;
+  transition: 0.05s
+}
+
+.pictureComments {
   min-width: 200px;
   width: 60%;
   font-size: larger;
@@ -189,15 +216,26 @@ li {
   background-color: white;
   text-align: justify;
   justify-self: center;
-  align-self: flex-end;
   overflow-y: scroll;
   padding: 1em;
   grid-area: modalleft;
+  max-height: 0;
+  opacity: 0;
+  /* max-height: 70vh; */
+  max-width: 0;
+  margin-left: 20px;
+  transition: 0.4s ease-in-out;
+  transform: rotate(-180deg);
+}
+
+.pictureComments.show{
+  transform: rotate(0);
   max-height: 70vh;
+  opacity: 1;
   max-width: 500px;
 }
 
-.pictureComment::-webkit-scrollbar {
+.pictureComments::-webkit-scrollbar {
   display: none;
 }
 
