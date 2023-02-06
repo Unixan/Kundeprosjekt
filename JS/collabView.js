@@ -52,11 +52,11 @@ function collabImages(){
                         collabImageExists = true;
                         html += /*HTML*/`
                         <div class="picBox">
-                                <h2 class="pictureTitle">${picture.title}</h2>
-                                <div>
-                                <img src="${picture.img}" class="picture" onclick="modalActivate(${i})"/>
-                                </div>
-                        </div>
+                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <div>
+                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                  </div>
+                </div>
                         `;        
                         banner = /*HTML*/ `
                         <h3 class="collabBanner" id="collabBannerId">
@@ -68,7 +68,7 @@ function collabImages(){
         }
         return html;
 }
-
+//undefined???
 function creatorSoMeLinks(){
         let html;
         const soMeCreator = model.creator.creatorSoMelinks;
