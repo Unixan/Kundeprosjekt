@@ -30,3 +30,4 @@ function editSoMe(){
     model.inputs.admin.editProfile.creatorSoMeLink[3].link = model.creator.creatorSoMelinks.links[3].link
     updateView()
 }
+
