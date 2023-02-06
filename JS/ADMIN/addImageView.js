@@ -84,16 +84,19 @@ function fetchCategories(index) {
                 onchange="model.inputs.admin.addPic.category[${i}].temp = this.value"
                 value="${model.inputs.admin.addPic.category[i].temp}"
             >
-            <button onclick="pushCategory(${
-              index != null ? `${i},${index}` : i
-            })">Legg til</button>
-            <button onclick="removeUnusedCategory(${
-              index != null ? `${i},${index}` : i
-            })">Fjern</button>
+            <button 
+              onclick="pushCategory(${index != null ? `${i},${index}` : i})">
+              Legg til
+            </button>
+            <button 
+              onclick="removeUnusedCategory(${index != null ? `${i},${index}` : i})">
+              Fjern
+            </button>
             <br>
-            <button onclick="addCategory(${
-              index == null ? null : index
-            })">Legg til kategori</button>
+            <button 
+              onclick="addCategory(${index == null ? null : index})">
+              Legg til kategori
+            </button>
       </div>
         `;
   }
@@ -198,10 +201,10 @@ function fetchSaveButtons(index) {
   <div>
     ${
       index != null
-      ? /*HTML*/ `
+        ? /*HTML*/ `
         <button onclick="saveEdit(${index})">Lagre endringer</button>
       `
-      : /*HTML*/ `
+        : /*HTML*/ `
         <button onclick="publishNew()">Publisér</button>
       `
     }
