@@ -37,7 +37,7 @@ function changeSoMe(index, thisValue){
 
 function updateSoMe(index){
 for(i = 0; i < model.creator.creatorSoMelinks.links.length; i++){
-    model.creator.creatorSoMelinks.links[i].link = model.inputs.admin.editProfile.creatorSoMeLink[i].link;
+    model.creator.creatorSoMelinks.links[index].link = model.inputs.admin.editProfile.creatorSoMeLink[index].link;
 }
 model.creator.creatorSoMelinks.editMode = false;
 updateView();
