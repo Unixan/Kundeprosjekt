@@ -20,11 +20,11 @@ function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
   console.log(index);
   let html = "";
-
-  let catecoryDiv = fetchCategories(index);
+  let menu = menuBar();
   let titleDiv = fetchTitle(index);
   let imageDiv = fetchImage(index);
   let descriptionDiv = fetchDescription(index);
+  let catecoryDiv = fetchCategories(index);
   let saveButtonsDiv = fetchSaveButtons(index);
 
   html = /*HTML*/ `
@@ -33,7 +33,7 @@ function updateAddImageView(index) {
     src=${model.backLogo}>
     </a>
   </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
-
+  
   <div>
     ${titleDiv}
     ${imageDiv}
@@ -43,6 +43,99 @@ function updateAddImageView(index) {
     </div>
     `;
   appDiv.innerHTML = html;
+}
+
+function fetchTitle(index) {
+  let titleDiv = /*html*/ `
+  <div>
+  <h1>${
+    index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
+  }</h1>
+  ${
+    index != null
+    ? /*HTML*/ `<input 
+    type="text" 
+    value="${model.pictures[index].title}" 
+    onchange="model.inputs.admin.addPic.title = this.value"
+    >`
+    : /*HTML*/ `<input 
+    type="text" 
+    placeholder="Skriv inn tittel" 
+    onchange="model.inputs.admin.addPic.title = this.value"
+    value="${model.inputs.admin.addPic.title}"
+    >`
+  }
+  </div>
+  `;
+  return titleDiv;
+}
+
+function fetchImage(index) {
+  let imageDiv = /*html*/ `
+    <div> 
+        ${
+          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
+          index != null
+            ? /*HTML*/ `
+            <img src='${model.pictures[index].img}'>
+            ${
+              !model.areYouSureImg
+                ? "" //spør bruker om de er sikker på at de vil slette bildet
+                : /*HTML*/ `
+            <p>Er du sikker på at du vil slette bildet for alltid?</p>
+            <input 
+                type="checkbox" 
+                ${!model.areYouSure ? "" : "checked"} 
+                name="delete"
+                onchange="model.areYouSure = !model.areYouSure"
+            >
+            <label for="delete">
+              Ja 
+            </label>
+            `
+            }
+            <button onclick="deletePicture(${index})">Slett bilde</button> 
+          `
+            : //ellers får du input for å legge til nytt
+              /*HTML*/ `
+              ${
+                //skjekker om det er et bilde i input
+                model.inputs.admin.addPic.img != ""
+                  ? `<img src='${model.inputs.admin.addPic.img}'>`
+                  : "<p>Legg til bilde</p>"
+              }
+            <!--knapp bruker kan trykke på for å laste opp bilder
+            sender hele input-taggen med bildet som innhold til userUpload() i controller-->
+            <input 
+            type="file"
+            oninput="userUpload(this)"
+            accept="image/jpeg, image/png, image/jpg"
+             >
+             `
+        }
+    </div>
+    `;
+    return imageDiv;
+  }
+  
+  function fetchDescription(index) {
+    let descriptionDiv = `
+  ${
+    index != null
+    ? `<input 
+        type="text" 
+        value="${model.pictures[index].description}" 
+        onchange="model.inputs.admin.addPic.description = this.value"
+      >`
+      : ` <input 
+        type="text" 
+        placeholder="Skriv inn beskrivelse" 
+        onchange="model.inputs.admin.addPic.description = this.value"
+        value="${model.inputs.admin.addPic.description}"
+      >`
+    }
+  `;
+  return descriptionDiv;
 }
 
 function fetchCategories(index) {
@@ -101,99 +194,6 @@ function fetchCategories(index) {
         `;
   }
   return catecoryDiv;
-}
-
-function fetchTitle(index) {
-  let titleDiv = /*html*/ `
-  <div>
-  <h1>${
-    index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
-  }</h1>
-  ${
-    index != null
-      ? /*HTML*/ `<input 
-      type="text" 
-      value="${model.pictures[index].title}" 
-      onchange="model.inputs.admin.addPic.title = this.value"
-      >`
-      : /*HTML*/ `<input 
-      type="text" 
-      placeholder="Skriv inn tittel" 
-      onchange="model.inputs.admin.addPic.title = this.value"
-      value="${model.inputs.admin.addPic.title}"
-      >`
-  }
-  </div>
-  `;
-  return titleDiv;
-}
-
-function fetchImage(index) {
-  let imageDiv = /*html*/ `
-    <div> 
-        ${
-          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
-          index != null
-            ? /*HTML*/ `
-            <img src='${model.pictures[index].img}'>
-            ${
-              !model.areYouSureImg
-                ? "" //spør bruker om de er sikker på at de vil slette bildet
-                : /*HTML*/ `
-            <p>Er du sikker på at du vil slette bildet for alltid?</p>
-            <input 
-                type="checkbox" 
-                ${!model.areYouSure ? "" : "checked"} 
-                name="delete"
-                onchange="model.areYouSure = !model.areYouSure"
-            >
-            <label for="delete">
-              Ja 
-            </label>
-            `
-            }
-            <button onclick="deletePicture(${index})">Slett bilde</button> 
-          `
-            : //ellers får du input for å legge til nytt
-              /*HTML*/ `
-              ${
-                //skjekker om det er et bilde i input
-                model.inputs.admin.addPic.img != ""
-                  ? `<img src='${model.inputs.admin.addPic.img}'>`
-                  : "<p>Legg til bilde</p>"
-              }
-            <!--knapp bruker kan trykke på for å laste opp bilder
-            sender hele input-taggen med bildet som innhold til userUpload() i controller-->
-            <input 
-            type="file"
-            oninput="userUpload(this)"
-            accept="image/jpeg, image/png, image/jpg"
-             >
-             `
-        }
-    </div>
-    `;
-  return imageDiv;
-}
-
-function fetchDescription(index) {
-  let descriptionDiv = `
-  ${
-    index != null
-      ? `<input 
-        type="text" 
-        value="${model.pictures[index].description}" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-      >`
-      : ` <input 
-        type="text" 
-        placeholder="Skriv inn beskrivelse" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-        value="${model.inputs.admin.addPic.description}"
-      >`
-  }
-  `;
-  return descriptionDiv;
 }
 
 function fetchSaveButtons(index) {
