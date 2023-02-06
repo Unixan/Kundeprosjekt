@@ -24,3 +24,8 @@ function updateAbout(){
     model.creator.aboutCreator.editMode = false;
     updateAdminContactView();
 }
+
+function editSoMe(){
+    model.creator.creatorSoMelinks.editMode = true;
+    
+}
