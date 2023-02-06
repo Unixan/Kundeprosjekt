@@ -20,6 +20,126 @@ function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
   console.log(index);
   let html = "";
+  let menu = menuBar();
+  let titleDiv = fetchTitle(index);
+  let imageDiv = fetchImage(index);
+  let descriptionDiv = fetchDescription(index);
+  let catecoryDiv = fetchCategories(index);
+  let saveButtonsDiv = fetchSaveButtons(index);
+
+  html = /*HTML*/ `
+  <div><a onclick="backEdit()">
+    <img 
+    src=${model.backLogo}>
+    </a>
+  </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
+  
+  <div>
+    ${titleDiv}
+    ${imageDiv}
+    ${descriptionDiv}
+    ${catecoryDiv}
+    ${saveButtonsDiv}
+    </div>
+    `;
+  appDiv.innerHTML = html;
+}
+
+function fetchTitle(index) {
+  let titleDiv = /*html*/ `
+  <div>
+  <h1>${
+    index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
+  }</h1>
+  ${
+    index != null
+    ? /*HTML*/ `<input 
+    type="text" 
+    value="${model.pictures[index].title}" 
+    onchange="model.inputs.admin.addPic.title = this.value"
+    >`
+    : /*HTML*/ `<input 
+    type="text" 
+    placeholder="Skriv inn tittel" 
+    onchange="model.inputs.admin.addPic.title = this.value"
+    value="${model.inputs.admin.addPic.title}"
+    >`
+  }
+  </div>
+  `;
+  return titleDiv;
+}
+
+function fetchImage(index) {
+  let imageDiv = /*html*/ `
+    <div> 
+        ${
+          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
+          index != null
+            ? /*HTML*/ `
+            <img src='${model.pictures[index].img}'>
+            ${
+              !model.areYouSureImg
+                ? "" //spør bruker om de er sikker på at de vil slette bildet
+                : /*HTML*/ `
+            <p>Er du sikker på at du vil slette bildet for alltid?</p>
+            <input 
+                type="checkbox" 
+                ${!model.areYouSure ? "" : "checked"} 
+                name="delete"
+                onchange="model.areYouSure = !model.areYouSure"
+            >
+            <label for="delete">
+              Ja 
+            </label>
+            `
+            }
+            <button onclick="deletePicture(${index})">Slett bilde</button> 
+          `
+            : //ellers får du input for å legge til nytt
+              /*HTML*/ `
+              ${
+                //skjekker om det er et bilde i input
+                model.inputs.admin.addPic.img != ""
+                  ? `<img src='${model.inputs.admin.addPic.img}'>`
+                  : "<p>Legg til bilde</p>"
+              }
+            <!--knapp bruker kan trykke på for å laste opp bilder
+            sender hele input-taggen med bildet som innhold til userUpload() i controller-->
+            <input 
+            type="file"
+            oninput="userUpload(this)"
+            accept="image/jpeg, image/png, image/jpg"
+             >
+             `
+        }
+    </div>
+    `;
+    return imageDiv;
+  }
+  
+  function fetchDescription(index) {
+    let descriptionDiv = `
+  ${
+    index != null
+    ? `<input 
+        type="text" 
+        value="${model.pictures[index].description}" 
+        onchange="model.inputs.admin.addPic.description = this.value"
+      >`
+      : ` <input 
+        type="text" 
+        placeholder="Skriv inn beskrivelse" 
+        onchange="model.inputs.admin.addPic.description = this.value"
+        value="${model.inputs.admin.addPic.description}"
+      >`
+    }
+  `;
+  return descriptionDiv;
+}
+
+function fetchCategories(index) {
+  let catecoryDiv = "";
   model.inputs.admin.addPic.category = model.filter;
   if (index != null) {
     //setter kategorier på valgt bilde til å være "checked"
@@ -28,7 +148,6 @@ function updateAddImageView(index) {
         filterList.checked = true;
     });
   }
-  let catecoryDiv = "";
   for (let i = 0; i < model.inputs.admin.addPic.category.length; i++) {
     //genererer categoribokser
     if (model.inputs.admin.addPic.category[i].cat) {
@@ -51,116 +170,45 @@ function updateAddImageView(index) {
     } //om vi legger til ny kategori
     else
       catecoryDiv += /*HTML*/ `
+      <div>
             <input
                 type="text"
                 placeholder= "Skriv inn kategorinavn"
                 onchange="model.inputs.admin.addPic.category[${i}].temp = this.value"
                 value="${model.inputs.admin.addPic.category[i].temp}"
             >
-            <button onclick="pushCategory(${
-              index != null ? `${i},${index}` : i
-            })">Legg til</button>
-            <button onclick="removeUnusedCategory(${
-              index != null ? `${i},${index}` : i
-            })">Fjern</button>
+            <button 
+              onclick="pushCategory(${index != null ? `${i},${index}` : i})">
+              Legg til
+            </button>
+            <button 
+              onclick="removeUnusedCategory(${index != null ? `${i},${index}` : i})">
+              Fjern
+            </button>
             <br>
+            <button 
+              onclick="addCategory(${index == null ? null : index})">
+              Legg til kategori
+            </button>
+      </div>
         `;
   }
-  html = /*HTML*/ `
-  <div><a onclick="backEdit()"><img src=${
-    model.backLogo
-  }></a></div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
+  return catecoryDiv;
+}
+
+function fetchSaveButtons(index) {
+  let saveButtonsDiv = `
   <div>
-    <h1>${
-      index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
-    }</h1>
     ${
       index != null
-        ? /*HTML*/ `<input 
-        type="text" 
-        value="${model.pictures[index].title}" 
-        onchange="model.inputs.admin.addPic.title = this.value"
-        >`
-        : /*HTML*/ `<input 
-        type="text" 
-        placeholder="Skriv inn tittel" 
-        onchange="model.inputs.admin.addPic.title = this.value"
-        value="${model.inputs.admin.addPic.title}"
-        >`
+        ? /*HTML*/ `
+        <button onclick="saveEdit(${index})">Lagre endringer</button>
+      `
+        : /*HTML*/ `
+        <button onclick="publishNew()">Publisér</button>
+      `
     }
-        <div> 
-        ${
-          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
-          index != null
-            ? /*HTML*/ `
-            <img src='${model.pictures[index].img}'>
-            ${
-              !model.areYouSureImg
-                ? "" //spør bruker om de er sikker på at de vil slette bildet
-                : /*HTML*/ `
-            <p>Er du sikker på at du vil slette bildet for alltid?</p>
-            <input 
-                type="checkbox" 
-                ${!model.areYouSure ? "" : "checked"} 
-                name="delete"
-                onchange="model.areYouSure = !model.areYouSure"
-            >
-            <label for="delete">
-              Ja 
-            </label>
-            `
-            }
-            <button onclick="deletePicture(${index})">Slett bilde</button>
-            <input 
-            type="text" 
-            value="${model.pictures[index].description}" 
-            onchange="model.inputs.admin.addPic.description = this.value"
-            >
-            </div>
-          `
-            : //ellers får du input for å legge til nytt
-              /*HTML*/ `
-              ${
-                //skjekker om det er et bilde i input
-                model.inputs.admin.addPic.img != ""
-                  ? `<img src='${model.inputs.admin.addPic.img}'>`
-                  : "<p>Legg til bilde</p>"
-              }
-            <!--knapp bruker kan trykke på for å laste opp bilder
-            sender hele input-taggen med bildet som innhold til userUpload() i controller-->
-            <input 
-            type="file"
-            oninput="userUpload(this)"
-            accept="image/jpeg, image/png, image/jpg"
-             >
-            
-        </div>
-        <input 
-            type="text" 
-            placeholder="Skriv inn beskrivelse" 
-            onchange="model.inputs.admin.addPic.description = this.value"
-            value="${model.inputs.admin.addPic.description}"
-            >
-        `
-        }
-        <div>
-            ${catecoryDiv}
-            <button onclick="addCategory(${
-              index == null ? null : index
-            })">Legg til kategori</button>
-        </div><br>
-        <div>
-          ${
-            index != null
-              ? /*HTML*/ `
-          <button onclick="saveEdit(${index})">Lagre endringer</button>
-          `
-              : /*HTML*/ `
-          <button onclick="publishNew()">Publisér</button>
-          `
-          }
-        </div>
-    </div>
-    `;
-  appDiv.innerHTML = html;
+  </div>
+  `;
+  return saveButtonsDiv;
 }
