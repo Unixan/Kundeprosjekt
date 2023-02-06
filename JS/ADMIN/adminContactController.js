@@ -22,7 +22,7 @@ function updateAbout(){
     updateView();
 }
 
-function editSoMe(index){
+function editSoMe(){
     model.creator.creatorSoMelinks.editMode = true;
     updateView()
 }
