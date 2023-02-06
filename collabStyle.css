@@ -60,10 +60,11 @@
 
 .collabBanner{
     grid-area: banner;
-    display: none;
-    justify-self: center;
-    align-self: center;
-    padding: 10px;
+    padding: 5px;
+    color: white;
+    background: linear-gradient(to bottom, #2a2f35 0%, transparent 100%);
+    text-align: center;
+    
 }
 .collabExists{
     display: flex;

@@ -30,6 +30,7 @@ function updateCollabView(){
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                 </div>
+        <div class="collabBanner">${getBanner()}</div>
         </div>
         <div class="scrollBox">${collabImages()}</div>
         <footer class="footer footerPlacement">
@@ -43,31 +44,25 @@ function updateCollabView(){
 
 function collabImages(){
         let html = '';
-        let banner = '';
-        let collabImageExists = false;
+        
         for(let i = 0; i < model.pictures.length; i++){
                 let picture = model.pictures[i];
                 model.pictures[i].category.forEach((catArr) => {
                         if(catArr.includes('Collaboration')){
-                        collabImageExists = true;
                         html += /*HTML*/`
                         <div class="picBox">
-                  <h2 class="pictureTitle">${picture.title}</h2>
-                  <div>
-                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
-                  </div>
-                </div>
-                        `;        
-                        banner = /*HTML*/ `
-                        <h3 class="collabBanner" id="collabBannerId">
-                        Tidligere samarbeidsprosjekter</h3>
-                        `;
+                        <h2 class="pictureTitle">${picture.title}</h2>
+                                <div>
+                                <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                                </div>
+                        </div>
+                        `;               
                         }
-                        return banner;
                 })
         }
         return html;
 }
+
 //undefined???
 function creatorSoMeLinks(){
         let html;
@@ -79,6 +74,21 @@ function creatorSoMeLinks(){
                 `;
         }
         return html;
+}
+
+function getBanner(){
+        let banner = '';
+        for(let i = 0; i < model.pictures.length; i++){
+                model.pictures[i].category.forEach((catArr) => {
+                        if(catArr.includes('Collaboration')){
+                                banner = /*HTML*/ `
+                                <h3 class="collabBanner">
+                                Tidligere samarbeidsprosjekter</h3>
+                                `;
+                        }
+                })
+        }
+        return banner;
 }
 /* Todo
 -fylle inn info i css
