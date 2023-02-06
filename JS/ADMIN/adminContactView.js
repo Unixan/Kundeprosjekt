@@ -5,9 +5,8 @@ function updateAdminContactView(){
     let someHTML = "";
     if(model.creator.creatorSoMelinks.editMode === false){
     for(i = 0; i < model.creator.creatorSoMelinks.links.length; i ++){
-      someHTML += `<div><a href="${model.creator.creatorSoMelinks.links[i].link}" target="_blank" rel="noopener noreferrer"><img src=${model.creator.creatorSoMelinks.links[i].logoimg}></a></div>`
+      someHTML += `<div><a href="${model.creator.creatorSoMelinks.links[i].link}" target="_blank" rel="noopener noreferrer"><img src=${model.creator.creatorSoMelinks.links[i].logoimg}></a><button onclick="editSoMe(${i})">Rediger SoMe-linker</button></div>`
   }
-  someHTML += `<button onclick="editSoMe()">Rediger SoMe-linker</button>`;
 }
 else if (model.creator.creatorSoMelinks.editMode === true){
   for(i = 0; i < model.creator.creatorSoMelinks.links.length; i++){
@@ -20,23 +19,8 @@ else if (model.creator.creatorSoMelinks.editMode === true){
     
   
     document.getElementById('app').innerHTML = /*html*/ `
-    <header>
-  <nav class="menuBar">
- 
-        <ul class="menu">
-          <li class="menuItem">
-            <a href="#" class="menuLink">Rediger filtrering</a>
-          </li>
-          <li class="menuItem">
-            <a href="#" class="menuLink">Adminside</a>
-          </li>
-          <li class="menuItem">
-            <a href="#" class="menuLink">Logg ut</a>
-          </li>
-        </ul>
-    </nav>
-  </header>
-    
+    ${menuBar()}
+    ${hamburger()}
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
