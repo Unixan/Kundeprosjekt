@@ -11,18 +11,25 @@ function updateCollabView(){
         appDiv.innerHTML = /*HTML*/`
         ${menuBar()}
         ${hamburger()}
-        <div class="scrollBox collabInfo-box">
+        <div class="collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
-                <div class="creatorImg"><img src='${model.creator.aboutPicture.picture}'/></div>
+                <div class="creatorImg">
+                <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 300px;"/>
+                </div>
                 <div class="collab-SoMeLinks">Social media links here</div>
 
                 <p class="collabInfo">Hei, jeg ønsker flere samarbeidspartnere! 
                 Kontakt meg gjerne.
                 </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
                 <div class="collabContactInfo-box">
                 <label class="contactInfoTitle">Kontakt meg her!</label>
-                <a class="collab-email">${model.creator.email}</a>
-                <a class="collab-tlf">${model.creator.tlf}</a>
+                <div><a class="collab-email">${model.creator.email}</a>
+                <a class="collab-tlf">${model.creator.tlf}</a></div>
                 </div>
         </div>
         <div class="scrollBox">${collabImages()}</div>
