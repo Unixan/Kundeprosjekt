@@ -28,7 +28,12 @@ const model = {
         aboutCreator: "",
         aboutPicture: "",
         title: "",
-        creatorSoMeLink: "",
+        creatorSoMeLink:[
+          {link: ''},
+          {link: ''},
+          {link: ''},
+          {link: ''},
+        ]
       },
     },
   },
