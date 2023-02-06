@@ -15,6 +15,7 @@ function updateContactView(){
     let someHTML = "";
     document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
+    ${hamburger()}
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
@@ -24,6 +25,7 @@ function updateContactView(){
     <div>${someHTML}
     </div>
     <p>${model.creator.aboutCreator}</p>
+    
     `
     for(i = 0; i < model.creator.creatorSoMelinks.length; i ++){
         someHTML += `<div><a><img src=${model.creator.creatorSoMelinks[i].logoimg}></a></div>`
