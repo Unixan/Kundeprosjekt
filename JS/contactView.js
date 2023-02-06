@@ -15,7 +15,6 @@ function updateContactView(){
     let someHTML = "";
     document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
-    <div><a onclick="backButton()"><img src=${model.backLogo}></a></div>
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
