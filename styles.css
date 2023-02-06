@@ -8,9 +8,10 @@
   display: grid;
   grid-template-areas:
     "headLeft head headRight"
-    "body body body"
+    "bodyleft1 body1 bodyright1"
+    "bodyleft2 body bodyright2"
     "footer footer footer";
-  grid-template-rows: 60px auto 40px;
+  grid-template-rows: 60px auto auto 40px;
   grid-template-columns: 240px auto 240px;
   background-color: #cedbad;
 }
