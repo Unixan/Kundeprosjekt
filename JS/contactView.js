@@ -22,7 +22,7 @@ function updateContactView() {
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
             <div class="collabInfo">
-                    <p>${model.creator.title}</p>
+                    <p style="font-weight: bold;">${model.creator.title}</p>
                     <p class="contact-info">
                         <a>${model.creator.email}</a><br/>
                         <a>${model.creator.tlf}</a>
