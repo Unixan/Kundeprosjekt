@@ -142,7 +142,7 @@ li {
   gap: 0;
   flex-direction: column;
   background-color: #2a2f35;
-  width: 30vw;
+  width: 300px;
   text-align: center;
   transition: 0.4s ease-in-out;
 }

@@ -96,11 +96,12 @@ function closeModal() {
   modal.classList.toggle("appear");
   modalImage.src = "";
 }
+1;
 
 function openModal(index) {
-  pictures = index
-  model.modal.showModal = !model.modal.showModal
-  updateView()
+  pictures = index;
+  model.modal.showModal = !model.modal.showModal;
+  updateView();
 }
 
 function hamburger() {
