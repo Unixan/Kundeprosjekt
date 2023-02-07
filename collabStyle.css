@@ -3,17 +3,26 @@
     justify-self: center;
     align-self: start;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 270px 270px 270px;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 
-        'title title title'
-        'info1 info1 imageSpace'
-        'info1 info1 info2'
-        'banner banner banner';
+    'title title title'
+    'info1 info1 imageSpace'
+    'info1 info1 info2'
+    'banner banner banner';
 }
 .footerPlacement{
     position: sticky;
     bottom: 0;
+}
+.collabBanner{
+    grid-area: banner;
+    padding: 5px;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to bottom, #2a2f35 0%, transparent 100%);
+    text-align: center;
+    
 }
 
 .collabTitle{
@@ -21,7 +30,8 @@
     justify-self: start;
     align-self: center;
     font-size: 25px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .creatorImg{
@@ -58,14 +68,6 @@
 }
 
 
-.collabBanner{
-    grid-area: banner;
-    padding: 5px;
-    color: white;
-    background: linear-gradient(to bottom, #2a2f35 0%, transparent 100%);
-    text-align: center;
-    
-}
 .collabExists{
     display: flex;
 }

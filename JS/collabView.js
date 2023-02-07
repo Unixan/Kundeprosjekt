@@ -14,7 +14,7 @@ function updateCollabView(){
         <div class="collabInfo-box">
                 <div class="collabTitle">Samarbeidsprosjekter</div>
                 <div class="creatorImg">
-                <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 300px;"/>
+                <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 200px;"/>
                 </div>
                 <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
