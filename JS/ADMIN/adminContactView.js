@@ -29,8 +29,8 @@ function updateAdminContactView() {
     <div>
     <img src=${model.creator.aboutPicture.picture} alt="Profilbilde av Jarand Midtgaard"><button onclick="editProfilePic()">Rediger bilde</button>
     <div> <!--SoMe linker-->
-    <div>${someHTML}
-    </div>
+    ${someHTML}
+    
     </div>
     <div>${aboutCreatorEdit}</div>
     `
