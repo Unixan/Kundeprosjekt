@@ -3,7 +3,7 @@
     justify-self: center;
     align-self: start;
     display: grid;
-    grid-template-columns: 270px 270px 270px;
+    grid-template-columns: 270px 270px 180px;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 
     'title title title'
@@ -38,14 +38,15 @@
     grid-area: imageSpace;
     justify-self: center;
     align-self: center;
-    padding: 10px;
+    
    
 }
 
 .collab-SoMeLinks{
     grid-area: info2;
     display: flex;
-    padding-left: 10px;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .collabInfo{
@@ -55,8 +56,13 @@
     order: 1;
     padding: 10px;
 }
-.collabInfoParagraph{
+.contact-info{
     order: 2;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.collabInfoParagraph{
+    order: 3;
     margin-top: 20px;
 }
 
