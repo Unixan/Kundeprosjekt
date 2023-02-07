@@ -93,7 +93,6 @@ function closeModal() {
   const modal = document.querySelector(".modal");
   const modalImage = document.querySelector(".modalImg");
   modal.classList.toggle("appear");
-  model.modal.currentPictureIndex = null;
   modalImage.src = "";
 }
 
@@ -101,10 +100,9 @@ function modalActivate(index) {
   const picture = model.pictures[index].img;
   const modal = document.querySelector(".modal");
   const modalImage = document.querySelector(".modalImg");
-  
+
   modal.classList.toggle("appear");
   modalImage.src = picture;
- 
 }
 
 function hamburger() {
