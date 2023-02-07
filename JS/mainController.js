@@ -5,8 +5,8 @@ function changeToContactView() {
   updateView();
 }
 
-function changeToCollabView() {
-  model.state = "collabView";
+function updateFilterView() {
+  model.state = "filterView";
   updateView();
 }
 
