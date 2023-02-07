@@ -14,7 +14,7 @@ function updateContactView() {
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
             <div class="creatorImg">
-            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 200px;"/>
+            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 220px;"/>
             </div>
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
@@ -42,7 +42,6 @@ function updateContactView() {
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){
     let html = '';
-    
     for(let i = 0; i < model.pictures.length; i++){
             let picture = model.pictures[i];
             model.pictures[i].category.forEach((catArr) => {
@@ -54,14 +53,15 @@ function collabImages(){
                             <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
                             </div>
                     </div>
-                    `;               
+                    `; 
+
                     }
             })
     }
     return html;
 }
 
-//undefined???
+
 function creatorSoMeLinks(){
     let html = '';
     const soMeCreator = model.creator.creatorSoMelinks.links;
@@ -81,7 +81,7 @@ function getBanner(){
                     if(catArr.includes('Collaboration')){
                             banner = /*HTML*/ `
                             <h3 class="collabBanner">
-                            Prosjekter</h3>
+                            Samarbeidsprosjekter</h3>
                             `;
                     }
             })

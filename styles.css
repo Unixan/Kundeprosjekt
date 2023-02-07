@@ -103,13 +103,15 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 0% 50%;
+  background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 50% 50%;
 }
 
 .hamburger {
+  position: absolute;
+  top: 10px;
+  right: 12px;
   display: block;
   cursor: pointer;
-  /* border: solid white 1px; */
 }
 
 .hamburger .bar {
@@ -121,16 +123,37 @@ li {
   background-color: white;
 }
 
+.hamburger.show .bar:nth-child(1) {
+  transform-origin: 50%;
+  transform: translateY(11px) rotate(45deg);
+}
+.hamburger.show .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.show .bar:nth-child(3) {
+  transform-origin: 50%;
+  transform: translateY(-11px) rotate(-45deg);
+}
+
 .menu {
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
+  position: fixed;
+  right: -100%;
+  top: 60px;
+  gap: 0;
+  flex-direction: column;
+  background-color: #2a2f35;
+  width: 30vw;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+
+.menu.show {
+  right: 0;
 }
 
 .menuItem {
   font-size: 20px;
+  margin: 16px 0;
 }
 
 .menuLink {
@@ -162,9 +185,7 @@ li {
   top: 0;
   left: 0;
   background-color: hsla(0, 0%, 0%, 0.8);
-  z-index: 1;
-  opacity: 0;
-  pointer-events: none;
+  z-index: 10;
   overflow: auto;
 }
 
@@ -259,12 +280,7 @@ li {
   display: none;
 }
 
-.modal.appear {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.modal.appear .modalImg {
+.modalImg {
   animation: zoom 0.3s linear;
 }
 
@@ -283,29 +299,6 @@ li {
   .app {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .hamburger {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    display: block;
-  }
-
-  .hamburger.show .bar:nth-child(1) {
-    transform-origin: 50%;
-    transform: translateY(11px) rotate(45deg);
-  }
-  .hamburger.show .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.show .bar:nth-child(3) {
-    transform-origin: 50%;
-    transform: translateY(-11px) rotate(-45deg);
-  }
-
-  .menuBar {
-    background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 50% 50%;
   }
 
   .menu {

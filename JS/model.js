@@ -39,7 +39,7 @@ const model = {
   },
 
   //data
-
+  modal:{showModal: false, modalPicture: '', modalComments: ''},
   userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
   adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
   filter: [
@@ -102,7 +102,7 @@ const model = {
       title: "Home Atelier 1",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration",],
+      category: ["Architecture", "Building", "Completed",],
       comments: [{ user: "Knut Arild", comment: "Dette var lekkert! 10/10." }],
     },
     {
@@ -112,7 +112,7 @@ const model = {
       title: "Home Atelier 2",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration",],
+      category: ["Architecture", "Building", "Completed",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -122,7 +122,7 @@ const model = {
       title: "Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration",],
+      category: ["Architecture", "Building", "Completed",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -225,7 +225,7 @@ const model = {
       title: "Architectural Projects projects 1",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic","Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -235,7 +235,7 @@ const model = {
       title: "Architectural Projects projects 2",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic","Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -245,7 +245,7 @@ const model = {
       title: "Architectural Projects projects 3",
       description: "",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic",],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
   ],

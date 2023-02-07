@@ -22,7 +22,7 @@ function updateAddImageView(index) {
   let html = "";
   let menu = menuBar();
   let titleDiv = fetchTitle(index);
-  let projectDiv = fetchProject(index);
+  // let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
   let descriptionDiv = fetchDescription(index);
   let catecoryDiv = fetchCategories(index);
@@ -57,12 +57,12 @@ function fetchTitle(index) {
   }</h1>
   ${
     index != null
-    ? /*HTML*/ `<input 
+      ? /*HTML*/ `<input 
     type="text" 
     value="${model.pictures[index].title}" 
     onchange="model.inputs.admin.addPic.title = this.value"
     >`
-    : /*HTML*/ `<input 
+      : /*HTML*/ `<input 
     type="text" 
     placeholder="Skriv inn tittel" 
     onchange="model.inputs.admin.addPic.title = this.value"
@@ -74,8 +74,8 @@ function fetchTitle(index) {
   return titleDiv;
 }
 
-function fetchProject(index){
-  //trålet gjennom model.pictures[index].projectId.number og henter name
+function fetchProject(index) {
+
 }
 
 function fetchImage(index) {
@@ -124,15 +124,15 @@ function fetchImage(index) {
         }
     </div>
     `;
-    return imageDiv;
-  }
-  
-  function fetchDescription(index) {
-    let descriptionDiv = `
+  return imageDiv;
+}
+
+function fetchDescription(index) {
+  let descriptionDiv = `
     <div class="addDescription">
   ${
     index != null
-    ? `<input 
+      ? `<input 
         type="text" 
         value="${model.pictures[index].description}" 
         onchange="model.inputs.admin.addPic.description = this.value"
@@ -143,7 +143,7 @@ function fetchImage(index) {
         onchange="model.inputs.admin.addPic.description = this.value"
         value="${model.inputs.admin.addPic.description}"
       >`
-    }
+  }
     </div>
   `;
   return descriptionDiv;
@@ -199,8 +199,8 @@ function fetchCategories(index) {
             <br>
             </div>
             `;
-          }
-    catecoryDiv += /*html*/`
+  }
+  catecoryDiv += /*html*/ `
             <button 
               onclick="addCategory(${index == null ? null : index})">
               Legg til kategori
