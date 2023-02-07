@@ -19,10 +19,11 @@ function updateContactView() {
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
             <div class="collabInfo">
-                    <p>${model.creator.title}
+                    <p>${model.creator.title}</p>
+                    <p class="contact-info">
+                        <a>${model.creator.email}</a>
+                        <a>${model.creator.tlf}</a>
                     </p>
-                    <p><a class="collab-email">${model.creator.email}</a></p>
-                    <p><a class="collab-tlf">${model.creator.tlf}</a></p>
                     <p class="collabInfoParagraph">
                     ${model.creator.aboutCreator.about}
                     </p>
