@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .app {
@@ -13,7 +14,7 @@
     "footer footer footer";
   grid-template-rows: 60px auto auto 40px;
   grid-template-columns: 240px auto 240px;
-  background-color: #cedbad;
+  background-color: white;
 }
 
 a {
@@ -31,28 +32,46 @@ li {
 }
 
 .picBox {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.picBox:nth-child(1) {
-  padding-top: 20px;
-  padding-bottom: 5px;
+.picContainer {
+  max-height: 500px;
+  max-width: 500px;
+  background-color: #cedbad;
+  margin: 10px 0;
 }
 
-.picBox:nth-last-child() {
-  padding-top: 5px;
-  padding-bottom: 20px;
+.picContainer:nth-child(1) {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.picContainer:nth-last-child() {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.picBackground{
+  background-color: #cedbad;
+  transition: 0.3s all ease;
+}
+
+.picBackground:hover{
+  transform: scale(105%)
+
 }
 
 .picture {
-  padding: 5px 0;
-  height: 500px;
-  width: 500px;
+  margin: 0;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
   transition: 0.3s all ease;
   cursor: pointer;
+  background-color: #cedbad;
 }
 
 .picture:hover {
@@ -60,14 +79,19 @@ li {
 }
 
 .scrollBox {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  padding: 15px;
+  margin: 20px;
+  gap: 100px;
+  grid-template-columns: 300px 300px 300px;
+  grid-auto-rows: 300px;
   align-items: center;
   grid-area: body;
   max-width: 100%;
   overflow-y: scroll;
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 140px);
   scroll-behavior: smooth;
+  justify-self: center;
 }
 
 .scrollBox::-webkit-scrollbar {
@@ -199,13 +223,13 @@ li {
   transition: 0.3s;
 }
 
-.button:hover{
+.button:hover {
   scale: 1.2;
 }
 
-.button:active{
+.button:active {
   scale: 1;
-  transition: 0.05s
+  transition: 0.05s;
 }
 
 .pictureComments {
@@ -228,7 +252,7 @@ li {
   transform: rotate(-180deg);
 }
 
-.pictureComments.show{
+.pictureComments.show {
   transform: rotate(0);
   max-height: 70vh;
   opacity: 1;
