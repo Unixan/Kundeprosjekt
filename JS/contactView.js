@@ -14,7 +14,7 @@ function updateContactView() {
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
             <div class="creatorImg">
-            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 200px;"/>
+            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 220px;"/>
             </div>
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
@@ -81,7 +81,7 @@ function getBanner(){
                     if(catArr.includes('Collaboration')){
                             banner = /*HTML*/ `
                             <h3 class="collabBanner">
-                            Prosjekter</h3>
+                            Samarbeidsprosjekter</h3>
                             `;
                     }
             })

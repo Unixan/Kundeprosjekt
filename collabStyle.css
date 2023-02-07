@@ -18,7 +18,6 @@
 .collabBanner{
     grid-area: banner;
     padding: 5px;
-    width: 100%;
     text-align: center;
     
 }
@@ -44,7 +43,7 @@
     grid-area: info2;
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .collabInfo{
@@ -70,7 +69,13 @@
     padding: 10px;
 }
 
-
-.collabExists{
-    display: flex;
+@media (max-width: 700px) {
+    .collabInfo-box {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .collab-SoMeLinks{
+        justify-content: center;
+    }
 }
