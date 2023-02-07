@@ -8,7 +8,6 @@ function updateLoginView(){
     appDiv.innerHTML = /*HTML*/`
     <div class="container">
     <div class="logIn-Field">
-        <div class="logIn-Title">Velkommen</div>
         <label class="logIn-UnderTitle">Brukernavn</label>
         <input type="text" 
             id="usernameInput"
