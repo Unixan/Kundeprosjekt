@@ -65,9 +65,9 @@ function collabImages(){
 
 //undefined???
 function creatorSoMeLinks(){
-        let html;
-        const soMeCreator = model.creator.creatorSoMelinks;
-        for(let i = 0; i > soMeCreator.length; i++){
+        let html = '';
+        const soMeCreator = model.creator.creatorSoMelinks.links;
+        for(let i = 0; i < soMeCreator.length; i++){
                 html += /*HTML*/`
                 <a href="${soMeCreator[i].link}">
                 <img src='${soMeCreator[i].logoimg}'/></a>
