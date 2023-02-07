@@ -39,7 +39,7 @@ const model = {
   },
 
   //data
-  modal:{showModal: false, modalPicture: ''},
+  modal:{showModal: false, modalPicture: '', modalComments: ''},
   userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
   adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
   filter: [
