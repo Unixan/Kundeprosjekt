@@ -3,13 +3,13 @@
     justify-self: center;
     align-self: start;
     display: grid;
-    grid-template-columns: 250px auto auto 250px;
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 
-        'side title title side'
-        'side info1 imageSpace side'
-        'side info1 info2 side'
-        'banner banner banner banner';
+        'title title title'
+        'info1 info1 imageSpace'
+        'info1 info1 info2'
+        'banner banner banner';
 }
 .footerPlacement{
     position: sticky;
