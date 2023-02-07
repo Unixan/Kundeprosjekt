@@ -11,7 +11,7 @@ function updateAdminContactView() {
   }
   else if (model.creator.creatorSoMelinks.editMode === true) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
-      someHTML += `<input type="text" value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" onchange="changeSoMe(${i},this.value)>`
+      someHTML += `<div><p>${model.creator.creatorSoMelinks.links[i].media}</p><input type="text" value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" onchange="changeSoMe(${i},this.value)"></div><br/>`
     }
     someHTML += `<button onclick="updateSoMe()">Lagre</button>`
   }
@@ -29,8 +29,8 @@ function updateAdminContactView() {
     <div>
     <img src=${model.creator.aboutPicture.picture} alt="Profilbilde av Jarand Midtgaard"><button onclick="editProfilePic()">Rediger bilde</button>
     <div> <!--SoMe linker-->
-    <div>${someHTML}
-    </div>
+    ${someHTML}
+    
     </div>
     <div>${aboutCreatorEdit}</div>
     `

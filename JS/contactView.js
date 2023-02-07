@@ -8,6 +8,9 @@ må disse også endres til lik stil.
 */
 
 function updateContactView() {
+    if (model.modal.showModal) {
+        appDiv.innerHTML += modal();
+      }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
     ${hamburger()}
@@ -19,7 +22,7 @@ function updateContactView() {
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
             <div class="collabInfo">
-                    <p>${model.creator.title}</p>
+                    <p style="font-weight: bold;">${model.creator.title}</p>
                     <p class="contact-info">
                         <a>${model.creator.email}</a><br/>
                         <a>${model.creator.tlf}</a>
@@ -34,7 +37,6 @@ function updateContactView() {
     <footer class="footer footerPlacement">
     ©Copyright
     </footer>
-    ${modal()}
     `;
 }
 
