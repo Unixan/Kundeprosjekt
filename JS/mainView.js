@@ -101,10 +101,10 @@ function modalActivate(index) {
   const picture = model.pictures[index].img;
   const modal = document.querySelector(".modal");
   const modalImage = document.querySelector(".modalImg");
-  model.modal.currentPictureIndex = index;
+  
   modal.classList.toggle("appear");
   modalImage.src = picture;
-  generateComments(index);
+ 
 }
 
 function hamburger() {
