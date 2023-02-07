@@ -1,9 +1,6 @@
-/*Login side som admin skal kunne logge seg på. Denne skal være på egen side. 
-    Ansvarlig: Becka
+/*Ansvarlig: Becka
 DONE
 */
-
-
 function updateLoginView(){
     appDiv.innerHTML = /*HTML*/`
     <div class="container">
@@ -38,6 +35,4 @@ function updateLoginView(){
     </div>
     </div>
     `;
-
 }
-

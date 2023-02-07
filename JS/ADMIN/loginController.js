@@ -2,7 +2,6 @@
     Ansvarlig: Becka
 DONE
 */
-
 function togglePassword(){
 const password = document.querySelector('#passwordInput');
 const type = password.getAttribute('type') === 

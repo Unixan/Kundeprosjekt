@@ -12,23 +12,22 @@
     align-content: center;
     align-items: center;
     justify-self: center;
-    border-radius: 20px;
-    border: 1px solid grey;
+    border-radius: 3px;
+    border: 1px solid;
+    box-shadow: 5px 6px #888888;
     height: auto;
     width: 350px;
-    background-color: beige;
+    background-color: #cedbad;
+    padding-top: 50px;
 }
 
 .logIn-Title{
     font-size: 30px;
     padding-bottom: 50px;
-    padding-top: 50px;
 }
-
 .logIn-UnderTitle{
     font-size: 18px;
 }
-
 .logIn-Input{
     width: 300px;
     height: 40px;
@@ -52,7 +51,8 @@
     border-radius: 20px;
     background: none;
     cursor: pointer;
-    background-color: #cedbad;
+    color: white;
+    background-color: #2a2f35;
     margin-bottom: 50px;
 }
 
@@ -60,16 +60,14 @@
     display: none;
     color: rgb(192, 27, 27);
     margin-bottom: 22px;
-    
 }
 .wrongLogIn{
     display: flex;
 }
-
 .passwordEye{
     position: absolute;
     cursor: pointer;
-    margin-bottom: -125px;
+    margin-bottom: -75px;
     margin-right: -250px;
     opacity: 0.5;
     user-select: none;

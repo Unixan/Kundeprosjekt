@@ -1,13 +1,11 @@
-/*
-Ansvarlig: Becka
-Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
-må disse også endres til lik stil. 
+/*Ansvarlig: Becka
+NB: kopier endringer fra mainView av bildene til collabImages,
+frem til et annet oppsett er nødvendig.  
 */
-
 function updateContactView() {
     if (model.modal.showModal) {
         appDiv.innerHTML += modal();
-      }
+    }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
     ${hamburger()}
@@ -36,7 +34,23 @@ function updateContactView() {
     </footer>
     `;
 }
-//Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
+
+//BANNERE SITTER FAST PÅ FORSIDEN, 
+//MEN BLIR IKKE MED I SCROLLINGA. 
+
+
+function creatorSoMeLinks(){
+    let html = '';
+    const soMeCreator = model.creator.creatorSoMelinks.links;
+    for(let i = 0; i < soMeCreator.length; i++){
+            html += /*HTML*/`
+            <a href="${soMeCreator[i].link}">
+            <img src='${soMeCreator[i].logoimg}'/></a>
+            `;
+    }
+    return html;
+}
+//Henter frem bilder hvis et bildet inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){
     let html = '';
@@ -52,21 +66,8 @@ function collabImages(){
                             </div>
                     </div>
                     `; 
-
                     }
             })
-    }
-    return html;
-}
-
-function creatorSoMeLinks(){
-    let html = '';
-    const soMeCreator = model.creator.creatorSoMelinks.links;
-    for(let i = 0; i < soMeCreator.length; i++){
-            html += /*HTML*/`
-            <a href="${soMeCreator[i].link}">
-            <img src='${soMeCreator[i].logoimg}'/></a>
-            `;
     }
     return html;
 }
