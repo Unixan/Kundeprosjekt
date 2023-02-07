@@ -21,7 +21,7 @@ function updateContactView() {
             <div class="collabInfo">
                     <p>${model.creator.title}</p>
                     <p class="contact-info">
-                        <a>${model.creator.email}</a>
+                        <a>${model.creator.email}</a><br/>
                         <a>${model.creator.tlf}</a>
                     </p>
                     <p class="collabInfoParagraph">

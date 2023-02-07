@@ -190,7 +190,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_1.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 4},
+      projectId: { name: '3D Print', number: 4},
       title: "Sculptures 1",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -200,7 +200,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 4},
+      projectId: { name: '3D Print', number: 4},
       title: "Sculptures 2",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -210,7 +210,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 4},
+      projectId: { name: '3D Print', number: 4},
       title: "Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
