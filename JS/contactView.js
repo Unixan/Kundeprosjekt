@@ -34,7 +34,7 @@ function updateContactView() {
             <div class="collabBanner">${getBanner()}</div>
     </div>
     <div class="scrollBox">${collabImages()}</div>
-    <footer class="footer footerPlacement">
+    <footer class="footer">
     ©Copyright
     </footer>
     `;

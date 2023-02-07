@@ -11,10 +11,7 @@
     'info1 info1 info2'
     'banner banner banner';
 }
-.footerPlacement{
-    position: sticky;
-    bottom: 0;
-}
+
 .collabBanner{
     grid-area: banner;
     padding: 5px;

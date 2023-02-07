@@ -173,7 +173,11 @@ li {
 }
 
 .footer {
-  grid-area: footer;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 40px;
   background-color: #2a2f35;
   text-align: center;
 }
