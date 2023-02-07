@@ -22,19 +22,21 @@ function updateAddImageView(index) {
   let html = "";
   let menu = menuBar();
   let titleDiv = fetchTitle(index);
+  let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
   let descriptionDiv = fetchDescription(index);
   let catecoryDiv = fetchCategories(index);
   let saveButtonsDiv = fetchSaveButtons(index);
 
   html = /*HTML*/ `
+  ${menu}
+  
+  <div class="main">
   <div><a onclick="backEdit()">
     <img 
     src=${model.backLogo}>
     </a>
   </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
-  
-  <div class="main">
     ${titleDiv}
     ${imageDiv}
     ${descriptionDiv}
@@ -70,6 +72,10 @@ function fetchTitle(index) {
   </div>
   `;
   return titleDiv;
+}
+
+function fetchProject(index){
+  //trålet gjennom model.pictures[index].projectId.number og henter name
 }
 
 function fetchImage(index) {
@@ -191,13 +197,15 @@ function fetchCategories(index) {
               Fjern
             </button>
             <br>
+            </div>
+            `;
+          }
+    catecoryDiv += /*html*/`
             <button 
               onclick="addCategory(${index == null ? null : index})">
               Legg til kategori
             </button>
-      </div>
-        `;
-  }
+            `;
   return catecoryDiv;
 }
 
