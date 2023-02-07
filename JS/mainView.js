@@ -17,6 +17,9 @@ function updateMainView() {
   // Holder på å lage funksjonalitet i modal. Har fått satt opp kommentarer-boks. Holder på å legge til knapper.
   // Bare vet ikke helt hvorfor jeg ikke ser knappene mine!
   let html = "";
+  if (model.modal.showModal) {
+    html += modal();
+  }
   html += menuBar(); //Menyinit
 
   html += /*HTML*/ `
@@ -26,8 +29,8 @@ function updateMainView() {
     html += /*HTML*/ `
                 <div class="picBox">
                   <h2 class="pictureTitle">${picture.title}</h2>
-                  <div>
-                    <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
+                  <div class="picBackground">
+                    <img src="${picture.img}" class="picture" onclick="openModal(index)"/>
                   </div>
                 </div>`;
   });
@@ -35,7 +38,6 @@ function updateMainView() {
         <footer class="footer">
     ©Copyright
     </footer>`;
-  html += modal(); // Modal innlasting
   html += hamburger();
 
   appDiv.innerHTML = html;
@@ -55,8 +57,7 @@ function modal() {
       </div>
       <div class="linkbox">
           <img src="IMG/ICONS/comment.png" class="button" 
-            onclick="showModalComments()" 
-            style="height: 35px" />
+               style="height: 35px" />
           <img src="IMG/ICONS/email.png" class="button"/>
           <img src="IMG/ICONS/share.png" class="button"/>
       </div>
@@ -96,13 +97,10 @@ function closeModal() {
   modalImage.src = "";
 }
 
-function modalActivate(index) {
-  const picture = model.pictures[index].img;
-  const modal = document.querySelector(".modal");
-  const modalImage = document.querySelector(".modalImg");
-
-  modal.classList.toggle("appear");
-  modalImage.src = picture;
+function openModal(index) {
+  pictures = index
+  model.modal.showModal = !model.modal.showModal
+  updateView()
 }
 
 function hamburger() {
