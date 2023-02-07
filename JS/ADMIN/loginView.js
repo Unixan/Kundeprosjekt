@@ -2,6 +2,9 @@
 DONE
 */
 function updateLoginView(){
+    if (model.modal.showModal) {
+        appDiv.innerHTML += modal();
+    }
     appDiv.innerHTML = /*HTML*/`
     <div class="container">
     <div class="logIn-Field">
