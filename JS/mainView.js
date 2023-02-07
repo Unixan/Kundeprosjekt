@@ -24,8 +24,7 @@ function updateMainView() {
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
-  let scrollBoxPics = '';
-   scrollBoxPics = model.pictures.forEach((picture, i) => {
+  model.pictures.forEach((picture, i) => {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
@@ -96,12 +95,13 @@ function closeModal() {
   const modalImage = document.querySelector(".modalImg");
   modal.classList.toggle("appear");
   modalImage.src = "";
-}1
+}
+1;
 
 function openModal(index) {
-  pictures = index
-  model.modal.showModal = !model.modal.showModal
-  updateView()
+  pictures = index;
+  model.modal.showModal = !model.modal.showModal;
+  updateView();
 }
 
 function hamburger() {
