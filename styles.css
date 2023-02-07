@@ -20,7 +20,6 @@
 a {
   text-decoration: none;
   cursor: pointer;
-  color: white;
 }
 
 li {
@@ -34,7 +33,6 @@ li {
 .picBox {
   display: flex;
   flex-direction: column;
-  
 }
 
 .picContainer {
@@ -54,14 +52,13 @@ li {
   margin-bottom: 20px;
 }
 
-.picBackground{
+.picBackground {
   background-color: #cedbad;
   transition: 0.3s all ease;
 }
 
-.picBackground:hover{
-  transform: scale(105%)
-
+.picBackground:hover {
+  transform: scale(105%);
 }
 
 .picture {
@@ -348,5 +345,22 @@ li {
     min-height: 100%;
     height: 80%;
     max-width: 100vw;
+  }
+
+  .scrollBox {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    max-height: calc(100vh - 100px);
+    gap: 0;
+  }
+
+  .picBackground {
+    background-color: white;
+  }
+
+  .picBackground:hover {
+    transform: none;
   }
 }
