@@ -8,18 +8,21 @@ må disse også endres til lik stil.
 */
 
 function updateContactView() {
+    if (model.modal.showModal) {
+        appDiv.innerHTML += modal();
+      }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
     ${hamburger()}
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
             <div class="creatorImg">
-            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 200px;"/>
+            <img src='${model.creator.aboutPicture.picture}' style="width: auto; height: 220px;"/>
             </div>
             <div class="collab-SoMeLinks">${creatorSoMeLinks()}</div>
 
             <div class="collabInfo">
-                    <p>${model.creator.title}</p>
+                    <p style="font-weight: bold;">${model.creator.title}</p>
                     <p class="contact-info">
                         <a>${model.creator.email}</a><br/>
                         <a>${model.creator.tlf}</a>
@@ -34,7 +37,6 @@ function updateContactView() {
     <footer class="footer footerPlacement">
     ©Copyright
     </footer>
-    ${modal()}
     `;
 }
 
@@ -81,7 +83,7 @@ function getBanner(){
                     if(catArr.includes('Collaboration')){
                             banner = /*HTML*/ `
                             <h3 class="collabBanner">
-                            Prosjekter</h3>
+                            Samarbeidsprosjekter</h3>
                             `;
                     }
             })
