@@ -80,7 +80,7 @@ function getBanner(){
                     if(catArr.includes('Collaboration')){
                             banner = /*HTML*/ `
                             <h3 class="collabBanner">
-                            Tidligere samarbeidsprosjekter</h3>
+                            Prosjekter</h3>
                             `;
                     }
             })
