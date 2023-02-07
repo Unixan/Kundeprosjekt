@@ -8,6 +8,9 @@ må disse også endres til lik stil.
 */
 
 function updateContactView() {
+    if (model.modal.showModal) {
+        appDiv.innerHTML += modal();
+      }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
     ${hamburger()}
@@ -34,7 +37,6 @@ function updateContactView() {
     <footer class="footer footerPlacement">
     ©Copyright
     </footer>
-    ${modal()}
     `;
 }
 
