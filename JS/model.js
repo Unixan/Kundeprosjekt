@@ -98,7 +98,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_1.jpg",
       toggled: false,
-      projectId: { name: 'Home Atelier', number: 001},
+      projectId: { name: 'Home Atelier', number: 1},
       title: "Home Atelier 1",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -108,7 +108,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_2.jpg",
       toggled: false,
-      projectId: { name: 'Home Atelier', number: 001},
+      projectId: { name: 'Home Atelier', number: 1},
       title: "Home Atelier 2",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -118,7 +118,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
       toggled: false,
-      projectId: { name: 'Home Atelier', number: 001},
+      projectId: { name: 'Home Atelier', number: 1},
       title: "Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
@@ -128,7 +128,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_1.jpg",
       toggled: false,
-      projectId: { name: 'Exhibition', number: 002},
+      projectId: { name: 'Exhibition', number: 2},
       title: "Exhibition 1",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -138,7 +138,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_2.jpg",
       toggled: false,
-      projectId: { name: 'Exhibition', number: 002},
+      projectId: { name: 'Exhibition', number: 2},
       title: "Exhibition 2",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -148,7 +148,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro2_3.jpg",
       toggled: false,
-      projectId: { name: 'Exhibition', number: 002},
+      projectId: { name: 'Exhibition', number: 2},
       title: "Exhibition 3",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -159,7 +159,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_1.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 003},
+      projectId: { name: 'Digital Collages', number: 3},
       title: "Digital Collages 1",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -169,7 +169,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_2.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 003},
+      projectId: { name: 'Digital Collages', number: 3},
       title: "Digital Collages 2",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -179,7 +179,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 003},
+      projectId: { name: 'Digital Collages', number: 3},
       title: "Digital Collages 3",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
@@ -190,7 +190,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_1.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 004},
+      projectId: { name: 'Digital Collages', number: 4},
       title: "Sculptures 1",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -200,7 +200,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 004},
+      projectId: { name: 'Digital Collages', number: 4},
       title: "Sculptures 2",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -210,7 +210,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
       toggled: false,
-      projectId: { name: 'Digital Collages', number: 004},
+      projectId: { name: 'Digital Collages', number: 4},
       title: "Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
@@ -221,7 +221,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_1.JPG",
       toggled: false,
-      projectId: { name: 'Architectural Projects', number: 005},
+      projectId: { name: 'Architectural Projects', number: 5},
       title: "Architectural Projects projects 1",
       description: "",
       artist: "Jarand Midtgaard",
@@ -231,7 +231,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_2.jpg",
       toggled: false,
-      projectId: { name: 'Architectural Projects', number: 005},
+      projectId: { name: 'Architectural Projects', number: 5},
       title: "Architectural Projects projects 2",
       description: "",
       artist: "Jarand Midtgaard",
@@ -241,7 +241,7 @@ const model = {
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
       toggled: false,
-      projectId: { name: 'Architectural Projects', number: 005},
+      projectId: { name: 'Architectural Projects', number: 5},
       title: "Architectural Projects projects 3",
       description: "",
       artist: "Jarand Midtgaard",

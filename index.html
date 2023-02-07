@@ -16,8 +16,8 @@
   <script src="JS/modelfilter.js"></script>
   <script src="JS/mainView.js"></script>
   <script src="JS/mainController.js"></script>
-  <script src="JS/collabView.js"></script>
-  <script src="JS/collabController.js"></script>
+  <script src="JS/filterController.js"></script>
+  <script src="JS/filterView.js"></script>
   <script src="JS/contactView.js"></script>
   <script src="JS/contactController.js"></script>
   <script src="JS/ADMIN/addImageView.js"></script>
@@ -44,7 +44,7 @@
     if (model.state === "addImageView") updateAddImageView(index);
     if (model.state === "contactView") updateContactView();
     if (model.state === "adminContactView") updateAdminContactView();
-    if (model.state === "collabView") updateCollabView();
+    if (model.state === "filterView") updateFilterView();
     if (model.state === "loginView") updateLoginView();
   }
 </script>
