@@ -11,12 +11,13 @@
     'info1 info1 info2'
     'banner banner banner';
 }
-
+.collabImageTop{
+    padding-top: 25px;
+}
 .collabBanner{
     grid-area: banner;
     padding: 5px;
     text-align: center;
-    
 }
 
 .collabTitle{
@@ -27,15 +28,11 @@
     padding-top: 10px;
     padding-left: 10px;
 }
-
 .creatorImg{
     grid-area: imageSpace;
     justify-self: center;
     align-self: center;
-    
-   
 }
-
 .collab-SoMeLinks{
     grid-area: info2;
     display: flex;
@@ -63,13 +60,10 @@
 .contact-info:hover{
     color: black;
 }
-
 .collabInfoParagraph{
     order: 3;
     margin-top: 20px;
 }
-
-
 .collabContactInfo-box{
     grid-area: info3;
     display: flex;

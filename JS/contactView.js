@@ -1,8 +1,5 @@
 /*
 Ansvarlig: Becka
-NEED
-- CSS
-
 Bildene fra loopen er en kopi av oppsettet på mainView, så hvis de blir endret
 må disse også endres til lik stil. 
 */
@@ -33,13 +30,12 @@ function updateContactView() {
             </div>
             <div class="collabBanner">${getBanner()}</div>
     </div>
-    <div class="scrollBox">${collabImages()}</div>
+    <div class="scrollBox collabImageTop">${collabImages()}</div>
     <footer class="footer">
     ©Copyright
     </footer>
     `;
 }
-
 //Henter frem bilder hvis et bildet inneholder Samarbeidsprosjekt i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){
@@ -62,7 +58,6 @@ function collabImages(){
     }
     return html;
 }
-
 
 function creatorSoMeLinks(){
     let html = '';
@@ -90,10 +85,3 @@ function getBanner(){
     }
     return banner;
 }
-/* Todo
--fylle inn info i css
--lage en toggle på h3 banner tittel i hovedsiden og fjerne tittelen i collabImages
-- lage en funksjon i controller som toggler som blir kalt i if statementen
-istedenfor tittelen. 
-
-*/
