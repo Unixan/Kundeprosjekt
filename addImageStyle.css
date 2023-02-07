@@ -1,18 +1,30 @@
-.addMain{
- background-color: #83785A;
+.addMain {
+  display: grid;
+  grid-area: body;
+  background-color: #83785a;
 }
-.addTitle{
-    background-color: #273832;
+.addTitle {
+  display: grid;
+  grid-area: body;
+  background-color: #273832;
 }
-.addImage{
-    background-color: #7B809D;
+.addImage {
+  display: grid;
+  grid-area: body;
+  background-color: #7b809d;
 }
-.addDescription{
-    background-color: #835A5E;
+.addDescription {
+  display: grid;
+  grid-area: body;
+  background-color: #835a5e;
 }
-.addCategory{
-    background-color: #747F81;
+.addCategory {
+  display: grid;
+  grid-area: body;
+  background-color: #747f81;
 }
-.addSaveButtons{
-    background-color: #382632;
+.addSaveButtons {
+  display: grid;
+  grid-area: body;
+  background-color: #382632;
 }
