@@ -12,50 +12,46 @@ TODO
 - legges på mainView
     */
 
-function showFilter(){
+//filter meny
+function createFilterMenu(){
     let filterMenu = '';
     filterMenu = /*HTML*/`
-    <div>Velg filtere</div>
-    `;
-
-    model.filter.forEach((filter, i) => {
-        filterMenu += /*HTML*/`
+    <div>
+        <div>Velg filtere</div>
             <div id="filterDropdown" class="filterBox">
-                <input 
-                type="checkbox"
-                id="filterBox"
-                onclick="checkedFilter(this, ${i})"
-                />
-                <label>
-                    ${filter.cat}
-                </label>
+            ${showFilter()}
             </div>
-        `;
-    })
-    filterMenu += /*HTML*/`
         <div>
-            <a onclick="resetFilter()">
+            <button onclick="resetFilter()">
             Reset filter
-            </a>
+            </button>
         </div>
-
         <div>
             <a onclick="closeFilter()">
             Lukk filter
             </a>
         </div>
+    <div>
     `;
-    console.log(filterMenu)
     return filterMenu;
 }
 
-
-//Nye viewet for filtrerte bilder
-//Legges på mainView som en if, hvis filtrene er huket av. 
-function newFilterView(){
-    const filterArray = [];
-
-
-
-    return filterArray;
+//lager selve filtrene
+function showFilter(){
+    let filterMenu = '';
+    model.filter.forEach((filter, i) => {
+        filterMenu += /*HTML*/`
+        <div>
+            <input 
+            type="checkbox"
+            id="filterBox"
+            onclick="checkedFilter(this, ${i})"
+            />
+            <label>
+                ${filter.cat}
+            </label>
+        </div>
+        `;
+    })
+    return filterMenu;
 }
