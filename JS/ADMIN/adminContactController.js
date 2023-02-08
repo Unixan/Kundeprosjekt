@@ -1,11 +1,5 @@
 // de midlertidie verdiene fra adminContactView pushes til model.aboutCreator 
 
-
-function editProfilePic() {
-    model.creator.aboutPicture.editMode = true;
-    updateView();
-}
-
 function editAbout() {
     model.creator.aboutCreator.editMode = true;
     model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
@@ -41,4 +35,14 @@ function updateSoMe(index) {
     }
     model.creator.creatorSoMelinks.editMode = false;
     updateView();
+}
+
+
+function editProfilePic() {
+    model.creator.aboutPicture.editMode = true;
+    updateView();
+}
+
+function adminUpLoadPicture(new_Image) {
+
 }
