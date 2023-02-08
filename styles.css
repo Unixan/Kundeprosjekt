@@ -343,7 +343,7 @@ li {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    max-height: calc(100% - 100px);
+    max-height: calc(100vh - 100px);
     gap: 0;
   }
 
