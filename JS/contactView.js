@@ -51,6 +51,7 @@ function collabImages(){
     for(let i = 0; i < model.pictures.length; i++){
             let picture = model.pictures[i];
             model.pictures[i].category.forEach((catArr) => {
+                index = i;
                     if(catArr.includes('Collaboration')){
                     html += /*HTML*/`
                     <div class="picBox">
