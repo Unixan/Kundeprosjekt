@@ -21,10 +21,14 @@ function updateMainView() {
     html += modal();
   }
   html += menuBar(); //Menyinit
+  filteredList = "";
+  for (picture in model.pictures) {
+    if ((filteredList = "")) {
+      filteredList.push(picture);
+    }
+  }
 
-let filteredList = model.pictures.filter((picture, index) =>{
-  
-})
+  console.log(filteredList);
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
@@ -71,7 +75,7 @@ function menuBar() {
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
           </li>
           <li class="menuItem">
-            <div onclick="changeToCollabView()" class="menuLink">Samarbeid</div>
+            <div onclick="changeToFilterView()" class="menuLink">Filter</div>
           </li>
           <li class="menuItem">
             <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
