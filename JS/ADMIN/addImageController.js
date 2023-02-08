@@ -98,15 +98,9 @@ function publishNew() {
   backEdit();
 }
 
-function forceNewProject(projectArray){
-  const projects = projectArray;
-  let input = model.inputs.admin.addPic;
-  projects[projects.length] ={
-    projectName: input.projectName,
-    projectNumber: input.projectNumber
-  }
-  projectSelection(projects);
-  updateView();
+function forceNewProject(){
+ //TODO this thing
+  console.log("her gadd jeg ikke mer. lykke til")
 }
 
 function getCategoryNames() {
@@ -139,6 +133,7 @@ function resetInput() {
       list.checked = !list.checked;
     }
   });
+  model.projects = getProjects();
   const emptyInput = {
     img: "",
     projectName: "",
