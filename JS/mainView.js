@@ -35,7 +35,6 @@ function updateMainView() {
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {
-    console.log(i);
     html += /*HTML*/ `
                 <div class="picBox">
                   <h2 class="pictureTitle">${picture.projectName}</h2>

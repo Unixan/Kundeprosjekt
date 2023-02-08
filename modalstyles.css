@@ -33,6 +33,10 @@
   max-width: 100px;
 }
 
+.modalSSpictures img{
+    transform: zoom 0.3s ease-in
+}
+
 .close {
   z-index: 20;
   position: fixed;
@@ -103,6 +107,17 @@
 .pictureComments::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes zoom {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
 @media (max-width: 850px) {
   .modalImg {

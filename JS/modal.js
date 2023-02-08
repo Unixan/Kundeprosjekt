@@ -18,8 +18,7 @@ function modal() {
 }
 
 function createSlideShow(projectNumber) {
-    let slideShowPics = generatePictureArray(projectNumber);
-    console.log(slideShowPics)
+  let slideShowPics = generatePictureArray(projectNumber);
   let slideShow = "";
   let slideNumber = 1;
   slideShowPics.forEach((picture) => {
@@ -29,7 +28,7 @@ function createSlideShow(projectNumber) {
             <img src="${picture.img}"/>
         </div>
         `;
-        slideNumber++
+    slideNumber++;
   });
-  return slideShow
+  return slideShow;
 }
