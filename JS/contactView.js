@@ -1,6 +1,5 @@
 /*Ansvarlig: Becka
-NB: kopier endringer fra mainView av bildene til collabImages,
-frem til et annet oppsett er nødvendig.  
+DONE  
 */
 function updateContactView() {
     if (model.modal.showModal) {
@@ -8,7 +7,6 @@ function updateContactView() {
     }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
-    ${hamburger()}
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
             <div class="creatorImg">
@@ -29,15 +27,11 @@ function updateContactView() {
             <div class="collabBanner">${getBanner()}</div>
     </div>
     <div class="collabImageTop">${collabImages()}</div>
-    <footer class="footer">
+    <footer class="footer footerSticky">
     ©Copyright
     </footer>
     `;
 }
-
-//BANNERE SITTER FAST PÅ FORSIDEN, 
-//MEN BLIR IKKE MED I SCROLLINGA. 
-
 
 function creatorSoMeLinks(){
     let html = '';

@@ -17,7 +17,6 @@ function updateFilterView(){
     }
     appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
-    ${hamburger()}
     <div>Dette er filtreringssiden</div>
     <footer class="footer">
     ©Copyright
