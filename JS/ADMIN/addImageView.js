@@ -22,7 +22,7 @@ function updateAddImageView(index) {
   let html = "";
   let menu = menuBar();
   let titleDiv = fetchTitle(index);
-  // let projectDiv = fetchProject(index);
+  let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
   let descriptionDiv = fetchDescription(index);
   let catecoryDiv = fetchCategories(index);
@@ -38,6 +38,7 @@ function updateAddImageView(index) {
     </a>
   </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
     ${titleDiv}
+    ${projectDiv}
     ${imageDiv}
     ${descriptionDiv}
     <div class="addCategory">
@@ -78,15 +79,42 @@ function fetchProject(index) {
   //skal lage en rullgardin hvor du kan velge eksisterende kategori, eller legge til ny
   //siden lager ny, så kan jeg bruke if og kjøre forskjellige funksjoner
   //ternery operators er brukbart, men forvirrende i lengden.
+  const projects = getProjects()
   if(index){
-    return editProject(index);
-  } else return newProject();
+    return editProject(index, projects);
+  } else return newProject(projects);
 }
 
-function editProject(index){
+function editProject(index, projects){
+  
 }
 
-function newProject(){
+function newProject(projects){
+  let html = /*html*/`
+  <div class="projectDiv">
+  <label for="projects">
+  Velg et prosjekt:
+  </label>
+  <select 
+  name="projects"
+  onchange="console.log(this.value, 'valgt prosjektnummer')">
+  ${getProjectOptions(projects)}
+  </select>
+  </div>
+  `
+  return html;
+}
+
+function getProjectOptions(projects){
+  let options = "";
+  for(let i = 0; i < projects.length; i++){
+    options +=/*html*/`
+    <option value="${projects[i].projectNumber}">
+    ${projects[i].projectName}
+    </option>
+    `
+  }
+  return options;
 }
 
 function fetchImage(index) {
