@@ -17,8 +17,7 @@ function changeToMainView() {
 
 function openModal(index) {
   pictures = index;
-  console.log(pictures)
-  model.modal.modalPictures = createSlideShow(index)
+  model.modal.modalPictures = createSlideShow(index);
   model.modal.showModal = !model.modal.showModal;
   updateView();
 }
