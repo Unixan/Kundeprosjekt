@@ -27,10 +27,9 @@ function updateMainView() {
     if (!objectsInFilteredList.includes(picture.projectNumber)) {
       objectsInFilteredList.push(picture.projectNumber);
       return true;
-    } else if (!objectsInFilteredList.includes(picture.projectNumber)) return false;
+    } else if (!objectsInFilteredList.includes(picture.projectNumber))
+      return false;
   });
-  console.log(filteredList);
-  console.log(objectsInFilteredList)
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
@@ -38,7 +37,7 @@ function updateMainView() {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
-                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <h2 class="pictureTitle">${picture.projectName}</h2>
                   <div class="picBackground">
                     <img src="${picture.img}" class="picture" onclick="openModal(index)"/>
                   </div>
