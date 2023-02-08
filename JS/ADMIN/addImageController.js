@@ -130,6 +130,8 @@ function resetInput() {
   });
   const emptyInput = {
     img: "",
+    projectName: "",
+    projectNumber: 0,
     title: "",
     description: "",
     artist: "",

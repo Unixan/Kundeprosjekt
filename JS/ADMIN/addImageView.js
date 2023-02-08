@@ -97,7 +97,8 @@ function newProject(projects){
   </label>
   <select 
   name="projects"
-  onchange="console.log(this.value, 'valgt prosjektnummer')">
+  onchange="model.inputs.admin.addPic.projectNumber = this.value"
+  value="model.inputs.admin.addPic.projectNumber">
   ${getProjectOptions(projects)}
   </select>
   </div>

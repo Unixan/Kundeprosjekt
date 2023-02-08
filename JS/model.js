@@ -19,6 +19,8 @@ const model = {
     admin: {
       addPic: {
         img: "",
+        projectName: "",
+        projectNumber: 0,
         title: "",
         description: "",
         artist: "",
