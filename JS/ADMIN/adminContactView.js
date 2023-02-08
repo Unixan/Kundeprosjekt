@@ -52,6 +52,25 @@ function updateAdminContactView() {
   <button onclick="updateAbout()">Lagre</button>
   ` }
 
+  let adminPictureEdit = "";
+  if (model.creator.aboutPicture.editMode === false) {
+    adminPictureEdit = `
+    <img 
+      src=${model.creator.aboutPicture.picture} 
+      alt="Profilbilde av Jarand Midtgaard">
+    <button onclick="editProfilePic()">Rediger bilde</button>
+    `
+  }
+  else if (model.creator.aboutPicture.editMode === true) {
+    adminPictureEdit = `
+    <input 
+    type="file"
+    oninput="userUpload(this)"
+    accept="image/jpeg, image/png, image/jpg"
+    >
+    `
+  }
+
 
   document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
@@ -60,10 +79,8 @@ function updateAdminContactView() {
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
     <div>
-    <img 
-      src=${model.creator.aboutPicture.picture} 
-      alt="Profilbilde av Jarand Midtgaard">
-    <button onclick="editProfilePic()">Rediger bilde</button>
+    ${adminPictureEdit}
+    </div>
     <div> <!--SoMe linker-->
     ${someHTML}
     

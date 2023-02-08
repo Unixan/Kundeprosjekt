@@ -41,6 +41,9 @@ const model = {
   //data
   areYouSure: false,
   areYouSureImg: false,
+
+  filterView: false,
+
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
 
