@@ -1,0 +1,12 @@
+.showFilterMenu{
+    display: flex;
+    transition: 0.5s; 
+    transform: translate(100px,100px); 
+    height: 200px;
+    border: 1px solid black;
+}
+
+.filterBox{
+    display: none;
+    transition: 0.5s; 
+}
