@@ -1,19 +1,18 @@
 function getProjects() {
-    //TODO make this shit work
   //tråler gjennom model.pictures[index].projectNumber og .projectName
-  //returnerer array med {projectName:"(...)", projectNumber:(...)}
   const numbers = [];
   const names = [];
   let picture = model.pictures;
   for (let i = 0; i < picture.length; i++) {
       if(numbers.includes(picture[i].projectNumber)){
           continue;
-      } else numbers.push(picture[i].projectNumber);
-      if(names.includes(picture[i].projectName)){
-          continue;
-      } else names.push(picture[i].projectName);
+        } else numbers.push(picture[i].projectNumber);
+        if(names.includes(picture[i].projectName)){
+            continue;
+        } else names.push(picture[i].projectName);
     }
     return makeProjectArray(names, numbers);
+    //returnerer array med [{projectName:"(...)", projectNumber:(...)}, {...}]
 }
 
 function makeProjectArray(name, number){
