@@ -16,9 +16,9 @@ TODO
 function createFilterMenu(){
     let filterMenu = '';
     filterMenu = /*HTML*/`
-    <div>
+    <div id="filterDropdown" class="filterBox">
         <div>Velg filtere</div>
-            <div id="filterDropdown" class="filterBox">
+            <div>
             ${showFilter()}
             </div>
         <div>
