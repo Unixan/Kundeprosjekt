@@ -1,7 +1,11 @@
+.modal {
+  position: absolute;
+}
+
 .modalBackground {
   position: fixed;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   background-color: hsla(0, 0%, 0%, 0.8);
@@ -19,13 +23,14 @@
   grid-template-areas: "modalleft modalcenter modalright";
 }
 
-.modalImg {
-  z-index: 10;
-  grid-area: modalcenter;
-  max-height: 100vh;
-  height: 90%;
-  max-width: 1000px;
-  object-fit: contain;
+.slideShow{
+    z-index: 20;
+}
+
+.modalSSpictures {
+  z-index: 20;
+  max-height: 100px;
+  max-width: 100px;
 }
 
 .close {
@@ -38,7 +43,6 @@
 }
 
 .linkbox {
-  grid-area: modalleft;
   grid-template-columns: repeat(3, 1fr);
   align-content: space-evenly;
   display: grid;
@@ -98,10 +102,6 @@
 
 .pictureComments::-webkit-scrollbar {
   display: none;
-}
-
-.modalImg {
-  animation: zoom 0.3s linear;
 }
 
 @media (max-width: 850px) {
