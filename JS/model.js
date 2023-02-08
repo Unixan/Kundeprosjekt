@@ -39,9 +39,12 @@ const model = {
   },
 
   //data
+  areYouSure: false,
+  areYouSureImg: false,
+  logo: "IMG/Signatur.png",
+  backLogo: "IMG/ICONS/tilbake.png",
+
   modal:{showModal: false, modalPicture: '', modalComments: ''},
-  userMenu: ["Filtrering", "Kontakt", "Samarbeidsprosjekter"],
-  adminMenu: ["Rediger filtrering", "Admin side", "Logg ut"],
   filter: [
     { cat: "Architecture", checked: false },
     { cat: "Building", checked: false },
@@ -249,8 +252,4 @@ const model = {
       comments: [{ user: "", comment: "" }],
     },
   ],
-  areYouSure: false,
-  areYouSureImg: false,
-  logo: "IMG/Signatur.png",
-  backLogo: "IMG/ICONS/tilbake.png",
 };

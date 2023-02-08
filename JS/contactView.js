@@ -28,7 +28,7 @@ function updateContactView() {
             </div>
             <div class="collabBanner">${getBanner()}</div>
     </div>
-    <div class="scrollBox collabImageTop">${collabImages()}</div>
+    <div class="collabImageTop">${collabImages()}</div>
     <footer class="footer">
     ©Copyright
     </footer>
@@ -44,7 +44,7 @@ function creatorSoMeLinks(){
     const soMeCreator = model.creator.creatorSoMelinks.links;
     for(let i = 0; i < soMeCreator.length; i++){
             html += /*HTML*/`
-            <a href="${soMeCreator[i].link}">
+            <a href="${soMeCreator[i].link}" target="_blank" rel="noopener noreferrer">
             <img src='${soMeCreator[i].logoimg}'/></a>
             `;
     }
