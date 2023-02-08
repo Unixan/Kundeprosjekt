@@ -28,20 +28,14 @@
   position: relative;
   width: 80vw;
   max-width: 1000px;
-  max-height: 100vh;
-}
-
-
-
-.modalSSPicContainer {
-  display: none;
+  max-height: 90vh;
 }
 
 .slideShowPic {
   object-fit: contain;
   width: 80vw;
   max-width: 1000px;
-  max-height: 100vh;
+  max-height: 90vh;
 }
 
 .prev,

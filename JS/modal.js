@@ -1,11 +1,10 @@
 let slideIndex = 1;
 function modal(n) {
   //tegner opp modalen
-  
+
   let pictureIndex = 1;
   let slidePics = model.modal.modalPictures;
   let modalView = "";
-  console.log(slidePics);
   if (n > slidePics.length) {
     slideIndex = 1;
   }
@@ -39,7 +38,7 @@ function modal(n) {
   </div>
   </div>
   `;
-  
+
   return modalView;
 }
 
