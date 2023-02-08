@@ -76,32 +76,31 @@ function fetchTitle(index) {
 }
 
 function fetchProject(index) {
+  //TODO skrive kommentarer til alle prosjektfunksjoner
+  //TODO lempe "getProjects()" i inputs og bruke det istedenfor
   //skal lage en rullgardin hvor du kan velge eksisterende kategori, eller legge til ny
   //siden lager ny, så kan jeg bruke if og kjøre forskjellige funksjoner
   //ternery operators er brukbart, men forvirrende i lengden.
   const projects = getProjects()
-  if(index){
-    return editProject(index, projects);
-  } else return newProject(projects);
+  if(index != null){
+    return editImageProjects(index, projects);
+  } else return projectSelection(projects);
 }
 
-function editProject(index, projects){
+function editImageProjects(index, projects){
   
 }
 
-function newProject(projects){
+function projectSelection(projects){
   let html = /*html*/`
-  <div class="projectDiv">
-  <label for="projects">
-  Velg et prosjekt:
-  </label>
-  <select 
-  name="projects"
-  onchange="model.inputs.admin.addPic.projectNumber = this.value"
-  value="model.inputs.admin.addPic.projectNumber">
-  ${getProjectOptions(projects)}
-  </select>
-  </div>
+  ${makeSelection(projects)}
+  <p>
+    Nytt Prosjekt?
+    <button 
+      onclick="makeSelection(projects, 1)">
+     +
+    </button>
+  </p>
   `
   return html;
 }
@@ -116,6 +115,36 @@ function getProjectOptions(projects){
     `
   }
   return options;
+}
+
+function makeSelection(projects, another){
+  let html = /*html*/`
+  <div class="projectDiv">
+  <label for="projects">
+  Velg et prosjekt:
+  </label>
+  <select 
+  name="projects"
+  onchange="model.inputs.admin.addPic.projectNumber = this.value"
+  value="model.inputs.admin.addPic.projectNumber">
+  ${getProjectOptions(projects)}
+  </select>
+  </div>
+  `
+  if(another != null){
+    html+=`
+    <input 
+      type="tekst"
+      placeholder="Nytt Prosjektnavn"
+      value="${model.inputs.admin.addPic.projectName}"
+      onchange="${model.inputs.admin.addPic.projectName = this.value}" 
+    >
+    <button onclick="forceNewProject(${projects}), updateView()">
+      Legg til prosjekt
+    </button>
+  `;
+  }
+  return html;
 }
 
 function fetchImage(index) {
