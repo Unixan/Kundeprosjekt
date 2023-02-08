@@ -9,24 +9,29 @@ TODO
 //åpne filtermenyen
 function updateFilterView(){
     document.querySelector("#filterDropdown").classList.add("showFilterMenu");
-    filterView = true;
 }
 //lukke filtermenyen
 function closeFilter(){
     document.querySelector("#filterDropdown").classList.remove("showFilterMenu");
-    filterView = false;
 }
 //reset filtere
 function resetFilter(){
     let filterBox = document.querySelectorAll('#filterBox');
     if(filterBox.checked) !filterBox.checked;
+    model.filterView = false;
 }
 
 //reagerer når filtrene blir trykket på
 //toggler ckeckbox
 function checkedFilter(index){
     let filterBox = document.querySelector('#filterBox');
+    let allFilterBox = document.querySelectorAll('#filterBox');
     filterBox.checked = !filterBox.checked;
+
+    if(allFilterBox = !filterBox.checked) model.filterView = false;
+    if(filterBox.checked) model.filterView = true;
+
+    
 
 }
 
