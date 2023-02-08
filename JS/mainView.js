@@ -22,6 +22,10 @@ function updateMainView() {
   }
   html += menuBar(); //Menyinit
 
+let filteredList = model.pictures.filter((picture, index) =>{
+  
+})
+
   html += /*HTML*/ `
           <div class="scrollBox">`;
   model.pictures.forEach((picture, i) => {

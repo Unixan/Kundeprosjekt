@@ -44,7 +44,7 @@ const model = {
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
 
-  modal: { showModal: false, modalPicture: "", modalComments: "" },
+  modal: { showModal: false, modalPicture: "",},
   filter: [
     { cat: "Architecture", checked: false },
     { cat: "Building", checked: false },
@@ -165,7 +165,7 @@ const model = {
       img: "IMG/PICTURES/Pro2_1.jpg",
       toggled: false,
       projectName: "Exhibition",
-      projectNuber: 2,
+      projectNumber: 2,
       title: "Exhibition 1",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
@@ -210,7 +210,7 @@ const model = {
       img: "IMG/PICTURES/Pro3_2.jpg",
       toggled: false,
       projectName: "Digital Collage",
-      projectNnumber: 3,
+      projectNumber: 3,
       title: "Digital Collages 2",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
