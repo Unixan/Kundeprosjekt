@@ -21,18 +21,20 @@ function updateMainView() {
     html += modal();
   }
   html += menuBar(); //Menyinit
-  filteredList = "";
-  for (picture in model.pictures) {
-    if ((filteredList = "")) {
-      filteredList.push(picture);
-    }
-  }
-
+  let filteredList = [];
+  let objectsInFilteredList = [];
+  filteredList = model.pictures.filter((picture) => {
+    if (!objectsInFilteredList.includes(picture.projectNumber)) {
+      objectsInFilteredList.push(picture.projectNumber);
+      return true;
+    } else if (!objectsInFilteredList.includes(picture.projectNumber)) return false;
+  });
   console.log(filteredList);
+  console.log(objectsInFilteredList)
 
   html += /*HTML*/ `
           <div class="scrollBox">`;
-  model.pictures.forEach((picture, i) => {
+  filteredList.forEach((picture, i) => {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
