@@ -65,9 +65,11 @@ function updateAdminContactView() {
     adminPictureEdit = `
     <input 
     type="file"
-    oninput="userUpload(this)"
+    oninput="adminUpLoadPicture(this)"
     accept="image/jpeg, image/png, image/jpg"
     >
+    <br/>
+    <button onclick="updateAdminPicture()">Lagre</button>
     `
   }
 
