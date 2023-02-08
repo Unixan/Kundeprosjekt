@@ -169,19 +169,11 @@ li {
   color: #7b7d7c;
 }
 
-.logo {
-  height: 60px;
-}
-
 .footer {
   grid-area: footer;
   background-color: #2a2f35;
   text-align: center;
 }
-
-
-
-
 
 @media (max-width: 850px) {
   .app {

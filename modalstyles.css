@@ -14,7 +14,7 @@
 }
 
 .modalContent {
-  max-height: 100%;
+  max-height: 100vh;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -23,18 +23,59 @@
   grid-template-areas: "modalleft modalcenter modalright";
 }
 
-.slideShow{
-    z-index: 20;
-}
-
-.modalSSpictures {
+.slideShow {
   z-index: 20;
-  max-height: 100px;
-  max-width: 100px;
+  position: relative;
+  width: 80vw;
+  max-width: 1000px;
+  max-height: 100vh;
 }
 
-.modalSSpictures img{
-    transform: zoom 0.3s ease-in
+
+
+.modalSSPicContainer {
+  display: none;
+}
+
+.slideShowPic {
+  object-fit: contain;
+  width: 80vw;
+  max-width: 1000px;
+  max-height: 100vh;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slideNumber {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
 .close {
@@ -109,15 +150,15 @@
 }
 
 @keyframes zoom {
-    from {
-      transform: scale(0.8);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 @media (max-width: 850px) {
   .modalImg {

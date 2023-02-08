@@ -17,7 +17,7 @@ function changeToMainView() {
 
 function openModal(index) {
   pictures = index;
-  model.modal.modalPictures = createSlideShow(index);
+  model.modal.modalPictures = generatePictureArray(index);
   model.modal.showModal = !model.modal.showModal;
   updateView();
 }
@@ -25,5 +25,6 @@ function openModal(index) {
 function closeModal() {
   model.modal.showModal = !model.modal.showModal;
   model.modal.modalPictures = "";
+  slideIndex = 1;
   updateView();
 }
