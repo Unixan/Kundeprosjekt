@@ -173,11 +173,7 @@ li {
 }
 
 .footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 40px;
+  grid-area: footer;
   background-color: #2a2f35;
   text-align: center;
 }
@@ -266,7 +262,6 @@ li {
   grid-area: modalleft;
   max-height: 0;
   opacity: 0;
-  /* max-height: 70vh; */
   max-width: 0;
   margin-left: 20px;
   transition: 0.4s ease-in-out;
@@ -348,7 +343,7 @@ li {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100% - 100px);
     gap: 0;
   }
 

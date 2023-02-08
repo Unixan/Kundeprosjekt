@@ -71,8 +71,9 @@ function modal() {
 
 function menuBar() {
   //tegner opp menyen
-  menu = /*HTML*/ `<header>
-  <nav class="menuBar">
+  menu = /*HTML*/ `
+  <header>
+    <nav class="menuBar">
          <ul class="menu">
           <li class="menuItem">
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
@@ -96,13 +97,6 @@ function closeModal() {
   modal.classList.toggle("appear");
   modalImage.src = "";
 }
-1;
-
-function openModal(index) {
-  pictures = index;
-  model.modal.showModal = !model.modal.showModal;
-  updateView();
-}
 
 function hamburger() {
   let hamburger = /*HTML*/ `
@@ -124,8 +118,4 @@ function hamburgerActivate() {
   menuItem.forEach((item) => {
     item.classList.toggle("show");
   });
-}
-
-function showModalComments() {
-  document.querySelector(".pictureComments").classList.toggle("show");
 }

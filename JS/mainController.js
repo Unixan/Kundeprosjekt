@@ -14,3 +14,9 @@ function changeToMainView() {
   model.state = "mainView";
   updateView();
 }
+
+function openModal(index) {
+  pictures = index;
+  model.modal.showModal = !model.modal.showModal;
+  updateView();
+}
