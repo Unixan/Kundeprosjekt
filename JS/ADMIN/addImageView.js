@@ -75,7 +75,18 @@ function fetchTitle(index) {
 }
 
 function fetchProject(index) {
+  //skal lage en rullgardin hvor du kan velge eksisterende kategori, eller legge til ny
+  //siden lager ny, så kan jeg bruke if og kjøre forskjellige funksjoner
+  //ternery operators er brukbart, men forvirrende i lengden.
+  if(index){
+    return editProject(index);
+  } else return newProject();
+}
 
+function editProject(index){
+}
+
+function newProject(){
 }
 
 function fetchImage(index) {
