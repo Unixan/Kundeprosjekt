@@ -107,7 +107,7 @@ li {
 }
 
 .hamburger {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 12px;
   display: block;
@@ -178,110 +178,7 @@ li {
   text-align: center;
 }
 
-.modal {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: hsla(0, 0%, 0%, 0.8);
-  z-index: 10;
-  overflow: auto;
-}
 
-.modalContent {
-  max-height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100vh;
-  grid-template-areas: "modalleft modalcenter modalright";
-}
-
-.modalImg {
-  z-index: 10;
-  grid-area: modalcenter;
-  max-height: 100vh;
-  height: 90%;
-  max-width: 1000px;
-  object-fit: contain;
-}
-
-.close {
-  position: absolute;
-  top: 1.5em;
-  right: 2em;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.linkbox {
-  grid-area: modalleft;
-  grid-template-columns: repeat(3, 1fr);
-  align-content: space-evenly;
-  display: grid;
-  margin: 20px;
-  border: solid white 2px;
-  border-radius: 7.5% / 50%;
-  height: 50px;
-  width: 300px;
-  justify-self: center;
-  align-self: flex-end;
-}
-
-.button {
-  margin: auto;
-  height: 40px;
-  background-color: transparent;
-  width: 40px;
-  padding: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.button:hover {
-  scale: 1.2;
-}
-
-.button:active {
-  scale: 1;
-  transition: 0.05s;
-}
-
-.pictureComments {
-  min-width: 200px;
-  width: 60%;
-  font-size: larger;
-  border-radius: 0.5em;
-  background-color: white;
-  text-align: justify;
-  justify-self: center;
-  overflow-y: scroll;
-  padding: 1em;
-  grid-area: modalleft;
-  max-height: 0;
-  opacity: 0;
-  max-width: 0;
-  margin-left: 20px;
-  transition: 0.4s ease-in-out;
-  transform: rotate(-180deg);
-}
-
-.pictureComments.show {
-  transform: rotate(0);
-  max-height: 70vh;
-  opacity: 1;
-  max-width: 500px;
-}
-
-.pictureComments::-webkit-scrollbar {
-  display: none;
-}
-
-.modalImg {
-  animation: zoom 0.3s linear;
-}
 
 @keyframes zoom {
   from {
@@ -332,12 +229,7 @@ li {
   .picture:hover {
     transform: none;
   }
-  .modalImg {
-    min-height: 100%;
-    height: 80%;
-    max-width: 100vw;
-  }
-
+  
   .scrollBox {
     display: flex;
     flex-direction: column;

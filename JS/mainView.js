@@ -38,7 +38,7 @@ function updateMainView() {
         <footer class="footer">
     ©Copyright
     </footer>`;
-  html += hamburger();
+  // html += hamburger();
 
   appDiv.innerHTML = html;
 }
@@ -50,19 +50,7 @@ function modal() {
     <span>
       <img src="IMG/ICONS/close.png" style="height:20px" class="close" onclick="closeModal()"/>
     </span>
-    
-    <div class="modalContent">
-      <div class="pictureComments">
-        
-      </div>
-      <div class="linkbox">
-          <img src="IMG/ICONS/comment.png" class="button" 
-               style="height: 35px" />
-          <img src="IMG/ICONS/email.png" class="button"/>
-          <img src="IMG/ICONS/share.png" class="button"/>
-      </div>
-      <img src="" class="modalImg" />
-    </div>
+    <div class="modalBackground" id="modalBackground" onclick="closeModal()"></div>   
   </div>
   `;
 
@@ -86,27 +74,14 @@ function menuBar() {
           </li>
         </ul>
     </nav>
-  </header>`;
-
-  return menu;
-}
-
-function closeModal() {
-  const modal = document.querySelector(".modal");
-  const modalImage = document.querySelector(".modalImg");
-  modal.classList.toggle("appear");
-  modalImage.src = "";
-}
-
-function hamburger() {
-  let hamburger = /*HTML*/ `
     <div class="hamburger" onclick="hamburgerActivate()">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
-    `;
-  return hamburger;
+  </header>`;
+
+  return menu;
 }
 
 function hamburgerActivate() {

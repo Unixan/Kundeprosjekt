@@ -20,3 +20,8 @@ function openModal(index) {
   model.modal.showModal = !model.modal.showModal;
   updateView();
 }
+
+function closeModal() {
+  model.modal.showModal = !model.modal.showModal;
+  updateView();
+}
