@@ -77,48 +77,48 @@ function fetchTitle(index) {
 
 function fetchProject(index) {
   //TODO skrive kommentarer til alle prosjektfunksjoner
-  //TODO lempe "getProjects()" i inputs og bruke det istedenfor
   //skal lage en rullgardin hvor du kan velge eksisterende kategori, eller legge til ny
   //siden lager ny, så kan jeg bruke if og kjøre forskjellige funksjoner
   //ternery operators er brukbart, men forvirrende i lengden.
-  const projects = getProjects()
-  if(index != null){
-    return editImageProjects(index, projects);
-  } else return projectSelection(projects);
+  model.inputs.admin.addPic.projects = model.projects;
+  if (index != null) {
+    return editImageProjects(index);
+  } else return projectSelection();
 }
 
-function editImageProjects(index, projects){
-  
-}
+function editImageProjects(index) {}
 
-function projectSelection(projects){
-  let html = /*html*/`
-  ${makeSelection(projects)}
+function projectSelection() {
+  let html = /*html*/ `
+  ${makeSelection()}
   <p>
     Nytt Prosjekt?
     <button 
-      onclick="makeSelection(projects, 1)">
+      onclick="addProject()">
      +
     </button>
   </p>
-  `
+  `;
   return html;
 }
 
-function getProjectOptions(projects){
+function getProjectOptions() {
+  let projects = model.inputs.admin.addPic.projects;
   let options = "";
-  for(let i = 0; i < projects.length; i++){
-    options +=/*html*/`
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].projectName != "") {
+      options += /*html*/ `
     <option value="${projects[i].projectNumber}">
     ${projects[i].projectName}
     </option>
-    `
+    `;
+    }
   }
   return options;
 }
 
-function makeSelection(projects, another){
-  let html = /*html*/`
+function makeSelection() {
+  let html = /*html*/ `
   <div class="projectDiv">
   <label for="projects">
   Velg et prosjekt:
@@ -127,24 +127,43 @@ function makeSelection(projects, another){
   name="projects"
   onchange="model.inputs.admin.addPic.projectNumber = this.value"
   value="model.inputs.admin.addPic.projectNumber">
-  ${getProjectOptions(projects)}
+  ${getProjectOptions()}
+  ${checkForNewProjects()}
   </select>
   </div>
-  `
-  if(another != null){
-    html+=`
-    <input 
-      type="tekst"
-      placeholder="Nytt Prosjektnavn"
-      value="${model.inputs.admin.addPic.projectName}"
-      onchange="${model.inputs.admin.addPic.projectName = this.value}" 
-    >
-    <button onclick="forceNewProject(${projects}), updateView()">
-      Legg til prosjekt
-    </button>
   `;
-  }
   return html;
+}
+
+function addProject() {
+  model.inputs.admin.addPic.projects.push({
+    projectName: "",
+    projectNumber: 0,
+  });
+  updateView();
+}
+
+function checkForNewProjects() {
+  let projects = model.inputs.admin.addPic.projects;
+  let additional = "";
+  for (let i = 0; i < model.inputs.admin.addPic.projects.length; i++) {
+    if (projects[i].projectNumber == 0) {
+      projects[i].projectName = "";
+      additional += `
+        <br>
+        <input 
+          type="tekst"
+          placeholder="Nytt Prosjektnavn"
+          value="${projects[i].projectName}"
+          onchange="${(projects[i].projectName = this.value)}" 
+        >
+        <button onclick="forceNewProject()">
+          Legg til prosjekt
+        </button>
+      `;
+    }
+  }
+  return additional;
 }
 
 function fetchImage(index) {
@@ -262,7 +281,9 @@ function fetchCategories(index) {
               Legg til
             </button>
             <button 
-              onclick="removeUnusedCategory(${index != null ? `${i},${index}` : i})">
+              onclick="removeUnusedCategory(${
+                index != null ? `${i},${index}` : i
+              })">
               Fjern
             </button>
             <br>

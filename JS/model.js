@@ -66,6 +66,13 @@ const model = {
     { cat: "3Dmodeling", checked: false },
     { cat: "Utopic", checked: false },
   ],
+  projects: [
+    {projectName: 'Home Atelier', projectNumber: 1},
+    {projectName: 'Exhibition', projectNumber: 2},
+    {projectName: 'Digital Collage', projectNumber: 3},
+    {projectName: '3D Print', projectNumber: 4},
+    {projectName: 'Architectural projects', projectNumber: 5},
+  ],
   creator: {
     role: "Admin",
     password: "1234",
