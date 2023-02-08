@@ -68,6 +68,8 @@ function updateAdminContactView() {
     oninput="userUpload(this)"
     accept="image/jpeg, image/png, image/jpg"
     >
+    <br/>
+    <button onclick="updateAdminPicture()">Lagre</button>
     `
   }
 
