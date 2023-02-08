@@ -21,10 +21,10 @@ function updateMainView() {
     html += modal();
   }
   html += menuBar(); //Menyinit
-  filteredList = '';
-  for(picture in model.pictures){
-    if (filteredList = ''){
-      filteredList.push(picture)
+  filteredList = "";
+  for (picture in model.pictures) {
+    if ((filteredList = "")) {
+      filteredList.push(picture);
     }
   }
 
@@ -75,7 +75,7 @@ function menuBar() {
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
           </li>
           <li class="menuItem">
-            <div onclick="changeToCollabView()" class="menuLink">Filter</div>
+            <div onclick="changeToFilterView()" class="menuLink">Filter</div>
           </li>
           <li class="menuItem">
             <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
