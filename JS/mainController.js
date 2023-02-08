@@ -17,11 +17,14 @@ function changeToMainView() {
 
 function openModal(index) {
   pictures = index;
+  console.log(pictures)
+  model.modal.modalPictures = createSlideShow(index)
   model.modal.showModal = !model.modal.showModal;
   updateView();
 }
 
 function closeModal() {
   model.modal.showModal = !model.modal.showModal;
+  model.modal.modalPictures = "";
   updateView();
 }

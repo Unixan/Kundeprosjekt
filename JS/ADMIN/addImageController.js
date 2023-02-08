@@ -98,6 +98,17 @@ function publishNew() {
   backEdit();
 }
 
+function forceNewProject(projectArray){
+  const projects = projectArray;
+  let input = model.inputs.admin.addPic;
+  projects[projects.length] ={
+    projectName: input.projectName,
+    projectNumber: input.projectNumber
+  }
+  projectSelection(projects);
+  updateView();
+}
+
 function getCategoryNames() {
   //ser om kategori er checked, og legger til teksten i bildekategorien
   const catArray = [];

@@ -22,25 +22,25 @@ function updateMainView() {
   }
   html += menuBar(); //Menyinit
   // let filteredList = [];
-  // let objectsInFilteredList = [];
+  // let projectNumbers = [];
   // filteredList = model.pictures.filter((picture) => {
-  //   if (!objectsInFilteredList.includes(picture.projectNumber)) {
-  //     objectsInFilteredList.push(picture.projectNumber);
+  //   if (!projectNumbers.includes(picture.projectNumber)) {
+  //     projectNumbers.push(picture.projectNumber);
   //     return true;
-  //   } else if (!objectsInFilteredList.includes(picture.projectNumber))
+  //   } else if (!projectNumbers.includes(picture.projectNumber))
   //     return false;
   // });
 
-  filteredList = generateMainViewArray();
+  filteredList = model.filterView ? newFilterView() : generatePictureArray();
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {
-    index = i;
+    console.log(i);
     html += /*HTML*/ `
                 <div class="picBox">
                   <h2 class="pictureTitle">${picture.projectName}</h2>
                   <div class="picBackground">
-                    <img src="${picture.img}" class="picture" onclick="openModal(index)"/>
+                    <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
                   </div>
                 </div>`;
   });
@@ -91,15 +91,23 @@ function hamburgerActivate() {
   });
 }
 
-function generateMainViewArray(){
+function generatePictureArray(number) {
   let pictureList = [];
-  let objectsInFilteredList = [];
-  pictureList = model.pictures.filter((picture) => {
-    if (!objectsInFilteredList.includes(picture.projectNumber)) {
-      objectsInFilteredList.push(picture.projectNumber);
-      return true;
-    } else if (!objectsInFilteredList.includes(picture.projectNumber))
-      return false;
-  });
-  return pictureList
+  let projectNumbers = [number === undefined ? "" : number];
+  if (number === undefined) {
+    pictureList = model.pictures.filter((picture) => {
+      if (!projectNumbers.includes(picture.projectNumber)) {
+        projectNumbers.push(picture.projectNumber);
+        return true;
+      } else if (projectNumbers.includes(picture.projectNumber)) return false;
+    });
+  }
+  if (number !== undefined) {
+    pictureList = model.pictures.filter((picture) => {
+      if (projectNumbers.includes(picture.projectNumber)) {
+        return true;
+      } else if (!projectNumbers.includes(picture.projectNumber)) return false;
+    });
+  }
+  return pictureList;
 }
