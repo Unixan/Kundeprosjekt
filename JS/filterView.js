@@ -11,61 +11,47 @@ TODO
 
 - legges på mainView
     */
-function updateFilterView(){
-    let filterMenu = '';
-    if (model.modal.showModal) {
-        appDiv.innerHTML += modal();
-    }
-    
-    filterMenu = /*HTML*/`
-    <div>Velg filtere</div>
-    `;
 
+//filter meny
+function createFilterMenu(){
+    let filterMenu = '';
+    filterMenu = /*HTML*/`
+    <div>
+        <div>Velg filtere</div>
+            <div id="filterDropdown" class="filterBox">
+            ${showFilter()}
+            </div>
+        <div>
+            <button onclick="resetFilter()">
+            Reset filter
+            </button>
+        </div>
+        <div>
+            <a onclick="closeFilter()">
+            Lukk filter
+            </a>
+        </div>
+    <div>
+    `;
+    return filterMenu;
+}
+
+//lager selve filtrene
+function showFilter(){
+    let filterMenu = '';
     model.filter.forEach((filter, i) => {
         filterMenu += /*HTML*/`
         <div>
             <input 
-            type="checkbox">
+            type="checkbox"
+            id="filterBox"
+            onclick="checkedFilter(this, ${i})"
+            />
             <label>
                 ${filter.cat}
             </label>
         </div>
         `;
-    
     })
-
-    filterMenu += /*HTML*/ `</div>
-        <footer class="footer">
-    ©Copyright
-    </footer>`;
-    console.log(filterMenu)
-    updateMainView();
     return filterMenu;
-}
-
-
-//Nye viewet for filtrerte bilder
-//Legges på mainView som en if, hvis filtrene er huket av. 
-function newFilterView(){
-    let html = '';
-    if (model.modal.showModal) {
-        appDiv.innerHTML += modal();
-    }
-    html += menuBar();
-    model.pictures.forEach((picture, i) => {
-        index = i;
-        html += /*HTML*/ `
-                    <div class="picBox">
-                      <h2 class="pictureTitle">${picture.title}</h2>
-                      <div class="picBackground">
-                        <img src="${picture.img}" class="picture" onclick="openModal(index)"/>
-                      </div>
-                    </div>`;
-      });
-    html += /*HTML*/ `</div>
-        <footer class="footer">
-        ©Copyright
-        </footer>`;
-    
-    return html;
 }

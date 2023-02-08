@@ -1,0 +1,15 @@
+.showFilterMenu{
+    display: flex;
+    transition: 0.5s; 
+    transform: translate(100px,100px); 
+    height: 200px;
+    border: 1px solid black;
+}
+
+.filterBox{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    transition: 0.5s; 
+}

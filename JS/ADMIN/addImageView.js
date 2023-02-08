@@ -22,7 +22,7 @@ function updateAddImageView(index) {
   let html = "";
   let menu = menuBar();
   let titleDiv = fetchTitle(index);
-  // let projectDiv = fetchProject(index);
+  let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
   let descriptionDiv = fetchDescription(index);
   let catecoryDiv = fetchCategories(index);
@@ -38,6 +38,7 @@ function updateAddImageView(index) {
     </a>
   </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
     ${titleDiv}
+    ${projectDiv}
     ${imageDiv}
     ${descriptionDiv}
     <div class="addCategory">
@@ -75,18 +76,75 @@ function fetchTitle(index) {
 }
 
 function fetchProject(index) {
+  //TODO skrive kommentarer til alle prosjektfunksjoner
+  //TODO lempe "getProjects()" i inputs og bruke det istedenfor
   //skal lage en rullgardin hvor du kan velge eksisterende kategori, eller legge til ny
   //siden lager ny, så kan jeg bruke if og kjøre forskjellige funksjoner
   //ternery operators er brukbart, men forvirrende i lengden.
-  if(index){
-    return editProject(index);
-  } else return newProject();
+  const projects = getProjects()
+  if(index != null){
+    return editImageProjects(index, projects);
+  } else return projectSelection(projects);
 }
 
-function editProject(index){
+function editImageProjects(index, projects){
+  
 }
 
-function newProject(){
+function projectSelection(projects){
+  let html = /*html*/`
+  ${makeSelection(projects)}
+  <p>
+    Nytt Prosjekt?
+    <button 
+      onclick="makeSelection(projects, 1)">
+     +
+    </button>
+  </p>
+  `
+  return html;
+}
+
+function getProjectOptions(projects){
+  let options = "";
+  for(let i = 0; i < projects.length; i++){
+    options +=/*html*/`
+    <option value="${projects[i].projectNumber}">
+    ${projects[i].projectName}
+    </option>
+    `
+  }
+  return options;
+}
+
+function makeSelection(projects, another){
+  let html = /*html*/`
+  <div class="projectDiv">
+  <label for="projects">
+  Velg et prosjekt:
+  </label>
+  <select 
+  name="projects"
+  onchange="model.inputs.admin.addPic.projectNumber = this.value"
+  value="model.inputs.admin.addPic.projectNumber">
+  ${getProjectOptions(projects)}
+  </select>
+  </div>
+  `
+  if(another != null){
+    html+=`
+    <input 
+      type="tekst"
+      placeholder="Nytt Prosjektnavn"
+      value="${model.inputs.admin.addPic.projectName}"
+      onchange="${model.inputs.admin.addPic.projectName = this.value}" 
+    >
+    <button onclick="forceNewProject(${projects}), updateView()">
+      Legg til prosjekt
+    </button>
+  `;
+  }
+  return html;
 }
 
 function fetchImage(index) {

@@ -1,11 +1,5 @@
 // de midlertidie verdiene fra adminContactView pushes til model.aboutCreator 
 
-
-function editProfilePic() {
-    model.creator.aboutPicture.editMode = true;
-    updateView();
-}
-
 function editAbout() {
     model.creator.aboutCreator.editMode = true;
     model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
@@ -40,5 +34,27 @@ function updateSoMe(index) {
         model.creator.creatorSoMelinks.links[i].link = model.inputs.admin.editProfile.creatorSoMeLink[i].link;
     }
     model.creator.creatorSoMelinks.editMode = false;
+    updateView();
+}
+
+
+function editProfilePic() {
+    model.creator.aboutPicture.editMode = true;
+    model.inputs.admin.editProfile.aboutPicture = model.creator.aboutPicture.picture;
+    updateView();
+}
+
+function adminUpLoadPicture(new_Image) {
+    const inputTag = new_Image;
+    inputTag.addEventListener("change", () => {
+        const temp = inputTag.files;
+        console.log(inputTag.files);
+        model.inputs.admin.editProfile.aboutPicture = URL.createObjectURL(temp[0]);
+    })
+}
+
+function updateAdminPicture() {
+    model.creator.aboutPicture.picture = model.inputs.admin.editProfile.aboutPicture;
+    model.creator.aboutPicture.editMode = false;
     updateView();
 }
