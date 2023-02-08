@@ -21,24 +21,24 @@ function updateMainView() {
     html += modal();
   }
   html += menuBar(); //Menyinit
-  let filteredList = [];
-  let objectsInFilteredList = [];
-  filteredList = model.pictures.filter((picture) => {
-    if (!objectsInFilteredList.includes(picture.projectNumber)) {
-      objectsInFilteredList.push(picture.projectNumber);
-      return true;
-    } else if (!objectsInFilteredList.includes(picture.projectNumber)) return false;
-  });
-  console.log(filteredList);
-  console.log(objectsInFilteredList)
+  // let filteredList = [];
+  // let objectsInFilteredList = [];
+  // filteredList = model.pictures.filter((picture) => {
+  //   if (!objectsInFilteredList.includes(picture.projectNumber)) {
+  //     objectsInFilteredList.push(picture.projectNumber);
+  //     return true;
+  //   } else if (!objectsInFilteredList.includes(picture.projectNumber))
+  //     return false;
+  // });
 
+  filteredList = generateMainViewArray();
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {
     index = i;
     html += /*HTML*/ `
                 <div class="picBox">
-                  <h2 class="pictureTitle">${picture.title}</h2>
+                  <h2 class="pictureTitle">${picture.projectName}</h2>
                   <div class="picBackground">
                     <img src="${picture.img}" class="picture" onclick="openModal(index)"/>
                   </div>
@@ -51,20 +51,6 @@ function updateMainView() {
   // html += hamburger();
 
   appDiv.innerHTML = html;
-}
-
-function modal() {
-  //tegner opp modalen
-  html = /*HTML*/ `
-  <div class="modal" id="modal">
-    <span>
-      <img src="IMG/ICONS/close.png" style="height:20px" class="close" onclick="closeModal()"/>
-    </span>
-    <div class="modalBackground" id="modalBackground" onclick="closeModal()"></div>   
-  </div>
-  `;
-
-  return html;
 }
 
 function menuBar() {
@@ -103,4 +89,17 @@ function hamburgerActivate() {
   menuItem.forEach((item) => {
     item.classList.toggle("show");
   });
+}
+
+function generateMainViewArray(){
+  let pictureList = [];
+  let objectsInFilteredList = [];
+  pictureList = model.pictures.filter((picture) => {
+    if (!objectsInFilteredList.includes(picture.projectNumber)) {
+      objectsInFilteredList.push(picture.projectNumber);
+      return true;
+    } else if (!objectsInFilteredList.includes(picture.projectNumber))
+      return false;
+  });
+  return pictureList
 }
