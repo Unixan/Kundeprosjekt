@@ -11,7 +11,12 @@ function updateAdminContactView() {
   }
   else if (model.creator.creatorSoMelinks.editMode === true) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
-      someHTML += `<div><p>${model.creator.creatorSoMelinks.links[i].media}</p><input type="text" value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" onchange="changeSoMe(${i},this.value)"></div><br/>`
+      someHTML += `<div><p>${model.creator.creatorSoMelinks.links[i].media}</p>
+        <input 
+          type="text" 
+          value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" 
+          onchange="changeSoMe(${i},this.value)">
+          </div><br/>`
     }
     someHTML += `<button onclick="updateSoMe()">Lagre</button>`
   }
