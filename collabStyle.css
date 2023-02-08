@@ -11,7 +11,12 @@
     'banner banner info2';
 }
 .collabImageTop{
+    grid-area: body;
     padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .collabBanner{
     grid-area: banner;
@@ -85,4 +90,10 @@
     .collabTitle{
         padding-bottom: 10px;
     }
+}
+@media(max-width: 920px){
+    .collabImageTop{
+        flex-direction: column;
+    }
+
 }
