@@ -5,7 +5,7 @@ function changeToContactView() {
   updateView();
 }
 
-function updateFilterView() {
+function changeToFilterView() {
   model.state = "filterView";
   updateView();
 }
