@@ -40,9 +40,21 @@ function updateSoMe(index) {
 
 function editProfilePic() {
     model.creator.aboutPicture.editMode = true;
+    model.inputs.admin.editProfile.aboutPicture = model.creator.aboutPicture.picture;
     updateView();
 }
 
 function adminUpLoadPicture(new_Image) {
+    const inputTag = new_Image;
+    inputTag.addEventListener("change", () => {
+        const temp = inputTag.files;
+        console.log(inputTag.files);
+        model.inputs.admin.editProfile.aboutPicture = URL.createObjectURL(temp[0]);
+    })
+}
 
+function updateAdminPicture() {
+    model.creator.aboutPicture.picture = model.inputs.admin.editProfile.aboutPicture;
+    model.creator.aboutPicture.editMode = false;
+    updateView();
 }
