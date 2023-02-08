@@ -158,7 +158,7 @@ const model = {
       title: "Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed"],
+      category: ["Architecture", "Building", "Completed", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
     {
@@ -191,7 +191,7 @@ const model = {
       title: "Exhibition 3",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Art", "Exhibition"],
+      category: ["Architecture", "Surrealism", "Art", "Exhibition", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -225,7 +225,7 @@ const model = {
       title: "Digital Collages 3",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
-      category: ["Surrealism", "Art", "Collage", "Digital"],
+      category: ["Surrealism", "Art", "Collage", "Digital", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -259,7 +259,7 @@ const model = {
       title: "Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
+      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint", "Collaboration",],
       comments: [{ user: "", comment: "" }],
     },
 
@@ -293,7 +293,6 @@ const model = {
         "Surrealism",
         "3Dmodeling",
         "Utopic",
-        "Collaboration",
       ],
       comments: [{ user: "", comment: "" }],
     },
