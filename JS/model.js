@@ -44,7 +44,6 @@ const model = {
   areYouSure: false,
   areYouSureImg: false,
 
-  filterView: false,
   filterMenu: false,
 
   logo: "IMG/Signatur.png",

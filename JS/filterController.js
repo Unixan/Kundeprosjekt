@@ -6,34 +6,25 @@ TODO
 - finne filtere
 */
 
-//åpne filtermenyen
-
-// function updateFilterView(){
-    
-//     const dropDown = document.querySelector('#filterDropdown');
-//     dropDown.classList.add('showFilterMenu');
-// }
-//lukke filtermenyen
+//lukke filtermenyen DONE
 function closeFilter(){
     model.filterMenu = false;
     updateView();
 }
-//reset filtere
+//reset filtere DONE
 function resetFilter(){
-    let filterBox = document.querySelectorAll('#filterBox');
-    if(filterBox.checked) !filterBox.checked;
-    model.filterView = false;
+    let filterBox = document.getElementById('filterBox');
+    for(let i = 0; i < filterBox.length; i++){
+        !filterBox[i].checked;
+    }
+    updateView();
 }
 
 //reagerer når filtrene blir trykket på
 //toggler ckeckbox
 function checkedFilter(index){
     let filterBox = document.querySelector('#filterBox');
-    let allFilterBox = document.querySelectorAll('#filterBox');
-    filterBox.checked = !filterBox.checked;
-
-    if(allFilterBox = !filterBox.checked) model.filterView = false;
-    if(filterBox.checked) model.filterView = true;
+    filterBox[index].checked = !filterBox[index].checked;
 
     
 
