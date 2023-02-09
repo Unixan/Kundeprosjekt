@@ -15,8 +15,8 @@ TODO
 // }
 //lukke filtermenyen
 function closeFilter(){
-    const dropDown = document.querySelector('#filterDropdown');
-    dropDown.classList.remove('showFilterMenu');
+    model.filterMenu = false;
+    updateView();
 }
 //reset filtere
 function resetFilter(){

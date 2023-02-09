@@ -6,7 +6,6 @@ function changeToContactView() {
 }
 
 function changeToFilterView() {
-  model.state = "filterView";
   model.filterMenu = true;
   updateView();
 }

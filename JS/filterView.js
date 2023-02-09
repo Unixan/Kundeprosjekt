@@ -14,10 +14,10 @@ TODO
 
 //filter meny
 function createFilterMenu(){
-    let filterMenu = '';
+    let filterPopUp = '';
    
-    filterMenu = /*HTML*/`
-    <div id="filterDropdown" class="filterBox showFilterMenu">
+    filterPopUp = /*HTML*/`
+    <div id="filterDropdown" class="filterBox">
         <div>Velg filtere</div>
             <div>
             ${showFilter()}
@@ -34,7 +34,7 @@ function createFilterMenu(){
         </div>
     <div>
     `;
-    return filterMenu;
+    return filterPopUp;
 }
 
 //lager selve filtrene
