@@ -22,24 +22,34 @@ function resetFilter(){
 
 //reagerer når filtrene blir trykket på
 //toggler ckeckbox
-function checkedFilter(index){
-    let filterBox = document.querySelector('#filterBox');
-    filterBox[index].checked = !filterBox[index].checked;
-
-    
-
-}
-
 
 //Nye viewet for filtrerte bilder
 //Legges på mainView som en if, hvis filtrene er huket av. 
-function newFilterView(){
-    let filterArray = [];
 
+function checkedFilter(index){
+    let filteredPictures = [];
 
+    let filterBox = document.querySelector('#filterBox');
+    filterBox[index] = !filterBox[index];
 
-    return filterArray;
+    let filter = model.filter;
+    for(let i = 0; i < model.pictures.length; i++){
+        model.pictures[i].category.forEach((picture) => {
+            if(picture.includes(filter[index])){
+                filteredPictures.push(model.pictures[i])
+            }
+            
+
+        })
+    }
+    return filteredPictures;
 }
 
 
+
+/*
+model.pictures[i].category.forEach((picture) => picture.category == 
+filter[index] ? filteredPictures.push(picture): null);
+console.log(filteredPictures)
+*/
 

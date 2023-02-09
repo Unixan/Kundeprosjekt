@@ -17,7 +17,7 @@ function createFilterMenu(){
     let filterPopUp = '';
    
     filterPopUp = /*HTML*/`
-    <div id="filterDropdown" class="filterBox">
+    <div class="filterBox">
         <div>Velg filtere</div>
             <div>
             ${showFilter()}
