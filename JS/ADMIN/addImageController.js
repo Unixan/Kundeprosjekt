@@ -78,6 +78,15 @@ function saveEdit(index) {
   if (model.inputs.admin.addPic.description != "") {
     model.pictures[index].description = model.inputs.admin.addPic.description;
   }
+
+  if (
+    model.inputs.admin.addPic.projectNumber !=
+    model.pictures[index].projectNumber
+  ) {
+    model.pictures[index].projectNumber =
+      model.inputs.admin.addPic.projectNumber;
+    model.pictures[index].projectName = model.inputs.admin.addPic.projectName;
+  }
   backEdit();
 }
 
@@ -86,7 +95,8 @@ function publishNew() {
   const newImage = {
     img: model.inputs.admin.addPic.img,
     toggled: false,
-    projectId: "TODO fix this shit",
+    projectName: model.inputs.admin.addPic.projectName,
+    projectNumber: model.inputs.admin.addPic.projectNumber,
     title: model.inputs.admin.addPic.title,
     description: model.inputs.admin.addPic.description,
     artist: "TODO fix this shit",
@@ -98,9 +108,38 @@ function publishNew() {
   backEdit();
 }
 
-function forceNewProject(){
- //TODO this thing
-  console.log("her gadd jeg ikke mer. lykke til")
+function getProjectNameFromNumber(projectNum) {
+  let name = "";
+  model.projects.map((array) => {
+    if (array.projectNumber == projectNum) {
+      name = array.projectName;
+    }
+  });
+  return name;
+}
+
+function addProject(index) {
+  model.inputs.admin.addPic.projects.push({
+    projectName: "",
+    projectNumber: 0,
+  });
+  updateView(index);
+}
+
+function forceNewProject(i, index) {
+  //TODO this thing
+  let comparison = getProjects();
+  model.inputs.admin.addPic.projects[i].projectNumber = parseInt(
+    comparison.length + 1
+  );
+  model.inputs.admin.addPic.projectName =
+    model.inputs.admin.addPic.projects[i].projectName;
+  model.inputs.admin.addPic.projectNumber =
+    model.inputs.admin.addPic.projects[i].projectNumber;
+  if (index != null) {
+    model.pictures[index].projectName = model.inputs.admin.addPic.projectName;
+  }
+  updateView(index);
 }
 
 function getCategoryNames() {

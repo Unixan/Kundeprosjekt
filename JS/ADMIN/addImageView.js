@@ -18,7 +18,6 @@ legge til back button X
     */
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
-  console.log(index);
   let html = "";
   let menu = menuBar();
   let titleDiv = fetchTitle(index);
@@ -86,15 +85,20 @@ function fetchProject(index) {
   } else return projectSelection();
 }
 
-function editImageProjects(index) {}
+function editImageProjects(index) {
+  //setter inputmodellen til current project så det kan lagres
+  model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
+  model.inputs.admin.addPic.projectNumber = model.pictures[index].projectNumber;
+  return projectSelection(index);
+}
 
-function projectSelection() {
+function projectSelection(index) {
   let html = /*html*/ `
-  ${makeSelection()}
+  ${makeSelection(index)}
   <p>
     Nytt Prosjekt?
     <button 
-      onclick="addProject()">
+      onclick="addProject(${index})">
      +
     </button>
   </p>
@@ -117,7 +121,7 @@ function getProjectOptions() {
   return options;
 }
 
-function makeSelection() {
+function makeSelection(index) {
   let html = /*html*/ `
   <div class="projectDiv">
   <label for="projects">
@@ -125,39 +129,34 @@ function makeSelection() {
   </label>
   <select 
   name="projects"
-  onchange="model.inputs.admin.addPic.projectNumber = this.value"
+  onchange="
+    model.inputs.admin.addPic.projectNumber = parseInt(this.value);
+    model.inputs.admin.addPic.projectName = getProjectNameFromNumber(model.inputs.admin.addPic.projectNumber)"
   value="model.inputs.admin.addPic.projectNumber">
   ${getProjectOptions()}
-  ${checkForNewProjects()}
+  ${checkForNewProjects(index)}
   </select>
   </div>
   `;
   return html;
 }
 
-function addProject() {
-  model.inputs.admin.addPic.projects.push({
-    projectName: "",
-    projectNumber: 0,
-  });
-  updateView();
-}
-
-function checkForNewProjects() {
+function checkForNewProjects(index) {
   let projects = model.inputs.admin.addPic.projects;
   let additional = "";
   for (let i = 0; i < model.inputs.admin.addPic.projects.length; i++) {
     if (projects[i].projectNumber == 0) {
-      projects[i].projectName = "";
       additional += `
         <br>
         <input 
           type="tekst"
           placeholder="Nytt Prosjektnavn"
           value="${projects[i].projectName}"
-          onchange="${(projects[i].projectName = this.value)}" 
+          onchange="model.inputs.admin.addPic.projects[${i}].projectName = this.value" 
         >
-        <button onclick="forceNewProject()">
+        <button onclick="forceNewProject(${i} ${
+        index != null ? `,${index}` : ""
+      })">
           Legg til prosjekt
         </button>
       `;
