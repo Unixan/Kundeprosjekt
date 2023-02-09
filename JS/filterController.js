@@ -6,45 +6,50 @@ TODO
 - finne filtere
 */
 
-//åpne filtermenyen
-function updateFilterView(){
-    document.querySelector("#filterDropdown").classList.add("showFilterMenu");
-}
-//lukke filtermenyen
+//lukke filtermenyen DONE
 function closeFilter(){
-    document.querySelector("#filterDropdown").classList.remove("showFilterMenu");
+    model.filterMenu = false;
+    updateView();
 }
-//reset filtere
+//reset filtere DONE
 function resetFilter(){
-    let filterBox = document.querySelectorAll('#filterBox');
-    if(filterBox.checked) !filterBox.checked;
-    model.filterView = false;
+    let filterBox = document.getElementById('filterBox');
+    for(let i = 0; i < filterBox.length; i++){
+        !filterBox[i].checked;
+    }
+    updateView();
 }
 
 //reagerer når filtrene blir trykket på
 //toggler ckeckbox
-function checkedFilter(index){
-    let filterBox = document.querySelector('#filterBox');
-    let allFilterBox = document.querySelectorAll('#filterBox');
-    filterBox.checked = !filterBox.checked;
-
-    if(allFilterBox = !filterBox.checked) model.filterView = false;
-    if(filterBox.checked) model.filterView = true;
-
-    
-
-}
-
 
 //Nye viewet for filtrerte bilder
 //Legges på mainView som en if, hvis filtrene er huket av. 
-function newFilterView(){
-    let filterArray = [];
 
+function checkedFilter(index){
+    let filteredPictures = [];
 
+    let filterBox = document.querySelector('#filterBox');
+    filterBox[index] = !filterBox[index];
 
-    return filterArray;
+    let filter = model.filter;
+    for(let i = 0; i < model.pictures.length; i++){
+        model.pictures[i].category.forEach((picture) => {
+            if(picture.includes(filter[index])){
+                filteredPictures.push(model.pictures[i])
+            }
+            
+
+        })
+    }
+    return filteredPictures;
 }
 
 
+
+/*
+model.pictures[i].category.forEach((picture) => picture.category == 
+filter[index] ? filteredPictures.push(picture): null);
+console.log(filteredPictures)
+*/
 

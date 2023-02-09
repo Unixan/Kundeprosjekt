@@ -30,6 +30,7 @@ function updateMainView() {
   //   } else if (!projectNumbers.includes(picture.projectNumber))
   //     return false;
   // });
+  if(model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView ? newFilterView() : generatePictureArray();
   html += /*HTML*/ `
