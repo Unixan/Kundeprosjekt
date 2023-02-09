@@ -7,12 +7,16 @@ TODO
 */
 
 //åpne filtermenyen
-function updateFilterView(){
-    document.querySelector("#filterDropdown").classList.add("showFilterMenu");
-}
+
+// function updateFilterView(){
+    
+//     const dropDown = document.querySelector('#filterDropdown');
+//     dropDown.classList.add('showFilterMenu');
+// }
 //lukke filtermenyen
 function closeFilter(){
-    document.querySelector("#filterDropdown").classList.remove("showFilterMenu");
+    const dropDown = document.querySelector('#filterDropdown');
+    dropDown.classList.remove('showFilterMenu');
 }
 //reset filtere
 function resetFilter(){

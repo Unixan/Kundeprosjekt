@@ -45,6 +45,7 @@ const model = {
   areYouSureImg: false,
 
   filterView: false,
+  filterMenu: false,
 
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
