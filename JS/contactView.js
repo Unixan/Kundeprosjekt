@@ -32,18 +32,6 @@ function updateContactView() {
     </footer>
     `;
 }
-
-function creatorSoMeLinks(){
-    let html = '';
-    const soMeCreator = model.creator.creatorSoMelinks.links;
-    for(let i = 0; i < soMeCreator.length; i++){
-            html += /*HTML*/`
-            <a href="${soMeCreator[i].link}" target="_blank" rel="noopener noreferrer">
-            <img src='${soMeCreator[i].logoimg}'/></a>
-            `;
-    }
-    return html;
-}
 //Henter frem bilder hvis et bildet inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages(){

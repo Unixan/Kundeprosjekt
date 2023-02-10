@@ -52,4 +52,7 @@ model.pictures[i].category.forEach((picture) => picture.category ==
 filter[index] ? filteredPictures.push(picture): null);
 console.log(filteredPictures)
 */
-
+/*
+projects.map((e) => (
+    e.projectName.includes(userSelectedName) ? e.projectName : null)).filter((e) => e != null);
+*/
