@@ -1,8 +1,6 @@
 /*BECKA IS ON IT 
 
 TODO
-- reset checked
-- lukke menyen
 - finne filtere
 */
 
@@ -17,6 +15,9 @@ function resetFilter(){
     for(let i = 0; i < filterBox.length; i++){
         !filterBox[i].checked;
     }
+    for(let i = 0; i < model.filter.length; i++){
+            !model.filter[i].checked;
+    }
     updateView();
 }
 
@@ -28,31 +29,17 @@ function resetFilter(){
 
 function checkedFilter(index){
     let filteredPictures = [];
-
     let filterBox = document.querySelector('#filterBox');
     filterBox[index] = !filterBox[index];
+    model.filter[index].checked = !model.filter[index].checked;
 
-    let filter = model.filter;
     for(let i = 0; i < model.pictures.length; i++){
-        model.pictures[i].category.forEach((picture) => {
-            if(picture.includes(filter[index])){
+       model.pictures[i].category.forEach((cat) => {
+            if(cat.includes(model.filter[index].cat)){
                 filteredPictures.push(model.pictures[i])
             }
-            
-
         })
     }
+    console.log(filteredPictures)
     return filteredPictures;
 }
-
-
-
-/*
-model.pictures[i].category.forEach((picture) => picture.category == 
-filter[index] ? filteredPictures.push(picture): null);
-console.log(filteredPictures)
-*/
-/*
-projects.map((e) => (
-    e.projectName.includes(userSelectedName) ? e.projectName : null)).filter((e) => e != null);
-*/
