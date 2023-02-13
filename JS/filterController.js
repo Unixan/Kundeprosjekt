@@ -48,9 +48,9 @@ function checkedFilter(index){
                 model.inputs.user.userFilter.push(model.pictures[i]);
                 model.filterView = true;
             }
-             if(model.pictures[i] == filterArray[filterArrayIndex]){
-                  console.log('like')
-             }
+            //  if(model.pictures[i] == filterArray[filterArrayIndex]){
+            //       console.log('like')
+            //  }
 
         })
         
