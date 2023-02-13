@@ -25,6 +25,7 @@ const model = {
         description: "",
         artist: "",
         category: [],
+        projects:[],
       },
       editProfile: {
         aboutCreator: "",

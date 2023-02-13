@@ -136,6 +136,12 @@ function forceNewProject(i, index) {
   updateView(index);
 }
 
+function removeUnusedProject(i, index){
+  let projects = model.inputs.admin.addPic.projects;
+  projects.splice(i, 1);
+  updateView(index);
+}
+
 function getCategoryNames() {
   //ser om kategori er checked, og legger til teksten i bildekategorien
   const catArray = [];

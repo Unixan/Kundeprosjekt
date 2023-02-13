@@ -86,9 +86,11 @@ function fetchProject(index) {
 }
 
 function editImageProjects(index) {
-  //setter inputmodellen til current project så det kan lagres
+  //setter inputmodellen til current project så det kan lagres, men oppdaterer endring om du bytter prosjekt
+  if(model.inputs.admin.addPic.projectNumber == 0){
   model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
   model.inputs.admin.addPic.projectNumber = model.pictures[index].projectNumber;
+}
   return projectSelection(index);
 }
 
@@ -133,12 +135,13 @@ function makeSelection(index) {
     model.inputs.admin.addPic.projectNumber = parseInt(this.value);
     model.inputs.admin.addPic.projectName = getProjectNameFromNumber(model.inputs.admin.addPic.projectNumber)"
   value="model.inputs.admin.addPic.projectNumber">
-  ${model.inputs.admin.addPic.projectNumber != 0 ? 
-    `<option value="${model.inputs.admin.addPic.projectNumber}">
+  ${
+    model.inputs.admin.addPic.projectNumber != 0
+      ? `<option value="${model.inputs.admin.addPic.projectNumber}">
     ${model.inputs.admin.addPic.projectName}
     </option>
-    ` 
-    : `<option value="0">
+    `
+      : `<option value="0">
     Velg et prosjekt
     </option>`
   }
@@ -153,9 +156,9 @@ function makeSelection(index) {
 function checkForNewProjects(index) {
   let projects = model.inputs.admin.addPic.projects;
   let additional = "";
-  for (let i = 0; i < model.inputs.admin.addPic.projects.length; i++) {
+  for (let i = 0; i < projects.length; i++) {
     if (projects[i].projectNumber == 0) {
-      additional += `
+      additional += /*html*/ `
         <br>
         <input 
           type="tekst"
@@ -164,9 +167,14 @@ function checkForNewProjects(index) {
           onchange="model.inputs.admin.addPic.projects[${i}].projectName = this.value" 
         >
         <button onclick="forceNewProject(${i} ${
-        index != null ? `,${index}` : ""
+        index != null ? `,${index}` : ``
       })">
           Legg til prosjekt
+        </button>
+        <button onclick="removeUnusedProject(${i} ${
+        index != null ? `,${index}` : ``
+      })">
+          Fjern
         </button>
       `;
     }
