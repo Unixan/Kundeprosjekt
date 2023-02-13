@@ -33,7 +33,6 @@
 
 .pictureContainer {
   display: none;
-  
 }
 
 .pictureContainer.show {
@@ -82,6 +81,81 @@
   top: 0;
 }
 
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 20;
+  right: -10%;
+  position: fixed;
+  width: 0px;
+  height: 0px;
+  background: white;
+  border-radius: 5% / 2%;
+  padding: 15px;
+  transition: 0.3s ease-in-out;
+  font-size: 0;
+  transform: rotate(180deg);
+  background: #cedbad
+}
+
+.commentBox.show {
+  width: 350px;
+  height: 80vh;
+  right: 70px;
+  font-size: 100%;
+  transform: rotate(0deg);
+}
+
+
+
+.commentID {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentID input {
+  width: 45%;
+}
+
+.commentField {
+  margin: 5px 0;
+  padding: 5px;
+  height: 100px;
+  max-height: 100px;
+  min-height: 100px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.linkLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  z-index: 20;
+  text-align: center;
+  color: white;
+  height: 30px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background: transparent;
+}
+
+.linkLine img {
+  height: 30px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.linkLine img:hover {
+  transform: scale(0.9);
+}
+
 .close {
   z-index: 20;
   position: fixed;
@@ -92,5 +166,4 @@
 }
 
 @media (max-width: 850px) {
-  
 }

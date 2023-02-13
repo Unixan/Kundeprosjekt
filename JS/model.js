@@ -25,7 +25,7 @@ const model = {
         description: "",
         artist: "",
         category: [],
-        projects:[],
+        projects: [],
       },
       editProfile: {
         aboutCreator: "",
@@ -51,7 +51,13 @@ const model = {
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
 
-  modal: { showModal: false, modalPictures: "", slideIndex: 1},
+  modal: {
+    commentFieldOpen: false,
+    showModal: false,
+    modalPictures: "",
+    slideIndex: 1,
+    modalComments: "",
+  },
   filter: [
     { cat: "Architecture", checked: false },
     { cat: "Building", checked: false },
@@ -68,11 +74,11 @@ const model = {
     { cat: "Utopic", checked: false },
   ],
   projects: [
-    {projectName: 'Home Atelier', projectNumber: 1},
-    {projectName: 'Exhibition', projectNumber: 2},
-    {projectName: 'Digital Collage', projectNumber: 3},
-    {projectName: '3D Print', projectNumber: 4},
-    {projectName: 'Architectural projects', projectNumber: 5},
+    { projectName: "Home Atelier", projectNumber: 1 },
+    { projectName: "Exhibition", projectNumber: 2 },
+    { projectName: "Digital Collage", projectNumber: 3 },
+    { projectName: "3D Print", projectNumber: 4 },
+    { projectName: "Architectural projects", projectNumber: 5 },
   ],
   creator: {
     role: "Admin",
@@ -150,7 +156,13 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed"],
-      comments: [{ user: "Knut Arild", comment: "Dette var lekkert! 10/10." }],
+      comments: [
+        {
+          email: "somemail@dom.com",
+          user: "Knut Arild",
+          comment: "Dette var lekkert! 10/10.",
+        },
+      ],
     },
     {
       img: "IMG/PICTURES/Pro1_2.jpg",
@@ -161,7 +173,7 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
@@ -171,8 +183,8 @@ const model = {
       title: "Home Atelier 3",
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Building", "Completed", "Collaboration",],
-      comments: [{ user: "", comment: "" }],
+      category: ["Architecture", "Building", "Completed", "Collaboration"],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_1.jpg",
@@ -183,7 +195,7 @@ const model = {
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_2.jpg",
@@ -194,7 +206,7 @@ const model = {
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_3.jpg",
@@ -204,8 +216,14 @@ const model = {
       title: "Exhibition 3",
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Art", "Exhibition", "Collaboration",],
-      comments: [{ user: "", comment: "" }],
+      category: [
+        "Architecture",
+        "Surrealism",
+        "Art",
+        "Exhibition",
+        "Collaboration",
+      ],
+      comments: [],
     },
 
     {
@@ -217,7 +235,7 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro3_2.jpg",
@@ -228,7 +246,7 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
@@ -238,8 +256,8 @@ const model = {
       title: "Digital Collages 3",
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
-      category: ["Surrealism", "Art", "Collage", "Digital", "Collaboration",],
-      comments: [{ user: "", comment: "" }],
+      category: ["Surrealism", "Art", "Collage", "Digital", "Collaboration"],
+      comments: [],
     },
 
     {
@@ -251,7 +269,7 @@ const model = {
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
@@ -262,7 +280,7 @@ const model = {
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
@@ -272,8 +290,14 @@ const model = {
       title: "Sculptures 3",
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
-      category: ["Architecture", "Surrealism", "Sculpture", "3Dprint", "Collaboration",],
-      comments: [{ user: "", comment: "" }],
+      category: [
+        "Architecture",
+        "Surrealism",
+        "Sculpture",
+        "3Dprint",
+        "Collaboration",
+      ],
+      comments: [],
     },
 
     {
@@ -291,7 +315,7 @@ const model = {
         "Utopic",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro5_2.jpg",
@@ -301,13 +325,8 @@ const model = {
       title: "Architectural Projects projects 2",
       description: "",
       artist: "Jarand Midtgaard",
-      category: [
-        "Architecture",
-        "Surrealism",
-        "3Dmodeling",
-        "Utopic",
-      ],
-      comments: [{ user: "", comment: "" }],
+      category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
@@ -324,7 +343,7 @@ const model = {
         "Utopic",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
   ],
 };

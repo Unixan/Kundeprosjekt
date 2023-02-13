@@ -17,19 +17,19 @@ function modal(n) {
           <span>
             <img src="IMG/ICONS/close.png" style="height:20px" class="close" onclick="closeModal()"/>
           </span>
-            <div class="slideShow" id="slideShow">`;
+          <div class="slideShow" id="slideShow">`;
   showSlide = model.modal.slideIndex - 1;
   slidePics.forEach((picture, index) => {
     let img = picture.img;
     modalView += /*HTML*/ `
-          <div class="${
-            index === showSlide ? "pictureContainer show" : "pictureContainer"
-          }">
-            <img src=${img} class="slideShowPic"/>
-            <div class="slideNumber ">${pictureIndex} / ${
-            slidePics.length
+            <div class="${
+              index === showSlide ? "pictureContainer show" : "pictureContainer"
+            }">
+              <img src=${img} class="slideShowPic"/>
+              <div class="slideNumber ">${pictureIndex} / ${
+      slidePics.length
     }       </div>
-          </div>
+            </div>
           `;
     pictureIndex++;
   });
@@ -37,8 +37,10 @@ function modal(n) {
   <a class="prev" onclick="slidePictures(-1)">&#10094;</a>
   <a class="next" onclick="slidePictures(1)">&#10095;</a>
           </div>
+          ${commentBox()}
+          ${linkLine()}
         </div>
-      </div>
+    </div>
   `;
 
   return modalView;
@@ -47,4 +49,50 @@ function modal(n) {
 function slidePictures(n) {
   model.modal.slideIndex += n;
   updateView();
+}
+
+function showComments() {
+  document.querySelector(".commentBox").classList.toggle("show");
+  model.modal.commentFieldOpen = !model.modal.commentFieldOpen
+}
+
+function commentBox() {
+  let commentBox = /*HTML*/ `
+  <div class="${model.modal.commentFieldOpen ? 'commentBox show' : 'commentBox'}">
+    <div class="comments">
+    ${comments()}
+    </div>
+    <div class="addComment">
+      <div class="commentID">  
+        <input type="text" placeholder="Skjermnavn"/>
+        <input type="email" placeholder="E-Mail"/>
+      </div>
+      <div>
+        <textarea class="commentField" type="text" placeholder="Kommentar"></textarea>
+      </div>
+    </div>
+  </div>`;
+  return commentBox;
+}
+
+function linkLine() {
+  let links = /*HTML*/ `
+    <div class="linkLine">
+      <img title="Del bilde" src="IMG/ICONS/share.png"/>
+      <img title="Meld interesse" src="IMG/ICONS/email.png"/>
+      <img onclick="showComments()" title="Se kommentarer" src="IMG/ICONS/comment.png"/>
+    </div>`;
+  return links;
+}
+
+function comments() {
+  model.modal.modalComments = ''
+  let currentPicture = "";
+  pictureIndex = model.modal.slideIndex - 1;
+  currentPicture = model.modal.modalPictures[pictureIndex];
+  console.log(pictureIndex);
+  let picComments = "";
+  if (currentPicture.comments.length !== 0){
+      
+  }
 }
