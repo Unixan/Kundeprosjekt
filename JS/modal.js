@@ -53,11 +53,12 @@ function slidePictures(n) {
 
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
+  model.modal.commentFieldOpen = !model.modal.commentFieldOpen
 }
 
 function commentBox() {
   let commentBox = /*HTML*/ `
-  <div class="commentBox">
+  <div class="${model.modal.commentFieldOpen ? 'commentBox show' : 'commentBox'}">
     <div class="comments">
     ${comments()}
     </div>
