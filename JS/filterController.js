@@ -35,26 +35,21 @@ function checkedFilter(index){
     filterBox[index] = !filterBox[index];
     model.filter[index].checked = !model.filter[index].checked;
 
+    console.log('start', filteredPictures)
     for(let i = 0; i < model.pictures.length; i++){
        model.pictures[i].category.forEach((cat) => {
             if(cat.includes(model.filter[index].cat)){
                 filteredPictures.push(model.pictures[i]);
+                model.filterView = true;
+            }
+            if(!filterBox[index] && cat.includes(model.filter[index].cat)){
+                filteredPictures.splice(model.pictures[i]);
             }
         })
-    }
-    
-    for(let j = 0; j < filteredPictures.length; j++){
-        filteredPictures[j].category.forEach((cat) =>{
-            if(!cat.includes(model.filter[index].cat)){
-                filteredPictures.splice(filteredPictures.pictures[j]);
-            }
 
-        })
+        
     }
-
-    if(filteredPictures = []){
-        model.filterView = false;
-    }
-    console.log(filteredPictures)
+   
+    console.log('finish', filteredPictures)
     return filteredPictures;
 }
