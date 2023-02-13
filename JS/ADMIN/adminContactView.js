@@ -80,7 +80,7 @@ function updateAdminContactView() {
     ${menuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
-    <div class="creatorImg">
+    <div class="creatorImg" style="justify-self: auto;">
     ${adminPictureEdit}
     </div>
     <div class="collab-SoMeLinks"> <!--SoMe linker-->
