@@ -83,7 +83,7 @@ function updateAdminContactView() {
     <div class="creatorImg">
     ${adminPictureEdit}
     </div>
-    <div> <!--SoMe linker-->
+    <div class="collab-SoMeLinks"> <!--SoMe linker-->
     ${someHTML}
     </div>
     <div class="collabInfo">
