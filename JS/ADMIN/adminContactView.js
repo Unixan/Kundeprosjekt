@@ -78,16 +78,16 @@ function updateAdminContactView() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
   <div class="collabInfo-box">
-    <h1>${model.creator.name}</h1>
-    <p>${model.creator.title}</p>
-    <p><a href="mailto:${model.creator.email}">kontakt</a>
+    <h1 class="collabTitle">${model.creator.name}</h1>
+    <p><a href="mailto:${model.creator.email}">${model.creator.email}</a>
     <div>
     ${adminPictureEdit}
     </div>
     <div> <!--SoMe linker-->
     ${someHTML}
-    
     </div>
+    <div class="collabInfo">
+    <p style="font-weight: bold;">${model.creator.title}</p>
     <div>${aboutCreatorEdit}</div>
     <p class="collabInfoParagraph">
     ${model.creator.aboutCreator.about}
