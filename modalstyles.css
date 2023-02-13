@@ -31,18 +31,28 @@
   max-height: 90vh;
 }
 
+.pictureContainer {
+  display: none;
+  
+}
+
+.pictureContainer.show {
+  display: flex;
+  flex-direction: column;
+}
+
 .slideShowPic {
   object-fit: contain;
-  width: 80vw;
   max-width: 1000px;
   max-height: 90vh;
+  height: 90vh;
 }
 
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
@@ -81,83 +91,6 @@
   cursor: pointer;
 }
 
-.linkbox {
-  grid-template-columns: repeat(3, 1fr);
-  align-content: space-evenly;
-  display: grid;
-  margin: 20px;
-  border: solid white 2px;
-  border-radius: 7.5% / 50%;
-  height: 50px;
-  width: 300px;
-  justify-self: center;
-  align-self: flex-end;
-}
-
-.button {
-  margin: auto;
-  height: 40px;
-  background-color: transparent;
-  width: 40px;
-  padding: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.button:hover {
-  scale: 1.2;
-}
-
-.button:active {
-  scale: 1;
-  transition: 0.05s;
-}
-
-.pictureComments {
-  min-width: 200px;
-  width: 60%;
-  font-size: larger;
-  border-radius: 0.5em;
-  background-color: white;
-  text-align: justify;
-  justify-self: center;
-  overflow-y: scroll;
-  padding: 1em;
-  grid-area: modalleft;
-  max-height: 0;
-  opacity: 0;
-  max-width: 0;
-  margin-left: 20px;
-  transition: 0.4s ease-in-out;
-  transform: rotate(-180deg);
-}
-
-.pictureComments.show {
-  transform: rotate(0);
-  max-height: 70vh;
-  opacity: 1;
-  max-width: 500px;
-}
-
-.pictureComments::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 850px) {
-  .modalImg {
-    min-height: 100%;
-    height: 80%;
-    max-width: 100vw;
-  }
+  
 }
