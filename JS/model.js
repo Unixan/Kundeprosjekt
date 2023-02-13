@@ -49,7 +49,7 @@ const model = {
   logo: "IMG/Signatur.png",
   backLogo: "IMG/ICONS/tilbake.png",
 
-  modal: { showModal: false, modalPictures: "",},
+  modal: { showModal: false, modalPictures: "", slideIndex: 1},
   filter: [
     { cat: "Architecture", checked: false },
     { cat: "Building", checked: false },

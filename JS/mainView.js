@@ -18,7 +18,7 @@ function updateMainView() {
   // Bare vet ikke helt hvorfor jeg ikke ser knappene mine!
   let html = "";
   if (model.modal.showModal) {
-    html += modal(slideIndex);
+    html += modal(model.modal.slideIndex);
   }
   html += menuBar(); //Menyinit
   // let filteredList = [];
