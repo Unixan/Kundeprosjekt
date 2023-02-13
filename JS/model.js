@@ -54,7 +54,6 @@ const model = {
     { cat: "Architecture", checked: false },
     { cat: "Building", checked: false },
     { cat: "Completed", checked: false },
-    { cat: "Project1", checked: false },
     { cat: "Collaboration", checked: false },
     { cat: "Surrealism", checked: false },
     { cat: "Art", checked: false },
