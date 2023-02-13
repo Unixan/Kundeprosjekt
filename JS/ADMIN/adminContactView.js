@@ -79,7 +79,6 @@ function updateAdminContactView() {
     ${menuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
-    <p><a href="mailto:${model.creator.email}">${model.creator.email}</a>
     <div>
     ${adminPictureEdit}
     </div>
@@ -88,9 +87,12 @@ function updateAdminContactView() {
     </div>
     <div class="collabInfo">
     <p style="font-weight: bold;">${model.creator.title}</p>
-    <div>${aboutCreatorEdit}</div>
+    <p class="contact-info">
+                        <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
+                        <a>${model.creator.tlf}</a>
+                    </p>
     <p class="collabInfoParagraph">
-    ${model.creator.aboutCreator.about}
+    ${aboutCreatorEdit}
     </p>
 </div>
 <div class="collabBanner">${getBanner()}</div>
