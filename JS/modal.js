@@ -56,18 +56,19 @@ function showComments() {
 }
 
 function commentBox() {
-  let commentBox = /*HTML*/ `<div class="commentBox">
-  <div class="comments">
-   ${comments()}
-  </div>
-  <div class="addComment">
-    <div class="commentID">  
-      <input type="text" placeholder="Skjermnavn"/>
-      <input type="email" placeholder="E-Mail"/>
+  let commentBox = /*HTML*/ `
+  <div class="commentBox">
+    <div class="comments">
+    ${comments()}
     </div>
-    <div>
-      <textarea class="commentField" type="text" placeholder="Kommentar"></textarea>
-    </div>
+    <div class="addComment">
+      <div class="commentID">  
+        <input type="text" placeholder="Skjermnavn"/>
+        <input type="email" placeholder="E-Mail"/>
+      </div>
+      <div>
+        <textarea class="commentField" type="text" placeholder="Kommentar"></textarea>
+      </div>
     </div>
   </div>`;
   return commentBox;
@@ -84,12 +85,13 @@ function linkLine() {
 }
 
 function comments() {
-  let currentPictures = "";
-  currentPictures = model.modal.modalPictures;
+  model.modal.modalComments = ''
+  let currentPicture = "";
   pictureIndex = model.modal.slideIndex - 1;
+  currentPicture = model.modal.modalPictures[pictureIndex];
   console.log(pictureIndex);
   let picComments = "";
-  currentPictures.forEach((picture) => {
-    console.log(picture.comments);
-  });
+  if (currentPicture.comments.length !== 0){
+      
+  }
 }
