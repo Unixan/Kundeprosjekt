@@ -77,7 +77,7 @@ function updateAdminContactView() {
 
   document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
-    
+  <div class="collabInfo-box">
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
