@@ -17,7 +17,7 @@ function updateContactView() {
             <div class="collabInfo">
                     <p style="font-weight: bold;">${model.creator.title}</p>
                     <p class="contact-info">
-                        <a>${model.creator.email}</a><br/>
+                        <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
                         <a>${model.creator.tlf}</a>
                     </p>
                     <p class="collabInfoParagraph">
