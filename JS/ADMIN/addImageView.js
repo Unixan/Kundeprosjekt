@@ -133,6 +133,15 @@ function makeSelection(index) {
     model.inputs.admin.addPic.projectNumber = parseInt(this.value);
     model.inputs.admin.addPic.projectName = getProjectNameFromNumber(model.inputs.admin.addPic.projectNumber)"
   value="model.inputs.admin.addPic.projectNumber">
+  ${model.inputs.admin.addPic.projectNumber != 0 ? 
+    `<option value="${model.inputs.admin.addPic.projectNumber}">
+    ${model.inputs.admin.addPic.projectName}
+    </option>
+    ` 
+    : `<option value="0">
+    Velg et prosjekt
+    </option>`
+  }
   ${getProjectOptions()}
   ${checkForNewProjects(index)}
   </select>
