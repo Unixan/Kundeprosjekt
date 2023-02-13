@@ -83,10 +83,13 @@ function linkLine() {
   return links;
 }
 
-function comments(){
-  currentPictures = model.modal.modalPictures
-  console.log(currentPictures)
-  let picComments = /*HTML*/`
-
-  `
+function comments() {
+  let currentPictures = "";
+  currentPictures = model.modal.modalPictures;
+  pictureIndex = model.modal.slideIndex - 1;
+  console.log(pictureIndex);
+  let picComments = "";
+  currentPictures.forEach((picture) => {
+    console.log(picture.comments);
+  });
 }

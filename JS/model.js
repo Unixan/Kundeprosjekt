@@ -25,7 +25,7 @@ const model = {
         description: "",
         artist: "",
         category: [],
-        projects:[],
+        projects: [],
       },
       editProfile: {
         aboutCreator: "",
@@ -156,7 +156,13 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed"],
-      comments: [{ user: "Knut Arild", comment: "Dette var lekkert! 10/10." }],
+      comments: [
+        {
+          email: "somemail@dom.com",
+          user: "Knut Arild",
+          comment: "Dette var lekkert! 10/10.",
+        },
+      ],
     },
     {
       img: "IMG/PICTURES/Pro1_2.jpg",
@@ -167,7 +173,7 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
@@ -178,7 +184,7 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed", "Collaboration"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_1.jpg",
@@ -189,7 +195,7 @@ const model = {
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_2.jpg",
@@ -200,7 +206,7 @@ const model = {
       description: "Framvist kunst.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Art", "Exhibition"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro2_3.jpg",
@@ -217,7 +223,7 @@ const model = {
         "Exhibition",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
 
     {
@@ -229,7 +235,7 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro3_2.jpg",
@@ -240,7 +246,7 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
@@ -251,7 +257,7 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital", "Collaboration"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
 
     {
@@ -263,7 +269,7 @@ const model = {
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro4_2.jpg",
@@ -274,7 +280,7 @@ const model = {
       description: "Printed architectural sculpture.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "Sculpture", "3Dprint"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro4_3.jpg",
@@ -291,7 +297,7 @@ const model = {
         "3Dprint",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
 
     {
@@ -309,7 +315,7 @@ const model = {
         "Utopic",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro5_2.jpg",
@@ -320,7 +326,7 @@ const model = {
       description: "",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
@@ -337,7 +343,7 @@ const model = {
         "Utopic",
         "Collaboration",
       ],
-      comments: [{ user: "", comment: "" }],
+      comments: [],
     },
   ],
 };
