@@ -58,7 +58,8 @@ function updateAdminContactView() {
     adminPictureEdit = `
     <img 
       src=${model.creator.aboutPicture.picture} 
-      alt="Profilbilde av Jarand Midtgaard">
+      alt="Profilbilde av Jarand Midtgaard"
+      style="width: auto; height: 220px;">
     <button onclick="editProfilePic()">Rediger bilde</button>
     `
   }
@@ -79,7 +80,7 @@ function updateAdminContactView() {
     ${menuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
-    <div>
+    <div class="creatorImg">
     ${adminPictureEdit}
     </div>
     <div> <!--SoMe linker-->
