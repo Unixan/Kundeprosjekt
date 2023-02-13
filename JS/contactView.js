@@ -2,10 +2,10 @@
 DONE  
 */
 function updateContactView() {
-    if (model.modal.showModal) {
-        appDiv.innerHTML += modal();
-    }
-    appDiv.innerHTML = /*HTML*/`
+        if (model.modal.showModal) {
+                appDiv.innerHTML += modal();
+        }
+        appDiv.innerHTML = /*HTML*/`
     ${menuBar()}
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
@@ -32,40 +32,40 @@ function updateContactView() {
     </footer>
     `;
 }
-//Henter frem bilder hvis et bildet inneholder Collaboration i category.
+//Henter frem bilder hvis et bilde inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
-function collabImages(){
-    let html = '';
-    for(let i = 0; i < model.pictures.length; i++){
-            let picture = model.pictures[i];
-            model.pictures[i].category.forEach((catArr) => {
-                index = i;
-                    if(catArr.includes('Collaboration')){
-                    html += /*HTML*/`
+function collabImages() {
+        let html = '';
+        for (let i = 0; i < model.pictures.length; i++) {
+                let picture = model.pictures[i];
+                model.pictures[i].category.forEach((catArr) => {
+                        index = i;
+                        if (catArr.includes('Collaboration')) {
+                                html += /*HTML*/`
                     <div class="picBox">
                     <h2 class="pictureTitle">${picture.title}</h2>
                             <div>
                             <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
                             </div>
                     </div>
-                    `; 
-                    }
-            })
-    }
-    return html;
+                    `;
+                        }
+                })
+        }
+        return html;
 }
 
-function getBanner(){
-    let banner = '';
-    for(let i = 0; i < model.pictures.length; i++){
-            model.pictures[i].category.forEach((catArr) => {
-                    if(catArr.includes('Collaboration')){
-                            banner = /*HTML*/ `
+function getBanner() {
+        let banner = '';
+        for (let i = 0; i < model.pictures.length; i++) {
+                model.pictures[i].category.forEach((catArr) => {
+                        if (catArr.includes('Collaboration')) {
+                                banner = /*HTML*/ `
                             <h3 class="collabBanner">
                             Samarbeidsprosjekter</h3>
                             `;
-                    }
-            })
-    }
-    return banner;
+                        }
+                })
+        }
+        return banner;
 }

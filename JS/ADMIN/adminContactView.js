@@ -1,5 +1,6 @@
 // her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks
-//Lage input
+//Lage input X
+//Collab view også lagt til
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
   let someHTML = "";
@@ -76,7 +77,7 @@ function updateAdminContactView() {
 
   document.getElementById('app').innerHTML = /*html*/ `
     ${menuBar()}
-    
+  <div class="collabInfo-box">
     <h1>${model.creator.name}</h1>
     <p>${model.creator.title}</p>
     <p><a href="mailto:${model.creator.email}">kontakt</a>
@@ -88,6 +89,16 @@ function updateAdminContactView() {
     
     </div>
     <div>${aboutCreatorEdit}</div>
+    <p class="collabInfoParagraph">
+    ${model.creator.aboutCreator.about}
+    </p>
+</div>
+<div class="collabBanner">${getBanner()}</div>
+</div>
+<div class="collabImageTop">${collabImages()}</div>
+<footer class="footer footerSticky">
+©Copyright
+</footer>
     `
 
 }
