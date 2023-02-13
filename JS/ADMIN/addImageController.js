@@ -2,12 +2,9 @@
 //ON THE CASE: Nikotron
 
 /* TODO:
-    hente informasjon fra addImageView og legge til i modellen
-    endre state til "adminView" om en trykker på "tilbake"
-    oppdatere model.input når bruker skriver
+  Nice to have: at det kan legges til flere bilder til ett prosjekt samtidig
     */
 
-//TODO skrive addCategory() pushCategory() og removeUnusedCategory()
 
 function userUpload(imageToAdd) {
   //sendet inputTag med bildefil og legger til model.inputs
@@ -64,7 +61,6 @@ function deletePicture(picture) {
 }
 
 function saveEdit(index) {
-  //TODO Test
   //skal oppdatere eksisterende bilde med endringer
   if (model.inputs.admin.addPic.title != "") {
     model.pictures[index].title = model.inputs.admin.addPic.title;
@@ -93,16 +89,16 @@ function publishNew() {
     projectNumber: model.inputs.admin.addPic.projectNumber,
     title: model.inputs.admin.addPic.title,
     description: model.inputs.admin.addPic.description,
-    artist: "TODO fix this shit",
+    artist: model.creator.name,
     category: getCategoryNames(),
     comments: [],
-    SoMelinks: "TODO hent dette basert på artist",
   };
   model.pictures.push(newImage);
-  backEdit();
+  changeToAdminView();
 }
 
 function getProjectNameFromNumber(projectNum) {
+  //send inn nummer og få ut navn
   let name = "";
   model.projects.map((array) => {
     if (array.projectNumber == projectNum) {
@@ -113,6 +109,7 @@ function getProjectNameFromNumber(projectNum) {
 }
 
 function addProject(index) {
+  //legger til et tomt prosjekt så bruker kan skrive navn og legge til nytt
   model.inputs.admin.addPic.projects.push({
     projectName: "",
     projectNumber: 0,
@@ -121,7 +118,8 @@ function addProject(index) {
 }
 
 function forceNewProject(i, index) {
-  //TODO this thing
+  //legger til nytt prosjekt i valgalternativer, og setter model.input til det nye prosjektet
+  //NB! Fjernes dersom bildet ikke lagres/lastes opp
   let comparison = getProjects();
   model.inputs.admin.addPic.projects[i].projectNumber = parseInt(
     comparison.length + 1
@@ -137,6 +135,7 @@ function forceNewProject(i, index) {
 }
 
 function removeUnusedProject(i, index){
+  //fjerner prosjekt som ikke er lagt til i listen
   let projects = model.inputs.admin.addPic.projects;
   projects.splice(i, 1);
   updateView(index);
@@ -151,12 +150,4 @@ function getCategoryNames() {
     }
   });
   return catArray;
-}
-
-
-
-function backToMain() {
-  //TODO Skal endre til "adminView", men for test purpouses trenger jeg å se main.
-  model.state = "mainView";
-  updateView();
 }
