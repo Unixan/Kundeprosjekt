@@ -7,6 +7,7 @@ TODO
 //lukke filtermenyen DONE
 function closeFilter(){
     model.filterMenu = false;
+    model.filterView = false;
     updateView();
 }
 //reset filtere DONE
@@ -18,6 +19,7 @@ function resetFilter(){
     for(let i = 0; i < model.filter.length; i++){
             !model.filter[i].checked;
     }
+    model.filterView = false;
     updateView();
 }
 
@@ -36,9 +38,22 @@ function checkedFilter(index){
     for(let i = 0; i < model.pictures.length; i++){
        model.pictures[i].category.forEach((cat) => {
             if(cat.includes(model.filter[index].cat)){
-                filteredPictures.push(model.pictures[i])
+                filteredPictures.push(model.pictures[i]);
             }
         })
+    }
+    
+    for(let j = 0; j < filteredPictures.length; j++){
+        filteredPictures[j].category.forEach((cat) =>{
+            if(!cat.includes(model.filter[index].cat)){
+                filteredPictures.splice(filteredPictures.pictures[j]);
+            }
+
+        })
+    }
+
+    if(filteredPictures = []){
+        model.filterView = false;
     }
     console.log(filteredPictures)
     return filteredPictures;
