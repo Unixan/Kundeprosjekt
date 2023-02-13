@@ -73,21 +73,25 @@ function AdminMenuBar() {
 
   function changeToAdminView(){
     model.state = "adminView";
+    backEdit();
     updateView();
   }
 
   function changeToAdminFilterView(){
     model.state = "adminFilterView";
+    backEdit();
     updateView();
   }
 
   function changeToAddImageView(){
     model.state = "addImageView";
+    backEdit();
     updateView();
   }
 
   function changeToAdminContactView(){
     model.state = "adminContactView";
+    backEdit();
     updateView();
   }
 
@@ -95,10 +99,8 @@ function AdminMenuBar() {
     //klargjør modellen for nye inputs og sender tilbake til adminView
     emptyUnusedFilter();
     resetInput();
-    backToMain();
   }
   function emptyUnusedFilter() {
-    //TODO TEST!
     //tømmer ubrukte filtre som ikke er lagt til
     model.inputs.admin.addPic.category.forEach((tempCat, index) => {
       if (tempCat.temp != null) {
@@ -124,6 +126,7 @@ function AdminMenuBar() {
       description: "",
       artist: "",
       category: model.filter,
+      projects:[],
     };
     model.inputs.admin.addPic = emptyInput;
   }
