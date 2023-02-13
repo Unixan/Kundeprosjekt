@@ -88,6 +88,16 @@ function updateAdminContactView() {
     
     </div>
     <div>${aboutCreatorEdit}</div>
+    <p class="collabInfoParagraph">
+    ${model.creator.aboutCreator.about}
+    </p>
+</div>
+<div class="collabBanner">${getBanner()}</div>
+</div>
+<div class="collabImageTop">${collabImages()}</div>
+<footer class="footer footerSticky">
+©Copyright
+</footer>
     `
 
 }
