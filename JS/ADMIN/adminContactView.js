@@ -90,7 +90,7 @@ function updateAdminContactView() {
     <p style="font-weight: bold;">${model.creator.title}</p>
     <p class="contact-info">
       <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
-      <p>${model.creator.tlf}</p>
+      <p>tlf: ${model.creator.tlf}</p>
     </p>
     <p class="collabInfoParagraph">
     ${aboutCreatorEdit}
