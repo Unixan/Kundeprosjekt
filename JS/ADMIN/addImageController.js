@@ -48,12 +48,6 @@ function removeUnusedCategory(index, picture) {
   else updateView(picture);
 }
 
-function backEdit() {
-  //klargjør modellen for nye inputs og sender tilbake til adminView
-  emptyUnusedFilter();
-  resetInput();
-  backToMain();
-}
 
 function deletePicture(picture) {
   //sletter bildet, men kun om du huker av på "ja-" knapp.
@@ -153,37 +147,7 @@ function getCategoryNames() {
   return catArray;
 }
 
-function emptyUnusedFilter() {
-  //TODO TEST!
-  //tømmer ubrukte filtre som ikke er lagt til
-  model.inputs.admin.addPic.category.forEach((tempCat, index) => {
-    if (tempCat.temp != null) {
-      tempCat.splice(index, 1);
-    }
-  });
-}
 
-function resetInput() {
-  //TODO test!
-  //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
-  model.filter.map((list) => {
-    //setter alle kategorier til å være unchecked så listen kan brukes på nytt
-    if (list.checked) {
-      list.checked = !list.checked;
-    }
-  });
-  model.projects = getProjects();
-  const emptyInput = {
-    img: "",
-    projectName: "",
-    projectNumber: 0,
-    title: "",
-    description: "",
-    artist: "",
-    category: model.filter,
-  };
-  model.inputs.admin.addPic = emptyInput;
-}
 
 function backToMain() {
   //TODO Skal endre til "adminView", men for test purpouses trenger jeg å se main.
