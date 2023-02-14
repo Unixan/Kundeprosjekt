@@ -78,7 +78,7 @@ function updateAdminContactView() {
 
 
   document.getElementById('app').innerHTML = /*html*/ `
-    ${menuBar()}
+    ${adminMenuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">
