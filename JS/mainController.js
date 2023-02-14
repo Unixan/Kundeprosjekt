@@ -26,6 +26,7 @@ function closeModal() {
   model.modal.showModal = !model.modal.showModal;
   model.modal.modalPictures = "";
   model.modal.commentFieldOpen = false;
+  model.modal.slideIndex = 1;
   slideIndex = 1;
   updateView();
 }
