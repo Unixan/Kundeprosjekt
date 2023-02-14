@@ -33,7 +33,7 @@
 }
 .addPicture{
   margin: 0;
-  width: 100%;
+  width: fit-content;
   object-fit: cover;
 }
 .addDescription {

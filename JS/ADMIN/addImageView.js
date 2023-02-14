@@ -85,14 +85,16 @@ function editImageProjects(index) {
 
 function projectSelection(index) {
   let html = /*html*/ `
-  ${makeSelection(index)}
-  <p>
-    Nytt Prosjekt?
-    <button 
-      onclick="addProject(${index})">
-     +
-    </button>
-  </p>
+  <div class="addProject">
+    ${makeSelection(index)}
+    <p>
+      Nytt Prosjekt?
+      <button 
+        onclick="addProject(${index})">
+      +
+      </button>
+    </p>
+  </div>
   `;
   return html;
 }
@@ -114,7 +116,7 @@ function getProjectOptions() {
 
 function makeSelection(index) {
   let html = /*html*/ `
-  <div class="addProject">
+  <div>
   <label for="projects">
   Velg et prosjekt:
   </label>
@@ -225,17 +227,21 @@ function fetchDescription(index) {
     <div class="addDescription">
   ${
     index != null
-      ? `<input 
+      ? `
+      <textarea 
         type="text" 
-        value="${model.pictures[index].description}" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-      >`
-      : ` <input 
-        type="text" 
-        placeholder="Skriv inn beskrivelse" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-        value="${model.inputs.admin.addPic.description}"
-      >`
+        oninput="model.inputs.admin.addPic.description = this.value"
+      >
+        ${model.pictures[index].description}
+      </textarea>`
+      : ` 
+      <textarea
+      type="text" 
+      placeholder="Skriv inn beskrivelse" 
+      oninput="model.inputs.admin.addPic.description = this.value"
+      >
+      ${model.inputs.admin.addPic.description}
+      </textarea>` 
   }
     </div>
   `;
