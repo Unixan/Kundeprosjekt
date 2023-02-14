@@ -21,11 +21,6 @@ function updateAddImageView(index) {
   ${menu}
   
   <div class="main">
-  <div><a onclick="backEdit()">
-    <img 
-    src=${model.backLogo}>
-    </a>
-  </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
     ${titleDiv}
     ${projectDiv}
     ${imageDiv}
