@@ -53,32 +53,7 @@ function updateMainView() {
   appDiv.innerHTML = html;
 }
 
-function menuBar() {
-  //tegner opp menyen
-  menu = /*HTML*/ `
-  <header>
-    <nav class="menuBar">
-         <ul class="menu">
-          <li class="menuItem">
-            <div onclick="changeToMainView()" class="menuLink">Hjem</div>
-          </li>
-          <li class="menuItem">
-            <div onclick="changeToFilterView()" class="menuLink">Filter</div>
-          </li>
-          <li class="menuItem">
-            <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
-          </li>
-        </ul>
-    </nav>
-    <div class="hamburger" onclick="hamburgerActivate()">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </header>`;
 
-  return menu;
-}
 
 function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");

@@ -53,14 +53,16 @@ function slidePictures(n) {
 
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
-  model.modal.commentFieldOpen = !model.modal.commentFieldOpen
+  model.modal.commentFieldOpen = !model.modal.commentFieldOpen;
 }
 
 function commentBox() {
   let commentBox = /*HTML*/ `
-  <div class="${model.modal.commentFieldOpen ? 'commentBox show' : 'commentBox'}">
+  <div class="${
+    model.modal.commentFieldOpen ? "commentBox show" : "commentBox"
+  }">
     <div class="comments">
-    ${comments()}
+    ${comments() === undefined ? "Ingen kommentarer" : `${comments()}`}
     </div>
     <div class="addComment">
       <div class="commentID">  
@@ -86,13 +88,21 @@ function linkLine() {
 }
 
 function comments() {
-  model.modal.modalComments = ''
+  model.modal.modalComments = "";
   let currentPicture = "";
   pictureIndex = model.modal.slideIndex - 1;
   currentPicture = model.modal.modalPictures[pictureIndex];
-  console.log(pictureIndex);
-  let picComments = "";
-  if (currentPicture.comments.length !== 0){
+  currentPicComments = currentPicture.comments;
+  if (currentPicComments.length !== 0) {
+    let picComments = "";
+    currentPicComments.forEach((comment) => {
+      picComments += /*HTML*/ `
+      <div class="commentName">${comment.user}
+        <div class="commentText">${comment.comment}</div>
+      </div>
       
+      `;
+    });
+    return picComments;
   }
 }

@@ -46,7 +46,7 @@ function showFilter(){
             <input 
             type="checkbox"
             id="filterBox"
-            onchange="checkedFilter(${i})"
+            onchange="trueOrFalse(${i})"
             />
             <label>
                 ${filter.cat}

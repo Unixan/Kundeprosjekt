@@ -25,6 +25,7 @@ function openModal(index) {
 function closeModal() {
   model.modal.showModal = !model.modal.showModal;
   model.modal.modalPictures = "";
+  model.modal.commentFieldOpen = false;
   slideIndex = 1;
   updateView();
 }
