@@ -83,10 +83,10 @@ function changeToAdminFilterView() {
   updateView();
 }
 
-function changeToAddImageView() {
+function changeToAddImageView(pictureIndex) {
   model.state = "addImageView";
   backEdit();
-  updateView();
+  updateView(pictureIndex);
 }
 
 function changeToAdminContactView() {
