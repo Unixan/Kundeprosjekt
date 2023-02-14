@@ -35,7 +35,7 @@ function updateAdminContactView() {
     }
     someHTML += `
     <button onclick="updateSoMe()">Lagre</button>
-    <button onclick="cancelSoMe()">Avbryt</button>
+    <button onclick="twitter()">Avbryt</button>
     `
   }
   let aboutCreatorEdit = "";
