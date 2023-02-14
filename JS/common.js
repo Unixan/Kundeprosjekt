@@ -41,7 +41,7 @@ function creatorSoMeLinks() {
 }
 
 //Admin menu
-function AdminMenuBar() {
+function adminMenuBar() {
   //tegner opp menyen til Admin
   menu = /*HTML*/ `
     <header>

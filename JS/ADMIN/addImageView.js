@@ -9,7 +9,7 @@
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
   let html = "";
-  let menu = menuBar();
+  let menu = adminMenuBar();
   let titleDiv = fetchTitle(index);
   let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
