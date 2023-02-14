@@ -97,7 +97,8 @@ function comments() {
     let picComments = "";
     currentPicComments.forEach((comment) => {
       picComments += /*HTML*/ `
-      <div class="commentName">${comment.user}
+      <div class="comment">
+        <div class="commentName">${comment.user}:</div>
         <div class="commentText">${comment.comment}</div>
       </div>
       
