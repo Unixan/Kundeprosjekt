@@ -70,3 +70,12 @@ function cancelAbout() {
     model.creator.aboutCreator.editMode = false;
     updateView()
 }
+
+function twitter() {
+    let SOMEinp = model.inputs.admin.editProfile.creatorSoMeLink;
+    let SOME = model.creator.creatorSoMelinks.links
+    SOME[0] = SOME[0].link;
+    SOME[1] = SOME[1].link;
+    SOME[2] = SOME[2].link;
+    SOME[3] = SOME[3].link;
+}
