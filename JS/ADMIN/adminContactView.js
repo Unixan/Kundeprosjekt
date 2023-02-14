@@ -102,7 +102,7 @@ function updateAdminContactView() {
 <div class="collabBanner">${getBanner()}</div>
 </div>
 <div class="collabImageTop">${collabImages()}</div>
-<footer class="footer footerSticky">
+<footer class="footer footerSticky" style="position: fixed;">
 ©Copyright
 </footer>
     `
