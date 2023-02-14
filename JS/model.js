@@ -14,9 +14,9 @@ const model = {
     user: {
       search: "",
       pictureComment: {
-        email: "test",
-        user: "test",
-        comment: "test",
+        email: "",
+        user: "",
+        comment: "",
         date: "",
       },
       userFilter: [],
