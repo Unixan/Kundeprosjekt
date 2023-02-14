@@ -13,7 +13,11 @@ const model = {
 
     user: {
       search: "",
-      pictureComment: { comment: "", userEmail: "" },
+      pictureComment: {
+        email: "",
+        user: "",
+        comment: "",
+      },
       userFilter: [],
     },
     admin: {

@@ -90,9 +90,15 @@ function comments() {
   let currentPicture = "";
   pictureIndex = model.modal.slideIndex - 1;
   currentPicture = model.modal.modalPictures[pictureIndex];
-  console.log(pictureIndex);
-  let picComments = "";
-  if (currentPicture.comments.length !== 0){
-      
+  currentPicComments = currentPicture.comments
+  if (currentPicComments.length !== 0){
+    console.log(currentPicComments);
+    let picComments = '';
+    currentPicComments.forEach((comment) =>{
+      picComments += /*HTML*/`
+      <div>${comment.user}<div>
+      <div>${comment.comment}
+      `
+    })
   }
 }
