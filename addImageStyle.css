@@ -1,21 +1,75 @@
 .addMain {
-  margin: auto;
   display: grid;
-  grid-area: body1;
-  background-color: #83785a;
+  grid-area: 2 / 2 / 3 /3;
+  background-color: #83785A;
+  justify-items: center;
 }
 .addTitle {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 0;
   background-color: #5B7983;
 }
+.addProject{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+  margin: 1%;
+  background-color: #835A5E;
+}
 .addImage {
-  background-color: #7b809d;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 0;
+  background-color: #5B7983;
+}
+.addPicture{
+  margin: 0;
+  width: 100%;
+  object-fit: cover;
 }
 .addDescription {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 0;
   background-color: #835a5e;
 }
 .addCategory {
-  background-color: #747f81;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 0;
+  background-color: #5B7983;
 }
 .addSaveButtons {
-  background-color: #382632;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 0;
+  background-color: #835A5E;
+}
+
+
+
+@media (max-width: 850px){
+  .addMain{
+    display: grid;
+    grid-area: body1;
+    margin: auto;
+  }
 }

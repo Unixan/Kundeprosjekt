@@ -114,7 +114,7 @@ function getProjectOptions() {
 
 function makeSelection(index) {
   let html = /*html*/ `
-  <div class="projectDiv">
+  <div class="addProject">
   <label for="projects">
   Velg et prosjekt:
   </label>
@@ -178,7 +178,7 @@ function fetchImage(index) {
           //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
           index != null
             ? /*HTML*/ `
-            <img src='${model.pictures[index].img}'>
+            <img class="addPicture" src='${model.pictures[index].img}'>
             ${
               !model.areYouSureImg
                 ? "" //spør bruker om de er sikker på at de vil slette bildet
@@ -203,7 +203,7 @@ function fetchImage(index) {
               ${
                 //skjekker om det er et bilde i input
                 model.inputs.admin.addPic.img != ""
-                  ? `<img src='${model.inputs.admin.addPic.img}'>`
+                  ? `<img class="addPicture" src='${model.inputs.admin.addPic.img}'>`
                   : "<p>Legg til bilde</p>"
               }
             <!--knapp bruker kan trykke på for å laste opp bilder
@@ -256,6 +256,7 @@ function fetchCategories(index) {
     //genererer categoribokser
     if (model.inputs.admin.addPic.category[i].cat) {
       catecoryDiv += /*HTML*/ `
+        <div class="addCat">
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
@@ -269,7 +270,7 @@ function fetchCategories(index) {
             <label for="${model.inputs.admin.addPic.category[i].cat}">
             ${model.inputs.admin.addPic.category[i].cat}
             </label> 
-            <br>
+      </div>
         `;
     } //om vi legger til ny kategori
     else
