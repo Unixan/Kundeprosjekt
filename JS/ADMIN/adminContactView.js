@@ -72,6 +72,7 @@ function updateAdminContactView() {
     >
     <br/>
     <button onclick="updateAdminPicture()">Lagre</button>
+    <button onclick="cancelAdminPicture()">Avbryt</button>
     `
   }
 

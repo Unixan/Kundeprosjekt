@@ -58,3 +58,9 @@ function updateAdminPicture() {
     model.creator.aboutPicture.editMode = false;
     updateView();
 }
+
+function cancelAdminPicture() {
+    model.inputs.admin.editProfile.aboutPicture = model.creator.aboutPicture.picture;
+    model.creator.aboutPicture.editMode = false;
+    updateView();
+}
