@@ -71,6 +71,36 @@ function adminMenuBar() {
   return menu;
 }
 
+function menuBar() {
+  //tegner opp menyen
+  menu = /*HTML*/ `
+  <header>
+    <nav class="menuBar">
+         <ul class="menu">
+          <li class="menuItem">
+            <div onclick="changeToMainView()" class="menuLink">Hjem</div>
+          </li>
+          <li class="menuItem">
+            <div onclick="changeToFilterView()" class="menuLink">Filter</div>
+          </li>
+          <li class="menuItem">
+            <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
+          </li>
+          <li class="menuItem">
+            <div onclick="changeToLoginView()" class="menuLink">Admin</div>
+          </li>
+        </ul>
+    </nav>
+    <div class="hamburger" onclick="hamburgerActivate()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>`;
+
+  return menu;
+}
+
 function changeToAdminView() {
   model.state = "adminView";
   backEdit();
@@ -94,6 +124,12 @@ function changeToAdminContactView() {
   backEdit();
   updateView();
 }
+
+function changeToLoginView(){
+    model.state = "loginView";
+    backEdit();
+    updateView();
+  }
 
 function backEdit() {
   //klargjør modellen for nye inputs og sender tilbake til adminView
