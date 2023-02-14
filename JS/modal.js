@@ -68,7 +68,7 @@ function commentBox() {
       <div class="addCommentLink show" onclick="toggleAddComment()">
         Legg til kommentar
       </div>
-      <button class="addCommentLink" style="float: right" onclick="toggleAddComment()">
+      <button class="addCommentLink" style="float: right" onclick="submitComment()">
         Kommentèr
       </button>
       <button class="addCommentLink" onclick="toggleAddComment()">
