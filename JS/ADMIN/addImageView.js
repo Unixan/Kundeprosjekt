@@ -1,6 +1,5 @@
 // addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
-
 //ON THE CASE: Nikotron
 
 /*TODO:
@@ -76,10 +75,11 @@ function fetchProject(index) {
 
 function editImageProjects(index) {
   //setter inputmodellen til current project så det kan lagres, men oppdaterer endring om du bytter prosjekt
-  if(model.inputs.admin.addPic.projectNumber == 0){
-  model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
-  model.inputs.admin.addPic.projectNumber = model.pictures[index].projectNumber;
-}
+  if (model.inputs.admin.addPic.projectNumber == 0) {
+    model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
+    model.inputs.admin.addPic.projectNumber =
+      model.pictures[index].projectNumber;
+  }
   return projectSelection(index);
 }
 
@@ -231,17 +231,13 @@ function fetchDescription(index) {
       <textarea 
         type="text" 
         oninput="model.inputs.admin.addPic.description = this.value"
-      >
-        ${model.pictures[index].description}
-      </textarea>`
+      >${model.pictures[index].description}</textarea>`
       : ` 
       <textarea
       type="text" 
       placeholder="Skriv inn beskrivelse" 
       oninput="model.inputs.admin.addPic.description = this.value"
-      >
-      ${model.inputs.admin.addPic.description}
-      </textarea>` 
+      >${model.inputs.admin.addPic.description}</textarea>`
   }
     </div>
   `;
