@@ -35,6 +35,7 @@ function updateAdminContactView() {
     }
     someHTML += `
     <button onclick="updateSoMe()">Lagre</button>
+    <button onclick="cancelSoMe()">Avbryt</button>
     `
   }
   let aboutCreatorEdit = "";
@@ -51,6 +52,7 @@ function updateAdminContactView() {
     value="${model.inputs.admin.editProfile.aboutCreator}" 
     onchange="changeAbout(this.value)">
   <button onclick="updateAbout()">Lagre</button>
+  <button onclick="cancelAbout()">Avbryt</button>
   ` }
 
   let adminPictureEdit = "";
