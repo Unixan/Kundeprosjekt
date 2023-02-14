@@ -170,6 +170,8 @@ li {
 }
 
 .footer {
+  padding: 10px;
+  color: white;
   position: fixed;
   height: 40px;
   width: 100vw;
@@ -217,7 +219,7 @@ li {
   .picture:hover {
     transform: none;
   }
-  
+
   .scrollBox {
     display: flex;
     flex-direction: column;
