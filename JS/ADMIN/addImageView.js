@@ -1,20 +1,10 @@
 // addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
-//TODO Legg til endring for projectId og Artsist, og legge til klasser for CSS
 
 //ON THE CASE: Nikotron
 
 /*TODO:
-legge til bilde i input om en skal redigere X
-legge til back button X
-    skrive view for å kunne legge til:
-         nytt bilde X
-         bildetittel X
-         beskrivelse av bilde X
-         hvilke tags bildet skal ha X
-         nye tags X
-    funksjonen trenger argument for å kunne velge allerede eksisterende bilde for redigering
-    bildet skal legges til i model.pictures, eller endre model.pictures[argument] X
+  How the F to add more pictures?
     */
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
