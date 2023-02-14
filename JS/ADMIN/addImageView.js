@@ -20,7 +20,7 @@ function updateAddImageView(index) {
   html = /*HTML*/ `
   ${menu}
   
-  <div class="main">
+  <div class="addMain">
     ${titleDiv}
     ${projectDiv}
     ${imageDiv}
@@ -30,6 +30,10 @@ function updateAddImageView(index) {
     </div>
     ${saveButtonsDiv}
     </div>
+    </div>
+        <footer class="footer">
+    ©Copyright
+    </footer>
     `;
   appDiv.innerHTML = html;
 }
