@@ -1,6 +1,5 @@
 // addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
-
 //ON THE CASE: Nikotron
 
 /*TODO:
@@ -76,23 +75,26 @@ function fetchProject(index) {
 
 function editImageProjects(index) {
   //setter inputmodellen til current project så det kan lagres, men oppdaterer endring om du bytter prosjekt
-  if(model.inputs.admin.addPic.projectNumber == 0){
-  model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
-  model.inputs.admin.addPic.projectNumber = model.pictures[index].projectNumber;
-}
+  if (model.inputs.admin.addPic.projectNumber == 0) {
+    model.inputs.admin.addPic.projectName = model.pictures[index].projectName;
+    model.inputs.admin.addPic.projectNumber =
+      model.pictures[index].projectNumber;
+  }
   return projectSelection(index);
 }
 
 function projectSelection(index) {
   let html = /*html*/ `
-  ${makeSelection(index)}
-  <p>
-    Nytt Prosjekt?
-    <button 
-      onclick="addProject(${index})">
-     +
-    </button>
-  </p>
+  <div class="addProject">
+    ${makeSelection(index)}
+    <p>
+      Nytt Prosjekt?
+      <button 
+        onclick="addProject(${index})">
+      +
+      </button>
+    </p>
+  </div>
   `;
   return html;
 }
@@ -114,7 +116,7 @@ function getProjectOptions() {
 
 function makeSelection(index) {
   let html = /*html*/ `
-  <div class="projectDiv">
+  <div>
   <label for="projects">
   Velg et prosjekt:
   </label>
@@ -178,7 +180,7 @@ function fetchImage(index) {
           //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
           index != null
             ? /*HTML*/ `
-            <img src='${model.pictures[index].img}'>
+            <img class="addPicture" src='${model.pictures[index].img}'>
             ${
               !model.areYouSureImg
                 ? "" //spør bruker om de er sikker på at de vil slette bildet
@@ -203,7 +205,7 @@ function fetchImage(index) {
               ${
                 //skjekker om det er et bilde i input
                 model.inputs.admin.addPic.img != ""
-                  ? `<img src='${model.inputs.admin.addPic.img}'>`
+                  ? `<img class="addPicture" src='${model.inputs.admin.addPic.img}'>`
                   : "<p>Legg til bilde</p>"
               }
             <!--knapp bruker kan trykke på for å laste opp bilder
@@ -225,17 +227,17 @@ function fetchDescription(index) {
     <div class="addDescription">
   ${
     index != null
-      ? `<input 
+      ? `
+      <textarea 
         type="text" 
-        value="${model.pictures[index].description}" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-      >`
-      : ` <input 
-        type="text" 
-        placeholder="Skriv inn beskrivelse" 
-        onchange="model.inputs.admin.addPic.description = this.value"
-        value="${model.inputs.admin.addPic.description}"
-      >`
+        oninput="model.inputs.admin.addPic.description = this.value"
+      >${model.pictures[index].description}</textarea>`
+      : ` 
+      <textarea
+      type="text" 
+      placeholder="Skriv inn beskrivelse" 
+      oninput="model.inputs.admin.addPic.description = this.value"
+      >${model.inputs.admin.addPic.description}</textarea>`
   }
     </div>
   `;
@@ -256,6 +258,7 @@ function fetchCategories(index) {
     //genererer categoribokser
     if (model.inputs.admin.addPic.category[i].cat) {
       catecoryDiv += /*HTML*/ `
+        <div class="addCat">
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
@@ -269,7 +272,7 @@ function fetchCategories(index) {
             <label for="${model.inputs.admin.addPic.category[i].cat}">
             ${model.inputs.admin.addPic.category[i].cat}
             </label> 
-            <br>
+      </div>
         `;
     } //om vi legger til ny kategori
     else

@@ -56,7 +56,7 @@ function deletePicture(picture) {
     model.pictures.splice(picture, 1);
     model.areYouSure = false;
     model.areYouSureImg = false;
-    backEdit();
+    changeToAdminView();
   }
 }
 
