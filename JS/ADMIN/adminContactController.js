@@ -64,3 +64,9 @@ function cancelAdminPicture() {
     model.creator.aboutPicture.editMode = false;
     updateView();
 }
+
+function cancelAbout() {
+    model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
+    model.creator.aboutCreator.editMode = false;
+    updateView()
+}
