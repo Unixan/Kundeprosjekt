@@ -86,6 +86,9 @@ function menuBar() {
           <li class="menuItem">
             <div onclick="changeToContactView()" class="menuLink">Kontakt</div>
           </li>
+          <li class="menuItem">
+            <div onclick="changeToLoginView()" class="menuLink">Admin</div>
+          </li>
         </ul>
     </nav>
     <div class="hamburger" onclick="hamburgerActivate()">
@@ -121,6 +124,12 @@ function changeToAdminContactView() {
   backEdit();
   updateView();
 }
+
+function changeToLoginView(){
+    model.state = "loginView";
+    backEdit();
+    updateView();
+  }
 
 function backEdit() {
   //klargjør modellen for nye inputs og sender tilbake til adminView
