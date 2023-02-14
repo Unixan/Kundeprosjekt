@@ -72,12 +72,13 @@ function updateAdminContactView() {
     >
     <br/>
     <button onclick="updateAdminPicture()">Lagre</button>
+    <button onclick="cancelAdminPicture()">Avbryt</button>
     `
   }
 
 
   document.getElementById('app').innerHTML = /*html*/ `
-    ${menuBar()}
+    ${adminMenuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">

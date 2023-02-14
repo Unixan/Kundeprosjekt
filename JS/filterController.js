@@ -31,11 +31,15 @@ function resetFilter(){
 function trueOrFalse(index){
     let filterBox = document.querySelector('#filterBox');
     filterBox[index] = !filterBox[index];
-    if(filterBox.checked){
+    model.filter[index].checked = !model.filter[index].checked;
+    console.log(model.filter[index])
+    if(model.filter[index].checked){
         checkedFilter(index);
+        console.log(model.filter[index])
         model.filterView = true;
     }
-    if(!filterBox.checked)uncheckedFilter(index);
+    if(!model.filter[index].checked)uncheckedFilter(index);
+    updateView();
 }
 
 
@@ -44,14 +48,13 @@ function trueOrFalse(index){
 //Legges på mainView som en if, hvis filtrene er huket av. 
 
 function checkedFilter(index){
-    model.filter[index].checked = !model.filter[index].checked;
     console.log('start', model.inputs.user.userFilter)
 
     for(let i = 0; i < model.pictures.length; i++){
        model.pictures[i].category.forEach((cat) => {
-            if(cat.includes(model.filter[index].cat)){
+            if(cat.includes('Art')){
                 model.inputs.user.userFilter.push(model.pictures[i]);
-                model.filterView = true;
+
             }
               if(model.pictures[i] == model.inputs.user.userFilter[i]){
                    console.log('like')
@@ -61,8 +64,10 @@ function checkedFilter(index){
     console.log('finish', model.inputs.user.userFilter)
     return model.inputs.user.userFilter;
 }
+//model.filter[index].cat
 
-
+/*let filteredPictures = projects.filter(project => 
+    inputname2.includes(project.projectName) ); */
 
 function uncheckedFilter(index){
     let filterBox = document.getElementById('filterBox');

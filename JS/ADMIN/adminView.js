@@ -9,3 +9,9 @@
                 // Knapp som linker til brukers foretrukne e-post program hvor gjeldende bilde (tittel og id) blir automatisk lagt til som emne.
                 // Knapp som kaller på funksjon for å vise SoMe linker der bildene kan deles direkte til brukers feed.
                 // Mulighet for å fjerne kommentarer. Blokkere/banne E-mail.
+
+function updateAdminView(){
+    appDiv.innerHTML = /*HTML*/`
+    ${adminMenuBar()}
+    `;
+}
