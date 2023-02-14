@@ -9,7 +9,7 @@
 function updateAddImageView(index) {
   //skriver skjermbilde for endring eller redigering av bilder
   let html = "";
-  let menu = menuBar();
+  let menu = adminMenuBar();
   let titleDiv = fetchTitle(index);
   let projectDiv = fetchProject(index);
   let imageDiv = fetchImage(index);
@@ -21,11 +21,6 @@ function updateAddImageView(index) {
   ${menu}
   
   <div class="main">
-  <div><a onclick="backEdit()">
-    <img 
-    src=${model.backLogo}>
-    </a>
-  </div><!--Tilbakeknapp som tømmer endringer om noen er gjort-->
     ${titleDiv}
     ${projectDiv}
     ${imageDiv}
