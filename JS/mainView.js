@@ -30,13 +30,16 @@ function updateMainView() {
   //   } else if (!projectNumbers.includes(picture.projectNumber))
   //     return false;
   // });
-  if(model.filterMenu == true) html += createFilterMenu();
+  if (model.filterMenu == true) html += createFilterMenu();
 
-  filteredList = model.filterView ? model.inputs.user.userFilter : generatePictureArray();
-  
+  filteredList = model.filterView
+    ? model.inputs.user.userFilter
+    : generatePictureArray();
+
   html += /*HTML*/ `
           <div class="scrollBox">`;
-  filteredList.forEach((picture, i) => {
+  for (x = filteredList.length - 1; x >= 0; x--) {
+    picture = filteredList[x];
     html += /*HTML*/ `
                 <div class="picBox">
                   <h2 class="pictureTitle">${picture.projectName}</h2>
@@ -44,16 +47,14 @@ function updateMainView() {
                     <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
                   </div>
                 </div>`;
-  });
+  }
   html += /*HTML*/ `</div>
         <footer class="footer">
     ©Copyright
     </footer>`;
- 
+
   appDiv.innerHTML = html;
 }
-
-
 
 function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");
