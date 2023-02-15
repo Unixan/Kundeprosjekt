@@ -57,7 +57,6 @@ function showComments() {
 }
 
 function commentBox() {
-  // console.log(model.pictures.indexOf(model.modal.modalPictures[model.modal.slideIndex - 1]));
   let commentBox = /*HTML*/ `
   <div class="${
     model.modal.commentFieldOpen ? "commentBox show" : "commentBox"
@@ -104,10 +103,13 @@ function commentBox() {
 }
 
 function linkLine() {
+  let picture = model.modal.modalPictures[model.modal.slideIndex-1] 
   let links = /*HTML*/ `
     <div class="linkLine">
       <img title="Del bilde" src="IMG/ICONS/share.png"/>
-      <img title="Meld interesse" src="IMG/ICONS/email.png"/>
+      <a href="mailto:fakeEmail@mail.com?subject=Prosjekt: ${picture.projectNumber} Title: ${picture.title}" target="_blank" rel="noopener noreferrer">
+        <img title="Meld interesse" src="IMG/ICONS/email.png"/>
+      </a> 
       <img onclick="showComments()" title="Se kommentarer" src="IMG/ICONS/comment.png"/>
     </div>`;
   return links;
@@ -121,15 +123,18 @@ function comments() {
   currentPicComments = currentPicture.comments;
   if (currentPicComments.length !== 0) {
     let picComments = "";
-    currentPicComments.forEach((comment) => {
+    for (let x = currentPicComments.length - 1; x >= 0; x--) {
+      let username = currentPicComments[x].user;
+      let usercomment = currentPicComments[x].comment;
+      let date = currentPicComments[x].date;
       picComments += /*HTML*/ `
       <div class="comment">
-        <div class="commentName">${comment.user}:</div>
-        <div class="commentText">${comment.comment}</div>
+        <div class="commentName">${date} | ${username} ></div>
+        <div class="commentText">${usercomment}</div>
       </div>
       
       `;
-    });
+    }
     return picComments;
   }
 }
@@ -160,6 +165,7 @@ function submitComment() {
           date: getTodaysDate(),
         };
         model.pictures[currentPictureIndex].comments.push(newComment);
+        updateView();
       } else {
         alert("Ugyldig kommentar");
       }
@@ -180,3 +186,4 @@ function getTodaysDate() {
   currentDate = day + "/" + month + " - " + year;
   return currentDate;
 }
+
