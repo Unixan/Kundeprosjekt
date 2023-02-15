@@ -7,6 +7,7 @@ TODO
 //lukke filtermenyen DONE
 function closeFilter(){
     model.inputs.user.userFilter = [];
+    model.inputs.user.checkedFilter = [];
     model.filterMenu = false;
     model.filterView = false;
     updateView();
@@ -21,6 +22,7 @@ function resetFilter(){
         model.filter[i].checked = false;
     }
     model.inputs.user.userFilter = [];
+    model.inputs.user.checkedFilter = [];
     model.filterView = false;
     updateView();
 }
@@ -38,10 +40,7 @@ function checkedFilter(index){
     console.log(model.filter[index].checked)
     if(model.filter[index].checked){
         model.filterView = true;
-
-        
-
-        
+        model.inputs.user.checkedFilter.push(model.filter[index])
         for(let i = 0; i < model.pictures.length; i++){
             model.pictures[i].category.forEach((cat) => {
                  if(cat.includes(model.filter[index].cat)){
@@ -66,15 +65,22 @@ function checkedFilter(index){
 function uncheckedFilter(index){
     console.log('unchechedStart', model.inputs.user.userFilter);
     let filterArray = model.inputs.user.userFilter;
-
-    for(let i = filterArray.length-1; i >= 0 ; i--){
-        filterArray[i].category.forEach((cat) => {
-             if(cat.includes(model.filter[index].cat)){
-                filterArray.splice(i, 1)
-            }
-        }) 
+    let checkedFilter = model.inputs.user.checkedFilter;
+    for(let j = 0; j < checkedFilter.length; j++){
+        if(model.filter[index] == checkedFilter[j]){
+            checkedFilter.splice(j, 1)
+        }
+        for(let i = filterArray.length-1; i >= 0 ; i--){
+            filterArray[i].category.forEach((cat) => {
+                 if(cat.includes(model.filter[index].cat) && model.filter[index] != checkedFilter[j]){
+                    filterArray.splice(i, 1)
+                }
+            }) 
+        }
     }
+
     if(filterArray.length == 0){
+        model.inputs.user.checkedFilter = [];
         model.filterView = false;
     }
     console.log('uncheckedFinish', model.inputs.user.userFilter);
