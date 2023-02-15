@@ -62,7 +62,7 @@ function updateAdminContactView() {
       src=${model.creator.aboutPicture.picture} 
       alt="Profilbilde av Jarand Midtgaard"
       style="width: auto; height: 220px;">
-    <button onclick="editProfilePic()">Rediger bilde</button>
+    <button onclick="editProfilePic()" style="margin-top: auto;">Rediger bilde</button>
     `
   }
   else if (model.creator.aboutPicture.editMode === true) {
