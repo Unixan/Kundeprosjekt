@@ -131,8 +131,7 @@ function comments() {
       <div class="comment">
         <div class="commentName">${date} | ${username} ></div>
         <div class="commentText">${usercomment}</div>
-      </div>
-      
+      </div>      
       `;
     }
     return picComments;

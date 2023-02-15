@@ -77,9 +77,8 @@ li {
 
 .scrollBox {
   display: grid;
-  padding: 15px;
-
-  gap: 100px;
+  padding: 30px;
+  gap: 70px;
   grid-template-columns: 300px 300px 300px;
   grid-auto-rows: 300px;
   align-items: center;
