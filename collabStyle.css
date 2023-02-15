@@ -77,6 +77,11 @@
     padding: 10px;
 }
 
+.editSoMe {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 700px) {
     .collabInfo-box {
       display: flex;
