@@ -15,7 +15,7 @@ function updateAdminView(){
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);
   }
-  html += adminMenuBar();
+  html += model.isAdmin ? adminMenuBar() : menuBar();
 if(model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView ? checkedFilter() : generatePictureArray();

@@ -51,10 +51,12 @@ function updateAdminContactView() {
   }
   else if (model.creator.aboutCreator.editMode === true) {
     aboutCreatorEdit = `
-  <input 
+    <textarea 
+    class="editAboutField" 
+    oninput="changeAbout(this.value)"
     type="text" 
-    value="${model.inputs.admin.editProfile.aboutCreator}" 
-    onchange="changeAbout(this.value)">
+    >${model.inputs.admin.editProfile.aboutCreator
+      }</textarea>
   <button onclick="updateAbout()">Lagre</button>
   <button onclick="cancelAbout()">Avbryt</button>
   ` }
