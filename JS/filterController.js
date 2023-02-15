@@ -35,10 +35,12 @@ function resetFilter(){
 
 function checkedFilter(index){
     console.log('start', model.inputs.user.userFilter)
-    console.log(index, "index")
     console.log(model.filter[index].checked)
     if(model.filter[index].checked){
         model.filterView = true;
+
+        
+
         
         for(let i = 0; i < model.pictures.length; i++){
             model.pictures[i].category.forEach((cat) => {
@@ -53,9 +55,9 @@ function checkedFilter(index){
         console.log('finish', model.inputs.user.userFilter);
          
     }
-        if(!model.filter[index].checked){
-            uncheckedFilter(index);
-        }
+    if(!model.filter[index].checked){
+        uncheckedFilter(index);
+    }
     updateView();
         
 }
@@ -71,6 +73,9 @@ function uncheckedFilter(index){
                 filterArray.splice(i, 1)
             }
         }) 
+    }
+    if(filterArray.length == 0){
+        model.filterView = false;
     }
     console.log('uncheckedFinish', model.inputs.user.userFilter);
 }
