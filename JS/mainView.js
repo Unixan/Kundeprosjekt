@@ -10,39 +10,23 @@
 // Knapp som kaller på funksjon for å vise SoMe linker der bildene kan deles direkte til brukers feed.function updateMainView(){}
 
 function updateMainView() {
-  //Tegner opp main view. TODO: Sette opp burgermeny og banner. Endre på hvordan ting scroller.
-  //Gjort ferdig full-screen meny. Hvertfall ferdig til diskusjon i team.
-  // Holder på å sette opp modal. Får nå opp bilder.
-  //Må bare nå legge til kommentarer, kontakt og social media links
-  // Holder på å lage funksjonalitet i modal. Har fått satt opp kommentarer-boks. Holder på å legge til knapper.
-  // Bare vet ikke helt hvorfor jeg ikke ser knappene mine!
   let html = "";
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);
   }
   html += menuBar(); //Menyinit
-  // let filteredList = [];
-  // let projectNumbers = [];
-  // filteredList = model.pictures.filter((picture) => {
-  //   if (!projectNumbers.includes(picture.projectNumber)) {
-  //     projectNumbers.push(picture.projectNumber);
-  //     return true;
-  //   } else if (!projectNumbers.includes(picture.projectNumber))
-  //     return false;
-  // });
   if (model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView
     ? model.inputs.user.userFilter
     : generatePictureArray();
-
   html += /*HTML*/ `
           <div class="scrollBox">`;
   for (x = filteredList.length - 1; x >= 0; x--) {
     picture = filteredList[x];
     html += /*HTML*/ `
                 <div class="picBox">
-                  <h2 class="pictureTitle">${picture.projectName}</h2>
+                  <h3 class="pictureTitle">${picture.projectName}</h3>
                   <div class="picBackground">
                     <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
                   </div>

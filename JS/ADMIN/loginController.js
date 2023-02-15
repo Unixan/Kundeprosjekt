@@ -20,6 +20,7 @@ function login(){
         model.inputs.login.username = '';
         model.inputs.login.password = '';
         model.state = 'adminView';
+        model.isAdmin = true
         updateView();
     }
 }

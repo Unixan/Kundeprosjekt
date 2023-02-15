@@ -82,6 +82,14 @@
     flex-direction: column;
 }
 
+.editAboutField {
+    max-height: 100px;
+    min-height: 100px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
 @media (max-width: 700px) {
     .collabInfo-box {
       display: flex;
