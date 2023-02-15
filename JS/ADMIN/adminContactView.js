@@ -99,9 +99,9 @@ function updateAdminContactView() {
       <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
       <p>tlf: ${model.creator.tlf}</p>
     </p>
-    <p class="collabInfoParagraph">
+    <div class="collabInfoParagraph">
     ${aboutCreatorEdit}
-    </p>
+    </div>
 </div>
 <div class="collabBanner" style="align-self: end;">${getBanner()}</div>
 </div>
