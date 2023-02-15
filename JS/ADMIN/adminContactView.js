@@ -4,6 +4,7 @@
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
   let someHTML = "";
+  let someHTMLedit = "";
   if (model.creator.creatorSoMelinks.editMode === false) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
       someHTML += `
@@ -15,14 +16,14 @@ function updateAdminContactView() {
             <img src=${model.creator.creatorSoMelinks.links[i].logoimg}>
         </a>
       </div>
-    `
+      `
     }
     someHTML += `
     <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
   else if (model.creator.creatorSoMelinks.editMode === true) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
-      someHTML += `
+      someHTMLedit += `
       <div>
         <p>${model.creator.creatorSoMelinks.links[i].media}</p>
           <input 
@@ -33,11 +34,14 @@ function updateAdminContactView() {
       <br/>
       `
     }
-    someHTML += `
+    someHTMLedit += `
     <button onclick="updateSoMe()">Lagre</button>
     <button onclick="cancelSoMe()">Avbryt</button>
     `
   }
+  someHTML += /*html*/ `
+  <div class="editSoMe">${someHTMLedit}</div>
+  `
   let aboutCreatorEdit = "";
   if (!model.creator.aboutCreator.editMode) {
     aboutCreatorEdit = `
