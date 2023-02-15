@@ -104,32 +104,37 @@ function menuBar() {
 function changeToAdminView() {
   model.state = "adminView";
   backEdit();
+  resetEdits();
   updateView();
 }
 
 function changeToAdminFilterView() {
   model.state = "adminFilterView";
   backEdit();
+  resetEdits();
   updateView();
 }
 
 function changeToAddImageView(pictureIndex) {
   model.state = "addImageView";
   backEdit();
+  resetEdits();
   updateView(pictureIndex);
 }
 
 function changeToAdminContactView() {
   model.state = "adminContactView";
   backEdit();
+  resetEdits();
   updateView();
 }
 
-function changeToLoginView(){
-    model.state = "loginView";
-    backEdit();
-    updateView();
-  }
+function changeToLoginView() {
+  model.state = "loginView";
+  backEdit();
+  resetEdits();
+  updateView();
+}
 
 function backEdit() {
   //klargjør modellen for nye inputs og sender tilbake til adminView
@@ -170,4 +175,18 @@ function resetInput() {
   model.inputs.user.pictureComment.user = '';
   model.inputs.user.pictureComment.comment = '';
   ;
+}
+
+function resetEdits() { //Resetter redigeringsfeltene i adminContactView
+  let SOMEinp = model.inputs.admin.editProfile.creatorSoMeLink;
+  let SOME = model.creator.creatorSoMelinks.links
+  SOMEinp[0].link = SOME[0].link;
+  SOMEinp[1].link = SOME[1].link;
+  SOMEinp[2].link = SOME[2].link;
+  SOMEinp[3].link = SOME[3].link;
+  model.creator.creatorSoMelinks.editMode = false;
+  model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
+  model.creator.aboutCreator.editMode = false;
+  model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
+  model.creator.aboutCreator.editMode = false;
 }

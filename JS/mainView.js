@@ -48,8 +48,7 @@ function updateMainView() {
         <footer class="footer">
     ©Copyright
     </footer>`;
-  // html += hamburger();
-
+ 
   appDiv.innerHTML = html;
 }
 

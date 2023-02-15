@@ -64,13 +64,38 @@ function commentBox() {
     <div class="comments">
     ${comments() === undefined ? "Ingen kommentarer" : `${comments()}`}
     </div>
-    <div class="addComment">
-      <div class="commentID">  
-        <input type="text" placeholder="Skjermnavn"/>
-        <input type="email" placeholder="E-Mail"/>
+    <div>
+      <div class="addCommentLink show" onclick="toggleAddComment()">
+        Legg til kommentar
       </div>
-      <div>
-        <textarea class="commentField" type="text" placeholder="Kommentar"></textarea>
+      <button class="addCommentLink" style="float: right" onclick="submitComment()">
+        Kommentèr
+      </button>
+      <button class="addCommentLink" onclick="toggleAddComment()">
+          Avbryt
+      </button>
+      <div class="addComment">
+        <div class="newComment">  
+          <input 
+            type="text" 
+            placeholder="Skjermnavn" 
+            value="${model.inputs.user.pictureComment.user}" 
+            oninput="model.inputs.user.pictureComment.user = this.value"/>
+          <input 
+            type="email" 
+            placeholder="E-Mail" 
+            value="${model.inputs.user.pictureComment.email}" 
+            oninput="model.inputs.user.pictureComment.email = this.value"/>
+        </div>
+        <div>
+          <textarea 
+          class="commentField" 
+          oninput="model.inputs.user.pictureComment.comment = this.value"
+          type="text" 
+          placeholder="Kommentar">${
+            model.inputs.user.pictureComment.comment
+          }</textarea>
+        </div>
       </div>
     </div>
   </div>`;
@@ -97,7 +122,8 @@ function comments() {
     let picComments = "";
     currentPicComments.forEach((comment) => {
       picComments += /*HTML*/ `
-      <div class="commentName">${comment.user}
+      <div class="comment">
+        <div class="commentName">${comment.user}:</div>
         <div class="commentText">${comment.comment}</div>
       </div>
       
@@ -105,4 +131,12 @@ function comments() {
     });
     return picComments;
   }
+}
+
+function toggleAddComment() {
+  addCommentToggle = document.querySelectorAll(".addCommentLink");
+  document.querySelector(".addComment").classList.toggle("show");
+  addCommentToggle.forEach((linkClass) => {
+    linkClass.classList.toggle("show");
+  });
 }

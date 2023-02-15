@@ -35,6 +35,7 @@ function updateAdminContactView() {
     }
     someHTML += `
     <button onclick="updateSoMe()">Lagre</button>
+    <button onclick="cancelSoMe()">Avbryt</button>
     `
   }
   let aboutCreatorEdit = "";
@@ -51,6 +52,7 @@ function updateAdminContactView() {
     value="${model.inputs.admin.editProfile.aboutCreator}" 
     onchange="changeAbout(this.value)">
   <button onclick="updateAbout()">Lagre</button>
+  <button onclick="cancelAbout()">Avbryt</button>
   ` }
 
   let adminPictureEdit = "";
@@ -78,7 +80,7 @@ function updateAdminContactView() {
 
 
   document.getElementById('app').innerHTML = /*html*/ `
-    ${menuBar()}
+    ${adminMenuBar()}
   <div class="collabInfo-box">
     <h1 class="collabTitle">${model.creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">
@@ -100,7 +102,7 @@ function updateAdminContactView() {
 <div class="collabBanner">${getBanner()}</div>
 </div>
 <div class="collabImageTop">${collabImages()}</div>
-<footer class="footer footerSticky">
+<footer class="footer footerSticky" style="position: fixed;">
 ©Copyright
 </footer>
     `

@@ -170,7 +170,13 @@ li {
 }
 
 .footer {
-  grid-area: footer;
+  padding: 10px;
+  color: white;
+  position: fixed;
+  height: 40px;
+  width: 100vw;
+  bottom: 0;
+  right: 0;
   background-color: #2a2f35;
   text-align: center;
 }
@@ -213,7 +219,7 @@ li {
   .picture:hover {
     transform: none;
   }
-  
+
   .scrollBox {
     display: flex;
     flex-direction: column;
