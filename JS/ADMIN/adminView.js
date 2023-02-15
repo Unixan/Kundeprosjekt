@@ -32,7 +32,7 @@ if(model.filterMenu == true) html += createFilterMenu();
   filteredList.forEach((picture, i) => {
     html += /*HTML*/ `
                 <div class="picBox">
-                  <h2 class="pictureTitle">${picture.projectName}</h2>
+                  <h3 class="pictureTitle">${picture.projectName}</h3>
                   <div class="picBackground">
                     <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
                   </div>
