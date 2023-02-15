@@ -103,7 +103,7 @@ function updateAdminContactView() {
     ${aboutCreatorEdit}
     </p>
 </div>
-<div class="collabBanner">${getBanner()}</div>
+<div class="collabBanner" style="align-self: end;">${getBanner()}</div>
 </div>
 <div class="collabImageTop">${collabImages()}</div>
 <footer class="footer footerSticky" style="position: fixed;">
