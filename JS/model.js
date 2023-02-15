@@ -50,7 +50,7 @@ const model = {
   //data
   areYouSure: false,
   areYouSureImg: false,
-
+  isAdmin: false,
   filterMenu: false,
   filterView: false,
   filterChecked: false,
