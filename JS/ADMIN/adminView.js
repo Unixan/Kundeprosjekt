@@ -11,7 +11,50 @@
                 // Mulighet for å fjerne kommentarer. Blokkere/banne E-mail.
 
 function updateAdminView(){
-    appDiv.innerHTML = /*HTML*/`
-    ${adminMenuBar()}
-    `;
+    let html = "";
+  if (model.modal.showModal) {
+    html += modal(model.modal.slideIndex);
+  }
+  html += adminMenuBar();
+if(model.filterMenu == true) html += createFilterMenu();
+
+  filteredList = model.filterView ? checkedFilter() : adminGeneratePictureArray();
+  html += /*HTML*/ `
+          <div class="scrollBox">`;
+  filteredList.forEach((picture, i) => {
+    html += /*HTML*/ `
+                <div class="picBox">
+                  <h2 class="pictureTitle">${picture.projectName}</h2>
+                  <div class="picBackground">
+                    <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
+                  </div>
+                </div>`;
+  });
+  html += /*HTML*/ `</div>
+        <footer class="footer">
+    ©Copyright
+    </footer>`;
+ 
+  appDiv.innerHTML = html;
+}
+
+function adminGeneratePictureArray(number) {
+  let pictureList = [];
+  let projectNumbers = [number === undefined ? "" : number];
+  if (number === undefined) {
+    pictureList = model.pictures.filter((picture) => {
+      if (!projectNumbers.includes(picture.projectNumber)) {
+        projectNumbers.push(picture.projectNumber);
+        return true;
+      } else if (projectNumbers.includes(picture.projectNumber)) return false;
+    });
+  }
+  if (number !== undefined) {
+    pictureList = model.pictures.filter((picture) => {
+      if (projectNumbers.includes(picture.projectNumber)) {
+        return true;
+      } else if (!projectNumbers.includes(picture.projectNumber)) return false;
+    });
+  }
+  return pictureList;
 }
