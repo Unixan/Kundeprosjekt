@@ -47,53 +47,31 @@ function checkedFilter(index){
                     if(model.inputs.user.userFilter.includes(model.pictures[i]) == false){
                         model.inputs.user.userFilter.push(model.pictures[i]);
                     }
-                   }
-             }) 
-         }
-         console.log('finish', model.inputs.user.userFilter)
-         return model.inputs.user.userFilter;
-         
+                }
+            }) 
         }
+        console.log('finish', model.inputs.user.userFilter);
+         
+    }
         if(!model.filter[index].checked){
             uncheckedFilter(index);
         }
-        updateView();
+    updateView();
         
 }
 
 //skal fjerne allerede filtrerte bilder når de blir huket av
 function uncheckedFilter(index){
-    console.log('start', model.inputs.user.userFilter)
+    console.log('unchechedStart', model.inputs.user.userFilter);
     let filterArray = model.inputs.user.userFilter;
 
-    for(let i = 0; i < filterArray.length; i++){
+    for(let i = filterArray.length-1; i >= 0 ; i--){
         filterArray[i].category.forEach((cat) => {
              if(cat.includes(model.filter[index].cat)){
                 filterArray.splice(i, 1)
-                
-               }
-         }) 
-     }
-
-
-    
-    // for(let i = 0; i < model.pictures.length; i++){
-    //     for(let j = 0; j < model.inputs.user.userFilter.length; ){
-    //         model.pictures[i].category.forEach((cat) => {
-    //             model.inputs.user.userFilter[j].category.forEach((filterCat) =>{
-                    
-    //                 if(model.filter[index].cat == filterCat){
-    //                     model.inputs.user.userFilter.splice(j, 1)
-                        
-    //                }
-
-    //             })
-
-
-    //         })
-    //     }
-    // }
-    console.log('finish', model.inputs.user.userFilter)
-    return model.inputs.user.userFilter;
+            }
+        }) 
+    }
+    console.log('uncheckedFinish', model.inputs.user.userFilter);
 }
 

@@ -44,7 +44,6 @@
   object-fit: contain;
   max-width: 1000px;
   max-height: 90vh;
-  height: 90vh;
 }
 
 .prev,
@@ -108,7 +107,7 @@
   transform: rotate(0deg);
 }
 
-.comments{
+.comments {
   max-width: 100%;
   max-height: auto;
   overflow-y: scroll;
@@ -120,18 +119,18 @@
   display: none;
 }
 
-.addComment{
+.addComment {
   opacity: 0;
   height: 0px;
   transition: 0.3s ease-in-out;
 }
 
-.addComment.show{
+.addComment.show {
   opacity: 1;
   height: 133px;
 }
 
-.addCommentLink{
+.addCommentLink {
   display: none;
   text-align: center;
   padding: 0;
@@ -143,12 +142,12 @@
   opacity: 0.6;
 }
 
-.addCommentLink.show{
+.addCommentLink.show {
   display: block;
   opacity: 1;
 }
 
-.addCommentLink:hover{
+.addCommentLink:hover {
   transform: scale(1.1);
   opacity: 1;
   font-weight: bold;
@@ -162,7 +161,6 @@
 .newComment input {
   width: 45%;
 }
-
 
 .commentField {
   margin: 5px 0;
@@ -225,7 +223,7 @@
 }
 
 .close {
-  z-index: 20;
+  z-index: 30;
   position: fixed;
   top: 1.5em;
   right: 2em;
@@ -234,4 +232,35 @@
 }
 
 @media (max-width: 850px) {
+  .linkLine {
+    gap: unset;
+    justify-content: space-around;
+  }
+
+  .commentBox {
+    z-index: 20;
+    right: 0;
+    bottom: -100%;
+    width: 100vw;
+    height: 90vh;
+    transform: none;
+  }
+
+  .commentBox.show {
+    width: 100vw;
+    height: 90vh;
+    right: 0;
+    bottom: 10vh;
+    font-size: 100%;
+  }
+
+  .slideShowPic {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+
+  .slideShow {
+    width: 100vw;
+    max-height: 90vh;
+  }
 }
