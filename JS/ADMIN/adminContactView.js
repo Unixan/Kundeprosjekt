@@ -18,7 +18,7 @@ function updateAdminContactView() {
     `
     }
     someHTML += `
-    <button onclick="editSoMe()">Rediger SoMe-link</button>`
+    <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
   else if (model.creator.creatorSoMelinks.editMode === true) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {

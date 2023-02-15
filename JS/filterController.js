@@ -18,7 +18,7 @@ function resetFilter(){
         !filterBox[i].checked;
     }
     for(let i = 0; i < model.filter.length; i++){
-            !model.filter[i].checked;
+        !model.filter[i].checked;
     }
     model.inputs.user.userFilter = [];
     model.filterView = false;
@@ -28,43 +28,47 @@ function resetFilter(){
 //reagerer når filtrene blir trykket på
 //toggler ckeckbox
 
-function trueOrFalse(index){
-    let filterBox = document.querySelector('#filterBox');
-    filterBox[index] = !filterBox[index];
-    model.filter[index].checked = !model.filter[index].checked;
-    console.log(model.filter[index])
-    if(model.filter[index].checked){
-        checkedFilter(index);
-        console.log(model.filter[index])
-        model.filterView = true;
-    }
-    if(!model.filter[index].checked)uncheckedFilter(index);
-    updateView();
-}
-
 
 
 //Nye viewet for filtrerte bilder
 //Legges på mainView som en if, hvis filtrene er huket av. 
 
 function checkedFilter(index){
+    model.inputs.user.userFilter = [];
     console.log('start', model.inputs.user.userFilter)
 
-    for(let i = 0; i < model.pictures.length; i++){
-       model.pictures[i].category.forEach((cat) => {
-            if(cat.includes('Art')){
-                model.inputs.user.userFilter.push(model.pictures[i]);
-
-            }
-              if(model.pictures[i] == model.inputs.user.userFilter[i]){
-                   console.log('like')
-              }
-        }) 
-    }
-    console.log('finish', model.inputs.user.userFilter)
-    return model.inputs.user.userFilter;
+    let filterBox = document.querySelector('#filterBox');
+    filterBox[index] = !filterBox[index];
+    model.filter[index].checked = !model.filter[index].checked;
+    
+    console.log(model.filter[index].checked)
+    if(model.filter[index].checked){
+        model.filterView = true;
+        
+        for(let i = 0; i < model.pictures.length; i++){
+            model.pictures[i].category.forEach((cat) => {
+                 if(cat.includes(model.filter[index].cat) || model.filter[index].checked == true){
+                     model.inputs.user.userFilter.push(model.pictures[i]);
+     
+                 }
+                   if(model.pictures[i] == model.inputs.user.userFilter[i]){
+                        console.log('like')
+                   }
+             }) 
+         }
+         console.log('finish', model.inputs.user.userFilter)
+         return model.inputs.user.userFilter;
+         
+        }
+        if(!model.filter[index].checked){
+            !filterBox[index];
+            uncheckedFilter(index);
+        }
+        updateView();
+        
 }
 //model.filter[index].cat
+//
 
 /*let filteredPictures = projects.filter(project => 
     inputname2.includes(project.projectName) ); */
@@ -87,4 +91,5 @@ function uncheckedFilter(index){
             })
         }
     }
+    updateView();
 }
