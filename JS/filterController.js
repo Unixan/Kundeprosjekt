@@ -37,21 +37,28 @@ function resetFilter(){
 
 function checkedFilter(index){
     console.log('start', model.inputs.user.userFilter)
-    console.log(model.filter[index].checked)
+    let checkedFilter = model.inputs.user.checkedFilter;
     if(model.filter[index].checked){
         model.filterView = true;
         model.inputs.user.checkedFilter.push(model.filter[index])
         for(let i = 0; i < model.pictures.length; i++){
-            model.pictures[i].category.forEach((cat) => {
-                 if(cat.includes(model.filter[index].cat)){
 
-                    if(model.inputs.user.userFilter.includes(model.pictures[i]) == false){
-                        model.inputs.user.userFilter.push(model.pictures[i]);
+            for(let j = 0; j < checkedFilter.length; j++){
+
+                model.pictures[i].category.forEach((cat) => {
+                    if(cat.includes(checkedFilter[j].cat)){
+                        
+                        if(model.inputs.user.userFilter.includes(model.pictures[i]) == false){
+                            model.inputs.user.userFilter.push(model.pictures[i]);
+                        }
                     }
-                }
-            }) 
+                }) 
+
+            }
+            
         }
         console.log('finish', model.inputs.user.userFilter);
+        console.log('filter', model.inputs.user.checkedFilter)
          
     }
     if(!model.filter[index].checked){
@@ -70,19 +77,24 @@ function uncheckedFilter(index){
         if(model.filter[index] == checkedFilter[j]){
             checkedFilter.splice(j, 1)
         }
+
+//cannot read cat ??? 
+
         for(let i = filterArray.length-1; i >= 0 ; i--){
             filterArray[i].category.forEach((cat) => {
-                 if(cat.includes(model.filter[index].cat) && model.filter[index] != checkedFilter[j]){
+                 if(!cat.includes(checkedFilter[j].cat) && !model.filter[index] === checkedFilter[j]){
                     filterArray.splice(i, 1)
                 }
             }) 
         }
     }
 
-    if(filterArray.length == 0){
-        model.inputs.user.checkedFilter = [];
+    if(filterArray.length == 0 || checkedFilter.length == 0){
+        checkedFilter = [];
+        filterArray = [];
         model.filterView = false;
     }
     console.log('uncheckedFinish', model.inputs.user.userFilter);
+    console.log('filter', model.inputs.user.checkedFilter)
 }
 
