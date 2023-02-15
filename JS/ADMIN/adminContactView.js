@@ -18,7 +18,7 @@ function updateAdminContactView() {
     `
     }
     someHTML += `
-    <button onclick="editSoMe()">Rediger SoMe-link</button>`
+    <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
   else if (model.creator.creatorSoMelinks.editMode === true) {
     for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
@@ -62,7 +62,7 @@ function updateAdminContactView() {
       src=${model.creator.aboutPicture.picture} 
       alt="Profilbilde av Jarand Midtgaard"
       style="width: auto; height: 220px;">
-    <button onclick="editProfilePic()" style="margin-top: auto;">Rediger bilde</button>
+    <button onclick="editProfilePic()">Rediger bilde</button>
     `
   }
   else if (model.creator.aboutPicture.editMode === true) {
