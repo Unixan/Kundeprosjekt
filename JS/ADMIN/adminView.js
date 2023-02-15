@@ -19,6 +19,14 @@ function updateAdminView(){
 if(model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView ? checkedFilter() : generatePictureArray();
+  filteredList.sort((a,b)=>{
+    if(b.projectNumber > a.projectNumber){
+        return +1;
+    }
+    if(b.projectNumber < a.projectNumber){
+        return -1;
+    }
+  });
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {
