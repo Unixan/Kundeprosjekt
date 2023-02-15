@@ -57,6 +57,7 @@ function showComments() {
 }
 
 function commentBox() {
+  // console.log(model.pictures.indexOf(model.modal.modalPictures[model.modal.slideIndex - 1]));
   let commentBox = /*HTML*/ `
   <div class="${
     model.modal.commentFieldOpen ? "commentBox show" : "commentBox"
@@ -139,4 +140,43 @@ function toggleAddComment() {
   addCommentToggle.forEach((linkClass) => {
     linkClass.classList.toggle("show");
   });
+}
+
+function submitComment() {
+  let currentPictureIndex = model.pictures.indexOf(
+    model.modal.modalPictures[model.modal.slideIndex - 1]
+  );
+  let isMailAddress =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (model.inputs.user.pictureComment.email.match(isMailAddress)) {
+    if (model.inputs.user.pictureComment.user.replace(" ", "").length > 2) {
+      if (
+        model.inputs.user.pictureComment.comment.replace(" ", "").length > 5
+      ) {
+        let newComment = {
+          email: model.inputs.user.pictureComment.email,
+          user: model.inputs.user.pictureComment.user,
+          comment: model.inputs.user.pictureComment.comment,
+          date: getTodaysDate(),
+        };
+        model.pictures[currentPictureIndex].comments.push(newComment);
+      } else {
+        alert("Ugyldig kommentar");
+      }
+    } else {
+      alert("Må ha minst 2 bokstaver i brukernavn");
+    }
+  } else {
+    alert("Ugyldig Email adresse");
+  }
+}
+
+function getTodaysDate() {
+  let currentDate = "";
+  let newDate = new Date();
+  let day = newDate.getDate();
+  let month = newDate.getMonth() + 1;
+  let year = newDate.getFullYear().toString().substring(2);
+  currentDate = day + "/" + month + " - " + year;
+  return currentDate;
 }
