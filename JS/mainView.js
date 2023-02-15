@@ -32,7 +32,7 @@ function updateMainView() {
   // });
   if(model.filterMenu == true) html += createFilterMenu();
 
-  filteredList = model.filterView ? checkedFilter() : generatePictureArray();
+  filteredList = model.filterView ? model.inputs.user.userFilter : generatePictureArray();
   
   html += /*HTML*/ `
           <div class="scrollBox">`;
