@@ -18,7 +18,7 @@ function updateAdminView(){
   html += adminMenuBar();
 if(model.filterMenu == true) html += createFilterMenu();
 
-  filteredList = model.filterView ? checkedFilter() : adminGeneratePictureArray();
+  filteredList = model.filterView ? checkedFilter() : generatePictureArray();
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {
@@ -36,25 +36,4 @@ if(model.filterMenu == true) html += createFilterMenu();
     </footer>`;
  
   appDiv.innerHTML = html;
-}
-
-function adminGeneratePictureArray(number) {
-  let pictureList = [];
-  let projectNumbers = [number === undefined ? "" : number];
-  if (number === undefined) {
-    pictureList = model.pictures.filter((picture) => {
-      if (!projectNumbers.includes(picture.projectNumber)) {
-        projectNumbers.push(picture.projectNumber);
-        return true;
-      } else if (projectNumbers.includes(picture.projectNumber)) return false;
-    });
-  }
-  if (number !== undefined) {
-    pictureList = model.pictures.filter((picture) => {
-      if (projectNumbers.includes(picture.projectNumber)) {
-        return true;
-      } else if (!projectNumbers.includes(picture.projectNumber)) return false;
-    });
-  }
-  return pictureList;
 }
