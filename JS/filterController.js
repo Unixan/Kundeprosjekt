@@ -35,7 +35,7 @@ function resetFilter(){
 
 function checkedFilter(index){
     console.log('start', model.inputs.user.userFilter)
-
+    console.log(index, "index")
     console.log(model.filter[index].checked)
     if(model.filter[index].checked){
         model.filterView = true;
