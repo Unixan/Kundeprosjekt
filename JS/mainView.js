@@ -33,6 +33,7 @@ function updateMainView() {
   if(model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView ? checkedFilter() : generatePictureArray();
+  
   html += /*HTML*/ `
           <div class="scrollBox">`;
   filteredList.forEach((picture, i) => {

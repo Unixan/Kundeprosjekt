@@ -69,6 +69,55 @@ function checkedFilter(index){
 }
 //model.filter[index].cat
 //
+//model.inputs.user.userFilter = [];
+function checkIfFilterIsOn(){
+    for (let index = 0; index < model.filter.length; index++) {
+        if(model.filter[index].checked == true ){
+            return true;
+        }
+       
+     
+    }
+    return false;
+}
+function addPictureToFilteredArray(i){
+
+
+    for (let index = 0; index < model.pictures.length; index++) {
+
+        if(model.inputs.user.userFilter.includes(model.pictures[index]) == false && model.filter[i].checked == true){
+            
+            model.inputs.user.userFilter.push(model.pictures[index]);
+        }
+        
+        
+    }
+    updateView();
+}
+
+function showPictures(){
+    let html = "";
+    if(checkIfFilterIsOn()){
+        for (let index = 0; index < model.inputs.user.userFilter.length; index++) {
+           html += `<img src="${ model.inputs.user.userFilter[index].img}"/>`;
+           
+        }
+    }
+
+    else{
+        for (let index = 0; index < model.pictures.length; index++) {
+            console.log("pictures")
+            html += `<img src="${ model.pictures[index].img}"/>`;
+            
+         }
+    }
+
+    return html;
+}
+
+
+
+
 
 /*let filteredPictures = projects.filter(project => 
     inputname2.includes(project.projectName) ); */
