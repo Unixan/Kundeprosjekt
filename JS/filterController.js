@@ -73,13 +73,15 @@ function uncheckedFilter(index){
     console.log('unchechedStart', model.inputs.user.userFilter);
     let filterArray = model.inputs.user.userFilter;
     let checkedFilter = model.inputs.user.checkedFilter;
+    console.log('WHY', checkedFilter)
     for(let j = 0; j < checkedFilter.length; j++){
         if(model.filter[index] == checkedFilter[j]){
-            checkedFilter.splice(j, 1)
+            checkedFilter.splice(j, 1);
+            break;
         }
-
-//cannot read cat ??? 
-
+        
+        //lag en ny loop slik at den ikke fucker opp med break 
+        console.log('checkedFilter.cat',j, checkedFilter)
         for(let i = filterArray.length-1; i >= 0 ; i--){
             filterArray[i].category.forEach((cat) => {
                  if(!cat.includes(checkedFilter[j].cat) && !model.filter[index] === checkedFilter[j]){
