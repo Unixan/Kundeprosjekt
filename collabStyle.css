@@ -112,10 +112,3 @@
         flex-direction: column;
     }
 }
-
-@media(min-width: 850px){
-    .footerSticky{
-        position: sticky;
-        bottom: 0;
-    }
-}
