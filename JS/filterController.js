@@ -36,30 +36,21 @@ function resetFilter(){
 //Legges på mainView som en if, hvis filtrene er huket av. 
 
 function checkedFilter(index){
-    console.log('start', model.inputs.user.userFilter)
     let checkedFilter = model.inputs.user.checkedFilter;
     if(model.filter[index].checked){
         model.filterView = true;
         model.inputs.user.checkedFilter.push(model.filter[index])
         for(let i = 0; i < model.pictures.length; i++){
-
             for(let j = 0; j < checkedFilter.length; j++){
-
                 model.pictures[i].category.forEach((cat) => {
                     if(cat.includes(checkedFilter[j].cat)){
-                        
                         if(model.inputs.user.userFilter.includes(model.pictures[i]) == false){
                             model.inputs.user.userFilter.push(model.pictures[i]);
                         }
                     }
-                }) 
-
+                })
             }
-            
         }
-        console.log('finish', model.inputs.user.userFilter);
-        console.log('filter', model.inputs.user.checkedFilter)
-         
     }
     if(!model.filter[index].checked){
         uncheckedFilter(index);
@@ -70,21 +61,19 @@ function checkedFilter(index){
 
 //skal fjerne allerede filtrerte bilder når de blir huket av
 function uncheckedFilter(index){
-    console.log('unchechedStart', model.inputs.user.userFilter);
+    console.log('Start', model.inputs.user.userFilter);
     let filterArray = model.inputs.user.userFilter;
     let checkedFilter = model.inputs.user.checkedFilter;
-    console.log('WHY', checkedFilter)
     for(let j = 0; j < checkedFilter.length; j++){
         if(model.filter[index] == checkedFilter[j]){
             checkedFilter.splice(j, 1);
             break;
         }
-        
-        //lag en ny loop slik at den ikke fucker opp med break 
-        console.log('checkedFilter.cat',j, checkedFilter)
+    }
+    for(let k = 0; k < checkedFilter.length; k++){
         for(let i = filterArray.length-1; i >= 0 ; i--){
             filterArray[i].category.forEach((cat) => {
-                 if(!cat.includes(checkedFilter[j].cat) && !model.filter[index] === checkedFilter[j]){
+                 if(!cat.includes(checkedFilter[k].cat) && model.filter[index] != checkedFilter[k]){
                     filterArray.splice(i, 1)
                 }
             }) 
@@ -96,7 +85,7 @@ function uncheckedFilter(index){
         filterArray = [];
         model.filterView = false;
     }
-    console.log('uncheckedFinish', model.inputs.user.userFilter);
-    console.log('filter', model.inputs.user.checkedFilter)
+    console.log('Finish', model.inputs.user.userFilter);
+    console.log('filter', model.inputs.user.checkedFilter);
 }
 
