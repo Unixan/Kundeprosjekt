@@ -153,7 +153,6 @@ function emptyUnusedFilter() {
   });
 }
 function resetInput() {
-  //TODO test!
   //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
   model.filter.map((list) => {
     //setter alle kategorier til å være unchecked så listen kan brukes på nytt
