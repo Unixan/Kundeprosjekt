@@ -20,7 +20,6 @@ const model = {
         date: "",
       },
       userFilter: [],
-      checkedFilter: [],
     },
     admin: {
       addPic: {
