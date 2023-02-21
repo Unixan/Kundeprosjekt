@@ -67,25 +67,49 @@ function uncheckedFilter(index){
     for(let j = 0; j < checkedFilter.length; j++){
         if(model.filter[index] == checkedFilter[j]){
             checkedFilter.splice(j, 1);
-            break;
+            //break;
         }
     }
-    for(let k = 0; k < checkedFilter.length; k++){
-        for(let i = filterArray.length-1; i >= 0 ; i--){
-            filterArray[i].category.forEach((cat) => {
-                 if(!cat.includes(checkedFilter[k].cat) && model.filter[index] != checkedFilter[k]){
-                    filterArray.splice(i, 1)
-                }
-            }) 
-        }
+
+    for(let i = 0; i < filterArray.length; i++){
+        
+            
+                filterArray[i].category.filter((catFilter) => { 
+                checkedFilter.find((addedFilter) =>{
+                    
+                        if(catFilter !== addedFilter.cat){
+                            filterArray.splice(i, 1);
+                            console.log('array', filterArray);
+                        }
+                        
+                    
+                    
+                    })
+                })
+            
     }
+
+
+    // for(let k = 0; k < checkedFilter.length; k++){
+    //     for(let i = filterArray.length-1; i >= 0 ; i--){
+    //         filterArray[i].category.forEach((cat) => {
+    //              if(!cat.includes(checkedFilter[k].cat) && model.filter[index].cat !== checkedFilter[k].cat){
+    //                 filterArray.splice(i, 1)
+    //                 console.log('array', filterArray)
+    //             }
+    //         }) 
+    //     }
+    // }
 
     if(filterArray.length == 0 || checkedFilter.length == 0){
         checkedFilter = [];
         filterArray = [];
         model.filterView = false;
     }
+    //console.log('array', filterArray)
     console.log('Finish', model.inputs.user.userFilter);
     console.log('filter', model.inputs.user.checkedFilter);
+
+    return filterArray;
 }
 
