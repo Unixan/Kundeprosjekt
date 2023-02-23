@@ -54,18 +54,20 @@ function uncheckedFilter(){
     let filterArray = model.inputs.user.userFilter;
 
     for(let i = 0; i < model.filter.length; i++){
-        for(let j = 0; j < filterArray.length; j++){
-            for(let k = 0; k < filterArray[j].category.length; k++){ //klarer ikke loope mange ganger i category
 
-                if(!model.filter[i].checked && filterArray[j].category[k] != model.filter[i].cat){
-                    filterArray.splice(j, 1);
-                    console.log('array', filterArray);
-                }
+        if(!model.filter[i].checked){
+
+            for(let j = 0; j < filterArray.length; j++){
+                model.filterArray[j].category.forEach((cat) => {
+                    if(cat.includes(model.filter[i].cat)){
+                        filterArray.splice(j, 1);
+                        console.log('array', filterArray);
+                    }
+                })
             }
-            
-            
         }
     }
+
 
     if(filterArray.length == 0){
         filterArray = [];
