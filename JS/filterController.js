@@ -25,55 +25,27 @@ function resetFilter(){
     updateView();
 }
 
-//reagerer når filtrene blir trykket på
-//toggler ckeckbox
-function checkedFilter(index){
-    if(model.filter[index].checked){
-        model.filterView = true;
-        for(let i = 0; i < model.pictures.length; i++){
-            model.pictures[i].category.forEach((cat) => {
-                if(cat.includes(model.filter[index].cat)){
-                    if(model.inputs.user.userFilter.includes(model.pictures[i]) == false){
-                        model.inputs.user.userFilter.push(model.pictures[i]);
-                    }
-                }
-            })
-        }
-    }
-    if(!model.filter[index].checked){
-        uncheckedFilter();
-    }
-    console.log('Finish', model.inputs.user.userFilter);
-    updateView();
-        
-}
-
-//skal fjerne allerede filtrerte bilder når de blir huket av
-function uncheckedFilter(){
-    console.log('Start', model.inputs.user.userFilter);
+//Pusher inn bildet med riktig filter
+function checkedFilter(){
+    model.inputs.user.userFilter = [];
     let filterArray = model.inputs.user.userFilter;
-
-    for(let i = 0; i < model.filter.length; i++){
-
-        if(!model.filter[i].checked){
-
-            for(let j = 0; j < filterArray.length; j++){
-                model.filterArray[j].category.forEach((cat) => {
-                    if(cat.includes(model.filter[i].cat)){
-                        filterArray.splice(j, 1);
-                        console.log('array', filterArray);
+    model.filterView = true;
+    model.pictures.forEach((picture) => {
+        let catPic = picture.category;
+        catPic.forEach((cat) => {
+            model.filter.forEach((filter) => {
+                if(cat === filter.cat && filter.checked === true){
+                    if(!filterArray.includes(picture)){
+                        filterArray.push(picture);
                     }
-                })
-            }
-        }
-    }
-
-
-    if(filterArray.length == 0){
-        filterArray = [];
+                }    
+            })
+        })
+    })
+    
+    if(filterArray.length === 0){
         model.filterView = false;
     }
-    console.log('filter', model.inputs.user.checkedFilter);
-    return filterArray;
+    console.log(filterArray);
+    updateView(); 
 }
-

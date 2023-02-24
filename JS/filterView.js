@@ -47,7 +47,7 @@ function showFilter(){
             type="checkbox"
             id="filterBox"
             ${filter.checked == true ? 'checked' : ''}
-            onchange="model.filter[${i}].checked = !model.filter[${i}].checked;  checkedFilter(${i})"
+            onchange="model.filter[${i}].checked = !model.filter[${i}].checked;  checkedFilter()"
             />
             <label>
                 ${filter.cat}
