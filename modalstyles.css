@@ -2,6 +2,14 @@
   position: absolute;
 }
 
+.editPictureButton {
+  z-index: 20;
+  position: absolute;
+  left: 47%;
+  top: 10px;
+  padding: 5px;
+}
+
 .modalBackground {
   position: fixed;
   height: 100vh;
@@ -220,7 +228,6 @@
 
 .commentText {
   padding-top: 5px;
-  
 }
 
 .close {
@@ -232,9 +239,9 @@
   cursor: pointer;
 }
 
-.removeButton{
+.removeButton {
   padding: 0 3px;
-  
+
   float: right;
 }
 
