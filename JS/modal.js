@@ -137,9 +137,12 @@ function comments() {
       let date = currentPicComments[x].date;
       picComments += /*HTML*/ `
       <div class="comment">
-        <div class="commentName">${date} | ${username} ></div> ${
-        model.isAdmin ? '<button onclick="removeComment(x)">x</button>' : ""
+      ${
+        model.isAdmin
+          ? '<button onclick="removeComment(x)" class="removeButton">Slett kommentar</button>'
+          : ""
       }
+        <div class="commentName">${date} | ${username} ></div> 
         <div class="commentText">${usercomment}</div>
        
       </div>      
