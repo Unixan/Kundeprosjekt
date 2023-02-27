@@ -17,22 +17,22 @@ function createFilterMenu(){
     let filterPopUp = '';
    
     filterPopUp = /*HTML*/`
-    <div class="filterBox">
-        <div>Velg filtere</div>
-            <div>
+    <div class="filterMenu">
+        <div class="filters">Velg filtere
+            <br/><br/>
             ${showFilter()}
             </div>
-        <div>
-            <button onclick="resetFilter()">
+        <div class="filterReset">
+            <a onclick="resetFilter()">
             Reset filter
-            </button>
+            </a>
         </div>
-        <div>
+        <div class="filterClose">
             <a onclick="closeFilter()">
             Lukk filter
             </a>
         </div>
-    <div>
+    </div>
     `;
     return filterPopUp;
 }

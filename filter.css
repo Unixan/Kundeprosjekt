@@ -1,21 +1,49 @@
-/* .showFilterMenu{
-    display: flex;
-    transition: 0.5s; 
-    transform: translate(100px,100px); 
-    height: 200px;
-    border: 1px solid black;
-} */
+
+.filterMenu{
+    grid-area: body;
+    justify-content: end;
+    align-content: start;
+    display: grid;
+    grid-template-columns: 170px;
+    grid-template-rows: 30px auto;
+    grid-template-areas:
+    'title' 
+    'part1';
+}
 
 .filterBox{
-    grid-area: body1;
-    align-self: start;
-    justify-self: center;
+    grid-area: part1;
     display: flex;
+    align-self: start;
+    justify-self: start;
     
 }
 
+.filters{
+    grid-area: part1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #cedbad;
+}
+
+.filterReset{
+    grid-area: title;
+    justify-self: start;
+}
+
+.filterClose{
+    grid-area: title;
+    justify-self: end;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+
+}
 @media (max-width: 850px){
     .filterBox{
-        grid-area: none;
+    
     }
 }
