@@ -226,5 +226,6 @@ function editPictureFromModal() {
   currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
   pictureIndex = model.pictures.indexOf(currentModalPicture);
   model.state = "addImageView";
+  model.modal.showModal = false
   updateView(pictureIndex);
 }

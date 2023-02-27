@@ -1,7 +1,8 @@
 // de midlertidie verdiene fra adminContactView pushes til model.aboutCreator 
 //hjelpevariabler
 const editAdminProfile = model.inputs.admin.editProfile;
-const creatorsSOME = model.creator.creatorSoMelinks
+const creatorsSOME = model.creator.creatorSoMelinks;
+const creatorsPicture = model.creator.aboutPicture;
 let SOMEinp = editAdminProfile.creatorSoMeLink;
 let SOME = creatorsSOME.links;
 const aboutTheCreator = model.creator.aboutCreator;
@@ -45,8 +46,8 @@ function updateSoMe(index) {
 
 
 function editProfilePic() {
-    model.creator.aboutPicture.editMode = true;
-    editAdminProfile.aboutPicture = model.creator.aboutPicture.picture;
+    creatorsPicture.editMode = true;
+    editAdminProfile.aboutPicture = creatorsPicture.picture;
     updateView();
 }
 
@@ -60,14 +61,14 @@ function adminUpLoadPicture(new_Image) {
 }
 
 function updateAdminPicture() {
-    model.creator.aboutPicture.picture = editAdminProfile.aboutPicture;
-    model.creator.aboutPicture.editMode = false;
+    creatorsPicture.picture = editAdminProfile.aboutPicture;
+    creatorsPicture.editMode = false;
     updateView();
 }
 
 function cancelAdminPicture() {
-    editAdminProfile.aboutPicture = model.creator.aboutPicture.picture;
-    model.creator.aboutPicture.editMode = false;
+    editAdminProfile.aboutPicture = creatorsPicture.picture;
+    creatorsPicture.editMode = false;
     updateView();
 }
 
