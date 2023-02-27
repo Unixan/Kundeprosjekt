@@ -148,7 +148,7 @@ function emptyUnusedFilter() {
   //tømmer ubrukte filtre som ikke er lagt til
   model.inputs.admin.addPic.category.forEach((tempCat, index) => {
     if (tempCat.temp != null) {
-      tempCat.splice(index, 1);
+      model.inputs.admin.addPic.category.splice(index, 1);
     }
   });
 }
