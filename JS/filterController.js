@@ -44,7 +44,7 @@ function checkedFilter(){
     })
     
     if(filterArray.length === 0){
-        model.filterView = false;
+        model.inputs.user.userFilter = model.pictures;
     }
     console.log(filterArray);
     updateView(); 
