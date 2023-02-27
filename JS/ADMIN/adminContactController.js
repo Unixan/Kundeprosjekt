@@ -1,46 +1,52 @@
 // de midlertidie verdiene fra adminContactView pushes til model.aboutCreator 
+//hjelpevariabler
+const editAdminProfile = model.inputs.admin.editProfile;
+const creatorsSOME = model.creator.creatorSoMelinks
+let SOMEinp = editAdminProfile.creatorSoMeLink;
+let SOME = creatorsSOME.links;
+const aboutTheCreator = model.creator.aboutCreator;
 
 function editAbout() {
-    model.creator.aboutCreator.editMode = true;
-    model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
+    aboutTheCreator.editMode = true;
+    editAdminProfile.aboutCreator = aboutTheCreator.about;
     updateView();
 }
 
 function changeAbout(thisValue) {
-    model.inputs.admin.editProfile.aboutCreator = thisValue;
+    editAdminProfile.aboutCreator = thisValue;
 }
 
 function updateAbout() {
-    model.creator.aboutCreator.about = model.inputs.admin.editProfile.aboutCreator;
-    model.creator.aboutCreator.editMode = false;
+    aboutTheCreator.about = editAdminProfile.aboutCreator;
+    aboutTheCreator.editMode = false;
     updateView();
 }
 
 function editSoMe() {
-    model.creator.creatorSoMelinks.editMode = true;
-    model.inputs.admin.editProfile.creatorSoMeLink[0].link = model.creator.creatorSoMelinks.links[0].link
-    model.inputs.admin.editProfile.creatorSoMeLink[1].link = model.creator.creatorSoMelinks.links[1].link
-    model.inputs.admin.editProfile.creatorSoMeLink[2].link = model.creator.creatorSoMelinks.links[2].link
-    model.inputs.admin.editProfile.creatorSoMeLink[3].link = model.creator.creatorSoMelinks.links[3].link
+    creatorsSOME.editMode = true;
+    for (let i = 0; i < SOMEinp.length; i++) {
+        SOMEinp[i].link = SOME[i].link;
+    }
+
     updateView()
 }
 
 function changeSoMe(index, thisValue) {
-    model.inputs.admin.editProfile.creatorSoMeLink[index].link = thisValue;
+    editAdminProfile.creatorSoMeLink[index].link = thisValue;
 }
 
 function updateSoMe(index) {
-    for (i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
-        model.creator.creatorSoMelinks.links[i].link = model.inputs.admin.editProfile.creatorSoMeLink[i].link;
+    for (i = 0; i < creatorsSOME.links.length; i++) {
+        creatorsSOME.links[i].link = editAdminProfile.creatorSoMeLink[i].link;
     }
-    model.creator.creatorSoMelinks.editMode = false;
+    creatorsSOME.editMode = false;
     updateView();
 }
 
 
 function editProfilePic() {
     model.creator.aboutPicture.editMode = true;
-    model.inputs.admin.editProfile.aboutPicture = model.creator.aboutPicture.picture;
+    editAdminProfile.aboutPicture = model.creator.aboutPicture.picture;
     updateView();
 }
 
@@ -49,35 +55,32 @@ function adminUpLoadPicture(new_Image) {
     inputTag.addEventListener("change", () => {
         const temp = inputTag.files;
         console.log(inputTag.files);
-        model.inputs.admin.editProfile.aboutPicture = URL.createObjectURL(temp[0]);
+        editAdminProfile.aboutPicture = URL.createObjectURL(temp[0]);
     })
 }
 
 function updateAdminPicture() {
-    model.creator.aboutPicture.picture = model.inputs.admin.editProfile.aboutPicture;
+    model.creator.aboutPicture.picture = editAdminProfile.aboutPicture;
     model.creator.aboutPicture.editMode = false;
     updateView();
 }
 
 function cancelAdminPicture() {
-    model.inputs.admin.editProfile.aboutPicture = model.creator.aboutPicture.picture;
+    editAdminProfile.aboutPicture = model.creator.aboutPicture.picture;
     model.creator.aboutPicture.editMode = false;
     updateView();
 }
 
 function cancelAbout() {
-    model.inputs.admin.editProfile.aboutCreator = model.creator.aboutCreator.about;
-    model.creator.aboutCreator.editMode = false;
+    editAdminProfile.aboutCreator = aboutTheCreator.about;
+    aboutTheCreator.editMode = false;
     updateView()
 }
 
 function cancelSoMe() {
-    let SOMEinp = model.inputs.admin.editProfile.creatorSoMeLink;
-    let SOME = model.creator.creatorSoMelinks.links
-    SOMEinp[0].link = SOME[0].link;
-    SOMEinp[1].link = SOME[1].link;
-    SOMEinp[2].link = SOME[2].link;
-    SOMEinp[3].link = SOME[3].link;
-    model.creator.creatorSoMelinks.editMode = false;
+    for (let i = 0; i < SOMEinp.length; i++) {
+        SOMEinp[i].link = SOME[i].link;
+    }
+    creatorsSOME.editMode = false;
     updateView();
 }

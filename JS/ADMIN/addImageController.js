@@ -77,7 +77,7 @@ function saveEdit(index) {
       model.inputs.admin.addPic.projectNumber;
     model.pictures[index].projectName = model.inputs.admin.addPic.projectName;
   }
-  backEdit();
+  changeToAdminView();
 }
 
 function publishNew() {

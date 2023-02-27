@@ -1,75 +1,81 @@
 .addMain {
   display: grid;
-  grid-area: 2 / 2 / 3 /3;
-  background-color: #83785A;
-  justify-items: center;
+  padding: 30px;
+  align-items: center;
+  grid-area: body;
+  max-width: 100%;
+  overflow-y: scroll;
+  min-height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  scroll-behavior: smooth;
+  justify-self: center;
+  margin:auto
 }
 .addTitle {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 1%;
-  margin-bottom: 0;
-  background-color: #5B7983;
+  margin: auto;
+  margin-bottom: 1%;
+  background-color: #5b7983;
 }
-.addProject{
-  display:flex;
+.addProject {
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 0;
-  margin: 1%;
-  background-color: #835A5E;
+  margin-bottom: 1%;
+  margin: auto;
+  background-color: #835a5e;
 }
 .addImage {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: 1%;
-  margin-bottom: 0;
-  background-color: #5B7983;
+  align-content: center;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 1%;
+  background-color: #5b7983;
 }
-.addPicture{
-  margin: 0;
-  width: fit-content;
+.addPicture {
+  display: block;
+  margin: auto;
+  width: 100%;
   object-fit: cover;
 }
 .addDescription {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 1%;
-  margin-bottom: 0;
+  margin: auto;
+  margin-bottom: 1%;
   background-color: #835a5e;
 }
 .addCategory {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 1%;
-  margin-bottom: 0;
-  background-color: #5B7983;
+  margin: auto;
+  margin-bottom: 1%;
+  background-color: #5b7983;
 }
 .addSaveButtons {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 1%;
-  margin-bottom: 0;
-  background-color: #835A5E;
+  margin: auto;
+  margin-bottom: 1%;
+  background-color: #835a5e;
 }
 
-
-
-@media (max-width: 850px){
-  .addMain{
+@media (max-width: 850px) {
+  .addMain {
     display: grid;
-    grid-area: body1;
-    margin: auto;
+    grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -1,7 +1,6 @@
 //tegner opp modalen
 
 function modal(n) {
-
   let pictureIndex = 1;
   let slidePics = model.modal.modalPictures;
   let modalView = "";
@@ -13,6 +12,11 @@ function modal(n) {
   }
   modalView = /*HTML*/ `
     <div class="modal" id="modal">
+    ${
+      model.isAdmin
+        ? '<button class="editPictureButton" onclick="editPictureFromModal()">Rediger bilde</button>'
+        : ""
+    }
         <div class="modalBackground" id="modalBackground" onclick="closeModal()"></div> 
         <div class="modalContent">
           <span>
@@ -61,7 +65,7 @@ function showComments() {
 
 //Kommentarboksen til hvert bilde
 
-function commentBox() { 
+function commentBox() {
   let commentBox = /*HTML*/ `
   <div class="${
     model.modal.commentFieldOpen ? "commentBox show" : "commentBox"
@@ -109,8 +113,8 @@ function commentBox() {
 
 // Linker i bånn av modal
 
-function linkLine() {  
-  let picture = model.modal.modalPictures[model.modal.slideIndex-1] 
+function linkLine() {
+  let picture = model.modal.modalPictures[model.modal.slideIndex - 1];
   let links = /*HTML*/ `
     <div class="linkLine">
       <img title="Del bilde" src="IMG/ICONS/share.png"/>
@@ -124,7 +128,7 @@ function linkLine() {
 
 // Kommentarer som blir lagt til i commentBox()
 
-function comments() { 
+function comments() {
   model.modal.modalComments = "";
   let currentPicture = "";
   pictureIndex = model.modal.slideIndex - 1;
@@ -138,8 +142,14 @@ function comments() {
       let date = currentPicComments[x].date;
       picComments += /*HTML*/ `
       <div class="comment">
-        <div class="commentName">${date} | ${username} ></div>
+      ${
+        model.isAdmin
+          ? '<button onclick="removeComment(x)" class="removeButton">Slett kommentar</button>'
+          : ""
+      }
+        <div class="commentName">${date} | ${username} ></div> 
         <div class="commentText">${usercomment}</div>
+       
       </div>      
       `;
     }
@@ -189,7 +199,7 @@ function submitComment() {
   }
 }
 
-// Funksjon for datomerking av kommentarer 
+// Funksjon for datomerking av kommentarer
 
 function getTodaysDate() {
   let currentDate = "";
@@ -201,3 +211,20 @@ function getTodaysDate() {
   return currentDate;
 }
 
+// Adminfunksjon for å fjerne kommentar
+
+function removeComment(index) {
+  currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
+  pictureIndex = model.pictures.indexOf(currentModalPicture);
+  if (confirm("Vil du slette kommentaren?")) {
+    model.pictures[pictureIndex].comments.splice(index, 1);
+  } else return;
+  updateView();
+}
+
+function editPictureFromModal() {
+  currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
+  pictureIndex = model.pictures.indexOf(currentModalPicture);
+  model.state = "addImageView";
+  updateView(pictureIndex);
+}
