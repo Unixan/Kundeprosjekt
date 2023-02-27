@@ -1,4 +1,4 @@
-// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks
+// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks X
 //Lage input X
 //Collab view også lagt til
 //Erwan Foxtail DOES it
