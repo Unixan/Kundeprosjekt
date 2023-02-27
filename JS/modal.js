@@ -1,5 +1,6 @@
+//tegner opp modalen
+
 function modal(n) {
-  //tegner opp modalen
 
   let pictureIndex = 1;
   let slidePics = model.modal.modalPictures;
@@ -51,12 +52,16 @@ function slidePictures(n) {
   updateView();
 }
 
+// Funksjon for å vise eller skjule kommentarfelt i modalen
+
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
   model.modal.commentFieldOpen = !model.modal.commentFieldOpen;
 }
 
-function commentBox() {
+//Kommentarboksen til hvert bilde
+
+function commentBox() { 
   let commentBox = /*HTML*/ `
   <div class="${
     model.modal.commentFieldOpen ? "commentBox show" : "commentBox"
@@ -102,7 +107,9 @@ function commentBox() {
   return commentBox;
 }
 
-function linkLine() {
+// Linker i bånn av modal
+
+function linkLine() {  
   let picture = model.modal.modalPictures[model.modal.slideIndex-1] 
   let links = /*HTML*/ `
     <div class="linkLine">
@@ -115,7 +122,9 @@ function linkLine() {
   return links;
 }
 
-function comments() {
+// Kommentarer som blir lagt til i commentBox()
+
+function comments() { 
   model.modal.modalComments = "";
   let currentPicture = "";
   pictureIndex = model.modal.slideIndex - 1;
@@ -138,6 +147,8 @@ function comments() {
   }
 }
 
+// Viser eller skjuler inputfield for egen kommentar
+
 function toggleAddComment() {
   addCommentToggle = document.querySelectorAll(".addCommentLink");
   document.querySelector(".addComment").classList.toggle("show");
@@ -145,6 +156,8 @@ function toggleAddComment() {
     linkClass.classList.toggle("show");
   });
 }
+
+// Kontrollfunksjon og submit av kommentar til enkelt bilde
 
 function submitComment() {
   let currentPictureIndex = model.pictures.indexOf(
@@ -175,6 +188,8 @@ function submitComment() {
     alert("Ugyldig Email adresse");
   }
 }
+
+// Funksjon for datomerking av kommentarer 
 
 function getTodaysDate() {
   let currentDate = "";
