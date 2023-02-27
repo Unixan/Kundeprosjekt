@@ -1,6 +1,7 @@
 // her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks X
 //Lage input X
 //Collab view også lagt til
+//Korte ned med hjelpevariabler
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
   let someHTML = "";
