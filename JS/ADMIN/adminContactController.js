@@ -1,10 +1,13 @@
 // de midlertidie verdiene fra adminContactView pushes til model.aboutCreator 
-
+//hjelpevariabler
 const editAdminProfile = model.inputs.admin.editProfile;
+let SOMEinp = editAdminProfile.creatorSoMeLink;
+let SOME = model.creator.creatorSoMelinks.links;
+const aboutTheCreator = model.creator.aboutCreator;
 
 function editAbout() {
-    model.creator.aboutCreator.editMode = true;
-    editAdminProfile.aboutCreator = model.creator.aboutCreator.about;
+    aboutTheCreator.editMode = true;
+    editAdminProfile.aboutCreator = aboutTheCreator.about;
     updateView();
 }
 
@@ -13,17 +16,20 @@ function changeAbout(thisValue) {
 }
 
 function updateAbout() {
-    model.creator.aboutCreator.about = editAdminProfile.aboutCreator;
-    model.creator.aboutCreator.editMode = false;
+    aboutTheCreator.about = editAdminProfile.aboutCreator;
+    aboutTheCreator.editMode = false;
     updateView();
 }
 
 function editSoMe() {
     model.creator.creatorSoMelinks.editMode = true;
-    editAdminProfile.creatorSoMeLink[0].link = model.creator.creatorSoMelinks.links[0].link
-    editAdminProfile.creatorSoMeLink[1].link = model.creator.creatorSoMelinks.links[1].link
-    editAdminProfile.creatorSoMeLink[2].link = model.creator.creatorSoMelinks.links[2].link
-    editAdminProfile.creatorSoMeLink[3].link = model.creator.creatorSoMelinks.links[3].link
+    for (let i = 0; i < SOMEinp.length; i++) {
+        SOMEinp[i].link = SOME[i].link;
+    }
+    // editAdminProfile.creatorSoMeLink[0].link = model.creator.creatorSoMelinks.links[0].link
+    // editAdminProfile.creatorSoMeLink[1].link = model.creator.creatorSoMelinks.links[1].link
+    // editAdminProfile.creatorSoMeLink[2].link = model.creator.creatorSoMelinks.links[2].link
+    // editAdminProfile.creatorSoMeLink[3].link = model.creator.creatorSoMelinks.links[3].link
     updateView()
 }
 
@@ -68,14 +74,12 @@ function cancelAdminPicture() {
 }
 
 function cancelAbout() {
-    editAdminProfile.aboutCreator = model.creator.aboutCreator.about;
-    model.creator.aboutCreator.editMode = false;
+    editAdminProfile.aboutCreator = aboutTheCreator.about;
+    aboutTheCreator.editMode = false;
     updateView()
 }
 
 function cancelSoMe() {
-    let SOMEinp = editAdminProfile.creatorSoMeLink;
-    let SOME = model.creator.creatorSoMelinks.links
     for (let i = 0; i < SOMEinp.length; i++) {
         SOMEinp[i].link = SOME[i].link;
     }
