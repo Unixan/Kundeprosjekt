@@ -12,6 +12,11 @@ function modal(n) {
   }
   modalView = /*HTML*/ `
     <div class="modal" id="modal">
+    ${
+      model.isAdmin
+        ? '<button class="editPictureButton" onclick="editPictureFromModal()">Rediger bilde</button>'
+        : ""
+    }
         <div class="modalBackground" id="modalBackground" onclick="closeModal()"></div> 
         <div class="modalContent">
           <span>
@@ -211,9 +216,15 @@ function getTodaysDate() {
 function removeComment(index) {
   currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
   pictureIndex = model.pictures.indexOf(currentModalPicture);
-  console.log(pictureIndex, index);
   if (confirm("Vil du slette kommentaren?")) {
     model.pictures[pictureIndex].comments.splice(index, 1);
   } else return;
   updateView();
+}
+
+function editPictureFromModal() {
+  currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
+  pictureIndex = model.pictures.indexOf(currentModalPicture);
+  model.state = "addImageView";
+  updateView(pictureIndex);
 }
