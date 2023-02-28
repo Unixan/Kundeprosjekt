@@ -91,7 +91,7 @@ const model = {
     role: "Admin",
     password: "1234",
     email: "jarand@niamo.no",
-    tlf: 12345678,
+    tlf: 95999849,
     aboutPicture: {
       picture: "IMG/Jarand_img.jpg",
       editMode: false,
