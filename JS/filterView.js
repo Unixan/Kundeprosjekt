@@ -18,8 +18,8 @@ function createFilterMenu(){
    
     filterPopUp = /*HTML*/`
     <div class="filterMenu">
-        <div class="filters">Velg filtere
-            <br/><br/>
+    <div class="filterTitle">Velg filtere</div>
+        <div class="filters">
             ${showFilter()}
             </div>
         <div class="filterReset">

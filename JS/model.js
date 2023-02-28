@@ -1,6 +1,6 @@
 const model = {
   //app
-  // mainView, adminView, addImageView, contactView, adminContactView, collabView, loginView
+  // mainView, addImageView, contactView, adminContactView, collabView, loginView
   state: "mainView",
 
   //input

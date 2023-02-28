@@ -1,4 +1,4 @@
-// addImageView skal brukes til å legge til bilder fra adminView når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
+// addImageView skal brukes til å legge til bilder fra mainView om adminIsTrue når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
 //ON THE CASE: Nikotron
 

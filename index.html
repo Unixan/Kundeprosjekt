@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kundeprosjekt</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="modalstyles.css" />
-    <link rel="stylesheet" href="logInStyle.css" />
-    <link rel="stylesheet" href="collabStyle.css" />
-    <link rel="stylesheet" href="addImageStyle.css" />
-    <link rel="stylesheet" href="filter.css" />
-    <script src="JS/model.js"></script>
-    <script src="JS/modelfilter.js"></script>
-    <script src="JS/modal.js"></script>
-    <script src="JS/mainView.js"></script>
-    <script src="JS/mainController.js"></script>
-    <script src="JS/filterController.js"></script>
-    <script src="JS/filterView.js"></script>
-    <script src="JS/contactView.js"></script>
-    <script src="JS/contactController.js"></script>
-    <script src="JS/ADMIN/addImageView.js"></script>
-    <script src="JS/ADMIN/addImageController.js"></script>
-    <script src="JS/ADMIN/adminContactView.js"></script>
-    <script src="JS/ADMIN/adminContactController.js"></script>
-    <script src="JS/ADMIN/adminView.js"></script>
-    <script src="JS/ADMIN/adminController.js"></script>
-    <script src="JS/ADMIN/loginView.js"></script>
-    <script src="JS/ADMIN/loginController.js"></script>
-    <script src="JS/ADMIN/adminFilterView.js"></script>
-    <script src="JS/ADMIN/adminFilterController.js"></script>
-    <script src="JS/common.js"></script>
-  </head>
 
-  <body>
-    <div id="app" class="app"></div>
-  </body>
-  <script>
-    const appDiv = document.getElementById(`app`);
-    updateView();
-    
-    function updateView(picture) {
-      let index = picture;
-      if (model.state === "mainView") updateMainView();
-      if (model.state === "adminView") updateAdminView();
-      if (model.state === "addImageView") updateAddImageView(index);
-      if (model.state === "contactView") updateContactView();
-      if (model.state === "adminContactView") updateAdminContactView();
-      if (model.state === "loginView") updateLoginView();
-      if (model.state === "adminFilterView") updateAdminFilterView();
-    }
-    
-  </script>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kundeprosjekt</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="modalstyles.css" />
+  <link rel="stylesheet" href="logInStyle.css" />
+  <link rel="stylesheet" href="collabStyle.css" />
+  <link rel="stylesheet" href="addImageStyle.css" />
+  <link rel="stylesheet" href="filter.css" />
+  <script src="JS/model.js"></script>
+  <script src="JS/modelfilter.js"></script>
+  <script src="JS/modal.js"></script>
+  <script src="JS/mainView.js"></script>
+  <script src="JS/mainController.js"></script>
+  <script src="JS/filterController.js"></script>
+  <script src="JS/filterView.js"></script>
+  <script src="JS/contactView.js"></script>
+  <script src="JS/contactController.js"></script>
+  <script src="JS/ADMIN/addImageView.js"></script>
+  <script src="JS/ADMIN/addImageController.js"></script>
+  <script src="JS/ADMIN/adminContactView.js"></script>
+  <script src="JS/ADMIN/adminController.js"></script>
+  <script src="JS/ADMIN/loginView.js"></script>
+  <script src="JS/ADMIN/loginController.js"></script>
+  <script src="JS/ADMIN/adminFilterView.js"></script>
+  <script src="JS/ADMIN/adminFilterController.js"></script>
+  <script src="JS/common.js"></script>
+</head>
+
+<body>
+  <div id="app" class="app"></div>
+</body>
+<script>
+  const appDiv = document.getElementById(`app`);
+  updateView();
+  function updateView(picture) {
+    let index = picture;
+    if (model.state === "mainView") updateMainView();
+    if (model.state === "addImageView") updateAddImageView(index);
+    if (model.state === "contactView") updateContactView();
+    if (model.state === "adminContactView") updateAdminContactView();
+    if (model.state === "loginView") updateLoginView();
+    if (model.state === "adminFilterView") updateAdminFilterView();
+  }
+</script>
 </html>
