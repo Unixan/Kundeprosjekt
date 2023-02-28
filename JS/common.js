@@ -79,7 +79,8 @@ function menuBar() {
   menu = /*HTML*/ `
   <header>
     <nav class="menuBar">
-         <ul class="menu">
+        <img src="IMG/Signatur.png" />
+        <ul class="menu">
           <li class="menuItem">
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
           </li>
