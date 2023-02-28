@@ -5,78 +5,64 @@
   display: grid;
   grid-area: 2 / 1 / 4 / 4;
   grid-template-columns: 1fr 3fr 1fr;
-
+  grid-template-rows: 1fr 1fr 10fr;
+  column-gap: 10px;
 }
 .addTitle{
+  grid-area: 1 / 2 / 2 / 3;
+}
+.addTextInput{
+  width: fit-content;
+}
+.addProject{
+  grid-area: 2 / 2 / 3 / 3;
+}
+.addCategory{
+  grid-area: 3 / 1 / 4 / 2;
+}
+.addImage{
+  grid-area: 3 / 2 / 4 /3;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.addPicture{
+  width: 80%;
+  object-fit: contain;
+
+}
+.addDescription{
+  grid-area: 2 / 2 / 3 / 3;
+  justify-self: end;
+  width: 33%;
+}
+.addSaveButtons{
+  grid-area: 2 / 3 / 3 / 4;
 }
 
 @media (max-width: 850px) {
-  .addMain {
+  .addMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  .addTitle{
+    display: flex;
+    flex-direction: column;
+  }
+  .addImage{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .addDescription{
     display: grid;
-    padding: 30px;
-    align-items: center;
-    grid-area: body;
-    max-width: 100%;
-    overflow-y: scroll;
-    min-height: calc(100vh - 100px);
-    max-height: calc(100vh - 100px);
-    scroll-behavior: smooth;
-    justify-self: center;
-    margin: auto;
+    justify-self: stretch;
+    padding-bottom: 10px;
   }
-  .addTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 1%;
-  }
-  .addProject {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1%;
-    margin: auto;
-  }
-  .addImage {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    margin-bottom: 1%;
-  }
-  .addPicture {
-    display: block;
-    margin: auto;
-    width: 100%;
-    object-fit: cover;
-  }
-  .addDescription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 1%;
-  }
-  .addCategory {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 1%;
-  }
-  .addSaveButtons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 1%;
+  .addCategory{
+    padding-bottom: 10px;
   }
 }
