@@ -17,7 +17,7 @@ function createFilterMenu(){
     let filterPopUp = '';
    
     filterPopUp = /*HTML*/`
-    <div class="filterMenu">
+    <div id="filterMenu" class="filterMenu">
     <div class="filterTitle">Velg filtere</div>
         <div class="filters">
             ${showFilter()}
@@ -25,6 +25,11 @@ function createFilterMenu(){
         <div class="filterReset">
             <a onclick="resetFilter()">
             Reset filter
+            </a>
+        </div>
+        <div class="filterMinimize">
+            <a onclick="filterMinimize()">
+            Minimer filter
             </a>
         </div>
         <div class="filterClose">

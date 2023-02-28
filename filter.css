@@ -1,7 +1,20 @@
 
 .filterMenu{
-    
     grid-area: body;
+    height: 400px;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: #cedbad;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+
+
+
+    /* grid-area: body;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -9,37 +22,51 @@
     align-content: flex-end;
     align-items: flex-start;
     padding-right: 20px;
-    padding-top: 10px;
+    padding-top: 10px; */
+}
+
+.filterMenu div{
+    display: block;
+    transition: 0.3s;
 }
 
 .filterClose{
-    order: 1;
+    position: absolute;
+    top: 0;
+    left: 25px;
+    margin-right: 50px;
+    /* order: 1;
     font-weight: bold;
-    padding-bottom: 15px;
+    padding-bottom: 15px; */
 }
 
 .filterTitle{
-    order: 2;
-    padding-bottom: 10px;
+    /* order: 2;
+    padding-bottom: 10px; */
 }
 
 .filters{
-   order: 3;
+   /* order: 3; */
 
 
 }
 
 .filterReset{
-    order: 4;
-    padding-top: 10px;
+    /* order: 4;
+    padding-top: 10px; */
+}
+
+.filterMinimize{
+    /* order: 4;
+    justify-content: flex-end; */
 }
 
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     .filterMenu{
         justify-content: center;
     }
 }
 @media (max-width: 850px){
     
-}
+} */
