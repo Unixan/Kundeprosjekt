@@ -104,7 +104,8 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2a2f35 url("IMG/Signatur60px.png") no-repeat scroll 50% 50%;
+  background: #2a2f35 
+  /* url("IMG/Signatur60px.png") no-repeat scroll 50% 50%; */
 }
 
 .hamburger {

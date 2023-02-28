@@ -26,8 +26,6 @@
   <script src="JS/ADMIN/addImageView.js"></script>
   <script src="JS/ADMIN/addImageController.js"></script>
   <script src="JS/ADMIN/adminContactView.js"></script>
-  <script src="JS/ADMIN/adminContactController.js"></script>
-  <script src="JS/ADMIN/adminView.js"></script>
   <script src="JS/ADMIN/adminController.js"></script>
   <script src="JS/ADMIN/loginView.js"></script>
   <script src="JS/ADMIN/loginController.js"></script>
@@ -45,7 +43,6 @@
   function updateView(picture) {
     let index = picture;
     if (model.state === "mainView") updateMainView();
-    if (model.state === "adminView") updateAdminView();
     if (model.state === "addImageView") updateAddImageView(index);
     if (model.state === "contactView") updateContactView();
     if (model.state === "adminContactView") updateAdminContactView();
