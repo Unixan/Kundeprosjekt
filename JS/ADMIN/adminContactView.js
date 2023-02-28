@@ -1,7 +1,7 @@
 // her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks X
 //Lage input X
-//Collab view også lagt til
-//Korte ned med hjelpevariabler
+//Collab view også lagt til X 
+//Korte ned med hjelpevariabler X
 //Skrive kommentarer
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
@@ -9,6 +9,7 @@ function updateAdminContactView() {
   const creatorsSOMEview = model.creator.creatorSoMelinks;
   const creatorsPicture = model.creator.aboutPicture;
   const aboutTheCreator = model.creator.aboutCreator;
+  const creator = model.creator;
   let someHTML = "";
   let someHTMLedit = "";
   if (creatorsSOMEview.editMode === false) {
@@ -94,7 +95,7 @@ function updateAdminContactView() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${adminMenuBar()}
   <div class="collabInfo-box">
-    <h1 class="collabTitle">${model.creator.name}</h1>
+    <h1 class="collabTitle">${creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">
     ${adminPictureEdit}
     </div>
@@ -102,10 +103,10 @@ function updateAdminContactView() {
     ${someHTML}
     </div>
     <div class="collabInfo">
-    <p style="font-weight: bold;">${model.creator.title}</p>
+    <p style="font-weight: bold;">${creator.title}</p>
     <p class="contact-info">
-      <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
-      <p>tlf: ${model.creator.tlf}</p>
+      <a href="mailto:${creator.email}">${creator.email}</a><br/>
+      <p>tlf: ${creator.tlf}</p>
     </p>
     <div class="collabInfoParagraph">
     ${aboutCreatorEdit}
