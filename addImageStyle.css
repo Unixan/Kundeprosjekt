@@ -1,81 +1,82 @@
-.addMain {
+/* .item {
+  grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>;
+} */
+.addMain{
   display: grid;
-  padding: 30px;
-  align-items: center;
-  grid-area: body;
-  max-width: 100%;
-  overflow-y: scroll;
-  min-height: calc(100vh - 100px);
-  max-height: calc(100vh - 100px);
-  scroll-behavior: smooth;
-  justify-self: center;
-  margin:auto
+  grid-area: 2 / 1 / 4 / 4;
+  grid-template-columns: 1fr 3fr 1fr;
+
 }
-.addTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 1%;
-  background-color: #5b7983;
-}
-.addProject {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1%;
-  margin: auto;
-  background-color: #835a5e;
-}
-.addImage {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  margin-bottom: 1%;
-  background-color: #5b7983;
-}
-.addPicture {
-  display: block;
-  margin: auto;
-  width: 100%;
-  object-fit: cover;
-}
-.addDescription {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 1%;
-  background-color: #835a5e;
-}
-.addCategory {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 1%;
-  background-color: #5b7983;
-}
-.addSaveButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 1%;
-  background-color: #835a5e;
+.addTitle{
 }
 
 @media (max-width: 850px) {
   .addMain {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    padding: 30px;
+    align-items: center;
+    grid-area: body;
+    max-width: 100%;
+    overflow-y: scroll;
+    min-height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+    scroll-behavior: smooth;
+    justify-self: center;
+    margin: auto;
+  }
+  .addTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1%;
+  }
+  .addProject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1%;
+    margin: auto;
+  }
+  .addImage {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 1%;
+  }
+  .addPicture {
+    display: block;
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+  .addDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1%;
+  }
+  .addCategory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1%;
+  }
+  .addSaveButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1%;
   }
 }
