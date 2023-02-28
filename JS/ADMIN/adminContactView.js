@@ -2,19 +2,24 @@
 //Lage input X
 //Collab view også lagt til
 //Korte ned med hjelpevariabler
+//Skrive kommentarer
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
+  const editAdminProfile = model.inputs.admin.editProfile;
+  const creatorsSOMEview = model.creator.creatorSoMelinks;
+  const creatorsPicture = model.creator.aboutPicture;
+  const aboutTheCreator = model.creator.aboutCreator;
   let someHTML = "";
   let someHTMLedit = "";
-  if (model.creator.creatorSoMelinks.editMode === false) {
-    for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
+  if (creatorsSOMEview.editMode === false) {
+    for (let i = 0; i < creatorsSOMEview.links.length; i++) {
       someHTML += `
       <div>
         <a 
-          href="${model.creator.creatorSoMelinks.links[i].link}" 
+          href="${creatorsSOMEview.links[i].link}" 
           target="_blank" 
           rel="noopener noreferrer">
-            <img src=${model.creator.creatorSoMelinks.links[i].logoimg}>
+            <img src=${creatorsSOMEview.links[i].logoimg}>
         </a>
       </div>
       `
@@ -22,14 +27,14 @@ function updateAdminContactView() {
     someHTML += `
     <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
-  else if (model.creator.creatorSoMelinks.editMode === true) {
-    for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
+  else if (creatorsSOMEview.editMode === true) {
+    for (let i = 0; i < creatorsSOMEview.links.length; i++) {
       someHTMLedit += `
       <div>
-        <p>${model.creator.creatorSoMelinks.links[i].media}</p>
+        <p>${creatorsSOMEview.links[i].media}</p>
           <input 
             type="text" 
-            value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" 
+            value="${editAdminProfile.creatorSoMeLink[i].link}" 
             onchange="changeSoMe(${i},this.value)">
       </div>
       <br/>
@@ -44,35 +49,35 @@ function updateAdminContactView() {
   <div class="editSoMe">${someHTMLedit}</div>
   `
   let aboutCreatorEdit = "";
-  if (!model.creator.aboutCreator.editMode) {
+  if (!aboutTheCreator.editMode) {
     aboutCreatorEdit = `
-  <p>${model.creator.aboutCreator.about}</p>
+  <p>${aboutTheCreator.about}</p>
   <button onclick="editAbout()">Rediger</button>
   `
   }
-  else if (model.creator.aboutCreator.editMode === true) {
+  else if (aboutTheCreator.editMode === true) {
     aboutCreatorEdit = `
     <textarea 
     class="editAboutField" 
     oninput="changeAbout(this.value)"
     type="text" 
-    >${model.inputs.admin.editProfile.aboutCreator
+    >${editAdminProfile.aboutCreator
       }</textarea>
   <button onclick="updateAbout()">Lagre</button>
   <button onclick="cancelAbout()">Avbryt</button>
   ` }
 
   let adminPictureEdit = "";
-  if (model.creator.aboutPicture.editMode === false) {
+  if (creatorsPicture.editMode === false) {
     adminPictureEdit = `
     <img 
-      src=${model.creator.aboutPicture.picture} 
+      src=${creatorsPicture.picture} 
       alt="Profilbilde av Jarand Midtgaard"
       style="width: auto; height: 220px;">
     <button onclick="editProfilePic()">Rediger bilde</button>
     `
   }
-  else if (model.creator.aboutPicture.editMode === true) {
+  else if (creatorsPicture.editMode === true) {
     adminPictureEdit = `
     <input 
     type="file"
