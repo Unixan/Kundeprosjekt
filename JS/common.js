@@ -45,7 +45,8 @@ function adminMenuBar() {
   //tegner opp menyen til Admin
   menu = /*HTML*/ `
     <header>
-      <nav class="menuBar">
+      <nav class="${model.runOnce ? "menuBarPermanent" : "menuBar"}">
+      <img src="IMG/Signatur.png" class="logoPermanent"/>
            <ul class="menu">
             <li class="menuItem">
               <div onclick="changeToAdminView()" class="menuLink">Hjem</div>
