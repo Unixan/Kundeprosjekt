@@ -1,18 +1,8 @@
 // Tegne opp hovedskjermen som først vises for bruker.
-// TODO:
-// MainView funksjon:
-// Tegne opp view med alle bilder.
-// Tilleggsfunksjoner som kalles på når bildene blir klikket på.
-// Tilleggsfunksjoner:
-// Funksjon som viser knapper og beskrivelse av bildet.
-// Knapp som igjen kaller på funksjon(er) for å vise/legge til kommentarer
-// Knapp som linker til brukers foretrukne e-post program hvor gjeldende bilde (tittel og id) blir automatisk lagt til som emne.
-// Knapp som kaller på funksjon for å vise SoMe linker der bildene kan deles direkte til brukers feed.function updateMainView(){}
 
 // Oppdaterer mainView
 
 function updateMainView() {
-  runOnce()
   let html = "";
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);
@@ -41,6 +31,7 @@ function updateMainView() {
     </footer>`;
 
   appDiv.innerHTML = html;
+  setTimeout(() =>{runOnce()}, 1000);
 }
 
 // Åpne og lukkeanimasjon for hamburgermeny
@@ -81,6 +72,9 @@ function generatePictureArray(number) {
   return pictureList;
 }
 
-function runOnce(){
-
+function runOnce() {
+  if (!model.runOnce){
+  document.querySelector('.logo').classList.add('done')
+  model.runOnce = true
+  }
 }

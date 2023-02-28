@@ -1,40 +1,53 @@
 // her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks X
 //Lage input X
-//Collab view også lagt til
-//Korte ned med hjelpevariabler
+//Collab view også lagt til X 
+//Korte ned med hjelpevariabler X
+//Skrive kommentarer
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
+  //hjelpevariabler
+  const creator = model.creator;
+  const editAdminProfile = model.inputs.admin.editProfile;
+  const creatorsSOME = creator.creatorSoMelinks;
+  const creatorsPicture = creator.aboutPicture;
+  const aboutTheCreator = creator.aboutCreator;
+
+  /*SoMe, Hva som vises er avhengig av om relevant editMode er aktiv eller ikke. 
+  Hvis den er aktiv vil det vises frem inputfields med lagre og avbryt funksjon, 
+  hvis ikke vil lenkene vises fram som symboler med en mulighet for å gå i redigeringsmodus*/
   let someHTML = "";
   let someHTMLedit = "";
-  if (model.creator.creatorSoMelinks.editMode === false) {
-    for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
+  if (creatorsSOME.editMode === false) { //Viser frem symboler med hyperlink
+    for (let i = 0; i < creatorsSOME.links.length; i++) {
       someHTML += `
       <div>
         <a 
-          href="${model.creator.creatorSoMelinks.links[i].link}" 
+          href="${creatorsSOME.links[i].link}" 
           target="_blank" 
           rel="noopener noreferrer">
-            <img src=${model.creator.creatorSoMelinks.links[i].logoimg}>
+            <img src=${creatorsSOME.links[i].logoimg}>
         </a>
       </div>
       `
     }
+    //Redigeringsknapp. Aktiverer editMode
     someHTML += `
     <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
-  else if (model.creator.creatorSoMelinks.editMode === true) {
-    for (let i = 0; i < model.creator.creatorSoMelinks.links.length; i++) {
+  else if (creatorsSOME.editMode === true) {//Viser frem input felt
+    for (let i = 0; i < creatorsSOME.links.length; i++) {
       someHTMLedit += `
       <div>
-        <p>${model.creator.creatorSoMelinks.links[i].media}</p>
+        <p>${creatorsSOME.links[i].media}</p>
           <input 
             type="text" 
-            value="${model.inputs.admin.editProfile.creatorSoMeLink[i].link}" 
+            value="${editAdminProfile.creatorSoMeLink[i].link}" 
             onchange="changeSoMe(${i},this.value)">
       </div>
       <br/>
       `
     }
+    //Lagre og avbrytknapper 
     someHTMLedit += `
     <button onclick="updateSoMe()">Lagre</button>
     <button onclick="cancelSoMe()">Avbryt</button>
@@ -43,36 +56,47 @@ function updateAdminContactView() {
   someHTML += /*html*/ `
   <div class="editSoMe">${someHTMLedit}</div>
   `
+
+  //Info om skaperen, hva som vises kommer ann på om relevant editMode er aktiv.
   let aboutCreatorEdit = "";
-  if (!model.creator.aboutCreator.editMode) {
+
+  //Viser info om skaperen med knapp for å redigere
+  if (!aboutTheCreator.editMode) {
     aboutCreatorEdit = `
-  <p>${model.creator.aboutCreator.about}</p>
+  <p>${aboutTheCreator.about}</p>
   <button onclick="editAbout()">Rediger</button>
   `
   }
-  else if (model.creator.aboutCreator.editMode === true) {
+
+  //Tekstfelt for å redigere info
+  else if (aboutTheCreator.editMode === true) {
     aboutCreatorEdit = `
     <textarea 
     class="editAboutField" 
     oninput="changeAbout(this.value)"
     type="text" 
-    >${model.inputs.admin.editProfile.aboutCreator
+    >${editAdminProfile.aboutCreator
       }</textarea>
   <button onclick="updateAbout()">Lagre</button>
   <button onclick="cancelAbout()">Avbryt</button>
   ` }
 
+  //Profilbilde. Hva som vises kommer ann på relevant editMode
   let adminPictureEdit = "";
-  if (model.creator.aboutPicture.editMode === false) {
+
+  //viser frem profilbildet med knapp for å redigere
+  if (creatorsPicture.editMode === false) {
     adminPictureEdit = `
     <img 
-      src=${model.creator.aboutPicture.picture} 
+      src=${creatorsPicture.picture} 
       alt="Profilbilde av Jarand Midtgaard"
       style="width: auto; height: 220px;">
     <button onclick="editProfilePic()">Rediger bilde</button>
     `
   }
-  else if (model.creator.aboutPicture.editMode === true) {
+
+  //mulighet for å laste opp nytt bilde, lagre og avbryte
+  else if (creatorsPicture.editMode === true) {
     adminPictureEdit = `
     <input 
     type="file"
@@ -89,7 +113,7 @@ function updateAdminContactView() {
   document.getElementById('app').innerHTML = /*html*/ `
     ${adminMenuBar()}
   <div class="collabInfo-box">
-    <h1 class="collabTitle">${model.creator.name}</h1>
+    <h1 class="collabTitle">${creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">
     ${adminPictureEdit}
     </div>
@@ -97,10 +121,10 @@ function updateAdminContactView() {
     ${someHTML}
     </div>
     <div class="collabInfo">
-    <p style="font-weight: bold;">${model.creator.title}</p>
+    <p style="font-weight: bold;">${creator.title}</p>
     <p class="contact-info">
-      <a href="mailto:${model.creator.email}">${model.creator.email}</a><br/>
-      <p>tlf: ${model.creator.tlf}</p>
+      <a href="mailto:${creator.email}">${creator.email}</a><br/>
+      <p>tlf: ${creator.tlf}</p>
     </p>
     <div class="collabInfoParagraph">
     ${aboutCreatorEdit}

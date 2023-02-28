@@ -78,8 +78,8 @@ function menuBar() {
   //tegner opp menyen
   menu = /*HTML*/ `
   <header>
-    <nav class="menuBar">
-        <img src="IMG/Signatur.png" />
+  <nav class="menuBar">
+  <img src="IMG/Signatur.png" class="logo"/>
         <ul class="menu">
           <li class="menuItem">
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
