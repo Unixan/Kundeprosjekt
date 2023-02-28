@@ -30,11 +30,11 @@ function updateAdminContactView() {
       </div>
       `
     }
-    //
+    //Redigeringsknapp. Aktiverer editMode
     someHTML += `
     <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
-  else if (creatorsSOME.editMode === true) {
+  else if (creatorsSOME.editMode === true) {//Viser frem input felt
     for (let i = 0; i < creatorsSOME.links.length; i++) {
       someHTMLedit += `
       <div>
@@ -47,6 +47,7 @@ function updateAdminContactView() {
       <br/>
       `
     }
+    //Lagre og avbrytknapper 
     someHTMLedit += `
     <button onclick="updateSoMe()">Lagre</button>
     <button onclick="cancelSoMe()">Avbryt</button>
@@ -58,12 +59,16 @@ function updateAdminContactView() {
 
   //Info om skaperen, hva som vises kommer ann på om relevant editMode er aktiv.
   let aboutCreatorEdit = "";
+
+  //Viser info om skaperen med knapp for å redigere
   if (!aboutTheCreator.editMode) {
     aboutCreatorEdit = `
   <p>${aboutTheCreator.about}</p>
   <button onclick="editAbout()">Rediger</button>
   `
   }
+
+  //Tekstfelt for å redigere info
   else if (aboutTheCreator.editMode === true) {
     aboutCreatorEdit = `
     <textarea 
@@ -76,7 +81,10 @@ function updateAdminContactView() {
   <button onclick="cancelAbout()">Avbryt</button>
   ` }
 
+  //Profilbilde. Hva som vises kommer ann på relevant editMode
   let adminPictureEdit = "";
+
+  //viser frem profilbildet med knapp for å redigere
   if (creatorsPicture.editMode === false) {
     adminPictureEdit = `
     <img 
@@ -86,6 +94,8 @@ function updateAdminContactView() {
     <button onclick="editProfilePic()">Rediger bilde</button>
     `
   }
+
+  //mulighet for å laste opp nytt bilde, lagre og avbryte
   else if (creatorsPicture.editMode === true) {
     adminPictureEdit = `
     <input 
