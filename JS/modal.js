@@ -222,6 +222,8 @@ function removeComment(index) {
   updateView();
 }
 
+// Adminfunksjon for å redigere eller slette bilde.
+
 function editPictureFromModal() {
   currentModalPicture = model.modal.modalPictures[model.modal.slideIndex - 1];
   pictureIndex = model.pictures.indexOf(currentModalPicture);
