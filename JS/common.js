@@ -45,7 +45,8 @@ function adminMenuBar() {
   //tegner opp menyen til Admin
   menu = /*HTML*/ `
     <header>
-      <nav class="menuBar">
+      <nav class="${model.runOnce ? "menuBarPermanent" : "menuBar"}">
+      <img src="IMG/Signatur.png" class="logoPermanent"/>
            <ul class="menu">
             <li class="menuItem">
               <div onclick="changeToAdminView()" class="menuLink">Hjem</div>
@@ -199,10 +200,9 @@ function resetEdits() {
 }
 
 function runOnce() {
-  if (!model.runOnce) {
-    document.querySelector(".logo").classList.add("done");
-    document.querySelector(".menuBar").classList.add("done");
+  // Kjøres første gang siden lastes inn for å hindre at animasjoner kjører mer enn en gang
 
-    model.runOnce = true;
-  }
+  document.querySelector(".logo").classList.add("done");
+  document.querySelector(".menuBar").classList.add("done");
+  model.runOnce = true;
 }
