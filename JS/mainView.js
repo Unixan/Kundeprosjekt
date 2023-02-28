@@ -31,7 +31,7 @@ function updateMainView() {
     </footer>`;
 
   appDiv.innerHTML = html;
-  setTimeout(() =>{runOnce()}, 1000);
+  model.runonce ? '' : setTimeout(() =>{runOnce()}, 1000);
 }
 
 // Åpne og lukkeanimasjon for hamburgermeny
@@ -72,9 +72,4 @@ function generatePictureArray(number) {
   return pictureList;
 }
 
-function runOnce() {
-  if (!model.runOnce){
-  document.querySelector('.logo').classList.add('done')
-  model.runOnce = true
-  }
-}
+

@@ -78,8 +78,10 @@ function menuBar() {
   //tegner opp menyen
   menu = /*HTML*/ `
   <header>
-  <nav class="menuBar">
-  <img src="IMG/Signatur.png" class="logo"/>
+  <nav class="${model.runOnce ? "menuBarPermanent" : "menuBar"}">
+  <img src="IMG/Signatur.png" class="${
+    model.runOnce ? "logoPermanent" : "logo"
+  }"/>
         <ul class="menu">
           <li class="menuItem">
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
@@ -194,4 +196,13 @@ function resetEdits() {
   model.inputs.admin.editProfile.aboutCreator =
     model.creator.aboutCreator.about;
   model.creator.aboutCreator.editMode = false;
+}
+
+function runOnce() {
+  if (!model.runOnce) {
+    document.querySelector(".logo").classList.add("done");
+    document.querySelector(".menuBar").classList.add("done");
+
+    model.runOnce = true;
+  }
 }

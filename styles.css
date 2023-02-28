@@ -95,36 +95,55 @@ li {
   display: none;
 }
 
-.menuBar {
-  grid-area: head;
-  margin: auto;
+.menuBarPermanent {
   position: fixed;
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #2a2f35;
-  /* url("IMG/Signatur60px.png") no-repeat scroll 50% 50%; */
+}
+
+.menuBar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #2a2f35;
+  transition: 1s ease-out;
+}
+
+.menuBar.done {
+  height: 60px;
 }
 
 .logo {
-  position: fixed;
-  top: 40vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
+
   z-index: 20;
   transition: 1s ease-in;
 }
 
 .logo.done {
-  transform: scale(0.2143)
+  transform: scale(0.2143);
+}
+
+.logoPermanent {
+  height: 60px;
+  margin: auto;
 }
 
 .hamburger {
+  display: block;
   position: fixed;
   top: 10px;
   right: 12px;
-  display: block;
   cursor: pointer;
 }
 
@@ -163,6 +182,7 @@ li {
 
 .menu.show {
   right: 0;
+  z-index: 50;
 }
 
 .menuItem {
@@ -195,6 +215,17 @@ li {
 }
 
 @media (max-width: 850px) {
+  .logoPermanent,
+  .logo {
+    height: 60px;
+    margin: auto;
+    transition: none;
+  }
+
+  .logo.done {
+    transform: none;
+  }
+
   .app {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
