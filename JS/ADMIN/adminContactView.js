@@ -5,11 +5,16 @@
 //Skrive kommentarer
 //Erwan Foxtail DOES it
 function updateAdminContactView() {
-  const editAdminProfile = model.inputs.admin.editProfile;
-  const creatorsSOMEview = model.creator.creatorSoMelinks;
-  const creatorsPicture = model.creator.aboutPicture;
-  const aboutTheCreator = model.creator.aboutCreator;
+  //hjelpevariabler
   const creator = model.creator;
+  const editAdminProfile = model.inputs.admin.editProfile;
+  const creatorsSOMEview = creator.creatorSoMelinks;
+  const creatorsPicture = creator.aboutPicture;
+  const aboutTheCreator = creator.aboutCreator;
+
+  /*SoMe, Hva som vises er avhengig av om relevant editMode er aktiv eller ikke. 
+  Hvis den er aktiv vil det vises frem inputfields med lagre og avbryt funksjon, 
+  hvis ikke vil lenkene vises fram som symboler med en mulighet for å gå i redigeringsmodus*/
   let someHTML = "";
   let someHTMLedit = "";
   if (creatorsSOMEview.editMode === false) {
@@ -49,6 +54,8 @@ function updateAdminContactView() {
   someHTML += /*html*/ `
   <div class="editSoMe">${someHTMLedit}</div>
   `
+
+  //Info om skaperen, hva som vises kommer ann på om relevant editMode er aktiv.
   let aboutCreatorEdit = "";
   if (!aboutTheCreator.editMode) {
     aboutCreatorEdit = `
