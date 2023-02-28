@@ -28,12 +28,16 @@ function updateAddImageView(index) {
       ${catecoryDiv}
     </div>
     ${saveButtonsDiv}
+    <div class="addBack">
+      <img 
+        class="addArrow" 
+        src="IMG/ICONS/tilbake.png" 
+        alt="avbryt" 
+        onclick="changeToAdminView()"
+      >
     </div>
-    </div>
-        <footer class="footer">
-    ©Copyright
-    </footer>
-    `;
+  </div>
+  `;
   appDiv.innerHTML = html;
 }
 
@@ -47,11 +51,13 @@ function fetchTitle(index) {
     index != null
       ? /*HTML*/ `<input 
     type="text" 
+    class="addTextInput"
     value="${model.pictures[index].title}" 
     onchange="model.inputs.admin.addPic.title = this.value"
     >`
-      : /*HTML*/ `<input 
+    : /*HTML*/ `<input 
     type="text" 
+    class="addTextInput"
     placeholder="Skriv inn tittel" 
     onchange="model.inputs.admin.addPic.title = this.value"
     value="${model.inputs.admin.addPic.title}"
@@ -152,7 +158,8 @@ function checkForNewProjects(index) {
       additional += /*html*/ `
         <br>
         <input 
-          type="tekst"
+          type="text"
+          class="addTextInput"
           placeholder="Nytt Prosjektnavn"
           value="${projects[i].projectName}"
           onchange="model.inputs.admin.addPic.projects[${i}].projectName = this.value" 
@@ -230,11 +237,13 @@ function fetchDescription(index) {
       ? `
       <textarea 
         type="text" 
+        placeholder="Skriv inn beskrivelse" 
         oninput="model.inputs.admin.addPic.description = this.value"
       >${model.pictures[index].description}</textarea>`
       : ` 
       <textarea
       type="text" 
+      class="addTextArea"
       placeholder="Skriv inn beskrivelse" 
       oninput="model.inputs.admin.addPic.description = this.value"
       >${model.inputs.admin.addPic.description}</textarea>`
