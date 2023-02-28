@@ -51,7 +51,7 @@ function adminMenuBar() {
               <div onclick="changeToAdminView()" class="menuLink">Hjem</div>
             </li>
             <li class="menuItem">
-              <div onclick="changeToAdminFilterView()" class="menuLink">Filter</div>
+              <div onclick="changeToFilterView()" class="menuLink">Filter</div>
             </li>
             <li class="menuItem">
               <div onclick="changeToAddImageView()" class="menuLink">Legg til bilde</div>
