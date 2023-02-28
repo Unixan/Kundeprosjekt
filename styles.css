@@ -104,8 +104,20 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #2a2f35 
+  background: #2a2f35;
   /* url("IMG/Signatur60px.png") no-repeat scroll 50% 50%; */
+}
+
+.logo {
+  position: fixed;
+  top: 40vh;
+  margin: auto;
+  z-index: 20;
+  transition: 1s ease-in;
+}
+
+.logo.done {
+  transform: scale(0.2143)
 }
 
 .hamburger {

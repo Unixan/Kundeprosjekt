@@ -47,6 +47,7 @@ const model = {
   },
 
   //data
+  runOnce: false,
   areYouSure: false,
   areYouSureImg: false,
   isAdmin: false,
