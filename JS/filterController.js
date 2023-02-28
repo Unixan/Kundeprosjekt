@@ -6,10 +6,14 @@ TODO
 
 //lukke filtermenyen DONE
 function closeFilter(){
+    document.getElementById("filterMenu").style.width = "0";
     model.inputs.user.userFilter = [];
-    model.filterMenu = false;
+    
     model.filterView = false;
-    updateView();
+}
+//Minimer filter
+function filterMinimize(){
+    document.getElementById("filterMenu").style.width = "0";
 }
 //reset filtere DONE
 function resetFilter(){
@@ -22,7 +26,6 @@ function resetFilter(){
     }
     model.inputs.user.userFilter = [];
     model.filterView = false;
-    updateView();
 }
 
 //Pusher inn bildet med riktig filter
@@ -47,5 +50,5 @@ function checkedFilter(){
         model.inputs.user.userFilter = model.pictures;
     }
     console.log(filterArray);
-    updateView(); 
+    return model.inputs.user.userFilter;
 }

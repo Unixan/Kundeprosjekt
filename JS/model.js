@@ -51,7 +51,7 @@ const model = {
   areYouSure: false,
   areYouSureImg: false,
   isAdmin: false,
-  filterMenu: false,
+  filterMenu: true,
   filterView: false,
   filterChecked: false,
   logo: "IMG/Signatur.png",

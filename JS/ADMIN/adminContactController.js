@@ -45,13 +45,13 @@ function updateSoMe() { //Overfører midlertidig data til data-delen av modellen
 }
 
 
-function editProfilePic() {
+function editProfilePic() { //Aktiverer edit mode for profilbildet
     creatorsPicture.editMode = true;
     editAdminProfile.aboutPicture = creatorsPicture.picture;
     updateView();
 }
 
-function adminUpLoadPicture(new_Image) {
+function adminUpLoadPicture(new_Image) {//Lagrer midlertidig profilbilde
     const inputTag = new_Image;
     inputTag.addEventListener("change", () => {
         const temp = inputTag.files;
@@ -60,25 +60,25 @@ function adminUpLoadPicture(new_Image) {
     })
 }
 
-function updateAdminPicture() {
+function updateAdminPicture() {//Lagrer nytt profilbilde
     creatorsPicture.picture = editAdminProfile.aboutPicture;
     creatorsPicture.editMode = false;
     updateView();
 }
 
-function cancelAdminPicture() {
+function cancelAdminPicture() {//Forkaster endringer i profilbilde
     editAdminProfile.aboutPicture = creatorsPicture.picture;
     creatorsPicture.editMode = false;
     updateView();
 }
 
-function cancelAbout() {
+function cancelAbout() {//Forkaster endringer i om-delen
     editAdminProfile.aboutCreator = aboutTheCreator.about;
     aboutTheCreator.editMode = false;
     updateView()
 }
 
-function cancelSoMe() {
+function cancelSoMe() {//Forkaster endringer i Sosiale medier
     for (let i = 0; i < SOMEinp.length; i++) {
         SOMEinp[i].link = SOME[i].link;
     }
