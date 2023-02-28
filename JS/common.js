@@ -105,7 +105,7 @@ function menuBar() {
 }
 
 function changeToAdminView() {
-  model.state = "adminView";
+  model.state = "mainView";
   backEdit();
   resetEdits();
   updateView();
@@ -140,7 +140,7 @@ function changeToLoginView() {
 }
 
 function backEdit() {
-  //klargjør modellen for nye inputs og sender tilbake til adminView
+  //klargjør modellen for nye inputs og sender tilbake til mainView
   emptyUnusedFilter();
   resetInput();
 }

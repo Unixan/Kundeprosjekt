@@ -19,7 +19,7 @@ function login(){
         && model.inputs.login.password === model.creator.password){
         model.inputs.login.username = '';
         model.inputs.login.password = '';
-        model.state = 'adminView';
+        model.state = 'mainView';
         model.isAdmin = true
         updateView();
     }
