@@ -9,12 +9,15 @@
 // Knapp som linker til brukers foretrukne e-post program hvor gjeldende bilde (tittel og id) blir automatisk lagt til som emne.
 // Knapp som kaller på funksjon for å vise SoMe linker der bildene kan deles direkte til brukers feed.function updateMainView(){}
 
+// Oppdaterer mainView
+
 function updateMainView() {
+  runOnce()
   let html = "";
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);
   }
-  html += menuBar(); //Menyinit
+  html += model.isAdmin ? adminMenuBar() : menuBar(); //Menyinit
   if (model.filterMenu == true) html += createFilterMenu();
 
   filteredList = model.filterView
@@ -40,6 +43,8 @@ function updateMainView() {
   appDiv.innerHTML = html;
 }
 
+// Åpne og lukkeanimasjon for hamburgermeny
+
 function hamburgerActivate() {
   const hamburger = document.querySelector(".hamburger");
   const menuItem = document.querySelectorAll(".menuItem");
@@ -50,6 +55,10 @@ function hamburgerActivate() {
     item.classList.toggle("show");
   });
 }
+
+/* Lager et array av bilder basert på om du sender med en verdi. 
+Med verdi får du tilbake alle med samme prosjektnummer.
+Uten verdi får du tilbake array av første av hvert bilde med ulikt prosjektnummer */
 
 function generatePictureArray(number) {
   let pictureList = [];
@@ -70,4 +79,8 @@ function generatePictureArray(number) {
     });
   }
   return pictureList;
+}
+
+function runOnce(){
+
 }
