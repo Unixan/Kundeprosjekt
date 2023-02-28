@@ -31,7 +31,7 @@ function updateMainView() {
     </footer>`;
 
   appDiv.innerHTML = html;
-  model.runonce ? '' : setTimeout(() =>{runOnce()}, 1000);
+  model.runOnce ? '': setTimeout(() =>{runOnce()}, 1000);
 }
 
 // Åpne og lukkeanimasjon for hamburgermeny
