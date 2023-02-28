@@ -8,7 +8,7 @@ function updateAdminContactView() {
   //hjelpevariabler
   const creator = model.creator;
   const editAdminProfile = model.inputs.admin.editProfile;
-  const creatorsSOMEview = creator.creatorSoMelinks;
+  const creatorsSOME = creator.creatorSoMelinks;
   const creatorsPicture = creator.aboutPicture;
   const aboutTheCreator = creator.aboutCreator;
 
@@ -17,27 +17,28 @@ function updateAdminContactView() {
   hvis ikke vil lenkene vises fram som symboler med en mulighet for å gå i redigeringsmodus*/
   let someHTML = "";
   let someHTMLedit = "";
-  if (creatorsSOMEview.editMode === false) {
-    for (let i = 0; i < creatorsSOMEview.links.length; i++) {
+  if (creatorsSOME.editMode === false) { //Viser frem symboler med hyperlink
+    for (let i = 0; i < creatorsSOME.links.length; i++) {
       someHTML += `
       <div>
         <a 
-          href="${creatorsSOMEview.links[i].link}" 
+          href="${creatorsSOME.links[i].link}" 
           target="_blank" 
           rel="noopener noreferrer">
-            <img src=${creatorsSOMEview.links[i].logoimg}>
+            <img src=${creatorsSOME.links[i].logoimg}>
         </a>
       </div>
       `
     }
+    //
     someHTML += `
     <button onclick="editSoMe()" style="margin-top: auto;">Rediger SoMe-link</button>`
   }
-  else if (creatorsSOMEview.editMode === true) {
-    for (let i = 0; i < creatorsSOMEview.links.length; i++) {
+  else if (creatorsSOME.editMode === true) {
+    for (let i = 0; i < creatorsSOME.links.length; i++) {
       someHTMLedit += `
       <div>
-        <p>${creatorsSOMEview.links[i].media}</p>
+        <p>${creatorsSOME.links[i].media}</p>
           <input 
             type="text" 
             value="${editAdminProfile.creatorSoMeLink[i].link}" 
