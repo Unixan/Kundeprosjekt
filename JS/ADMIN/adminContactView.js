@@ -109,7 +109,7 @@ function updateAdminContactView() {
     `
   }
 
-
+  //Collabs lagt til med resten av infoen
   document.getElementById('app').innerHTML = /*html*/ `
     ${adminMenuBar()}
   <div class="collabInfo-box">
