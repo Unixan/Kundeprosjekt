@@ -1,7 +1,6 @@
 //tegner opp modalen
 
 function modal(n) {
-  
   let pictureIndex = 1;
   let slidePics = model.modal.modalPictures;
   let modalView = "";
@@ -63,7 +62,7 @@ function slidePictures(n) {
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
   model.modal.commentFieldOpen = !model.modal.commentFieldOpen;
-  if(model.isMobile.matches){
+  if (model.isMobile.matches) {
     document.querySelector(".descriptionBox").classList.remove("show");
   }
 }
@@ -71,7 +70,7 @@ function showComments() {
 function showDescription() {
   document.querySelector(".descriptionBox").classList.toggle("show");
   model.modal.descriptionFieldOpen = !model.modal.descriptionFieldOpen;
-  if(model.isMobile.matches){
+  if (model.isMobile.matches) {
     document.querySelector(".commentBox").classList.remove("show");
   }
 }
@@ -82,13 +81,19 @@ function descriptionBox() {
   let descriptionBox = /*HTML*/ `
   <div class="${
     model.modal.descriptionFieldOpen ? "descriptionBox show" : "descriptionBox"
-  }">
+  }" ${model.isMobile.matches ? "onclick='closeDesc()'" : ""}>
     <div class="description">
       ${description()}
     </div>
   </div>
   `;
-  return descriptionBox
+  return descriptionBox;
+}
+
+//onclick på bakgrunn for lukking av kommentarer i mobile view
+
+function closeDesc() {
+  document.querySelector(".descriptionBox").classList.remove("show");
 }
 
 //Kommentarboksen til hvert bilde
@@ -166,12 +171,12 @@ function getCurrentPicture() {
 function description() {
   model.modal.modalDescription = "";
   currentPictureDescription = getCurrentPicture().description;
-  let picDescription = /*HTML*/`
+  let picDescription = /*HTML*/ `
     <div>
       ${currentPictureDescription}
     </div>
-  `
-  return picDescription
+  `;
+  return picDescription;
 }
 
 // Kommentarer som blir lagt til i commentBox()

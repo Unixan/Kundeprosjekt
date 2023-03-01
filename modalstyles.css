@@ -253,7 +253,7 @@
 }
 
 .close {
-  z-index: 30;
+  z-index: 10;
   position: fixed;
   top: 1.5em;
   right: 2em;
@@ -271,6 +271,28 @@
   .linkLine {
     gap: unset;
     justify-content: space-around;
+  }
+
+  .descriptionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+  }
+
+  .descriptionBox.show {
+    opacity: 0.8;
+    pointer-events: all;
+    top: 0;
+    left: 0;
+    font-size: large;
   }
 
   .commentBox {
