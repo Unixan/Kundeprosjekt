@@ -34,6 +34,7 @@ function showFilter(){
             <input 
             type="checkbox"
             id="filterBox"
+            class="filterCheckbox"
             ${filter.checked == true ? 'checked' : ''}
             onchange="model.filter[${i}].checked = !model.filter[${i}].checked;  checkedFilter()"
             />
