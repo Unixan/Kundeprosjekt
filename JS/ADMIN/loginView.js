@@ -36,6 +36,7 @@ function updateLoginView() {
         <b id="wrongPassword" class="wrongUsername">Må ha et gyldig passord</b>
 
         <button type="submit" class="logIn-button" onclick="login()">Logg inn</button>
+        <button class="logIn-button" onclick="backToMain()">Avbryt</button>
     </div>
     </div>
     `;
