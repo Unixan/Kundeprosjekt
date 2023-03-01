@@ -3,6 +3,12 @@
 // Oppdaterer mainView
 
 function updateMainView() {
+  model.isMobile = window.matchMedia("(max-width: 850px)")
+  model.isMobile.onchange = () => {
+    model.modal.commentFieldOpen = false;
+    model.modal.descriptionFieldOpen = false;
+    updateMainView()
+  }
   let html = "";
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);

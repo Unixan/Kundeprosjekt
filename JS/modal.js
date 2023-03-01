@@ -1,6 +1,7 @@
 //tegner opp modalen
 
 function modal(n) {
+  
   let pictureIndex = 1;
   let slidePics = model.modal.modalPictures;
   let modalView = "";

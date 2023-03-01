@@ -47,6 +47,7 @@ const model = {
   },
 
   //data
+  isMobile: null,
   runOnce: false,
   areYouSure: false,
   areYouSureImg: false,
