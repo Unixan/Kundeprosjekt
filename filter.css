@@ -1,14 +1,11 @@
 .filterMenu{
-    grid-area: body;
-    height: 400px;
+    height: auto;
     width: 0;
     position: fixed;
     z-index: 100;
     top: 0;
     right: 0;
-    
     overflow-x: hidden;
-    
     transition: 0.5s;
 }
 .filterColor{
@@ -41,16 +38,15 @@
     height: 0;
     width: 0;
     background-color: transparent;
-    border-left: 140px solid transparent;
+    border-left: 100px solid transparent;
     border-right: 100px solid #cedbad;
-    border-bottom: 100px solid #cedbad;
+    border-bottom: 100px solid transparent;
     border-top: 100px solid #cedbad;
 }
 
-
-@media (max-width: 1440px) {
-    
-}
 @media (max-width: 850px){
-    
+    .filterMenu{
+    grid-area: body1;
+    position:relative;
+    }
 }
