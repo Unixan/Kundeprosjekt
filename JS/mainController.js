@@ -6,7 +6,6 @@ function changeToContactView() {
 }
 
 function changeToFilterView() {
-  model.filterMenu = true;
   document.getElementById("filterMenu").style.width = "200px";
 }
 

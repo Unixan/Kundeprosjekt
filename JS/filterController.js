@@ -4,18 +4,16 @@ TODO
 - finne filtere
 */
 
-//lukke filtermenyen DONE
+//lukke filtermenyen
 function closeFilter(){
     document.getElementById("filterMenu").style.width = "0";
-    model.inputs.user.userFilter = [];
-    model.filterMenu = false;
     model.filterView = false;
+    resetFilter();
     updateView();
 }
 //Minimer filter
 function filterMinimize(){
     document.getElementById("filterMenu").style.width = "0";
-    updateView();
 }
 //reset filtere DONE
 function resetFilter(){
