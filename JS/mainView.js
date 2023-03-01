@@ -7,29 +7,29 @@ function updateMainView() {
   if (model.modal.showModal) {
     html += modal(model.modal.slideIndex);
   }
-  html += model.isAdmin ? adminMenuBar() : menuBar(); //Menyinit
   if (model.filterMenu == true) html += createFilterMenu();
-
+  
   filteredList = model.filterView
-    ? model.inputs.user.userFilter
-    : generatePictureArray();
+  ? model.inputs.user.userFilter
+  : generatePictureArray();
   html += /*HTML*/ `
-          <div class="scrollBox">`;
+  <div class="scrollBox">`;
   for (x = filteredList.length - 1; x >= 0; x--) {
     picture = filteredList[x];
     html += /*HTML*/ `
-                <div class="picBox">
-                  <h3 class="pictureTitle">${picture.projectName}</h3>
-                  <div class="picBackground">
-                    <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
-                  </div>
-                </div>`;
+    <div class="picBox">
+    <h3 class="pictureTitle">${picture.projectName}</h3>
+    <div class="picBackground">
+    <img src="${picture.img}" class="picture" onclick="openModal(${picture.projectNumber})"/>
+    </div>
+    </div>`;
   }
   html += /*HTML*/ `</div>
-        <footer class="footer">
-    ©Copyright
-    </footer>`;
-
+  <footer class="footer">
+  ©Copyright
+  </footer>`;
+  html += model.isAdmin ? adminMenuBar() : menuBar(); //Menyinit
+  
   appDiv.innerHTML = html;
   model.runOnce ? '': setTimeout(() =>{runOnce()}, 1000);
 }

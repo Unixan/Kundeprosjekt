@@ -17,25 +17,21 @@ function createFilterMenu(){
     let filterPopUp = '';
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">
+    <div>
+        <a class="filterClose" onclick="closeFilter()">
+            <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
+        </a>
+    </div>
     <div class="filterTitle">Velg filtere</div>
         <div class="filters">
             ${showFilter()}
             </div>
-        <div class="filterReset">
-            <a onclick="resetFilter()">
-            Reset filter
+        <div>
+            <a class="filterMinimize" onclick="filterMinimize()">
+            <img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">
             </a>
         </div>
-        <div class="filterMinimize">
-            <a onclick="filterMinimize()">
-            Minimer filter
-            </a>
-        </div>
-        <div class="filterClose">
-            <a onclick="closeFilter()">
-            Lukk filter
-            </a>
-        </div>
+        <div class="filterTriangel"></div>
     </div>
     `;
     return filterPopUp;
