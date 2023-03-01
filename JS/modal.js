@@ -42,6 +42,7 @@ function modal(n) {
   <a class="prev" onclick="slidePictures(-1)">&#10094;</a>
   <a class="next" onclick="slidePictures(1)">&#10095;</a>
           </div>
+          ${descriptionBox()}
           ${commentBox()}
           ${linkLine()}
         </div>
@@ -61,6 +62,26 @@ function slidePictures(n) {
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
   model.modal.commentFieldOpen = !model.modal.commentFieldOpen;
+}
+
+function showDescription() {
+  document.querySelector(".descriptionBox").classList.toggle("show");
+  model.modal.descriptionFieldOpen = !model.modal.descriptionFieldOpen;
+}
+
+//Beskrivelse til hvert bilde
+
+function descriptionBox() {
+  let descriptionBox = /*HTML*/ `
+  <div class="${
+    model.modal.descriptionFieldOpen ? "descriptionBox show" : "descriptionBox"
+  }">
+    <div class="description">
+      ${description()}
+    </div>
+  </div>
+  `;
+  return descriptionBox
 }
 
 //Kommentarboksen til hvert bilde
@@ -118,7 +139,7 @@ function linkLine() {
   let links = /*HTML*/ `
     <div class="linkLine">
       <img title="Del bilde" src="IMG/ICONS/share.png"/>
-      <img title="Beskrivelse" src="IMG/ICONS/info.png"/>
+      <img onclick="showDescription()" title="Beskrivelse" src="IMG/ICONS/info.png"/>
       <a href="mailto:fakeEmail@mail.com?subject=Prosjekt: ${picture.projectName} Tittel: ${picture.title}" target="_blank" rel="noopener noreferrer">
         <img title="Meld interesse" src="IMG/ICONS/email.png"/>
       </a> 
@@ -127,14 +148,30 @@ function linkLine() {
   return links;
 }
 
+function getCurrentPicture() {
+  let pictureIndex = model.modal.slideIndex - 1;
+  currentPicture = model.modal.modalPictures[pictureIndex];
+  return currentPicture;
+}
+
+// Beskrivelse som blir lag til i descriptionBox()
+
+function description() {
+  model.modal.modalDescription = "";
+  currentPictureDescription = getCurrentPicture().description;
+  let picDescription = /*HTML*/`
+    <div>
+      ${currentPictureDescription}
+    </div>
+  `
+  return picDescription
+}
+
 // Kommentarer som blir lagt til i commentBox()
 
 function comments() {
   model.modal.modalComments = "";
-  let currentPicture = "";
-  pictureIndex = model.modal.slideIndex - 1;
-  currentPicture = model.modal.modalPictures[pictureIndex];
-  currentPicComments = currentPicture.comments;
+  currentPicComments = getCurrentPicture().comments;
   if (currentPicComments.length !== 0) {
     let picComments = "";
     for (let x = currentPicComments.length - 1; x >= 0; x--) {
