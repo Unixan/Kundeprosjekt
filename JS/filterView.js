@@ -1,28 +1,17 @@
-/*BECKA IS ON IT
-
-TODO
-- rullgardinmeny på mainview når man trykker på knappen?
-- vise frem kun de bildene som inneholder kategoriene 
-    som brukeren har huket av. 
-
-- rullgardin under hele øverste bannere med en pil opp for å lukke
-- live oppdatering for valgene i checkboksene
-- reset knapp for filtrene 
-
-- legges på mainView
-    */
-
 //filter meny
 function createFilterMenu(){
     let filterPopUp = '';
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">
+    <div class="filterColor">
     <div>
-        <a class="filterClose" onclick="closeFilter()">
-            <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
-        </a>
     </div>
-    <div class="filterTitle">Velg filtere</div>
+    <div class="filterTitle">
+    <a class="filterClose" onclick="closeFilter()">
+    <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
+    </a>
+    <br/>
+        Velg filtere</div>
         <div class="filters">
             ${showFilter()}
             </div>
@@ -31,6 +20,7 @@ function createFilterMenu(){
             <img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">
             </a>
         </div>
+    </div>
         <div class="filterTriangel"></div>
     </div>
     `;
