@@ -50,8 +50,11 @@
     }
 }
 @media (max-width: 850px){
+    .filters{
+        font-size: 20px;
+    }
     .filterMenu{
     grid-area: body1;
-    position:relative;
+    
     }
 }
