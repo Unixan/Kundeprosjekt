@@ -18,7 +18,7 @@
   grid-area: 2 / 2 / 3 / 3;
 }
 .addCategory{
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 3 / 3 / 4 / 4;
 }
 .addImage{
   grid-area: 3 / 2 / 4 /3;
@@ -30,15 +30,24 @@
 .addPicture{
   width: 80%;
   object-fit: contain;
+  max-height: 600px;
 
 }
 .addDescription{
   grid-area: 2 / 2 / 3 / 3;
   justify-self: end;
-  width: 33%;
 }
 .addSaveButtons{
-  grid-area: 2 / 3 / 3 / 4;
+  grid-area: 2 / 2 / 3 / 3;
+  justify-self: end;
+  align-self: end;
+}
+.addButton{
+  font-size: 20px;
+  padding: 5px;
+  border: 3px solid black;
+  cursor: pointer;
+  margin: 5px;
 }
 
 @media (max-width: 850px) {
