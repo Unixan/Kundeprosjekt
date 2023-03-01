@@ -11,7 +11,9 @@ function changeToFilterView() {
 
 function changeToMainView() {
   model.state = "mainView";
+  model.filterView = false;
   updateView();
+  
 }
 
 function openModal(index) {

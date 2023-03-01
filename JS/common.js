@@ -209,5 +209,6 @@ function runOnce() {
 function backToMain() {
   //går tilbake til mainview
   model.state = "mainView";
+  model.filterView = false;
   updateView();
 }
