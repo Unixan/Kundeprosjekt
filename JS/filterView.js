@@ -15,7 +15,6 @@ TODO
 //filter meny
 function createFilterMenu(){
     let filterPopUp = '';
-   
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">
     <div class="filterTitle">Velg filtere</div>

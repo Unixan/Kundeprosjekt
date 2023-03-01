@@ -144,7 +144,7 @@ function comments() {
       <div class="comment">
       ${
         model.isAdmin
-          ? '<button onclick="removeComment(x)" class="removeButton">Slett kommentar</button>'
+          ? `<button onclick="removeComment(${x})" class="removeButton">Slett kommentar</button>`
           : ""
       }
         <div class="commentName">${date} | ${username} ></div> 
