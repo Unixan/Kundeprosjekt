@@ -63,11 +63,17 @@ function slidePictures(n) {
 function showComments() {
   document.querySelector(".commentBox").classList.toggle("show");
   model.modal.commentFieldOpen = !model.modal.commentFieldOpen;
+  if(model.isMobile.matches){
+    document.querySelector(".descriptionBox").classList.remove("show");
+  }
 }
 
 function showDescription() {
   document.querySelector(".descriptionBox").classList.toggle("show");
   model.modal.descriptionFieldOpen = !model.modal.descriptionFieldOpen;
+  if(model.isMobile.matches){
+    document.querySelector(".commentBox").classList.remove("show");
+  }
 }
 
 //Beskrivelse til hvert bilde
