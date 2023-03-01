@@ -118,6 +118,7 @@ function linkLine() {
   let links = /*HTML*/ `
     <div class="linkLine">
       <img title="Del bilde" src="IMG/ICONS/share.png"/>
+      <img title="Beskrivelse" src="IMG/ICONS/info.png"/>
       <a href="mailto:fakeEmail@mail.com?subject=Prosjekt: ${picture.projectName} Tittel: ${picture.title}" target="_blank" rel="noopener noreferrer">
         <img title="Meld interesse" src="IMG/ICONS/email.png"/>
       </a> 
