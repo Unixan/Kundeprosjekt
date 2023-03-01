@@ -35,23 +35,6 @@ li {
   flex-direction: column;
 }
 
-.picContainer {
-  max-height: 500px;
-  max-width: 500px;
-  background-color: #cedbad;
-  margin: 10px 0;
-}
-
-.picContainer:nth-child(1) {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.picContainer:nth-last-child() {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
 .picBackground {
   background-color: #cedbad;
   transition: 0.3s all ease;
