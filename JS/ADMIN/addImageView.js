@@ -322,10 +322,10 @@ function fetchSaveButtons(index) {
     ${
       index != null
         ? /*HTML*/ `
-        <button onclick="saveEdit(${index})">Lagre endringer</button>
+        <button class="addButton" onclick="saveEdit(${index})">Lagre endringer</button>
       `
         : /*HTML*/ `
-        <button onclick="publishNew()">Publisér</button>
+        <button class="addButton" onclick="publishNew()">Publisér</button>
       `
     }
   </div>
