@@ -31,6 +31,7 @@ function createFilterMenu(){
             <img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">
             </a>
         </div>
+        <div class="filterTriangel"></div>
     </div>
     `;
     return filterPopUp;

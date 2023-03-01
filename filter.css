@@ -11,19 +11,6 @@
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
-    
-
-
-
-    /* grid-area: body;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-end;
-    align-items: flex-start;
-    padding-right: 20px;
-    padding-top: 10px; */
 }
 
 .filterMenu div{
@@ -36,10 +23,6 @@
     top: 0;
     padding-top: 15px;
     padding-left: 10px;
-
-    /* order: 1;
-    font-weight: bold;
-    padding-bottom: 15px; */
 }
 
 .filterTitle{
@@ -55,6 +38,15 @@
 
 .filterMinimize{
     padding-left: 5px;
+}
+
+.filterTriangel{
+    height: 0;
+    width: 0;
+    border-left: 140px solid white;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 100px solid transparent;
 }
 
 
