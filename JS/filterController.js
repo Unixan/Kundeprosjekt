@@ -7,25 +7,19 @@ TODO
 //lukke filtermenyen
 function closeFilter(){
     document.getElementById("filterMenu").style.width = "0";
-    model.filterView = false;
-    resetFilter();
-    updateView();
-}
-//Minimer filter
-function filterMinimize(){
-    document.getElementById("filterMenu").style.width = "0";
-}
-//reset filtere DONE
-function resetFilter(){
     let filterBox = document.getElementById('filterBox');
+    model.filterView = false;
     for(let i = 0; i < filterBox.length; i++){
         filterBox[i].checked = false;
     }
     for(let i = 0; i < model.filter.length; i++){
         model.filter[i].checked = false;
     }
-    model.inputs.user.userFilter = [];
     updateView();
+}
+//Minimer filter
+function filterMinimize(){
+    document.getElementById("filterMenu").style.width = "0";
 }
 
 //Pusher inn bildet med riktig filter
