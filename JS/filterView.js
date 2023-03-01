@@ -14,6 +14,9 @@ TODO
 
 //filter meny
 function createFilterMenu(){
+    if(model.filterMenu == true){
+        
+    }
     let filterPopUp = '';
    
     filterPopUp = /*HTML*/`

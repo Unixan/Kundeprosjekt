@@ -27,7 +27,6 @@ function resetFilter(){
         model.filter[i].checked = false;
     }
     model.inputs.user.userFilter = [];
-    model.filterView = false;
     updateView();
 }
 
@@ -54,4 +53,5 @@ function checkedFilter(){
     }
     console.log(filterArray);
     updateView(); 
+    document.getElementById("filterMenu").style.width = "200px";
 }
