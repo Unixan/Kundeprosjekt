@@ -80,9 +80,8 @@ function menuBar() {
   menu = /*HTML*/ `
   <header>
   <nav class="${model.runOnce ? "menuBarPermanent" : "menuBar"}">
-  <img src="IMG/Signatur.png" class="${
-    model.runOnce ? "logoPermanent" : "logo"
-  }"/>
+  <img src="IMG/Signatur.png" class="${model.runOnce ? "logoPermanent" : "logo"
+    }"/>
         <ul class="menu">
           <li class="menuItem">
             <div onclick="changeToMainView()" class="menuLink">Hjem</div>
@@ -205,4 +204,10 @@ function runOnce() {
   document.querySelector(".logo").classList.add("done");
   document.querySelector(".menuBar").classList.add("done");
   model.runOnce = true;
+}
+
+function backToMain() {
+  //går tilbake til mainview
+  model.state = "mainView";
+  updateView();
 }
