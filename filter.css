@@ -53,8 +53,4 @@
     .filters{
         font-size: 20px;
     }
-    .filterMenu{
-    grid-area: body1;
-    
-    }
 }
