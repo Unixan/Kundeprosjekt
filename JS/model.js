@@ -60,10 +60,12 @@ const model = {
   modal: {
     addCommentOpen: false,
     commentFieldOpen: false,
+    descriptionFieldOpen: false,
     showModal: false,
     modalPictures: "",
     slideIndex: 1,
     modalComments: "",
+    modalDescription: "",
   },
   filter: [
     { cat: "Architecture", checked: false },
