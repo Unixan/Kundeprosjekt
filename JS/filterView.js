@@ -4,8 +4,6 @@ function createFilterMenu(){
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">
     <div class="filterColor">
-    <div>
-    </div>
     <div class="filterTitle">
     <a class="filterClose" onclick="closeFilter()">
     <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">

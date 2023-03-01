@@ -43,7 +43,6 @@ function checkedFilter(){
     if(filterArray.length === 0){
         model.inputs.user.userFilter = model.pictures;
     }
-    console.log(filterArray);
     updateView(); 
     document.getElementById("filterMenu").style.width = "200px";
 }
