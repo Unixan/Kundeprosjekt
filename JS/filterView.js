@@ -1,6 +1,5 @@
 //filter meny
 function createFilterMenu(){
-    let newFilterName = '';
     let filterPopUp = '';
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">

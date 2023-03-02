@@ -1,9 +1,3 @@
-/*BECKA IS ON IT 
-
-TODO
-- finne filtere
-*/
-
 //lukke filtermenyen
 function closeFilter(){
     document.getElementById("filterMenu").style.width = "0";
@@ -47,12 +41,14 @@ function checkedFilter(){
     document.getElementById("filterMenu").style.width = "200px";
 }
 
+//Slette eksisterende filter
 function deleteFilter(index){
     model.filter.splice(index, 1)
     updateView();
     document.getElementById("filterMenu").style.width = "200px";
 }
 
+//Nytt filter 
 function addNewFilter(){
     let newFilter = document.getElementById(`newFilterInput`).value;
     model.filter.push(

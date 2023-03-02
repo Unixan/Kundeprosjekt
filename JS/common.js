@@ -52,7 +52,7 @@ function adminMenuBar() {
               <div onclick="changeToAdminView()" class="menuLink">Hjem</div>
             </li>
             <li class="menuItem">
-              <div onclick="changeToFilterView()" class="menuLink">Filter</div>
+              <div onclick="changeToAdminFilterView()" class="menuLink">Filter</div>
             </li>
             <li class="menuItem">
               <div onclick="changeToAddImageView()" class="menuLink">Legg til bilde</div>
@@ -115,10 +115,11 @@ function changeToAdminView() {
 }
 
 function changeToAdminFilterView() {
-  model.state = "adminFilterView";
+  model.state = "mainView";
   backEdit();
   resetEdits();
   updateView();
+  document.getElementById("filterMenu").style.width = "200px";
 }
 
 function changeToAddImageView(pictureIndex) {
