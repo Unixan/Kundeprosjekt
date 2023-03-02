@@ -46,3 +46,11 @@ function checkedFilter(){
     updateView(); 
     document.getElementById("filterMenu").style.width = "200px";
 }
+
+function deleteFilter(index){
+
+}
+
+function addNewFilter(){
+    
+}

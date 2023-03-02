@@ -14,6 +14,16 @@ function createFilterMenu(){
             ${showFilter()}
             </div>
         <div>
+        ${model.isAdmin
+              ? `<div>
+                    <div>Nytt filter</div>
+                    <input type="text"/>
+                    <a onclick="addNewFilter()">Legg til</a>
+                </div>`
+              : ""
+          }
+        </div>
+        <div>
             <a class="filterMinimize" onclick="filterMinimize()">
             <img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">
             </a>
@@ -28,21 +38,34 @@ function createFilterMenu(){
 //lager selve filtrene
 function showFilter(){
     let filterMenu = '';
-    model.filter.forEach((filter, i) => {
-        filterMenu += /*HTML*/`
-        <div>
-            <input 
-            type="checkbox"
-            id="filterBox"
-            class="filterCheckbox"
-            ${filter.checked == true ? 'checked' : ''}
-            onchange="model.filter[${i}].checked = !model.filter[${i}].checked;  checkedFilter()"
-            />
-            <label>
-                ${filter.cat}
-            </label>
-        </div>
-        `;
-    })
+    if(model.isAdmin){
+        model.filter.forEach((filter, i) => {
+            filterMenu += /*HTML*/`
+            <div>
+                <button onclick="deleteFilter(${i})">Slett</button>
+                <label>
+                    ${filter.cat}
+                </label>
+            </div>
+            `;
+        })
+    }else{
+        model.filter.forEach((filter, i) => {
+            filterMenu += /*HTML*/`
+            <div>
+                <input 
+                type="checkbox"
+                id="filterBox"
+                class="filterCheckbox"
+                ${filter.checked == true ? 'checked' : ''}
+                onchange="model.filter[${i}].checked = !model.filter[${i}].checked;  checkedFilter()"
+                />
+                <label>
+                    ${filter.cat}
+                </label>
+            </div>
+            `;
+        })
+    }
     return filterMenu;
 }
