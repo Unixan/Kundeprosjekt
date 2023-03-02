@@ -1,13 +1,17 @@
 //filter meny
 function createFilterMenu(){
+    let newFilterName = '';
     let filterPopUp = '';
     filterPopUp = /*HTML*/`
     <div id="filterMenu" class="filterMenu">
     <div class="filterColor">
     <div class="filterTitle">
-    <a class="filterClose" onclick="closeFilter()">
-    <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
-    </a>
+    ${model.isAdmin
+        ? ""
+        : `<a class="filterClose" onclick="closeFilter()">
+                <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
+            </a>`
+    }
     <br/>
         Velg filtere</div>
         <div class="filters">
@@ -17,7 +21,11 @@ function createFilterMenu(){
         ${model.isAdmin
               ? `<div>
                     <div>Nytt filter</div>
-                    <input type="text"/>
+                    <input
+                        type="text"
+                        id="newFilterInput"
+                        placeholder="Nytt filter"
+                        />
                     <a onclick="addNewFilter()">Legg til</a>
                 </div>`
               : ""
@@ -25,7 +33,10 @@ function createFilterMenu(){
         </div>
         <div>
             <a class="filterMinimize" onclick="filterMinimize()">
-            <img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">
+            ${model.isAdmin
+                ? `<h3>Lagre endringer</h3>`
+                : `<img src="IMG/ICONS/minimizeArrow.png" style="height:auto; width:35px;">`
+            }
             </a>
         </div>
     </div>

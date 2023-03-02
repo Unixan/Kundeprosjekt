@@ -48,9 +48,16 @@ function checkedFilter(){
 }
 
 function deleteFilter(index){
-
+    model.filter.splice(index, 1)
+    updateView();
+    document.getElementById("filterMenu").style.width = "200px";
 }
 
 function addNewFilter(){
-    
+    let newFilter = document.getElementById(`newFilterInput`).value;
+    model.filter.push(
+                { cat: newFilter, checked: false },
+    )
+    updateView();
+    document.getElementById("filterMenu").style.width = "200px";
 }

@@ -1,6 +1,3 @@
-/*Ansvarlig: Becka
-DONE  
-*/
 function updateContactView() {
         if (model.modal.showModal) {
                 appDiv.innerHTML += modal();
