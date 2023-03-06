@@ -1,9 +1,5 @@
-// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst(x) og SoMeLinks X
-//Lage input X
-//Collab view også lagt til X 
-//Korte ned med hjelpevariabler X
-//Skrive kommentarer
-//Erwan Foxtail DOES it
+// her skal admin kunne trykke "rediger" og kunne laste opp nytt profilbilde eller endre tekst og SoMeLinks 
+
 function updateAdminContactView() {
   //hjelpevariabler
   const creator = model.creator;
@@ -12,9 +8,7 @@ function updateAdminContactView() {
   const creatorsPicture = creator.aboutPicture;
   const aboutTheCreator = creator.aboutCreator;
 
-  /*SoMe, Hva som vises er avhengig av om relevant editMode er aktiv eller ikke. 
-  Hvis den er aktiv vil det vises frem inputfields med lagre og avbryt funksjon, 
-  hvis ikke vil lenkene vises fram som symboler med en mulighet for å gå i redigeringsmodus*/
+  /*SoMe, Hva som vises er avhengig av om relevant editMode er aktiv eller ikke.*/
   let someHTML = "";
   let someHTMLedit = "";
   if (creatorsSOME.editMode === false) { //Viser frem symboler med hyperlink
