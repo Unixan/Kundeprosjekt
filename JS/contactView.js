@@ -1,8 +1,9 @@
 function updateContactView() {
+        appDiv.innerHTML = '';
         if (model.modal.showModal) {
                 appDiv.innerHTML += modal();
         }
-        appDiv.innerHTML = /*HTML*/`
+        appDiv.innerHTML += /*HTML*/`
     ${menuBar()}
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
@@ -28,6 +29,7 @@ function updateContactView() {
     ©Copyright
     </footer>
     `;
+    return appDiv.innerHTML;
 }
 //Henter frem bilder hvis et bilde inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
