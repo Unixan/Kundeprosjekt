@@ -55,7 +55,6 @@ function adminUpLoadPicture(new_Image) {//Lagrer midlertidig profilbilde
     const inputTag = new_Image;
     inputTag.addEventListener("change", () => {
         const temp = inputTag.files;
-        console.log(inputTag.files);
         editAdminProfile.aboutPicture = URL.createObjectURL(temp[0]);
     })
 }
