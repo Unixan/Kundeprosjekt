@@ -110,43 +110,35 @@ function menuBar() {
 function changeToAdminView() {
   model.state = "mainView";
   backEdit();
-  resetEdits();
-  updateView();
 }
 
 function changeToAdminFilterView() {
   model.state = "mainView";
   backEdit();
-  resetEdits();
-  updateView();
   document.getElementById("filterMenu").style.width = "200px";
 }
 
 function changeToAddImageView(pictureIndex) {
   model.state = "addImageView";
-  backEdit();
-  resetEdits();
-  updateView(pictureIndex);
+  backEdit(pictureIndex);
 }
 
 function changeToAdminContactView() {
   model.state = "adminContactView";
   backEdit();
-  resetEdits();
-  updateView();
 }
 
 function changeToLoginView() {
   model.state = "loginView";
   backEdit();
-  resetEdits();
-  updateView();
 }
 
-function backEdit() {
+function backEdit(pictureIndex) {
   //klargjør modellen for nye inputs og sender tilbake til mainView
   emptyUnusedFilter();
   resetInput();
+  resetEdits();
+  updateView(pictureIndex);
 }
 function emptyUnusedFilter() {
   //tømmer ubrukte filtre som ikke er lagt til
@@ -157,7 +149,7 @@ function emptyUnusedFilter() {
   });
 }
 function resetInput() {
-  //skal sette model.input til originalen, men må si cat=model.filter PGA reasons
+  // Tømmer model.filter og klargjør til nye inputs.
   model.filter.map((list) => {
     //setter alle kategorier til å være unchecked så listen kan brukes på nytt
     if (list.checked) {

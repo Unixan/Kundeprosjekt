@@ -3,7 +3,7 @@
 
 
 function userUpload(imageToAdd) {
-  //sendet inputTag med bildefil og legger til model.inputs
+  //sender inputTag med bildefil og legger til model.inputs
   const inputTag = imageToAdd;
   inputTag.addEventListener("change", () => {
     const temp = inputTag.files;
@@ -42,7 +42,7 @@ function removeUnusedCategory(index, picture) {
 
 
 function deletePicture(picture) {
-  //sletter bildet, men kun om du huker av på "ja-" knapp.
+  //sletter bildet, men kun om du huker av på "ja" -knapp.
   if (!model.areYouSure) {
     model.areYouSureImg = true;
     updateView(picture);
@@ -56,7 +56,7 @@ function deletePicture(picture) {
 }
 
 function saveEdit(index) {
-  //skal oppdatere eksisterende bilde med endringer
+  // Oppdaterer endringer brukeren har gjort på eksisterende bilde.
   if (model.inputs.admin.addPic.title != "") {
     model.pictures[index].title = model.inputs.admin.addPic.title;
   }
@@ -77,7 +77,7 @@ function saveEdit(index) {
 }
 
 function publishNew() {
-  //skal legge nytt bilde til model.pictures
+  // Lager et nytt bildeobjekt i model.pictures utifra brukerinputs
   const newImage = {
     img: model.inputs.admin.addPic.img,
     toggled: false,
