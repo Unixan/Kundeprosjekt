@@ -26,7 +26,7 @@ function updateMainView() {
     <div class="picBox">
     <h3 class="pictureTitle">${picture.projectName}</h3>
     <div class="picBackground">
-    <img src="${picture.img}" class="picture" onclick=${model.filterView ? `'openSingleModal(${x})'` : `"openModal(${picture.projectNumber})"`}/>
+    <img src="${picture.img}" class="picture" onclick=${model.filterView ? `'openSingleModal(${x}, model.inputs.user.userFilter)'` : `"openModal(${picture.projectNumber})"`}/>
     </div>
     </div>`;
   }
