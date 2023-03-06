@@ -134,7 +134,7 @@ function changeToLoginView() {
 }
 
 function backEdit(pictureIndex) {
-  //klargjør modellen for nye inputs og sender tilbake til mainView
+  //klargjør modellen for nye inputs og oppdaterer viewet
   emptyUnusedFilter();
   resetInput();
   resetEdits();
