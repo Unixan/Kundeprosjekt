@@ -39,9 +39,7 @@ function collabImages() {
                 model.pictures[i].category.forEach((catArr) => {
                         index = i;
                         if (catArr.includes('Collaboration')) {
-                                collabArray.push(model.pictures[i]);
-
-                                
+                        collabArray.push(model.pictures[i]);        
                         }
                 })
         }
@@ -49,13 +47,12 @@ function collabImages() {
                 collabArray.forEach((picture) => {
                         html += /*HTML*/`
                         <div class="picBox">
-                                <h2 class="pictureTitle">${picture.title}</h2>
-                                <div class="picBackground">
-                                <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
-                                </div>
+                        <h2 class="pictureTitle">${picture.title}</h2>
+                        <div class="picBackground">
+                        <img src="${picture.img}" class="picture" onclick="modalActivate(${index}, ${collabArray})"/>
                         </div>
-                                `;
-
+                        </div>
+                        `;
                 })
         }
         html += `</div>`;
