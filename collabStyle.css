@@ -126,4 +126,8 @@
     .collabImageTop{
         flex-direction: column;
     }
+    .scrollBoxContact{
+        display: flex;
+        flex-direction: column;
+    }
 }
