@@ -91,6 +91,20 @@
     min-width: 100%;
 }
 
+.scrollBoxContact {
+    display: grid;
+    padding: 30px;
+    gap: 70px;
+    grid-template-columns: 300px 300px 300px;
+    grid-auto-rows: 300px;
+    align-items: center;
+    grid-area: body;
+    max-width: 100%;
+    min-height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+    justify-self: center;
+  }
+
 @media (max-width: 700px) {
     .collabInfo-box {
       display: flex;
