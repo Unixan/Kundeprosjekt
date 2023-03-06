@@ -1,6 +1,5 @@
 // addImageView skal brukes til å legge til bilder fra mainView om adminIsTrue når en trykker "+". Skal også kunne brukes til å redigere eksisterende bilder
 
-//ON THE CASE: Nikotron
 
 /*TODO:
   How the F to add more pictures?
@@ -44,25 +43,23 @@ function updateAddImageView(index) {
 function fetchTitle(index) {
   let titleDiv = /*html*/ `
   <div class="addTitle">
-  <h1>${
-    index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
-  }</h1>
-  ${
-    index != null
+  <h1>${index != null ? `${model.pictures[index].title}` : "Legg til nytt bilde"
+    }</h1>
+  ${index != null
       ? /*HTML*/ `<input 
     type="text" 
     class="addTextInput"
     value="${model.pictures[index].title}" 
     onchange="model.inputs.admin.addPic.title = this.value"
     >`
-    : /*HTML*/ `<input 
+      : /*HTML*/ `<input 
     type="text" 
     class="addTextInput"
     placeholder="Skriv inn tittel" 
     onchange="model.inputs.admin.addPic.title = this.value"
     value="${model.inputs.admin.addPic.title}"
     >`
-  }
+    }
   </div>
   `;
   return titleDiv;
@@ -132,8 +129,7 @@ function makeSelection(index) {
     model.inputs.admin.addPic.projectNumber = parseInt(this.value);
     model.inputs.admin.addPic.projectName = getProjectNameFromNumber(model.inputs.admin.addPic.projectNumber)"
   value="model.inputs.admin.addPic.projectNumber">
-  ${
-    model.inputs.admin.addPic.projectNumber != 0
+  ${model.inputs.admin.addPic.projectNumber != 0
       ? `<option value="${model.inputs.admin.addPic.projectNumber}">
     ${model.inputs.admin.addPic.projectName}
     </option>
@@ -141,7 +137,7 @@ function makeSelection(index) {
       : `<option value="0">
     Velg et prosjekt
     </option>`
-  }
+    }
   ${getProjectOptions()}
   ${checkForNewProjects(index)}
   </select>
@@ -164,14 +160,12 @@ function checkForNewProjects(index) {
           value="${projects[i].projectName}"
           onchange="model.inputs.admin.addPic.projects[${i}].projectName = this.value" 
         >
-        <button onclick="forceNewProject(${i} ${
-        index != null ? `,${index}` : ``
-      })">
+        <button onclick="forceNewProject(${i} ${index != null ? `,${index}` : ``
+        })">
           Legg til prosjekt
         </button>
-        <button onclick="removeUnusedProject(${i} ${
-        index != null ? `,${index}` : ``
-      })">
+        <button onclick="removeUnusedProject(${i} ${index != null ? `,${index}` : ``
+        })">
           Fjern
         </button>
       `;
@@ -184,14 +178,13 @@ function fetchImage(index) {
   let imageDiv = /*html*/ `
     <div class="addImage"> 
         ${
-          //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
-          index != null
-            ? /*HTML*/ `
+    //om du redigerer eksisterende, vises bildet her med en sletteknapp for å fjerne alt
+    index != null
+      ? /*HTML*/ `
             <img class="addPicture" src='${model.pictures[index].img}'>
-            ${
-              !model.areYouSureImg
-                ? "" //spør bruker om de er sikker på at de vil slette bildet
-                : /*HTML*/ `
+            ${!model.areYouSureImg
+        ? "" //spør bruker om de er sikker på at de vil slette bildet
+        : /*HTML*/ `
             <p>Er du sikker på at du vil slette bildet for alltid?</p>
             <input 
                 type="checkbox" 
@@ -203,18 +196,18 @@ function fetchImage(index) {
               Ja 
             </label>
             `
-            }
+      }
             <br>
             <button onclick="deletePicture(${index})">Slett bilde</button> 
           `
-            : //ellers får du input for å legge til nytt
+      : //ellers får du input for å legge til nytt
               /*HTML*/ `
               ${
-                //skjekker om det er et bilde i input
-                model.inputs.admin.addPic.img != ""
-                  ? `<img class="addPicture" src='${model.inputs.admin.addPic.img}'>`
-                  : "<p>Legg til bilde</p>"
-              }
+      //skjekker om det er et bilde i input
+      model.inputs.admin.addPic.img != ""
+        ? `<img class="addPicture" src='${model.inputs.admin.addPic.img}'>`
+        : "<p>Legg til bilde</p>"
+      }
             <!--knapp bruker kan trykke på for å laste opp bilder
             sender hele input-taggen med bildet som innhold til userUpload() i controller-->
             <input 
@@ -223,7 +216,7 @@ function fetchImage(index) {
             accept="image/jpeg, image/png, image/jpg"
              >
              `
-        }
+    }
     </div>
     `;
   return imageDiv;
@@ -232,8 +225,7 @@ function fetchImage(index) {
 function fetchDescription(index) {
   let descriptionDiv = `
     <div class="addDescription">
-  ${
-    index != null
+  ${index != null
       ? `
       <textarea 
         type="text" 
@@ -247,7 +239,7 @@ function fetchDescription(index) {
       placeholder="Skriv inn beskrivelse" 
       oninput="model.inputs.admin.addPic.description = this.value"
       >${model.inputs.admin.addPic.description}</textarea>`
-  }
+    }
     </div>
   `;
   return descriptionDiv;
@@ -271,11 +263,10 @@ function fetchCategories(index) {
             <input 
                 type="checkbox" 
                 name="${model.inputs.admin.addPic.category[i].cat}"
-                ${
-                  !model.inputs.admin.addPic.category[i].checked
-                    ? ""
-                    : "checked"
-                } 
+                ${!model.inputs.admin.addPic.category[i].checked
+          ? ""
+          : "checked"
+        } 
                 onchange="model.inputs.admin.addPic.category[${i}].checked = !model.inputs.admin.addPic.category[${i}].checked"
             >
             <label for="${model.inputs.admin.addPic.category[i].cat}">
@@ -298,9 +289,8 @@ function fetchCategories(index) {
               Legg til
             </button>
             <button 
-              onclick="removeUnusedCategory(${
-                index != null ? `${i},${index}` : i
-              })">
+              onclick="removeUnusedCategory(${index != null ? `${i},${index}` : i
+        })">
               Fjern
             </button>
             <br>
@@ -319,12 +309,11 @@ function fetchCategories(index) {
 function fetchSaveButtons(index) {
   let saveButtonsDiv = `
   <div class="addSaveButtons">
-    ${
-      index != null
-        ? /*HTML*/ `
+    ${index != null
+      ? /*HTML*/ `
         <button class="addButton" onclick="saveEdit(${index})">Lagre endringer</button>
       `
-        : /*HTML*/ `
+      : /*HTML*/ `
         <button class="addButton" onclick="publishNew()">Publisér</button>
       `
     }
