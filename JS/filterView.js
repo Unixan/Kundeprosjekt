@@ -5,12 +5,10 @@ function createFilterMenu(){
     <div id="filterMenu" class="filterMenu">
     <div class="filterColor">
     <div class="filterTitle">
-    ${model.isAdmin
-        ? ""
-        : `<a class="filterClose" onclick="closeFilter()">
+    <a class="filterClose" onclick="closeFilter()">
                 <img src="IMG/ICONS/closeB.png" style="height:auto; width:25px;">
-            </a>`
-    }
+            </a>
+    
     <br/>
         Velg filtere</div>
         <div class="filters">
