@@ -33,6 +33,7 @@ function updateContactView() {
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages() {
         let html = '';
+        html += `<div class="scrollBoxContact">`;
         for (let i = 0; i < model.pictures.length; i++) {
                 let picture = model.pictures[i];
                 model.pictures[i].category.forEach((catArr) => {
@@ -41,7 +42,7 @@ function collabImages() {
                                 html += /*HTML*/`
                     <div class="picBox">
                     <h2 class="pictureTitle">${picture.title}</h2>
-                            <div>
+                            <div class="picBackground">
                             <img src="${picture.img}" class="picture" onclick="modalActivate(${index})"/>
                             </div>
                     </div>
@@ -49,6 +50,7 @@ function collabImages() {
                         }
                 })
         }
+        html += `</div>`;
         return html;
 }
 

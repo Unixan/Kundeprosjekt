@@ -17,13 +17,14 @@ function changeToMainView() {
   updateView();
   
 }
-
+//Åpner standard modal med alle bilder i samme prosjekt
 function openModal(index) {
   model.modal.modalPictures = generatePictureArray(index);
   model.modal.showModal = !model.modal.showModal;
   updateView();
 }
 
+//Åpner filtermodal med slideshow for hvert bilde i søkekriteriene
 function openSingleModal(x) {
   model.modal.modalPictures = model.inputs.user.userFilter;
   model.modal.showModal = !model.modal.showModal;
@@ -31,6 +32,7 @@ function openSingleModal(x) {
   updateView();
 }
 
+// Lukker hovedmodalen og nullstiller felter i modellen
 function closeModal() {
   model.modal.showModal = !model.modal.showModal;
   model.modal.modalPictures = "";
