@@ -1,9 +1,5 @@
 //controller skal bruke midlertidige verdier fra addImageView og push-e til model.pictures
-//ON THE CASE: Nikotron
 
-/* TODO:
-  Nice to have: at det kan legges til flere bilder til ett prosjekt samtidig
-    */
 
 
 function userUpload(imageToAdd) {
@@ -135,7 +131,7 @@ function forceNewProject(i, index) {
   updateView(index);
 }
 
-function removeUnusedProject(i, index){
+function removeUnusedProject(i, index) {
   //fjerner prosjekt som ikke er lagt til i listen
   let projects = model.inputs.admin.addPic.projects;
   projects.splice(i, 1);

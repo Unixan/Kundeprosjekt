@@ -26,7 +26,6 @@ function openModal(index) {
 
 //Åpner filtermodal med slideshow for hvert bilde i søkekriteriene
 function openSingleModal(x, filter) {
-  console.log(filter)
   model.modal.modalPictures = filter;
   model.modal.showModal = !model.modal.showModal;
   model.modal.slideIndex = x + 1;
