@@ -4,7 +4,7 @@ function updateContactView() {
                 appDiv.innerHTML += modal();
         }
         appDiv.innerHTML += /*HTML*/`
-    ${menuBar()}
+    
     <div class="collabInfo-box">
             <div class="collabTitle">${model.creator.name}</div>
             <div class="creatorImg">
@@ -28,8 +28,9 @@ function updateContactView() {
     <footer class="footer footerSticky">
     ©Copyright
     </footer>
+    ${menuBar()}
     `;
-    return appDiv.innerHTML;
+        return appDiv.innerHTML;
 }
 //Henter frem bilder hvis et bilde inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
@@ -41,12 +42,12 @@ function collabImages() {
                 model.pictures[i].category.forEach((catArr) => {
                         index = i;
                         if (catArr.includes('Collaboration')) {
-                                model.inputs.user.collabArray.push(model.pictures[i]);        
+                                model.inputs.user.collabArray.push(model.pictures[i]);
                         }
                 })
         }
         collabArray = model.inputs.user.collabArray;
-        if(collabArray.length !== 0){
+        if (collabArray.length !== 0) {
                 collabArray.forEach((picture, index) => {
                         html += /*HTML*/`
                         <div class="picBox">
