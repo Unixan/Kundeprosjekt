@@ -1,6 +1,4 @@
-/*Ansvarlig: Becka
-DONE
-*/
+
 function updateLoginView() {
     if (model.modal.showModal) {
         appDiv.innerHTML += modal();
