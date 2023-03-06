@@ -105,7 +105,7 @@ function updateAdminContactView() {
 
   //Collabs lagt til med resten av infoen
   document.getElementById('app').innerHTML = /*html*/ `
-    ${adminMenuBar()}
+    
   <div class="collabInfo-box">
     <h1 class="collabTitle">${creator.name}</h1>
     <div class="creatorImg" style="justify-self: auto;">
@@ -130,6 +130,7 @@ function updateAdminContactView() {
 <footer class="footer footerSticky" style="position: fixed;">
 ©Copyright
 </footer>
+${adminMenuBar()}
     `
 
 }
