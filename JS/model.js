@@ -20,6 +20,7 @@ const model = {
         date: "",
       },
       userFilter: [],
+      collabArray: [],
     },
     admin: {
       addPic: {
