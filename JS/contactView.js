@@ -32,24 +32,25 @@ function updateContactView() {
 //Henter frem bilder hvis et bilde inneholder Collaboration i category.
 //Legger også til en liten banner med tittel som viser til hva bildene er. 
 function collabImages() {
-        let collabArray = [];
+        model.inputs.user.collabArray = [];
         let html = '';
         html += `<div class="scrollBoxContact">`;
         for (let i = 0; i < model.pictures.length; i++) {
                 model.pictures[i].category.forEach((catArr) => {
                         index = i;
                         if (catArr.includes('Collaboration')) {
-                        collabArray.push(model.pictures[i]);        
+                                model.inputs.user.collabArray.push(model.pictures[i]);        
                         }
                 })
         }
+        collabArray = model.inputs.user.collabArray;
         if(collabArray.length !== 0){
-                collabArray.forEach((picture) => {
+                collabArray.forEach((picture, index) => {
                         html += /*HTML*/`
                         <div class="picBox">
                         <h2 class="pictureTitle">${picture.title}</h2>
                         <div class="picBackground">
-                        <img src="${picture.img}" class="picture" onclick="modalActivate(${index}, ${collabArray})"/>
+                        <img src="${picture.img}" class="picture" onclick="openSingleModal(${index}, model.inputs.user.collabArray)"/>
                         </div>
                         </div>
                         `;
