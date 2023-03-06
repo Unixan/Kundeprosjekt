@@ -48,21 +48,13 @@ function createFilterMenu(){
 //lager selve filtrene
 function showFilter(){
     let filterMenu = '';
-    if(model.isAdmin){
+    
         model.filter.forEach((filter, i) => {
             filterMenu += /*HTML*/`
             <div>
-                <button onclick="deleteFilter(${i})">Slett</button>
-                <label>
-                    ${filter.cat}
-                </label>
-            </div>
-            `;
-        })
-    }else{
-        model.filter.forEach((filter, i) => {
-            filterMenu += /*HTML*/`
-            <div>
+            ${!model.isAdmin 
+                ? ""
+                : `<button onclick="deleteFilter(${i})">Slett</button>`}
                 <input 
                 type="checkbox"
                 id="filterBox"
@@ -76,6 +68,6 @@ function showFilter(){
             </div>
             `;
         })
-    }
+    
     return filterMenu;
 }
