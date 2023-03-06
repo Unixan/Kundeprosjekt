@@ -7,7 +7,6 @@ function userUpload(imageToAdd) {
   const inputTag = imageToAdd;
   inputTag.addEventListener("change", () => {
     const temp = inputTag.files;
-    console.log(inputTag.files);
     model.inputs.admin.addPic.img = URL.createObjectURL(temp[0]);
   });
   const waitForUpdate = setTimeout(updateView, 300); //lar bildet laste opp før oppdatering av view
