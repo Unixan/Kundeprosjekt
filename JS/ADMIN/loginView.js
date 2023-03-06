@@ -1,7 +1,5 @@
 /*Ansvarlig: Becka
 DONE
-Bonus:
-Tilbakeknapp: Erwan Foxtail
 */
 function updateLoginView() {
     if (model.modal.showModal) {
