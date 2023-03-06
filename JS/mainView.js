@@ -24,7 +24,7 @@ function updateMainView() {
     picture = filteredList[x];
     html += /*HTML*/ `
     <div class="picBox">
-    <h3 class="pictureTitle">${model.filterMenu ? `${picture.title}` : `${picture.projectName}`}</h3>
+    <h3 class="pictureTitle">${model.filterView ? `${picture.title}` : `${picture.projectName}`}</h3>
     <div class="picBackground">
     <img src="${picture.img}" class="picture" onclick=${model.filterView ? `'openSingleModal(${x}, model.inputs.user.userFilter)'` : `"openModal(${picture.projectNumber})"`}/>
     </div>
