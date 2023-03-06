@@ -52,6 +52,8 @@ function modal(n) {
   return modalView;
 }
 
+//Funksjon for å bytte bilde i slideshow
+
 function slidePictures(n) {
   model.modal.slideIndex += n;
   updateView();
@@ -66,6 +68,8 @@ function showComments() {
     document.querySelector(".descriptionBox").classList.remove("show");
   }
 }
+
+// Funksjon for å vise eller skjule beskrivelse i modalen
 
 function showDescription() {
   document.querySelector(".descriptionBox").classList.toggle("show");
@@ -90,7 +94,7 @@ function descriptionBox() {
   return descriptionBox;
 }
 
-//onclick på bakgrunn for lukking av kommentarer i mobile view
+//onclick på bakgrunn for lukking av beskrivelse i mobile view
 
 function closeDesc() {
   document.querySelector(".descriptionBox").classList.remove("show");
@@ -159,6 +163,8 @@ function linkLine() {
     </div>`;
   return links;
 }
+
+//Hjelpefunksjon for å hente index til valgte bilde fra modalen ift hovedarrayet i modellen
 
 function getCurrentPicture() {
   let pictureIndex = model.modal.slideIndex - 1;
