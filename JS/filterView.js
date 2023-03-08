@@ -46,11 +46,11 @@ function createFilterMenu(){
 //lager selve filtrene
 function showFilter(){
     let filterMenu = '';
-    
+
         model.filter.forEach((filter, i) => {
             filterMenu += /*HTML*/`
             <div>
-            ${!model.isAdmin 
+            ${!model.isAdmin
                 ? ""
                 : `<button onclick="deleteFilter(${i})">Slett</button>`}
                 <input 
