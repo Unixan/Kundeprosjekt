@@ -104,7 +104,7 @@ const model = {
     name: "Jarand Midtgaard",
     aboutCreator: {
       about:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Jeg er en arkitekt og kunstner fra Sandefjord",
       editMode: false,
     },
     creatorSoMelinks: {
