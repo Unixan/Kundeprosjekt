@@ -185,7 +185,12 @@ const model = {
       description: "Arkitekturbygning ferdiglaget.",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Building", "Completed"],
-      comments: [],
+      comments: [ {
+        email: "somemail@dom.com",
+        user: "Cathrine",
+        comment: "Så flott!",
+        date: "15/2 - 23",
+      },],
     },
     {
       img: "IMG/PICTURES/Pro1_3.jpg",
@@ -258,7 +263,12 @@ const model = {
       description: "Surrealistisk bildet laget digitalt.",
       artist: "Jarand Midtgaard",
       category: ["Surrealism", "Art", "Collage", "Digital"],
-      comments: [],
+      comments: [ {
+        email: "somemail@dom.com",
+        user: "Ståle",
+        comment: "Vireklig pent! Kreativt!",
+        date: "15/2 - 23",
+      },],
     },
     {
       img: "IMG/PICTURES/Pro3_3.jpg",
@@ -309,7 +319,12 @@ const model = {
         "3Dprint",
         "Collaboration",
       ],
-      comments: [],
+      comments: [ {
+        email: "somemail@dom.com",
+        user: "Joakim",
+        comment: "Kreativt!",
+        date: "15/2 - 23",
+      },],
     },
 
     {
@@ -338,7 +353,12 @@ const model = {
       description: "",
       artist: "Jarand Midtgaard",
       category: ["Architecture", "Surrealism", "3Dmodeling", "Utopic"],
-      comments: [],
+      comments: [ {
+        email: "somemail@dom.com",
+        user: "Nils",
+        comment: "Fantastisk! Har du laget dette selv?",
+        date: "15/2 - 23",
+      },],
     },
     {
       img: "IMG/PICTURES/Pro5_3.JPG",
