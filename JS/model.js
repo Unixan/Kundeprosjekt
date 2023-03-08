@@ -94,8 +94,8 @@ const model = {
   creator: {
     role: "Admin",
     password: "1234",
-    email: "jarand@niamo.no",
-    tlf: 95999849,
+    email: "jarand@epost.no",
+    tlf: 12345678,
     aboutPicture: {
       picture: "IMG/Jarand_img.jpg",
       editMode: false,
