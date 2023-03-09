@@ -328,7 +328,7 @@ const model = {
     },
 
     {
-      img: "IMG/PICTURES/Pro5_1.JPG",
+      img: "IMG/PICTURES/Pro5_1.jpg",
       toggled: false,
       projectName: "Architectural projects",
       projectNumber: 5,
@@ -361,7 +361,7 @@ const model = {
       },],
     },
     {
-      img: "IMG/PICTURES/Pro5_3.JPG",
+      img: "IMG/PICTURES/Pro5_3.jpg",
       toggled: false,
       projectName: "Architectural projects",
       projectNumber: 5,
